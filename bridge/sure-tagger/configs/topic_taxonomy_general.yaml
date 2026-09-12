@@ -1,0 +1,144 @@
+version: general_topic_v0.1.0
+labels:
+  academic_research:
+    description: 学术、科研、理论讨论、论文、课程中的专业知识
+    minors:
+      - mathematics
+      - physics
+      - chemistry
+      - biology
+      - computer_science
+      - engineering
+      - medicine
+      - economics
+      - psychology
+      - philosophy
+      - linguistics
+      - history
+      - interdisciplinary
+
+  technology_engineering:
+    description: 技术、工程、产品、系统、软件硬件实现
+    minors:
+      - artificial_intelligence
+      - software_engineering
+      - data_science
+      - cybersecurity
+      - hardware
+      - robotics
+      - telecommunications
+      - product_design
+      - user_experience
+      - manufacturing
+
+  business_management:
+    description: 商业、组织管理、市场、运营、项目推进
+    minors:
+      - strategy
+      - marketing_sales
+      - finance_accounting
+      - operations
+      - human_resources
+      - entrepreneurship
+      - project_management
+      - customer_success
+      - procurement
+
+  law_policy_government:
+    description: 法律、政策、政府、公共事务和合规
+    minors:
+      - law
+      - regulation
+      - public_policy
+      - government_services
+      - compliance
+      - international_relations
+      - public_safety
+
+  health_medicine:
+    description: 医疗、健康、临床、公共卫生
+    minors:
+      - clinical_medicine
+      - public_health
+      - pharmacy
+      - mental_health
+      - fitness
+      - nutrition
+      - healthcare_operations
+
+  education_training:
+    description: 教学、培训、考试、学习辅导
+    minors:
+      - lecture
+      - tutorial
+      - exam_preparation
+      - classroom_discussion
+      - language_learning
+      - professional_training
+      - mentoring
+
+  culture_media_arts:
+    description: 文化、媒体、娱乐、艺术、人文表达
+    minors:
+      - literature
+      - music
+      - film_tv
+      - gaming
+      - visual_art
+      - religion
+      - media_production
+      - pop_culture
+
+  news_current_events:
+    description: 新闻、时事、社会事件和公共议题
+    minors:
+      - politics
+      - economy
+      - local_news
+      - international_news
+      - climate_environment
+      - social_issues
+      - breaking_news
+
+  daily_life_social:
+    description: 日常生活、人际交流、家庭、消费和闲聊
+    minors:
+      - family
+      - food
+      - shopping
+      - housing
+      - travel_transportation
+      - interpersonal_chat
+      - personal_experience
+      - small_talk
+
+  customer_service_support:
+    description: 客服、售后、咨询、投诉、工单处理
+    minors:
+      - product_inquiry
+      - troubleshooting
+      - complaint
+      - billing
+      - account_support
+      - appointment
+      - refund_exchange
+
+  meeting_workflow:
+    description: 会议组织过程，而不是会议讨论的业务主题本身
+    minors:
+      - agenda
+      - scheduling
+      - status_update
+      - decision
+      - action_item
+      - brainstorming
+      - coordination
+      - opening_closing
+
+  other:
+    description: 无法归入上述类别或信息不足
+    minors:
+      - unknown
+      - insufficient_context
+      - mixed_topics
+      - non_speech

@@ -1,0 +1,82 @@
+{
+  "sample_id": null,
+  "parent_sample_id": null,
+  "attribute": {
+    "duration": null,
+    "path": null,
+    "size": null,
+    "channels": null,
+    "sample_rate": null,
+    "file_type": null
+  },
+  "annotation": [
+    {
+      "seg_id": null,
+      "timestamp": {
+        "begin_time": null,
+        "end_time": null
+      },
+      "audio": {
+        "tag": null,
+        "acoustic": {
+          "background": null
+        }
+      },
+      "audio_quality": {
+        "snr": null,
+        "dnsmos": null,
+        "dnsmos_sig": null,
+        "dnsmos_bak": null,
+        "dnsmos_p808": null,
+        "snr_estimation": null
+      },
+      "vad": {
+        "nonspeech_ratio": null,
+        "silence_segments": [
+          {
+            "start_sec": null,
+            "end_sec": null
+          }
+        ]
+      },
+      "room_acoustic": {
+        "rt60": null,
+        "c50": null
+      },
+      "speaker": {
+        "distance": null,
+        "speaker_count": null,
+        "multi_speaker": null,
+        "speaker_change_count": null,
+        "speaker_change": null,
+        "overlap_ratio": null,
+        "speaker_overlap": null
+      },
+      "topic": null,
+      "task_extension": {
+        "sound_event": null
+      },
+      "sweeper_scene": {
+        "distance": null,
+        "external_noise_info": {
+          "type": null
+        }
+      },
+      "others": {
+        "music_state": null
+      },
+      "transcription": {
+        "language": null,
+        "text": null,
+        "speech_status": null,
+        "repeat_times": null,
+        "word_count": null,
+        "punctuation": {
+          "punctuation_count": null,
+          "has_terminal_punctuation": null
+        },
+        "filler_count": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/caption_extraction_schema.json",
+  "title": "Conservative caption-to-company-audio-label extraction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sample_id", "parent_sample_id", "attribute", "annotation"],
+  "properties": {
+    "sample_id": { "$ref": "#/$defs/nullableNonEmptyString" },
+    "parent_sample_id": { "$ref": "#/$defs/nullableNonEmptyString" },
+    "attribute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["duration", "path", "size", "channels", "sample_rate", "file_type"],
+      "properties": {
+        "duration": {
+          "anyOf": [
+            { "type": "integer", "minimum": 0, "description": "milliseconds" },
+            { "type": "null" }
+          ]
+        },
+        "path": { "$ref": "#/$defs/nullableNonEmptyString" },
+        "size": {
+          "anyOf": [
+            { "type": "integer", "minimum": 0, "description": "bytes" },
+            { "type": "null" }
+          ]
+        },
+        "channels": {
+          "anyOf": [
+            { "type": "integer", "minimum": 1 },
+            { "type": "null" }
+          ]
+        },
+        "sample_rate": {
+          "anyOf": [
+            { "type": "integer", "minimum": 1, "description": "Hz" },
+            { "type": "null" }
+          ]
+        },
+        "file_type": { "enum": ["audio", null] }
+      }
+    },
+    "annotation": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": { "$ref": "#/$defs/annotation" }
+    }
+  },
+  "$defs": {
+    "nullableNonEmptyString": {
+      "anyOf": [
+        { "type": "string", "minLength": 1 },
+        { "type": "null" }
+      ]
+    },
+    "nullableFiniteNumber": {
+      "anyOf": [
+        { "type": "number" },
+        { "type": "null" }
+      ]
+    },
+    "annotation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "seg_id", "timestamp", "audio", "audio_quality", "vad",
+        "room_acoustic", "speaker", "topic", "task_extension",
+        "sweeper_scene", "others", "transcription"
+      ],
+      "properties": {
+        "seg_id": { "$ref": "#/$defs/nullableNonEmptyString" },
+        "timestamp": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["begin_time", "end_time"],
+          "properties": {
+            "begin_time": {
+              "anyOf": [
+                { "type": "number", "minimum": 0, "description": "seconds in parent audio" },
+                { "type": "null" }
+              ]
+            },
+            "end_time": {
+              "anyOf": [
+                { "type": "number", "minimum": 0, "description": "seconds in parent audio" },
+                { "type": "null" }
+              ]
+            }
+          }
+        },
+        "audio": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tag", "acoustic"],
+          "properties": {
+            "tag": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": { "enum": ["speech", "music", "noise", "audio_event", "other"] },
+                  "minItems": 1,
+                  "maxItems": 5,
+                  "uniqueItems": true
+                },
+                { "type": "null" }
+              ]
+            },
+            "acoustic": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["background"],
+              "properties": {
+                "background": { "enum": ["quiet", "mix", "noisy", null] }
+              }
+            }
+          }
+        },
+        "audio_quality": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["snr", "dnsmos", "dnsmos_sig", "dnsmos_bak", "dnsmos_p808", "snr_estimation"],
+          "properties": {
+            "snr": { "$ref": "#/$defs/nullableFiniteNumber" },
+            "dnsmos": {
+              "anyOf": [
+                { "type": "number", "minimum": 1, "maximum": 5 },
+                { "type": "null" }
+              ]
+            },
+            "dnsmos_sig": {
+              "anyOf": [
+                { "type": "number", "minimum": 1, "maximum": 5 },
+                { "type": "null" }
+              ]
+            },
+            "dnsmos_bak": {
+              "anyOf": [
+                { "type": "number", "minimum": 1, "maximum": 5 },
+                { "type": "null" }
+              ]
+            },
+            "dnsmos_p808": {
+              "anyOf": [
+                { "type": "number", "minimum": 1, "maximum": 5 },
+                { "type": "null" }
+              ]
+            },
+            "snr_estimation": {
+              "enum": [
+                ">20db高信噪比", "10~20db中信噪比", "0~10db低信噪比",
+                "<0db极低信噪比", null
+              ]
+            }
+          }
+        },
+        "vad": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["nonspeech_ratio", "silence_segments"],
+          "properties": {
+            "nonspeech_ratio": {
+              "description": "Fraction of the clip not detected as human speech; this is not a physical silence ratio.",
+              "anyOf": [
+                { "type": "number", "minimum": 0, "maximum": 1 },
+                { "type": "null" }
+              ]
+            },
+            "silence_segments": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["start_sec", "end_sec"],
+                    "properties": {
+                      "start_sec": { "type": "number", "minimum": 0 },
+                      "end_sec": { "type": "number", "exclusiveMinimum": 0 }
+                    }
+                  }
+                },
+                { "type": "null" }
+              ]
+            }
+          }
+        },
+        "room_acoustic": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["rt60", "c50"],
+          "properties": {
+            "rt60": {
+              "anyOf": [
+                { "type": "number", "minimum": 0, "description": "seconds" },
+                { "type": "null" }
+              ]
+            },
+            "c50": { "$ref": "#/$defs/nullableFiniteNumber" }
+          }
+        },
+        "speaker": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "distance", "speaker_count", "multi_speaker", "speaker_change_count",
+            "speaker_change", "overlap_ratio", "speaker_overlap"
+          ],
+          "properties": {
+            "distance": { "enum": ["near", "far", null] },
+            "speaker_count": {
+              "anyOf": [
+                { "type": "integer", "minimum": 0 },
+                { "type": "null" }
+              ]
+            },
+            "multi_speaker": {
+              "anyOf": [
+                { "type": "boolean" },
+                { "type": "null" }
+              ]
+            },
+            "speaker_change_count": {
+              "anyOf": [
+                { "type": "integer", "minimum": 0 },
+                { "type": "null" }
+              ]
+            },
+            "speaker_change": {
+              "anyOf": [
+                { "type": "boolean" },
+                { "type": "null" }
+              ]
+            },
+            "overlap_ratio": {
+              "anyOf": [
+                { "type": "number", "minimum": 0, "maximum": 1 },
+                { "type": "null" }
+              ]
+            },
+            "speaker_overlap": {
+              "anyOf": [
+                { "type": "boolean" },
+                { "type": "null" }
+              ]
+            }
+          }
+        },
+        "topic": {
+          "anyOf": [
+            { "type": "string", "pattern": "^[^/]+/[^/]+$", "maxLength": 160 },
+            { "type": "null" }
+          ]
+        },
+        "task_extension": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["sound_event"],
+          "properties": {
+            "sound_event": {
+              "enum": [
+                "speech", "singing", "music", "speech,singing", "speech,music",
+                "singing,music", "speech,singing,music", null
+              ]
+            }
+          }
+        },
+        "sweeper_scene": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["distance", "external_noise_info"],
+          "properties": {
+            "distance": { "$ref": "#/$defs/nullableNonEmptyString" },
+            "external_noise_info": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["type"],
+              "properties": {
+                "type": { "$ref": "#/$defs/nullableNonEmptyString" }
+              }
+            }
+          }
+        },
+        "others": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["music_state"],
+          "properties": {
+            "music_state": { "enum": ["是", "否", null] }
+          }
+        },
+        "transcription": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "language", "text", "speech_status", "repeat_times", "word_count",
+            "punctuation", "filler_count"
+          ],
+          "properties": {
+            "language": {
+              "anyOf": [
+                { "type": "string", "minLength": 2, "maxLength": 32 },
+                { "type": "null" }
+              ]
+            },
+            "text": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": { "type": "string", "minLength": 1 },
+                  "minItems": 1
+                },
+                { "type": "null" }
+              ]
+            },
+            "speech_status": { "enum": ["speech", "invalid", "sil", null] },
+            "repeat_times": {
+              "anyOf": [
+                { "type": "integer", "minimum": 0 },
+                { "type": "null" }
+              ]
+            },
+            "word_count": {
+              "anyOf": [
+                { "type": "integer", "minimum": 0 },
+                { "type": "null" }
+              ]
+            },
+            "punctuation": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["punctuation_count", "has_terminal_punctuation"],
+                  "properties": {
+                    "punctuation_count": { "type": "integer", "minimum": 0 },
+                    "has_terminal_punctuation": { "type": "boolean" }
+                  }
+                },
+                { "type": "null" }
+              ]
+            },
+            "filler_count": {
+              "anyOf": [
+                { "type": "integer", "minimum": 0 },
+                { "type": "null" }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,140 @@
+# Python bytecode and test caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+coverage.xml
+htmlcov/
+
+# Python packaging and virtual environments
+.venv/
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Local runtime environments and temporary files
+.cache/
+tmp/
+temp/
+*.tmp
+*.log
+
+# Secrets, credentials, and local-only configuration
+.env
+.env.*
+!.env.example
+api.txt
+auth.json
+credentials.json
+secrets.json
+*.credentials
+*.key
+*.pem
+*.p12
+*.pfx
+*.token
+.codex/
+.huggingface/
+.netrc
+
+# External datasets and generated outputs
+/data
+/AMI
+/EN2001a.jsonl
+/bridge/sure-tagger/AMI
+/bridge/sure-tagger/outputs/
+/phase1_asr_samples/outputs/
+/ami_en2001a_utterances/
+/phase2_asr_sample/
+/ami_en2001a_utterances/outputs/
+/outputs/
+
+# Audio, transcripts, manifests, and generated demo payloads may contain
+# personal data or dataset material that is not licensed for redistribution.
+*.wav
+*.wave
+*.mp3
+*.flac
+*.m4a
+*.aac
+*.ogg
+*.opus
+*.pcm
+*.jsonl
+*.jsonl.gz
+*.scp
+*.csv
+*.parquet
+/phase1_asr_samples/
+/demo/assets/
+/demo/data.js
+
+# Third-party model repositories and model artifacts. Do not add a trailing
+# slash to the root entries: they must also match machine-local symlinks.
+/models
+/.runtime
+/checkpoints/
+/pretrained_models/
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.bin
+*.ggml
+*.gguf
+*.h5
+*.hdf5
+*.nemo
+*.tflite
+*.engine
+*.plan
+*.joblib
+*.pkl
+
+# Archives commonly used for model or dataset artifacts
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.rar
+
+# Internal deployment notes, evaluation reports, and machine-bound configs
+/company-label-alignment.md
+/bridge/公司音频标签规范/
+/bridge/sure-tagger/readme.md
+/bridge/sure-tagger/test.txt
+/bridge/sure-tagger/configs/ami*.yaml
+/bridge/sure-tagger/configs/tags_*.yaml
+/tagger/tools/speaker_v1/docs/company-label-alignment.md
+/tagger/tools/speaker_v1/docs/deployment/
+/tagger/tools/speaker_v1/docs/deployment_plan.md
+/tagger/tools/speaker_v1/docs/evaluation/
+/tagger/tools/speaker_v2/docs/*.html
+/tagger/tools/speaker_v2/evalue/
+/tagger/tools/speaker_v2/speaker-weekly-report-*/
+*.pdf
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Copied data dir and deployment artifacts (machine-local, not source)
+/dataset/
+/.deploy/
+/tagger/tools/speaker_v2/evalue/audio_wav_16k_mono/
+/tagger/tools/speaker_v2/evalue/data/
+/tagger/tools/speaker_v2/evalue/outputs/

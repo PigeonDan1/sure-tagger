@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ASR 数据集二次打标 Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Sure Tagger / Phase 2</p>
+        <h1>ASR 数据集二次打标展示</h1>
+        <p class="lead">
+          将 phase2 ASR manifest、音频、transcript 和原始 metadata 转换为统一标签：基础声学、音频质量（Brouhaha/DNSMOS）、空间声学（Rec-RIR）、声场场景（FireRed AED + DASS 分类背景声）、语言内容和多说话人信息。
+        </p>
+      </div>
+      <nav class="topnav" aria-label="页面导航">
+        <a href="#workflow">流程</a>
+        <a href="#samples">样本</a>
+        <a href="#coverage">覆盖</a>
+        <a href="#caption-compare">Captioner 对比</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="summary-band" aria-labelledby="summary-title">
+        <div class="section-heading">
+          <p class="eyebrow">Current run</p>
+          <h2 id="summary-title">Phase 2 全量打标结果</h2>
+        </div>
+        <div class="metric-grid" id="metricGrid"></div>
+      </section>
+
+      <section class="workflow-band" id="workflow" aria-labelledby="workflow-title">
+        <div class="section-heading">
+          <p class="eyebrow">Pipeline</p>
+          <h2 id="workflow-title">从 ASR 样本到可检索标签</h2>
+        </div>
+        <div class="pipeline">
+          <article class="pipeline-step">
+            <span class="step-index">01</span>
+            <h3>Manifest + Audio</h3>
+            <p>读取每条样本的音频路径、transcript 和原始 metadata。</p>
+          </article>
+          <article class="pipeline-step">
+            <span class="step-index">02</span>
+            <h3>Language Layer</h3>
+            <p>对 transcript 做确定性文本统计，音频语言始终由 FireRed LID 识别；输入为空时仅文本统计使用 speaker 路由 ASR，语言复用同一次 LID 证据。</p>
+          </article>
+          <article class="pipeline-step">
+            <span class="step-index">03</span>
+            <h3>Acoustic + Scene</h3>
+            <p>提取时长、静音片段、SNR、DNSMOS、RT60、C50；AED 检出 speech/singing/music，DASS 输出背景噪音类别与分类组成。</p>
+          </article>
+          <article class="pipeline-step">
+            <span class="step-index">04</span>
+            <h3>Unified Tags</h3>
+            <p>输出按 tag group 组织的 JSON；speaker 中文和英文使用 MOSS/FireRed，其他、混合或未知语言使用官方 DiariZen + Qwen3 ASR 链路。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="workspace" id="samples" aria-labelledby="samples-title">
+        <aside class="sample-rail">
+          <div class="rail-heading">
+            <div>
+              <p class="eyebrow">Representative audio</p>
+              <h2 id="samples-title">样本切换</h2>
+            </div>
+            <span class="count-pill" id="visibleCount"></span>
+          </div>
+          <div class="filter-row" id="filterRow" aria-label="按数据集筛选"></div>
+          <div class="sample-list" id="sampleList"></div>
+        </aside>
+
+        <section class="sample-detail" aria-live="polite">
+          <div class="detail-header">
+            <div>
+              <p class="eyebrow" id="activeDataset"></p>
+              <h2 id="activeTitle"></h2>
+              <p class="sample-note" id="activeNote"></p>
+            </div>
+            <div class="sample-id" id="activeSampleId"></div>
+          </div>
+
+          <div class="audio-stage">
+            <audio id="audioPlayer" controls preload="metadata"></audio>
+            <canvas id="waveform" height="160" aria-label="音频波形"></canvas>
+            <div class="waveform-hint">点击波形可跳转播放位置；琥珀色区段表示静音片段。</div>
+          </div>
+
+          <div class="transcript-strip">
+            <div>
+              <p class="eyebrow">Transcript</p>
+              <p class="transcript" id="transcriptText"></p>
+            </div>
+          </div>
+
+          <div class="tag-toolbar" id="tagToolbar" role="tablist" aria-label="标签分组"></div>
+          <div class="tag-grid" id="tagGrid"></div>
+
+          <div class="json-panels">
+            <details class="json-panel">
+              <summary>查看当前样本输入 JSON</summary>
+              <pre id="inputJson"></pre>
+            </details>
+            <details class="json-panel">
+              <summary>查看当前样本完整 tag JSON</summary>
+              <pre id="rawJson"></pre>
+            </details>
+          </div>
+        </section>
+      </section>
+
+      <section class="coverage-band" id="coverage" aria-labelledby="coverage-title">
+        <div class="section-heading">
+          <p class="eyebrow">Coverage</p>
+          <h2 id="coverage-title">数据集分布与标签覆盖</h2>
+        </div>
+        <div class="coverage-grid">
+          <div class="coverage-panel">
+            <h3>Phase 2 数据构成</h3>
+            <div id="datasetBars"></div>
+          </div>
+          <div class="coverage-panel">
+            <h3>Tag group 覆盖情况</h3>
+            <div id="coverageBars"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="summary-band caption-band" id="caption-compare" aria-labelledby="caption-title">
+        <div class="section-heading">
+          <p class="eyebrow">Cross-check / caption_pairs_3000 前 20 条</p>
+          <h2 id="caption-title">sound_field 标签 vs qwen-omni captioner</h2>
+          <p class="lead">
+            对纯音频只跑 sound_field 类标签（FireRed AED + DASS 分类背景声），与 qwen-omni captioner 提取的结构化标注逐条对比：音乐判定、语音/歌声/音乐事件、背景噪音标签。
+          </p>
+        </div>
+        <div class="metric-grid" id="captionMetrics"></div>
+      </section>
+
+      <section class="workspace" id="caption-workspace" aria-labelledby="caption-samples-title">
+        <aside class="sample-rail">
+          <div class="rail-heading">
+            <div>
+              <p class="eyebrow">caption_pairs_3000</p>
+              <h2 id="caption-samples-title">对比样本</h2>
+            </div>
+            <span class="count-pill" id="captionCount"></span>
+          </div>
+          <div class="sample-list" id="captionList"></div>
+        </aside>
+
+        <section class="sample-detail" aria-live="polite">
+          <div class="detail-header">
+            <div>
+              <p class="eyebrow">caption_pairs_3000 · 前 20 条</p>
+              <h2 id="captionSampleTitle"></h2>
+              <p class="sample-note" id="captionSampleNote"></p>
+            </div>
+            <div class="sample-id" id="captionSampleId"></div>
+          </div>
+
+          <div class="audio-stage">
+            <audio id="captionAudio" controls preload="none"></audio>
+            <div class="waveform-hint">
+              sure-tagger 侧只跑 sound_field 标签（FireRed AED + DASS 分类背景声）；captioner 侧来自 qwen-omni 描述的结构化提取（external_noise_info.type / music_state / sound_event）。
+            </div>
+          </div>
+
+          <div class="caption-compare-grid" id="captionCompareGrid"></div>
+
+          <details class="json-panel">
+            <summary>查看 captioner 完整描述</summary>
+            <div class="caption-text" id="captionText"></div>
+          </details>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Demo data: phase2 full pipeline tags（outputs/phase2_full_tags.jsonl，scripts/build_demo_data.py 生成）</span>
+      <span>speaker 按 FireRed LID 选择中文/英文 MOSS/FireRed 或其他语言官方 DiariZen + Qwen3 ASR；无 transcript 噪声样本按 guard 跳过 speech 相关 stage。</span>
+      <span>Captioner 对比：caption_pairs_3000 前 20 条，sound_field 标签 vs qwen-omni captioner（scripts/build_caption_compare.py 生成）。</span>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="caption_compare.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

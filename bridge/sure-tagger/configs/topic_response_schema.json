@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "major_topic": {
+      "type": "string"
+    },
+    "minor_topic": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "topic_keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "proper_nouns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reason_short": {
+      "type": "string"
+    },
+    "secondary_topics": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "required": [
+    "major_topic",
+    "minor_topic",
+    "confidence",
+    "topic_keywords",
+    "proper_nouns",
+    "reason_short"
+  ]
+}

@@ -1,0 +1,13 @@
+# DASS subprocess runtime requirements.
+#
+# The project-local runtime is .runtime/dass_runtime_py311. It is created and
+# checked by scripts/setup_dass_gpu.sh. torch==2.7.1 must resolve to a CUDA
+# builds (the setup script adds the cu126 PyTorch index and verifies CUDA before
+# declaring the environment ready).
+
+torch==2.7.1
+torchaudio==2.7.1
+librosa==0.11.0
+numpy==2.4.6
+transformers==4.49.0
+soundfile==0.14.0
