@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta
+      name="description"
+      content="Speaker v2 pipeline、SURE 模型测评、Qwen-captioner reference 评测与 AMI 真实 demo 技术汇报"
+    />
+    <title>Speaker Intelligence · 技术进展汇报</title>
+    <link rel="stylesheet" href="styles.css?v=20260819-2" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#pipeline" aria-label="回到报告首页">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span><b>SPEAKER</b><em>INTELLIGENCE</em></span>
+        </a>
+        <div class="report-meta">
+          <span class="live-dot"></span>
+          <span>HISTORICAL SNAPSHOT</span>
+          <time datetime="2026-08-19">2026.08.19</time>
+        </div>
+      </header>
+
+      <aside class="sidebar" aria-label="汇报模块">
+        <div class="side-intro">
+          <p class="eyebrow">WEEKLY / 34</p>
+          <h1>说话人理解<br />技术进展</h1>
+          <p><strong>2026-08-19 历史快照。</strong> 当前 public adapter 已直接发布可决策字段；FireRed LID 只将中文路由到 MOSS，其他语言进入固定 OpenASR 组合链路。请以 <a href="../docs/direct_public_output_20260820.md">最新输出合同</a>为准。</p>
+        </div>
+        <nav class="module-nav" id="moduleNav">
+          <button type="button" class="module-link is-active" data-module="pipeline" aria-current="page">
+            <span class="module-index">01</span>
+            <span><b>Label Pipeline</b><small>6 个公开标签</small></span>
+          </button>
+          <button type="button" class="module-link" data-module="sure">
+            <span class="module-index">02</span>
+            <span><b>SURE Matrix</b><small>冻结集模型测评</small></span>
+          </button>
+          <button type="button" class="module-link" data-module="qwen">
+            <span class="module-index">03</span>
+            <span><b>Qwen Reference</b><small>100 条一致性评测</small></span>
+          </button>
+          <button type="button" class="module-link" data-module="demo">
+            <span class="module-index">04</span>
+            <span><b>AMI Live Demo</b><small>5 条真实 shadow run</small></span>
+          </button>
+        </nav>
+        <div class="side-footer">
+          <span>QUALITY-SHADOW</span>
+          <span class="status-pill"><i></i> evidence ready</span>
+        </div>
+      </aside>
+
+      <main class="report-main">
+        <section class="module-panel is-active" id="pipeline" data-panel="pipeline" aria-labelledby="pipelineTitle">
+          <div class="module-content" id="pipelineContent"></div>
+        </section>
+        <section class="module-panel" id="sure" data-panel="sure" aria-labelledby="sureTitle" hidden>
+          <div class="module-content" id="sureContent"></div>
+        </section>
+        <section class="module-panel" id="qwen" data-panel="qwen" aria-labelledby="qwenTitle" hidden>
+          <div class="module-content" id="qwenContent"></div>
+        </section>
+        <section class="module-panel" id="demo" data-panel="demo" aria-labelledby="demoTitle" hidden>
+          <div class="module-content" id="demoContent"></div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <noscript>该技术汇报需要 JavaScript 来加载真实评测数据。</noscript>
+    <script src="data/report-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,257 @@
+{
+  "schema_version": "structural-field-universe-v0.1",
+  "universe_version": "structural-v0.1",
+  "benchmark": {
+    "dataset": "AMI",
+    "expected_sample_count": 300,
+    "splits": {
+      "legacy_200": 200,
+      "diverse_100": 100
+    }
+  },
+  "speaker_rule": {
+    "version": "speaker-gt-v0.1",
+    "min_segment_duration_sec": 0.1,
+    "merge_same_speaker_gap_sec": 0.3,
+    "speaker_change_max_gap_sec": 1.0,
+    "overlap_min_duration_sec": 0.1,
+    "overlap_ratio_denominator": "speech_union"
+  },
+  "text_rule": {
+    "version": "text-rules-v0.1",
+    "filler_lexicon": [
+      "ah",
+      "er",
+      "erm",
+      "hmm",
+      "mm",
+      "oh",
+      "uh",
+      "um",
+      "yeah"
+    ],
+    "repetition_max_ngram": 3,
+    "asr_normalization": "unicode-punctuation-strip-lower-whitespace-v0.1"
+  },
+  "multilabel_classes": {
+    "sound_field_scene.speech_music_events": [
+      "speech",
+      "singing",
+      "music"
+    ]
+  },
+  "fields": [
+    {
+      "path": "basic_acoustic.duration_sec",
+      "kind": "number",
+      "metric": "tolerance",
+      "tolerance": 0.001
+    },
+    {
+      "path": "basic_acoustic.sample_rate_hz",
+      "kind": "integer",
+      "metric": "integer"
+    },
+    {
+      "path": "basic_acoustic.channels",
+      "kind": "integer",
+      "metric": "integer"
+    },
+    {
+      "path": "basic_acoustic.nonspeech_ratio",
+      "kind": "number",
+      "metric": "unsupported"
+    },
+    {
+      "path": "basic_acoustic.silence_segments",
+      "kind": "array",
+      "metric": "unsupported"
+    },
+    {
+      "path": "audio_quality.snr_db",
+      "kind": "number",
+      "metric": "unsupported"
+    },
+    {
+      "path": "audio_quality.dnsmos_sig",
+      "kind": "number",
+      "metric": "unsupported"
+    },
+    {
+      "path": "audio_quality.dnsmos_bak",
+      "kind": "number",
+      "metric": "unsupported"
+    },
+    {
+      "path": "audio_quality.dnsmos_ovrl",
+      "kind": "number",
+      "metric": "unsupported"
+    },
+    {
+      "path": "audio_quality.dnsmos_p808",
+      "kind": "number",
+      "metric": "unsupported"
+    },
+    {
+      "path": "room_acoustic.far_field",
+      "kind": "boolean",
+      "metric": "unsupported"
+    },
+    {
+      "path": "room_acoustic.rt60_sec",
+      "kind": "number",
+      "metric": "unsupported"
+    },
+    {
+      "path": "room_acoustic.c50_db",
+      "kind": "number",
+      "metric": "unsupported"
+    },
+    {
+      "path": "sound_field_scene.speech_music_events",
+      "kind": "string_array",
+      "metric": "positive_multilabel"
+    },
+    {
+      "path": "sound_field_scene.music_present",
+      "kind": "boolean",
+      "metric": "boolean",
+      "independently_scored": true
+    },
+    {
+      "path": "sound_field_scene.external_noise_type",
+      "kind": "string_array",
+      "metric": "unsupported"
+    },
+    {
+      "path": "sound_field_scene.noise_composition",
+      "kind": "object",
+      "metric": "unsupported"
+    },
+    {
+      "path": "speaker.speaker_count",
+      "kind": "integer",
+      "metric": "integer"
+    },
+    {
+      "path": "speaker.speaker_present",
+      "kind": "boolean",
+      "metric": "boolean",
+      "independently_scored": true
+    },
+    {
+      "path": "speaker.asr_transcript",
+      "kind": "string",
+      "metric": "text_wer"
+    },
+    {
+      "path": "speaker.multi_speaker",
+      "kind": "boolean",
+      "metric": "boolean"
+    },
+    {
+      "path": "speaker.speaker_change_count",
+      "kind": "integer",
+      "metric": "integer"
+    },
+    {
+      "path": "speaker.speaker_change",
+      "kind": "boolean",
+      "metric": "boolean"
+    },
+    {
+      "path": "speaker.overlap_ratio",
+      "kind": "number",
+      "metric": "continuous"
+    },
+    {
+      "path": "speaker.speaker_overlap",
+      "kind": "boolean",
+      "metric": "boolean"
+    },
+    {
+      "path": "speaker.profiles",
+      "kind": "array",
+      "metric": "unsupported"
+    },
+    {
+      "path": "language_content.language",
+      "kind": "string",
+      "metric": "categorical"
+    },
+    {
+      "path": "language_content.word_count",
+      "kind": "integer",
+      "metric": "integer"
+    },
+    {
+      "path": "language_content.punctuation.punctuation_count",
+      "kind": "integer",
+      "metric": "integer"
+    },
+    {
+      "path": "language_content.punctuation.has_terminal_punctuation",
+      "kind": "boolean",
+      "metric": "boolean"
+    },
+    {
+      "path": "language_content.repetition.has_repetition",
+      "kind": "boolean",
+      "metric": "boolean"
+    },
+    {
+      "path": "language_content.repetition.repetition_count",
+      "kind": "integer",
+      "metric": "integer"
+    },
+    {
+      "path": "language_content.filler",
+      "kind": "integer",
+      "metric": "integer"
+    },
+    {
+      "path": "deterministic_derived.speaker_change_rate_per_min",
+      "kind": "number",
+      "metric": "continuous",
+      "independently_scored": true
+    },
+    {
+      "path": "deterministic_derived.filler_ratio",
+      "kind": "number",
+      "metric": "continuous",
+      "independently_scored": true
+    }
+  ],
+  "contract_rules": [
+    {
+      "name": "speaker_present_from_count",
+      "target": "speaker.speaker_present",
+      "dependencies": [
+        "speaker.speaker_count"
+      ]
+    },
+    {
+      "name": "music_present_from_events",
+      "target": "sound_field_scene.music_present",
+      "dependencies": [
+        "sound_field_scene.speech_music_events"
+      ]
+    },
+    {
+      "name": "speaker_change_rate_per_min",
+      "target": "deterministic_derived.speaker_change_rate_per_min",
+      "dependencies": [
+        "speaker.speaker_change_count",
+        "basic_acoustic.duration_sec"
+      ]
+    },
+    {
+      "name": "filler_ratio",
+      "target": "deterministic_derived.filler_ratio",
+      "dependencies": [
+        "language_content.filler",
+        "language_content.word_count"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+dataset:
+  name: AMI
+  root: /hpc_stor03/sjtu_home/huifei.wang/sure-tagger/AMI
+  annotation_release: "AMI Manual Annotations 1.7"
+
+adapter:
+  parse_granularity: segment
+  tag_granularity: meeting
+  sample_granularity: segment
+  audio_preference:
+    - mix_headset
+    - beamformed_mdm8
+    - headset
+  include_nonword_events: true
+  allow_null_audio_times: true

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd)"
+TAGGER_RUNTIME_ROOT="${TAGGER_RUNTIME_ROOT:-$PROJECT_ROOT/.runtime}"
+RUNTIME="$TAGGER_RUNTIME_ROOT/fireredlid_runtime_py311"
+SITE="$TAGGER_RUNTIME_ROOT/fireredlid_py311/lib/python3.11/site-packages"
+CUDA_LIBS=$(find "$SITE/nvidia" -mindepth 2 -maxdepth 2 -type d -name lib -printf '%p:' | sed 's/:$//')
+
+export LD_LIBRARY_PATH="${CUDA_LIBS}${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+exec "$RUNTIME/bin/python" "$@"

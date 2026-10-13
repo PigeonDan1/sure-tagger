@@ -1,0 +1,153 @@
+{
+  "sample_id": "0.000_10.049_obj_03dce036-8982-4663-b85f-6719b7a690a2",
+  "schema_version": "structural-prediction-v0.1",
+  "field_universe_version": "structural-v0.1",
+  "basic_acoustic": {
+    "duration_sec": 9,
+    "sample_rate_hz": null,
+    "channels": 2,
+    "nonspeech_ratio": null,
+    "silence_segments": null
+  },
+  "audio_quality": {
+    "snr_db": null,
+    "dnsmos_sig": null,
+    "dnsmos_bak": null,
+    "dnsmos_ovrl": null,
+    "dnsmos_p808": null
+  },
+  "room_acoustic": {
+    "far_field": null,
+    "rt60_sec": null,
+    "c50_db": null
+  },
+  "sound_field_scene": {
+    "speech_music_events": [
+      "speech"
+    ],
+    "music_present": false,
+    "external_noise_type": [
+      "formless"
+    ],
+    "noise_composition": null
+  },
+  "speaker": {
+    "speaker_count": null,
+    "speaker_present": null,
+    "asr_transcript": null,
+    "multi_speaker": true,
+    "speaker_change_count": null,
+    "speaker_change": null,
+    "overlap_ratio": null,
+    "speaker_overlap": null,
+    "profiles": null
+  },
+  "language_content": {
+    "language": null,
+    "word_count": null,
+    "punctuation": {
+      "punctuation_count": null,
+      "has_terminal_punctuation": null
+    },
+    "repetition": {
+      "has_repetition": null,
+      "repetition_count": null
+    },
+    "filler": null
+  },
+  "deterministic_derived": {
+    "speaker_change_rate_per_min": null,
+    "filler_ratio": null
+  },
+  "descriptive": {
+    "caption": "The clip is a 9-second stereo field recording from a large, reverberant indoor space. It contains a sharp metallic click, a faint high-pitched squeak, repetitive low-frequency creaks of a rocking chair, a very faint background murmur consistent with distant human conversation, and a brief low-frequency electronic tone near the end. No music or distinctive cultural markers are present, and the overall quality is moderate to low with a low-frequency hum and background hiss.",
+    "topic": null,
+    "background_condition": "Large, reverberant indoor space with pronounced echo, persistent low-frequency hum likely from HVAC or electrical equipment, noticeable background hiss, and moderate-to-low sound quality; no clipping or distortion reported.",
+    "dominant_content_impression": "The clip is dominated by repetitive low-frequency creaks of a rocking chair and a very faint background murmur, with brief mechanical click/squeak events at the start and a short synthetic electronic tone near the end.",
+    "clarity_intelligibility_impression": "Overall sound quality is moderate to low with noticeable background hiss; the background conversation is very faint, muffled, and unintelligible, and no clipping or distortion is reported.",
+    "background_sound_summary": "Persistent low-frequency hum likely from HVAC or electrical equipment, noticeable background hiss, pronounced echo/reverberation, and a very faint distant murmur that may be conversation.",
+    "descriptive_phrases": [
+      "9-second field recording",
+      "large, reverberant indoor space",
+      "pronounced echo",
+      "persistent low-frequency hum",
+      "noticeable background hiss",
+      "stereo recording with subtle spatial width",
+      "sharp metallic click",
+      "faint high-pitched squeak",
+      "repetitive low-frequency creak of rocking chair",
+      "very faint, muffled background murmur",
+      "distant, indistinct human conversation",
+      "brief low-frequency electronic tone",
+      "no music or distinctive cultural markers",
+      "moderate to low sound quality",
+      "possible public or semi-public indoor setting"
+    ],
+    "facets": [
+      {
+        "name": "recording_format",
+        "description": "The clip is 9 seconds long and recorded in stereo.",
+        "evidence_tags": [
+          "basic_acoustic.duration_sec",
+          "basic_acoustic.channels"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "name": "target_sound_events",
+        "description": "Speech is present in the sound field, and music is absent.",
+        "evidence_tags": [
+          "sound_field_scene.speech_music_events",
+          "sound_field_scene.music_present"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "name": "background_noise_category",
+        "description": "External noise is classified as formless.",
+        "evidence_tags": [
+          "sound_field_scene.external_noise_type"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "name": "multi_speaker_indication",
+        "description": "Multiple speakers are indicated.",
+        "evidence_tags": [
+          "speaker.multi_speaker"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "speaker_descriptions": null,
+    "scene_hypotheses": [
+      {
+        "description": "The recording may have been made in a public or semi-public indoor setting such as a lobby, waiting room, or atrium.",
+        "evidence_tags": [],
+        "confidence": 0.6
+      },
+      {
+        "description": "The brief electronic tone near the end may be a notification or system sound.",
+        "evidence_tags": [],
+        "confidence": 0.5
+      },
+      {
+        "description": "The presence of a rocking chair may hint at a relaxed or institutional atmosphere.",
+        "evidence_tags": [],
+        "confidence": 0.4
+      }
+    ],
+    "usability_notes": [
+      "Downstream ASR may need de-noising to deal with low-frequency hum, hiss, and reverberation.",
+      "Stereo channel information could be retained for spatial width, but no clipping or distortion is present.",
+      "Speech content is unintelligible, so transcription-based language or word-level metrics are not feasible from this recording alone."
+    ],
+    "uncertainties": [
+      "The exact source of the low-frequency hum is likely HVAC or electrical equipment but not confirmed.",
+      "The background murmur is described as consistent with distant human conversation, but word content, language, and speaker identities cannot be discerned.",
+      "Exact speaker count, turn-taking, overlap, and acoustic parameters such as SNR, RT60, and far-field status are not provided.",
+      "The specific function of the electronic tone is unclear.",
+      "The exact recording location and public/institutional context remain only suggested."
+    ]
+  }
+}

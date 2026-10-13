@@ -1,0 +1,7 @@
+python3 -m sure_tagger.cli tag \
+  --manifest outputs/ami/manifest.es2002a.20.jsonl \
+  --config configs/tags_language_mvp.yaml \
+  --tags language,word_count,punctuation,filler,repetition \
+  --output outputs/es2002a.20.tag.jsonl \
+  --bad-samples outputs/bad_samples.es2002a.20.tag.jsonl \
+  --report outputs/es2002a.20.tag.report.json

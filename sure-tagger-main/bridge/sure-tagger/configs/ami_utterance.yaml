@@ -1,0 +1,26 @@
+dataset:
+  name: AMI
+  root: /hpc_stor03/sjtu_home/huifei.wang/dataset/all
+  annotation_release: "AMI utterance JSONL from dataset/all"
+
+adapter:
+  source_format: ami_utterance_jsonl_dir
+  parse_granularity: utterance
+  tag_granularity: utterance
+  sample_granularity: utterance
+  required_fields:
+    - utt_id
+    - audio_id
+    - speaker
+    - start
+    - end
+    - text
+    - words
+
+topic:
+  target_granularity: utterance
+  default_provider: heuristic
+  context:
+    meeting_window_sec: 60
+    speaker_neighbor_segments: 3
+    max_context_chars: 3000

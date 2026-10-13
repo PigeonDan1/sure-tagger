@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd)"
+TAGGER_RUNTIME_ROOT="${TAGGER_RUNTIME_ROOT:-$PROJECT_ROOT/.runtime}"
+RUNTIME="$TAGGER_RUNTIME_ROOT/dass_runtime_py311"
+# Resolve CUDA packages from this runtime, including environments using .pth files.
+NVIDIA_SITE="$("$RUNTIME/bin/python" -c 'import importlib.util; print(next(iter(importlib.util.find_spec("nvidia").submodule_search_locations)))')"
+CUDA_LIBS=$(find "$NVIDIA_SITE" -mindepth 2 -maxdepth 2 -type d -name lib -printf '%p:' | sed 's/:$//')
+
+export LD_LIBRARY_PATH="${CUDA_LIBS}${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+exec "$RUNTIME/bin/python" "$@"

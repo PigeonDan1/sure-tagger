@@ -1,0 +1,30 @@
+run:
+  run_name: topic_gpt55_api_test
+
+tags:
+  topic:
+    enabled: true
+    method: llm_hierarchical_classification
+    taxonomy: general_topic_v0.1.0
+    taxonomy_path: configs/topic_taxonomy_general.yaml
+    schema_path: configs/topic_response_schema.json
+    use_json_schema: false
+    fallback: error
+    model:
+      provider: openai_responses
+      name: gpt-5.5
+      api_key_path: api.txt
+      model_provider: apifusion
+      codex_config_path: /hpc_stor03/sjtu_home/huifei.wang/.codex/config.toml
+      temperature: 0
+      prompt_version: topic_hierarchical_v0.3.0
+      timeout_sec: 180
+    meeting:
+      single_call_max_chars: 80000
+      chunk_chars: 60000
+    context:
+      meeting_window_sec: 120
+      speaker_neighbor_segments: 3
+      max_context_chars: 6000
+    cache:
+      enabled: false

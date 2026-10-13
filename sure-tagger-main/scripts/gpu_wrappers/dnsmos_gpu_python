@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd)"
+TAGGER_RUNTIME_ROOT="${TAGGER_RUNTIME_ROOT:-$PROJECT_ROOT/.runtime}"
+TORCH_ROOT="$TAGGER_RUNTIME_ROOT/recrir_py310_torch271"
+TORCH_SITE="$TORCH_ROOT/lib/python3.10/site-packages"
+FIRERED_SITE="$TAGGER_RUNTIME_ROOT/fireredvad_rebuild_py310/lib/python3.10/site-packages"
+ORT_OVERLAY="$TAGGER_RUNTIME_ROOT/onnxruntime_gpu_overlay_py310_v2"
+CUDA_LIBS=$(find "$TORCH_SITE/nvidia" -mindepth 2 -maxdepth 2 -type d -name lib -printf '%p:' | sed 's/:$//')
+
+export LD_LIBRARY_PATH="${CUDA_LIBS}${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+export PYTHONPATH="$ORT_OVERLAY:$TAGGER_RUNTIME_ROOT/firered_gpu_overlay_py310:$TORCH_SITE:$FIRERED_SITE${PYTHONPATH:+:$PYTHONPATH}"
+exec "$TORCH_ROOT/bin/python" "$@"

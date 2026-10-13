@@ -1,0 +1,80 @@
+# Python bytecode and test caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+coverage.xml
+htmlcov/
+
+# Python packaging and virtual environments
+.venv/
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Local runtime environments and temporary files
+.runtime/
+.cache/
+tmp/
+temp/
+*.tmp
+*.log
+
+# Secrets and local-only configuration
+.env
+.env.*
+!.env.example
+api.txt
+.codex/
+
+# External datasets and generated outputs
+/data
+/AMI
+/EN2001a.jsonl
+/bridge/sure-tagger/AMI
+/bridge/sure-tagger/outputs/
+/phase1_asr_samples/outputs/
+/ami_en2001a_utterances/
+/phase2_asr_sample/
+/ami_en2001a_utterances/outputs/
+/outputs/
+
+# Third-party model repositories and model artifacts
+/models/
+/checkpoints/
+/pretrained_models/
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.bin
+
+# Archives commonly used for model or dataset artifacts
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Copied data dir and deployment artifacts (machine-local, not source)
+/dataset/
+/.deploy/
+/tagger/tools/speaker_v2/evalue/audio_wav_16k_mono/
+/tagger/tools/speaker_v2/evalue/data/
+/tagger/tools/speaker_v2/evalue/outputs/

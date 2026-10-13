@@ -1,0 +1,69 @@
+run:
+  run_name: ami_language_mvp
+  random_seed: 42
+  cache_dir: outputs/cache
+
+tags:
+  language:
+    enabled: true
+    method: unicode_script_heuristic
+    min_chars_for_confident_prediction: 10
+
+  word_count:
+    enabled: true
+    tokenizer: simple_multilingual_v0
+    contractions: keep
+
+  punctuation:
+    enabled: true
+
+  filler:
+    enabled: true
+    lexicon_version: filler_en_v0
+    words:
+      - uh
+      - um
+      - erm
+      - er
+      - ah
+      - oh
+      - hmm
+      - mm
+      - yeah
+
+  repetition:
+    enabled: true
+    max_ngram: 3
+    consecutive_only: true
+
+  topic:
+    enabled: true
+    method: llm_hierarchical_classification
+    taxonomy: general_topic_v0.1.0
+    taxonomy_path: configs/topic_taxonomy_general.yaml
+    schema_path: configs/topic_response_schema.json
+    use_json_schema: false
+    fallback: heuristic
+    model:
+      provider: openai_responses
+      name: gpt-5.5
+      api_key_path: api.txt
+      model_provider: apifusion
+      codex_config_path: /hpc_stor03/sjtu_home/huifei.wang/.codex/config.toml
+      temperature: 0
+      prompt_version: topic_hierarchical_v0.3.0
+      timeout_sec: 180
+    meeting:
+      single_call_max_chars: 80000
+      chunk_chars: 60000
+    context:
+      meeting_window_sec: 120
+      speaker_neighbor_segments: 3
+      max_context_chars: 6000
+    short_utterance_guard:
+      enabled: true
+      max_tokens: 3
+    unknown_confidence_threshold: 0.5
+    cache:
+      enabled: true
+      path: outputs/cache/topic_llm_cache.jsonl
