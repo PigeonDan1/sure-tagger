@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">SURE-Tagger 宣传视频预留位</title>
+  <desc id="desc">深色静态视频封面，中间为播放符号；视频尚未发布。</desc>
+  <rect width="1200" height="320" rx="20" fill="#172b38"/>
+  <path d="M80 166h170l15-30 20 61 19-88 21 105 20-67 14 19h170M670 166h170l15-30 20 61 19-88 21 105 20-67 14 19h170" fill="none" stroke="#378e88" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".6"/>
+  <circle cx="600" cy="147" r="53" fill="#f6f7f2"/>
+  <path d="M585 119v56l46-28z" fill="#16796f"/>
+  <g fill="#f6f7f2" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, sans-serif">
+    <text x="600" y="257" font-size="30" font-weight="700">项目演示视频</text>
+    <text x="600" y="287" font-size="18" opacity=".78">COMING SOON</text>
+  </g>
+</svg>
