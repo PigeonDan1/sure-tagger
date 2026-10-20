@@ -1136,15 +1136,17 @@ def feature_signature(sample):
 
 
 def numeric_effect_anchor(members, samples, path, min_n=5, min_effect=0.45):
+    # All-label discovery can omit default anchor fields, including fields
+    # that are always null and therefore have no discovered numeric type.
     local = [
-        sample["features"]["numeric"][path]
+        sample["features"]["numeric"].get(path)
         for sample in members
-        if sample["features"]["numeric"][path] is not None
+        if sample["features"]["numeric"].get(path) is not None
     ]
     glob = [
-        sample["features"]["numeric"][path]
+        sample["features"]["numeric"].get(path)
         for sample in samples
-        if sample["features"]["numeric"][path] is not None
+        if sample["features"]["numeric"].get(path) is not None
     ]
     if len(local) < min_n or len(glob) < min_n:
         return None
@@ -2119,30 +2121,30 @@ def build_outputs(samples, labels, medoids, metrics, args, hashes, publishable, 
             "error_rate": error_rate_stats,
             "snr_db_median": median(
                 [
-                    sample["features"]["numeric"]["audio_quality.snr_db"]
+                    sample["features"]["numeric"].get("audio_quality.snr_db")
                     for sample in member_samples
-                    if sample["features"]["numeric"]["audio_quality.snr_db"] is not None
+                    if sample["features"]["numeric"].get("audio_quality.snr_db") is not None
                 ]
             ),
             "rt60_sec_median": median(
                 [
-                    sample["features"]["numeric"]["room_acoustic.rt60_sec"]
+                    sample["features"]["numeric"].get("room_acoustic.rt60_sec")
                     for sample in member_samples
-                    if sample["features"]["numeric"]["room_acoustic.rt60_sec"] is not None
+                    if sample["features"]["numeric"].get("room_acoustic.rt60_sec") is not None
                 ]
             ),
             "duration_sec_median": median(
                 [
-                    sample["features"]["numeric"]["basic_acoustic.duration_sec"]
+                    sample["features"]["numeric"].get("basic_acoustic.duration_sec")
                     for sample in member_samples
-                    if sample["features"]["numeric"]["basic_acoustic.duration_sec"] is not None
+                    if sample["features"]["numeric"].get("basic_acoustic.duration_sec") is not None
                 ]
             ),
             "nonspeech_ratio_median": median(
                 [
-                    sample["features"]["numeric"]["basic_acoustic.nonspeech_ratio"]
+                    sample["features"]["numeric"].get("basic_acoustic.nonspeech_ratio")
                     for sample in member_samples
-                    if sample["features"]["numeric"]["basic_acoustic.nonspeech_ratio"] is not None
+                    if sample["features"]["numeric"].get("basic_acoustic.nonspeech_ratio") is not None
                 ]
             ),
             "error_driven": use_wer_input,
@@ -2155,7 +2157,7 @@ def build_outputs(samples, labels, medoids, metrics, args, hashes, publishable, 
             sample = samples[index]
             secondary = secondary_tags(sample)
             unknown = []
-            if sample["features"]["numeric"]["speaker.speaker_count"] is None:
+            if sample["features"]["numeric"].get("speaker.speaker_count") is None:
                 unknown.append("speaker.speaker_count")
             if nested_get(sample["tags"], "language_content.language") is None:
                 unknown.append("language_content.language")

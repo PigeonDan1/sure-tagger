@@ -70,6 +70,10 @@ def mean(values):
     return sum(values) / float(len(values))
 
 
+def format_metric(value):
+    return "null" if value is None else "%.4f" % value
+
+
 def eta_k_score(eta2, k, k_ref=K_REF, lam=LAMBDA_K):
     """Post-hoc score: eta2 is gain, extra K beyond k_ref is cost.
 
@@ -184,12 +188,21 @@ def load_assignments(path):
 def load_scores(path):
     mapping = {}
     with path.open() as handle:
-        for line in handle:
+        for line_number, line in enumerate(handle, 1):
             row = json.loads(line)
+            sample_id = row["sample_id"]
+            if sample_id in mapping:
+                raise ValueError("%s:%s: duplicate sample_id %s" % (path, line_number, sample_id))
             by_model = {}
             for score in row.get("scores") or []:
-                by_model[score.get("model_id")] = score
-            mapping[row["sample_id"]] = {
+                model_id = score.get("model_id")
+                if model_id in by_model:
+                    raise ValueError(
+                        "%s:%s: duplicate model_id %s for sample %s"
+                        % (path, line_number, model_id, sample_id)
+                    )
+                by_model[model_id] = score
+            mapping[sample_id] = {
                 "language": row.get("language"),
                 "scores": by_model,
             }
@@ -409,14 +422,14 @@ def main():
         cluster = payload["models"][model_id]["cluster"]
         random_stats = payload["models"][model_id]["random_same_sizes"]
         print(
-            "%s n=%s eta2=%.4f S=%.4f random=%.4f source=%.4f H_MAD=%s"
+            "%s n=%s eta2=%s S=%s random=%s source=%s H_MAD=%s"
             % (
                 model_id,
                 len(items),
-                cluster["eta2"],
-                (cluster.get("eta_k_score") or {}).get("score"),
-                random_stats["mean"] if random_stats else float("nan"),
-                payload["models"][model_id]["source"]["eta2"],
+                format_metric(cluster["eta2"]),
+                format_metric((cluster.get("eta_k_score") or {}).get("score")),
+                format_metric(random_stats["mean"] if random_stats else None),
+                format_metric(payload["models"][model_id]["source"]["eta2"]),
                 None if cluster["h_mad"] is None else round(cluster["h_mad"], 4),
             )
         )

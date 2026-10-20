@@ -68,6 +68,10 @@ PYTHONDONTWRITEBYTECODE=1 python3 \
 
 若需要聚类入口同时输出诊断，可从聚类命令移除 `--skip-diagnostics`，增加 `--wer-cer "$INPUT_ROOT/sampled-100-per-source/sample_wer_cer.jsonl"` 和 `--sidecar "$INPUT_ROOT/wer-cer-results/sample_sidecar.jsonl"`；保留 `--no-wer-filter`，使 WER/CER 仅用于分区后的诊断。
 
+这两个入口的诊断输入要求不同。`cluster_scenes.py` 内置诊断要求每条样本的 `scores[]` 严格按 [源码 `MODEL_IDS`](scripts/cluster_scenes.py) 的固定 7 模型顺序排列；未评测模型也要保留带 `model_id` 的缺失占位（`error_rate=null`、`wer_valid=false`、`cer_valid=false`）。`--eval-models` 只选择汇总对象，不放宽输入布局。JSONL 行序、`sample_id` 和 `global_index` 须与标签对齐。可选 sidecar 每个 `(sample_id, model_id)` 只能一条记录，模型字段也可写为 `asr_system_id`；不同评分配置须预先选择，不能以不同 `scoring_config_id` 重复该样本和模型。
+
+独立 `error_homogeneity.py` 按 `sample_id` 连接分区，再按 `model_id` 读取分数，允许部分模型且不要求固定顺序；仅汇总源码中 `DIAGNOSTIC_MODELS` 的模型，不读取 sidecar。调用前确保评分与分区使用同一套样本 ID，每个样本只有一条评分记录、每个模型只有一项；缺失或无效评分从该模型的有效诊断子集排除，并报告覆盖率。完整契约见 [WER/CER 诊断说明](../compare/docs/multi-data-scene-classification.md#23-wercer-诊断契约)。
+
 ## 检查与测试
 
 在源码包根目录执行：
@@ -76,5 +80,5 @@ PYTHONDONTWRITEBYTECODE=1 python3 \
 PYTHONDONTWRITEBYTECODE=1 python3 \
   clustering/scripts/cluster_scenes.py --help
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover \
-  -s clustering/tests -p 'test_cluster*.py' -v
+  -s clustering/tests -p 'test_*.py' -v
 ```

@@ -45,5 +45,5 @@ python -m unittest discover -s tests
 cd ..
 python -m unittest discover -s compare/eval/tests
 python compare/eval/test_sure_tagger_pipeline_launchers.py
-PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s clustering/tests -p 'test_cluster*.py' -v
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s clustering/tests -p 'test_*.py' -v
 ```

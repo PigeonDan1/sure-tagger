@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
 import math
+import json
+import os
+import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -77,6 +81,98 @@ class WerInputAxisTest(unittest.TestCase):
 
 
 class AllSureTaggerLabelsTest(unittest.TestCase):
+    def run_all_labels_cli(self, tags):
+        with tempfile.TemporaryDirectory(prefix="clustering-all-labels-") as temporary:
+            root = Path(temporary)
+            inputs = {
+                "tags.jsonl": tags,
+                "index_map.jsonl": [
+                    {"global_index": index, "sample_id": "s%s" % index}
+                    for index in range(len(tags))
+                ],
+                "manifest.jsonl": [
+                    {"dataset": "source%s" % (index % 2), "key": "s%s" % index}
+                    for index in range(len(tags))
+                ],
+            }
+            for filename, rows in inputs.items():
+                (root / filename).write_text(
+                    "".join(json.dumps(row) + "\n" for row in rows), encoding="utf-8"
+                )
+            output = root / "output"
+            result = subprocess.run(
+                [
+                    sys.executable, str(HERE.parent / "scripts" / "cluster_scenes.py"),
+                    "--tags", str(root / "tags.jsonl"),
+                    "--index-map", str(root / "index_map.jsonl"),
+                    "--sampled-manifest", str(root / "manifest.jsonl"),
+                    "--run-metadata", str(root / "missing_metadata.json"),
+                    "--output-dir", str(output),
+                    "--use-all-labels", "--skip-diagnostics", "--no-wer-filter",
+                    "--k-min", "2", "--k-max", "2", "--n-min", "1",
+                    "--seeds", "0", "--min-neighbors", "0", "--max-refine", "0",
+                ],
+                cwd=root,
+                env=dict(os.environ, PYTHONDONTWRITEBYTECODE="1"),
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                timeout=30,
+            )
+            self.assertEqual(result.returncode, 0, result.stdout)
+            summary = json.loads((output / "cluster_summary.json").read_text())
+            assignments = [
+                json.loads(line)
+                for line in (output / "cluster_assignments.jsonl").read_text().splitlines()
+            ]
+        self.assertEqual(summary["n"], len(tags))
+        self.assertEqual(len(assignments), len(tags))
+        self.assertEqual({row["sample_id"] for row in assignments}, {"s%s" % i for i in range(len(tags))})
+        self.assertTrue(all("speaker.speaker_count" in row["unknown_reason"] for row in assignments))
+        return summary
+
+    def test_all_labels_cli_supports_partial_numeric_fields(self):
+        summary = self.run_all_labels_cli([
+            {"basic_acoustic": {"duration_sec": float(index + 1)}}
+            for index in range(6)
+        ])
+        self.assertEqual(
+            summary["preprocess"]["feature_specs"]["numeric"],
+            [{"path": "basic_acoustic.duration_sec", "axis": "spatial"}],
+        )
+        for profile in summary["clusters"]:
+            self.assertIsNotNone(profile["duration_sec_median"])
+            for field in ("snr_db_median", "rt60_sec_median", "nonspeech_ratio_median"):
+                self.assertIsNone(profile[field])
+
+    def test_all_labels_cli_supports_no_default_numeric_fields(self):
+        summary = self.run_all_labels_cli([
+            {"language_content": {"language": "en" if index < 3 else "zh"}}
+            for index in range(6)
+        ])
+        self.assertEqual(summary["preprocess"]["feature_specs"]["numeric"], [])
+        for profile in summary["clusters"]:
+            for field in ("snr_db_median", "rt60_sec_median", "duration_sec_median", "nonspeech_ratio_median"):
+                self.assertIsNone(profile[field])
+
+    def test_all_labels_cli_supports_always_null_numeric_fields(self):
+        summary = self.run_all_labels_cli([
+            {
+                "audio_quality": {"snr_db": None},
+                "room_acoustic": {"rt60_sec": None},
+                "basic_acoustic": {"duration_sec": None, "nonspeech_ratio": None},
+                "speaker": {"speaker_count": None, "overlap_ratio": None},
+                "language_content": {"language": "en" if index < 3 else "zh"},
+            }
+            for index in range(6)
+        ])
+        specs = summary["preprocess"]["feature_specs"]
+        self.assertEqual(specs["numeric"], [])
+        self.assertIn({"path": "audio_quality.snr_db", "axis": "quality"}, specs["categorical"])
+        for profile in summary["clusters"]:
+            for field in ("snr_db_median", "rt60_sec_median", "duration_sec_median", "nonspeech_ratio_median"):
+                self.assertIsNone(profile[field])
+
     def test_cli_flag_defaults_to_false_and_can_enable_all_labels(self):
         with patch.object(sys, "argv", ["cluster_scenes.py"]):
             args = cluster_scenes.parse_args()

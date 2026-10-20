@@ -99,9 +99,21 @@ hard gates 和目标函数选择并迭代 split/merge；最后固定 `cluster_id
 `sample_wer_cer.jsonl` 是一行一个样本的嵌套对象；诊断前检查样本集合、映射唯一性及
 缺失占位，不按 JSONL 行号猜测连接，也不使用假设的 `metric_kind=both` 宽表。
 该文件可以包含 `global_index`、`sample_id`、`dataset`、`key`、`language`、`path`
-和 `scores[]`；ASR 模型列表以实际配置为准，不规定固定模型数或语言覆盖率。
+和 `scores[]`。当前两个诊断入口接受的模型布局不同：
 
-下面仅展示一个模型的虚构格式示例，不代表包内已有对应数据：
+- `cluster_scenes.py` 内置诊断要求每条样本的 `scores[]` 严格包含以下 7 项，且顺序固定：
+  `nvidia__parakeet-tdt-0.6b-v2`、`Qwen__Qwen3-ASR-1.7B`、
+  `OpenMOSS-Team__MOSS-Transcribe-preview-2B`、`FunAudioLLM__SenseVoiceSmall`、
+  `openai__whisper-large-v3-turbo`、`ibm-granite__granite-speech-4.1-2b`、
+  `fun-asr-flash-2026-06-15`。以 [脚本中的 `MODEL_IDS`](../../clustering/scripts/cluster_scenes.py)
+  为准；`--eval-models` 选择需要汇总的模型，不改变这项输入布局要求。未评测模型仍保留
+  对应 `model_id` 的占位项，`error_rate=null`，`wer_valid=false` 且 `cer_valid=false`。
+- 独立 [error_homogeneity.py](../../clustering/scripts/error_homogeneity.py) 按 `sample_id`
+  连接分区，再按 `model_id` 取分数；不要求 7 项固定顺序，可只提供部分模型。实际汇总模型为
+  脚本中的 `DIAGNOSTIC_MODELS`。调用前须确保分区与评分使用同一套样本 ID，每个评分样本
+  只有一条记录、每个样本内每个 `model_id` 只有一项；缺失或无效分数只影响诊断覆盖率。
+
+下面仅展示独立诊断可读取的单模型格式，不是内置诊断所需的完整 7 项布局；示例数据为虚构：
 
 ~~~json
 {
@@ -133,7 +145,8 @@ hard gates 和目标函数选择并迭代 split/merge；最后固定 `cluster_id
 
 从选定的 `scores[]` 项抽取规范记录：`sample_id`、`model_id`、`metric_name`、
 `error_rate`、`error_valid`、`n_ref` 和 edit counts。其中
-`error_valid = (error_rate != null) and (wer_valid or cer_valid)`，`n_ref` 取 `counts.all`。
+`error_valid` 要求有限且非负的 `error_rate`、`metric_name=wer|cer`、至少一个有效标志为真，
+以及 `n_ref=counts.all>0`。
 每个样本对指定模型只选择一个有效错误率：`metric_name=wer|cer` 标明单位，
 不再拼成 `(wer, cer)` 二维向量，也不假装缺失的另一指标为 0。
 原始 `wer`/`cer`/valid 标志、prediction/reference 和报告来源保留用于追溯。
@@ -145,8 +158,11 @@ hard gates 和目标函数选择并迭代 split/merge；最后固定 `cluster_id
 
 评测 provenance 应由 sidecar 保存或补齐：`asr_system_id`、`run_id`、`scoring_protocol`、
 `scoring_config_id`、`pipeline_id`、`reference_language`、语言来源、`reference_version`
-以及 edit/reference counts。唯一键为 `(sample_id, asr_system_id, scoring_config_id)`；
-同一 `scoring_config_id` 不允许对应多套 tokenizer/normalizer。
+以及 edit/reference counts。当前 `cluster_scenes.py` 的 sidecar 加载器以
+`(sample_id, model_id)` 为唯一键，模型字段也接受 `asr_system_id`；即使
+`scoring_config_id` 不同，同一样本和模型的重复记录也会报错。需要比较多个评分配置时，
+应先选定一个配置并生成本次诊断的 sidecar。同一 `scoring_config_id` 不允许对应
+多套 tokenizer/normalizer。独立 `error_homogeneity.py` 不读取 sidecar。
 若对齐视图不带 config ID，应回查 sidecar，不能省略评分版本审计。
 包内诊断适配器所用评分协议为 `sure.eval.protocol.v1/standard_system`；兼容输入需保留
 对应的 WER/CER pipeline 和规范化说明。
