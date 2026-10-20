@@ -102,9 +102,7 @@ speaker stage 先调用 FireRed LID，再对每条样本并发运行 MOSS-Transc
 调用另一候选补位。语言路由选中的 `timeline_summary` / `raw_turns` 驱动 speaker
 C/M/O/X；另一 timeline 只参与 ASR 人数共识，不改变 speaker claim。语言、selected source、原始输出、
 模型 runtime provenance 和失败原因保存在 fusion/evidence artifact，不直接进入公开
-tags 对象。FireRed 模型资产与历史
-7 集对照见
-[`asr双路评测报告_20260831.md`](../evalue/asr双路评测报告_20260831.md)。
+tags 对象。
 
 policy 内四个 C/M/O/X claim rule 都使用 `selection="language_routed"`，且
 `fallback_sources` 为空。resolver 必须收到样本的 `language_route` 对象；缺失、

@@ -12,7 +12,7 @@
 >
 > 实施记录：[model_selection_and_framework_cleanup_implementation_20260817.md](model_selection_and_framework_cleanup_implementation_20260817.md)
 >
-> 依据：1k 模型测评汇总矩阵与部署 manifest（历史产物，当前 checkout 未保留）、
+> 依据：
 > [证据融合设计](../../speaker_v1/docs/evidence_fusion_design.md)、
 > [当时部署计划](../../speaker_v1/docs/deployment_plan.md)
 >
@@ -31,22 +31,6 @@
 当前 v2 可执行入口中的六路模型均已真实部署：MOSS、Sortformer、pyannote Community-1、FireRedVAD、CAM++、Whisper Base。不存在可以直接按“未部署占位模型”从运行代码删除的一批模型。ECAPA 和 Brouhaha 虽未接入 `speaker_evidence.py`，但已有本地资产和正式测评，属于待接入优选项，不属于清理对象。
 
 本计划不调整未进入本次 1k 测评的 `D`，不新增公开 schema，也不授权物理删除任何模型权重或 runtime。`A` 只处理是否进入 speaker 默认 profile，不在本计划内重新选择 ASR 模型。
-
-## 2. 决策依据
-
-冻结数据为 `ami_utterance_1k_v1`：1,000 条 utterance、167 场原始会议、7.7514 小时。身份链路使用同一批数据构建的 `ami_identity_trials_v1`，共 23,815 个 trial，dev/test 的 meeting 和 global speaker 隔离。
-
-| Claim | 当前最佳结果 | 选择结论 |
-| --- | --- | --- |
-| `C` count | Sortformer：MAE `0.2920`，accuracy `0.7350` | Sortformer primary；MOSS fallback；pyannote 不提供 count 决策票 |
-| `M` multi-speaker | Sortformer accuracy `0.9650`；MOSS accuracy `0.9580` 且误报更少 | Sortformer 负责 positive candidate；MOSS 负责 negative/false-positive guard |
-| `O` overlap | pyannote：frame F1 `0.7087`，event F1 `0.5218` | pyannote primary；Sortformer secondary；MOSS 只能做正例 corroboration，不能用 negative 否决 |
-| `X` speaker change | MOSS：count MAE `1.4730`、F1@0.25s `0.5716`；Sortformer bool accuracy `0.9550`、F1@0.5s `0.6275` | MOSS 负责次数和精定位；Sortformer 负责存在性和补召回；pyannote 不参与等权决策 |
-| `V` speech coverage | Brouhaha：F1 `0.9535`、DCF `0.0876`；FireRed：PFA `0.0675` | Brouhaha primary；FireRed 作为低 FA guard，不做 speaker event 票 |
-| `I` identity | ECAPA：EER `0.1079`、minDCF `0.5074`；CAM++：`0.1740/0.7601` | AMI/英文 profile 使用 ECAPA primary；CAM++ 仅保留中文域 fallback |
-| `A` lexical | MOSS 的中英文 CER/WER 均优于 Whisper Base | Whisper 不进入 speaker resolver，默认只在 audit profile 启用 |
-
-以上数字是 standalone 结果，不等于融合后的最终质量。新 resolver 必须重新生成 prediction 并走同一 SURE scorer，不能把各单项最优数字直接拼成组合模型结果。
 
 ## 3. 前置约束
 
@@ -70,8 +54,6 @@
 | 接入而非清理 | ECAPA、Brouhaha | 补 v2 adapter、manifest、smoke 和 shadow 后成为 `I/V` primary |
 | 只归档文档 | Silero、WebRTC、MarbleNet、TitaNet、ERes2Net、EEND、TS-VAD、VBx、Paraformer 等 | 从 active candidate 清单移入 backlog；它们本来就未进入 v2 runtime |
 | 禁止随 v2 清理删除 | 公共 subprocess worker、Brouhaha/PANNs/DNSMOS/Rec-RIR handler、共享模型资产 | 由其它 tagger pipeline 使用，必须单独做全仓引用审计和删除审批 |
-
-[2026-08-12 候选状态登记](../../speaker_v1/docs/evaluation/candidate_status_20260812.md)只能作为历史基线，其中“ECAPA checkpoint 不存在”和“pyannote blocked”等描述已经被 2026-08-17 的资产与评测事实取代，不能作为删除依据。
 
 ## 4. 目标模型职责
 

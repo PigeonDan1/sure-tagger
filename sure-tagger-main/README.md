@@ -183,7 +183,4 @@ from both systems select FireRedASR2-AED; otherwise ASR uses MOSS. There is no
 ASR failure fallback. None of these paths reads
 `sample.text.transcript`. Selected outputs, both count decisions, language, and route reason
 remain in the internal artifact under
-`artifacts/speaker_v2/<row-key>/`. See
-[`tagger/tools/speaker_v2/evalue/asr双路评测报告_20260831.md`](tagger/tools/speaker_v2/evalue/asr双路评测报告_20260831.md)
-for the historical ASR comparison; its pre-2026-09-04 routing results do not
-describe the current language-routed chain.
+`artifacts/speaker_v2/<row-key>/`.

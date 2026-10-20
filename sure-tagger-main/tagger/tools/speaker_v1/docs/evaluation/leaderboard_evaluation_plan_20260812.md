@@ -10,7 +10,7 @@
 
 > 文档边界：本文用于“模型能力发现、模型选型与组合消融”，在任何生产链路职责分配之前执行。[`evidence_fusion_design.md`](../evidence_fusion_design.md) 和 [`speaker_evidence_pipeline_brief.md`](../speaker_evidence_pipeline_brief.md) 描述待评测的 fusion baseline/目标架构；其中的“默认模型角色”不是选型结论，也不应限制本协议的候选池和单模型评测范围。
 
-候选资产与真实运行状态见 [`candidate_status_20260812.md`](candidate_status_20260812.md)。其中 `diagnostic_measured`、`blocked`、`N/A` 和 `pending` 必须分开记录，不能用空白或 0 混淆。
+候选状态中的 `diagnostic_measured`、`blocked`、`N/A` 和 `pending` 必须分开记录，不能用空白或 0 混淆。
 
 ## 0. 先说结论
 
@@ -396,7 +396,7 @@ Count 榜的主排序为 exact accuracy 和 MAE；不能让一个只输出 lower
 
 ### 6.7 VAD (`V`) 与 ASR (`A`)
 
-VAD：frame F1、miss/FA、speech coverage、onset/offset error、短 speech recall。Brouhaha 与 FireRedVAD 的 native raw frame score、阈值和后处理必须分别登记；当前 AMI 诊断只报告 `raw_native_speech_union_20ms`，不能把 Brouhaha 的 `confidence=1.0` 当成概率。Brouhaha 的 `SNR/C50` 只用于 acoustic-difficulty slice 和辅助 metadata 诊断，若没有独立 gold 则不参加质量数值排名。详见 [`brouhaha_vad_diagnostic_report_20260812.md`](brouhaha_vad_diagnostic_report_20260812.md)。
+VAD：frame F1、miss/FA、speech coverage、onset/offset error、短 speech recall。Brouhaha 与 FireRedVAD 的 native raw frame score、阈值和后处理必须分别登记；使用 `raw_native_speech_union_20ms` 时须明确记录该口径，不能把 Brouhaha 的 `confidence=1.0` 当成概率。Brouhaha 的 `SNR/C50` 只用于 acoustic-difficulty slice 和辅助 metadata 诊断，若没有独立 gold 则不参加质量数值排名。
 
 ASR：WER/CER、word coverage、word timestamp MAE、segment boundary error；有 gold speaker timeline 时增加 SA-WER/cpWER、word-speaker assignment accuracy 和 ambiguous/unassigned rate。
 
@@ -658,7 +658,7 @@ reason = metric + coverage + robustness + cost
 
 ### P2：AMI 全量诊断
 
-跑完整 195 条，生成每个模型的 raw artifact、统一 prediction JSONL、分层 point estimate 和第一版 descriptive capability matrix。当前已完成 MOSS/Sortformer/FireRedVAD/CAM++/Whisper 的 speaker evidence 诊断，以及 Brouhaha 的 VAD 对照诊断。该阶段不拆 calibration/dev/test，不运行 `dev_tuned`、不做概率校准、不给 cluster CI/显著性、不生成 rank；所有结果标记污染不对称/单 meeting 限制。
+跑完整 195 条，生成每个模型的 raw artifact、统一 prediction JSONL、分层 point estimate 和第一版 descriptive capability matrix。该阶段不拆 calibration/dev/test，不运行 `dev_tuned`、不做概率校准、不给 cluster CI/显著性、不生成 rank；所有结果标记污染不对称/单 meeting 限制。
 
 ### P3：跨 meeting 正式评测
 
@@ -691,20 +691,6 @@ reason = metric + coverage + robustness + cost
 
 当前文档是评测协议，不代表已经跑完上述模型或已经产生名次。正式汇报时，榜单中的空白应明确写 `pending`，模型未支持的能力写 `N/A`，不能用 0 填充。
 
-当前 AMI 全量诊断已完成，但仍不构成正式榜单：speaker evidence 结果见 [`ami_single_meeting_diagnostic_report_20260812.md`](ami_single_meeting_diagnostic_report_20260812.md)，Brouhaha VAD 对照见 [`brouhaha_vad_diagnostic_report_20260812.md`](brouhaha_vad_diagnostic_report_20260812.md)。对应 artifact 分别位于 `ami_en2001a_utterances/outputs/ami_single_meeting_diagnostic_20260812/` 和 `ami_en2001a_utterances/outputs/brouhaha_vad_full_diagnostic_20260812/`。两个报告都并列 scorer 口径和单 meeting 限制，不能混排成一个总榜。
-
-## 14. 当前 demo 的说明性结果
-
-在 `EN2001a_utterance_00000` 上，native reference 为 3 个 speaker、`multi_speaker=true`、存在 overlap。已有 shadow 结果显示：
-
-| 模型 | count (`metadata_v0_active_count`) | multi (`metadata_v0_multi`) | overlap (`metadata_v0_overlap`) | change (`public_v0_change`) |
-| --- | ---: | --- | --- | --- |
-| MOSS | 2 | true | false | true（shadow candidate；scorer=`public_v0`） |
-| Sortformer v2 | 3 | true | true | true（shadow candidate；scorer=`public_v0`） |
-
-其中 count 严格对应 `metadata_v0_active_count`，multi 是同一 scorer 的 `metadata_v0_multi` 派生值，overlap 对应 `metadata_v0_overlap`；change 仅表示当前 shadow scorer 的 `public_v0_change` 候选，尚未经过正式 scorer registry、校准或跨 session 评测。`floor_transfer_v2` 和 `different_speaker_onset` 不在这张 demo 表中，不能从 `candidate true` 推断它们为真。
-
-这只能说明两条模型输出存在可分析的差异，不能据一条 sample 宣布 Sortformer 是“人数模型”或 MOSS 是“换人模型”。只有在完整分层矩阵和跨 meeting test 上重复观察到优势，才能把某项能力写成模型职责。
 
 ### 3.8 SURE 链路覆盖映射（核对结果）
 
@@ -941,7 +927,7 @@ Count 榜的主排序为 exact accuracy 和 MAE；不能让一个只输出 lower
 
 ### 6.7 VAD (`V`) 与 ASR (`A`)
 
-VAD：frame F1、miss/FA、speech coverage、onset/offset error、短 speech recall。Brouhaha 与 FireRedVAD 的 native raw frame score、阈值和后处理必须分别登记；当前 AMI 诊断只报告 `raw_native_speech_union_20ms`，不能把 Brouhaha 的 `confidence=1.0` 当成概率。Brouhaha 的 `SNR/C50` 只用于 acoustic-difficulty slice 和辅助 metadata 诊断，若没有独立 gold 则不参加质量数值排名。详见 [`brouhaha_vad_diagnostic_report_20260812.md`](brouhaha_vad_diagnostic_report_20260812.md)。
+VAD：frame F1、miss/FA、speech coverage、onset/offset error、短 speech recall。Brouhaha 与 FireRedVAD 的 native raw frame score、阈值和后处理必须分别登记；使用 `raw_native_speech_union_20ms` 时须明确记录该口径，不能把 Brouhaha 的 `confidence=1.0` 当成概率。Brouhaha 的 `SNR/C50` 只用于 acoustic-difficulty slice 和辅助 metadata 诊断，若没有独立 gold 则不参加质量数值排名。
 
 ASR：WER/CER、word coverage、word timestamp MAE、segment boundary error；有 gold speaker timeline 时增加 SA-WER/cpWER、word-speaker assignment accuracy 和 ambiguous/unassigned rate。
 
@@ -1203,7 +1189,7 @@ reason = metric + coverage + robustness + cost
 
 ### P2：AMI 全量诊断
 
-跑完整 195 条，生成每个模型的 raw artifact、统一 prediction JSONL、分层 point estimate 和第一版 descriptive capability matrix。当前已完成 MOSS/Sortformer/FireRedVAD/CAM++/Whisper 的 speaker evidence 诊断，以及 Brouhaha 的 VAD 对照诊断。该阶段不拆 calibration/dev/test，不运行 `dev_tuned`、不做概率校准、不给 cluster CI/显著性、不生成 rank；所有结果标记污染不对称/单 meeting 限制。
+跑完整 195 条，生成每个模型的 raw artifact、统一 prediction JSONL、分层 point estimate 和第一版 descriptive capability matrix。该阶段不拆 calibration/dev/test，不运行 `dev_tuned`、不做概率校准、不给 cluster CI/显著性、不生成 rank；所有结果标记污染不对称/单 meeting 限制。
 
 ### P3：跨 meeting 正式评测
 
@@ -1236,20 +1222,6 @@ reason = metric + coverage + robustness + cost
 
 当前文档是评测协议，不代表已经跑完上述模型或已经产生名次。正式汇报时，榜单中的空白应明确写 `pending`，模型未支持的能力写 `N/A`，不能用 0 填充。
 
-当前 AMI 全量诊断已完成，但仍不构成正式榜单：speaker evidence 结果见 [`ami_single_meeting_diagnostic_report_20260812.md`](ami_single_meeting_diagnostic_report_20260812.md)，Brouhaha VAD 对照见 [`brouhaha_vad_diagnostic_report_20260812.md`](brouhaha_vad_diagnostic_report_20260812.md)。对应 artifact 分别位于 `ami_en2001a_utterances/outputs/ami_single_meeting_diagnostic_20260812/` 和 `ami_en2001a_utterances/outputs/brouhaha_vad_full_diagnostic_20260812/`。两个报告都并列 scorer 口径和单 meeting 限制，不能混排成一个总榜。
-
-## 14. 当前 demo 的说明性结果
-
-在 `EN2001a_utterance_00000` 上，native reference 为 3 个 speaker、`multi_speaker=true`、存在 overlap。已有 shadow 结果显示：
-
-| 模型 | count (`metadata_v0_active_count`) | multi (`metadata_v0_multi`) | overlap (`metadata_v0_overlap`) | change (`public_v0_change`) |
-| --- | ---: | --- | --- | --- |
-| MOSS | 2 | true | false | true（shadow candidate；scorer=`public_v0`） |
-| Sortformer v2 | 3 | true | true | true（shadow candidate；scorer=`public_v0`） |
-
-其中 count 严格对应 `metadata_v0_active_count`，multi 是同一 scorer 的 `metadata_v0_multi` 派生值，overlap 对应 `metadata_v0_overlap`；change 仅表示当前 shadow scorer 的 `public_v0_change` 候选，尚未经过正式 scorer registry、校准或跨 session 评测。`floor_transfer_v2` 和 `different_speaker_onset` 不在这张 demo 表中，不能从 `candidate true` 推断它们为真。
-
-这只能说明两条模型输出存在可分析的差异，不能据一条 sample 宣布 Sortformer 是“人数模型”或 MOSS 是“换人模型”。只有在完整分层矩阵和跨 meeting test 上重复观察到优势，才能把某项能力写成模型职责。
 
 ### 3.8 SURE 链路覆盖映射（核对结果）
 

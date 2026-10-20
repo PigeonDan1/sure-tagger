@@ -32,6 +32,16 @@
 *.ogg
 *.mp4
 
+# Clustering input snapshots and generated artifacts.
+/clustering/data/
+/clustering/input/
+/clustering/inputs/
+/clustering/sampled-100-per-source/
+/clustering/wer-cer-results/
+/clustering/result/
+/clustering/results/
+/clustering/logs/
+
 # Release packaging and local editor files.
 /sure-tagger-pipeline-*/
 /finalize_sure_tagger_package.py

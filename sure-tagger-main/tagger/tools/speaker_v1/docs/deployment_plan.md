@@ -6,22 +6,9 @@
 >
 > 共同维护根目录：`/hpc_stor03/sjtu_home/weihan.chen/share/tagger`
 >
-> 设计依据：[证据融合详细设计](evidence_fusion_design.md)、[汇报版 Pipeline](speaker_evidence_pipeline_brief.md)、[Speaker Metadata 标准](../speaker_metadata_standard.md)
+> 设计依据：[证据融合详细设计](evidence_fusion_design.md)、[汇报版 Pipeline](speaker_evidence_pipeline_brief.md)
 >
-> 部署实录：[部署报告](deployment/deployment_report_20260811.md)、[运行手册](deployment/runbook.md)
-
-模型评测状态与 blocked 候选见：[候选状态登记](evaluation/candidate_status_20260812.md)、[AMI speaker 诊断](evaluation/ami_single_meeting_diagnostic_report_20260812.md)、[Brouhaha VAD 诊断](evaluation/brouhaha_vad_diagnostic_report_20260812.md)。
-
-## 0. 实施进度（2026-08-11）
-
-本文件保留原始目标架构和生产门禁。当前已经完成的是一条可运行、可审计的 utterance-level `v2-shadow`，不是 calibrated production：
-
-- 已部署独立 orchestrator、MOSS、CAM++、Whisper Base、Streaming Sortformer 和复用的 FireRedVAD 环境/模型。
-- 已实现 typed evidence、依赖闭包、双 timeline 对齐、lexical clock、count/三个 bool resolver、确定性 H1/H2/H_other、原子 artifact 和 shadow public adapter。
-- 已在 `EN2001a_utterance_00000.wav` 上完成五路真实推理；完整回归为 `97/97` 通过。
-- pyannote Community-1 已以本地离线 bundle 接入；当前用 Sortformer 和 Community-1 作为独立 timeline。Community-1 license review 仍 pending，因此只提供 support/diagnostic evidence。
-- speaker evidence 的 10 条分层 smoke 与 195 条 AMI 单会议诊断已经完成；仍未完成跨域校准、joint-negative calibration 和生产门禁，因此公开 speaker 字段仍全部输出 `null`。
-- speaker count 已作为内部 claim 输出 observed/supported/certified/exact 分层状态，但尚未认证 exact count，也未写入公开 schema。
+> 部署操作：[运行手册](deployment/runbook.md)
 
 ## 1. 结论与部署策略
 
@@ -108,8 +95,6 @@ GPU 空闲量只是盘点时快照，不能写死为长期分配。当前 `local
 - 跨域 calibration registry、joint-negative calibration 和 production certification profile。
 - speaker claims 的跨域校准集评测仍未完成；Brouhaha 的 VAD 对照已完成，但正式 VAD/SNR/C50 榜仍待多 session gold。
 - 公开 `speaker_count` schema 及任何 v2 production 写回。
-
-部署后完整回归为 `97 tests OK`。运行中仍出现既有 Brouhaha 训练栈警告、Rec-RIR CPU/CUDA traceback 和 subprocess `ResourceWarning`；这些没有造成测试失败，但仍是生产化前要关闭的运行卫生问题，不能把“测试返回 OK”解释为全部模型已经 production healthy。
 
 ### 3.3 当前环境
 

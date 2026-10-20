@@ -15,8 +15,7 @@
   tagging 字段公开。`D` 尚未接入正式 claim/output。
 - Speaker v2 推理阶段不读取 native metadata。当前有效链路均属于“通过可评估模型”。native metadata 只允许在推理完成后用于评测。
 - Certification gate 已移除；可决策的六字段结果会直接写入 `evaluation_output.speaker` 和 `public_adapter.speaker`。
-- 下表按当前语言路由展开；旧版 Sortformer/Pyannote 评测数字仅作为历史基线，不能解释当前公开值。
-- 表中置信度是冻结数据集上的全局 SURE 指标估计，不是单条样本的校准概率。
+- 下表按当前语言路由展开。
 - FireRed LID 先决定原语言路由，每条样本并发运行 MOSS 和官方 DiariZen。C/M/O/X
   仍使用语言路由选中的 timeline；中英文且两边有效人数都 `<=1` 时 ASR 使用
   FireRed，中英文其它情况使用 MOSS，其他语言使用 Qwen3-ASR-0.6B。forced aligner 不再属于当前
@@ -26,19 +25,19 @@
 
 ## 2. 标签链路总表
 
-| 标签名 | 链路 | 链路类型 | 预估置信度（SURE） |
-| --- | --- | --- | --- |
-| C `speaker_count`（公开 schema） | 中文/英文：音频 → MOSS timeline → count；其他语言：音频 → 官方 DiariZen timeline → count | 通过语言路由模型 | 新路由评测待补；旧 Sortformer/Pyannote 数字不适用 |
-| M `multi_speaker`（公开 schema） | 语言路由时间线 → `speaker_count >= 2` | 通过语言路由模型 | 新路由评测待补 |
-| O `speaker_overlap` / `overlap_ratio`（公开 schema） | 语言路由时间线（中文/英文 MOSS，其他语言官方 DiariZen）→ overlap bool/regions/ratio | 通过语言路由模型 | 新路由评测待补 |
-| X `speaker_change` / `speaker_change_count`（公开 schema） | 语言路由时间线（中文/英文 MOSS，其他语言官方 DiariZen）→ change bool/count/points | 通过语言路由模型 | 新路由评测待补 |
-| I `speaker_identity_comparison`（内部 evidence） | 按语言路由选择 MOSS/DiariZen timeline → non-overlap regions → ECAPA embedding/cosine → same/different | 通过可评估模型 | 新路由评测待补 |
-| I `speaker_identity_comparison`（内部 evidence） | 预测 timeline → non-overlap regions → CAM++ embedding/score → same/different（legacy；仅显式 identity 诊断） | 通过可评估模型 | 约 **82.60%**（`1-EER`）；test accuracy `94.37%`；当前运行阈值仍需校准 |
-| V `speech_coverage`（内部 evidence） | Brouhaha → speech segments/coverage（`quality-shadow` coverage source） | 通过可评估模型 | **95.35%** VAD F1；boundary F1 `52.95%`；DCF `0.0876` |
-| V `speech_coverage`（内部 evidence） | FireRedVAD → speech segments/coverage（低误报/边界 guard；`legacy-shadow` coverage source） | 通过可评估模型 | **92.24%** VAD F1；PFA `6.75%`；boundary F1 `19.09%` |
-| A `routed_asr_transcript`（由 tagging adapter 公开） | 中英文且 MOSS + DiariZen 有效人数都 `<=1`：FireRedASR2-AED；中英文其它情况：MOSS；其他语言：Qwen3-ASR-0.6B | 通过人数共识与语言路由模型 | 新路由评测待补；FireRed/Qwen3 text 不构成 lexical timeline；旧 ASR 对照数字仅作历史参考 |
-| A `lexical_timeline`（内部 audit capability） | Whisper Base → transcript/lexical clock | 通过可评估模型 | 中文约 **64.52%**（`1-CER`）；英文约 **94.84%**（`1-WER`）；word coverage `65.88%/95.53%`；时间戳未单独评测 |
-| D `full_diarization`（规划能力） | 当前没有正式 claim/output 链路 | — | — |
+| 标签名 | 链路 | 链路类型 |
+| --- | --- | --- |
+| C `speaker_count`（公开 schema） | 中文/英文：音频 → MOSS timeline → count；其他语言：音频 → 官方 DiariZen timeline → count | 通过语言路由模型 |
+| M `multi_speaker`（公开 schema） | 语言路由时间线 → `speaker_count >= 2` | 通过语言路由模型 |
+| O `speaker_overlap` / `overlap_ratio`（公开 schema） | 语言路由时间线（中文/英文 MOSS，其他语言官方 DiariZen）→ overlap bool/regions/ratio | 通过语言路由模型 |
+| X `speaker_change` / `speaker_change_count`（公开 schema） | 语言路由时间线（中文/英文 MOSS，其他语言官方 DiariZen）→ change bool/count/points | 通过语言路由模型 |
+| I `speaker_identity_comparison`（内部 evidence） | 按语言路由选择 MOSS/DiariZen timeline → non-overlap regions → ECAPA embedding/cosine → same/different | 通过可评估模型 |
+| I `speaker_identity_comparison`（内部 evidence） | 预测 timeline → non-overlap regions → CAM++ embedding/score → same/different（legacy；仅显式 identity 诊断） | 通过可评估模型 |
+| V `speech_coverage`（内部 evidence） | Brouhaha → speech segments/coverage（`quality-shadow` coverage source） | 通过可评估模型 |
+| V `speech_coverage`（内部 evidence） | FireRedVAD → speech segments/coverage（低误报/边界 guard；`legacy-shadow` coverage source） | 通过可评估模型 |
+| A `routed_asr_transcript`（由 tagging adapter 公开） | 中英文且 MOSS + DiariZen 有效人数都 `<=1`：FireRedASR2-AED；中英文其它情况：MOSS；其他语言：Qwen3-ASR-0.6B | 通过人数共识与语言路由模型 |
+| A `lexical_timeline`（内部 audit capability） | Whisper Base → transcript/lexical clock | 通过可评估模型 |
+| D `full_diarization`（规划能力） | 当前没有正式 claim/output 链路 | — |
 
 ## 3. 公开与内部状态
 
@@ -64,11 +63,10 @@
    `null`，不尝试另一 source。
 3. 当前 guard 只生成 observation，`guards_affect_candidate=false`，不会修改 candidate。
 4. `excluded/audit` evidence 会保留用于审计，但不参与该 claim 的候选决策。
-5. 当前没有完成 1k fusion/ablation，因此没有多模型组合后的联合 SURE 分数；表中分数均为单模型分数。
-6. C/M/O/X 的 claim source 由语言路由固定：中文和英文为 MOSS，其他或未知语言为
+5. C/M/O/X 的 claim source 由语言路由固定：中文和英文为 MOSS，其他或未知语言为
    官方 DiariZen timeline；不再把 Sortformer/Pyannote 作为这些公开 claim 的
    主判或联合投票。
-7. ASR route 在原 FireRed LID 结果上增加 MOSS/DiariZen 单说话人共识：中英文
+6. ASR route 在原 FireRed LID 结果上增加 MOSS/DiariZen 单说话人共识：中英文
    共识成立时公开文本取 FireRed，否则取 MOSS；其他语言始终取 Qwen3 ASR。输入 transcript
    不会被当作模型输出。
 
@@ -86,8 +84,6 @@
 - `I`：由于 benchmark 正负样本约为 `1:10`，主估计使用更保守的 `1-EER`；test accuracy 仅作补充。
 - `V`：使用时长级 VAD F1，同时报告边界 F1、PFA 或 DCF。
 - `A`：使用 `1-CER`/`1-WER` 作为文本正确度代理；该分数不能代表 lexical timestamp 的置信度。
-
-评测数据为冻结的 `ami_utterance_1k_v1`：C/M/O/X/V 共 1,000 条 utterance；I 从同一批数据构建 23,815 个 verification trials。AMI 上的分数仍需通过非 AMI、meeting-separated 数据复核，尤其是可能存在 AMI 预训练污染的模型。
 
 ## 6. 当前配置注意事项
 
@@ -120,6 +116,4 @@ profile 只选择附加 evidence/诊断模型，不改变公开语言路由。�
 - resolver/public adapter：`tagger/tools/speaker_v2/resolver.py`
 - 直接公开输出合同：`tagger/tools/speaker_v2/docs/direct_public_output_20260820.md`
 - evidence 采集：`tagger/pipelines/speaker_evidence.py`
-- 历史 ASR 对照评测：`tagger/tools/speaker_v2/evalue/asr双路评测报告_20260831.md`
-- SURE 汇总：`tagger/tools/speaker_v1/model_evaluate/evaluation_matrix.md`
 - 模型选择实施记录：`tagger/tools/speaker_v2/docs/model_selection_and_framework_cleanup_implementation_20260817.md`
