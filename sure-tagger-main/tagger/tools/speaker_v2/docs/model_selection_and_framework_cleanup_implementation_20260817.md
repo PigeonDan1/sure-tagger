@@ -22,7 +22,7 @@ Phase 0–3 的代码、配置、adapter、worker、artifact 和单元测试接�
 - 对独立 speaker CLI，`quality-shadow` 和 `lean-shadow` 需要通过 `--profile` 显式
   选择；主 tagging pipeline 已默认选择 `quality-shadow`。
 - ECAPA 已完成 predicted-timeline adapter 接入，但 predicted-region 端到端身份评测尚未完成。
-- Brouhaha 已完成 coverage-only adapter 接入；1 条多说话人真实集成 smoke 已通过，但其余分层 smoke、1k 稳定性和成本评测尚未完成。
+- Brouhaha 已完成 coverage-only adapter 接入；分层 smoke、稳定性和成本评测需要独立执行。
 - 1k fusion/ablation、非 AMI 复核、pyannote license 和运行成本仍需持续跟踪，但不再阻断 public adapter 输出。
 - 没有物理删除任何模型、runtime、adapter 或公共 subprocess worker。
 - 已新增并核验 `.deploy/speaker_v2/deployment_manifest_20260817.json`；旧清单与旧部署快照继续保留用于回滚。
@@ -34,7 +34,7 @@ Phase 0–3 的代码、配置、adapter、worker、artifact 和单元测试接�
 | Phase 0：配置合同 | 已完成 | 1k 数据级 legacy parity 仍需随正式 fusion run 固化 |
 | Phase 1：per-claim 路由 | 已完成 | 1k fusion、per-claim ablation 和 guard calibration 尚未完成 |
 | Phase 2：ECAPA 接入 | 已完成 | predicted-region I 端到端评测和跨域 calibration 尚未完成 |
-| Phase 3：Brouhaha 接入 | 已完成 | 已完成 1/10 条真实分层 smoke；其余 smoke、1k 全量稳定性、RTF/资源评测尚未完成 |
+| Phase 3：Brouhaha 接入 | 已完成 | 分层 smoke、全量稳定性和 RTF/资源评测需独立执行 |
 | Phase 4：默认切换与精简 | 部分完成 | public adapter 已直接输出；主 tagging 默认已切到 quality，standalone 默认和物理精简未切换 |
 | Phase 5：直接发布与持续观测 | 已完成发布改造 | 非 AMI、license、统计置信区间和运行成本作为非阻断跟踪项 |
 
@@ -147,35 +147,7 @@ resolver 已从“所有可用 timeline 自动等权参与每个 claim”改为�
 默认使用 `quality-shadow`。当前没有删除或覆盖 FireRedVAD，Brouhaha 也不会直接产生
 C/M/O/X/I 投票。
 
-## 7. 真实 `quality-shadow` 集成结果
-
-已在无可用 GPU 的节点上使用 CPU 跑通一条多说话人/重叠样本：
-
-- sample：`EN2001a_utterance_00054`，时长 `24.019s`，AMI native reference 为 3 人、存在多说话人、重叠和 speaker change；
-- profile：`quality-shadow`，开启 post-inference `--score-native`；
-- run：`success_count=1`、`failure_count=0`；
-- MOSS、Sortformer、pyannote、ECAPA、Brouhaha、FireRedVAD 均产生真实 `estimated` evidence，Whisper 按 profile 明确记录为 disabled/missing，CAM++ 未启动；
-- Sortformer 和 MOSS 均预测 3 人，pyannote 预测 2 人；三路对 M/O/X 的布尔判断均与该样本 native reference 一致；
-- ECAPA 从 Sortformer 预测 timeline 盲选出 4 个 non-overlap region，生成 6 个 comparison；没有读取 native metadata；历史 evidence 中的 `counts_for_certification=false` 只保留为评测标记，不再阻断公开输出；
-- Brouhaha 只声明 `speech_coverage`，coverage ratio 为 `0.786535`；FireRedVAD 对照值为 `0.721096`；
-- 实际 C/M/O/X decision source 分别为 Sortformer、Sortformer、pyannote、MOSS，均符合冻结 policy；
-- fusion、certification 和 run manifest 的 profile/policy version/hash 一致；这条
-  2026-08-17 历史 smoke 运行时公开 speaker 字段仍全部为 `null`，2026-08-20 起
-  `supported` 且值合法的字段已改为直接发布。
-
-真实产物保存在 `.deploy/speaker_v2/smoke_quality_shadow_20260817_en2001a_00054/`。CPU smoke 出现 pyannote TorchCodec、Brouhaha 旧训练 runtime 和 Matplotlib cache 警告，但没有导致模型 evidence 缺失；这些兼容性警告仍需纳入后续 10 条 smoke 和成本稳定性观测。
-
-## 8. 单元测试结果
-
-Phase 0–3 工程接入完成时的验收记录为 **68/68 单元测试通过**，覆盖原有 speaker-v2 回归以及 profile/policy、artifact、ECAPA、Brouhaha 和 pipeline 接线。
-
-随后又补充了两项 CLI/profile override 与 artifact 禁用原因回归。本文复核时使用 Python 3.11 执行：
-
-```bash
-python3.11 -m unittest discover -s tests -p 'test_speaker_v2*.py'
-```
-
-当前扩展套件结果为 **70/70 通过**。因此 68/68 的阶段验收记录保持成立，新增的两项兼容回归也已通过。
+## 8. 单元测试覆盖
 
 测试覆盖重点包括：
 
@@ -233,11 +205,6 @@ candidate，不进入 C/M/O/X claim policy。FireRed 默认使用
 `.runtime/fireredasr2_aed_py311_torch280_cu128_v1/bin/python`，并通过独立的
 `firered_asr_estimate` 常驻 worker 隔离依赖。
 
-当时实现采用的反向语言选择、双模型并发和 availability 补位规则已全部删除；为避免
-被复制到新部署，本记录不再复述其逐条件算法。2026-08-31 的 24/24、112/112、
-207/207 回归数字只验证当时实现，不能作为当前语言路由的回归结论。FireRed 与 MOSS
-的 7 集历史对照结果（68,996 条，FireRed failed/missing 均为 0）见
-[`asr双路评测报告_20260831.md`](../evalue/asr双路评测报告_20260831.md)。
 
 ## 12. 2026-09-07 语言路由链路
 
@@ -312,7 +279,4 @@ Apache-2.0，DiariZen pack 为 CC BY-NC 4.0，ReDimNet pack 为 MIT。所有 `.o
 catalog revision `3a82628cf7036c2ad0128f2d35bd1cced09b3100`。
 
 能力边界：所有非 `zh` 结果进入该分支是路由合同，不代表全语种 ASR 已支持。固定
-FireRed/ForcedAligner catalog 只声明 en/zh 语系。英文端到端 smoke 通过；真实
-法语样本无 hint 时 exit 0 但返回语义错误的英文 text，同时 DiariZen turn 正常；
-显式 `--language fr` 时 exit 6。非 en/zh ASR 尚未获生产验证，且结构校验无法自动
-识别 silent wrong transcript。
+FireRed/ForcedAligner catalog 只声明 en/zh 语系。非 en/zh 输入需要单独验证能力边界；结构校验无法自动识别语义错误的 transcript。

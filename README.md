@@ -4,6 +4,7 @@
 
 - `sure-tagger-main/`：主程序、模型适配器、配置、schema、工具脚本及测试。
 - `compare/`：完整流水线、合并与重试、DeepSeek prompt、两套评分和测试。
+- [clustering/](clustering/README.md)：独立的 k-medoids 场景聚类、错误率诊断及测试。
 
 ## 完整流程
 
@@ -32,6 +33,10 @@ bash compare/eval/run_sure_tagger_pipeline_1.sh
 
 模型、运行环境、数据、API 凭据及运行输出由本机提供。直接运行主 CLI 时通过 `--manifest` 指定自己的输入。演示音频及生成的 `demo/data.js` 需另行准备；可用 `sure-tagger-main/scripts/build_demo_data.py` 生成演示数据。
 
+## 场景聚类
+
+`clustering/` 与 `sure-tagger-main/` 同级，读取已有结构化标签，只提供 k-medoids 方法。聚类与分区后的 WER/CER 诊断仅依赖 Python 3.9+ 标准库，无需 GPU。输入数据由使用者在仓库外准备；输入布局、运行参数与命令见 [聚类使用说明](clustering/README.md)。
+
 ## 测试
 
 ```bash
@@ -40,4 +45,5 @@ python -m unittest discover -s tests
 cd ..
 python -m unittest discover -s compare/eval/tests
 python compare/eval/test_sure_tagger_pipeline_launchers.py
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s clustering/tests -p 'test_*.py' -v
 ```

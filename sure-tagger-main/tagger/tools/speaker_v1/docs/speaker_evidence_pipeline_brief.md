@@ -21,11 +21,6 @@
 
 ## 2. Pipeline
 
-<figure class="pipeline-figure">
-  <img src="speaker_evidence_pipeline_brief_assets/pipeline.png" alt="Sure-Tagger utterance-level 多说话人证据协作流程图">
-  <figcaption><strong>图 1｜多说话人证据协作 Pipeline。</strong>所有模型观察同一个 utterance sample；蓝色为底层事件票，绿色为身份与 claim 检查，黄色为覆盖校验，红色为文本歧义与复核校验。发生冲突后先进入紫色的假设－预测－检验节点，再按区分能力补充独立证据；无法认证时输出 <code>null</code>。</figcaption>
-</figure>
-
 实际执行分六步：
 
 1. 直接读取现有 utterance-level `sample.audio.path`；不增加 `start_sec/end_sec` 等 input 字段，也不获取相邻 utterance。
@@ -173,4 +168,4 @@ Phase 2 冲突取证：
 
 上线前还需确认：标签语义版本、负例联合校准、模型许可，以及内部 transcript 的 PII/retention 策略。
 
-详细规则、artifact schema、failure injection 和模型调研见 [evidence_fusion_design.md](evidence_fusion_design.md)。当前 metadata 定义见 [speaker_metadata_standard.md](../speaker_metadata_standard.md)。
+详细规则、artifact schema、failure injection 和模型调研见 [evidence_fusion_design.md](evidence_fusion_design.md)。

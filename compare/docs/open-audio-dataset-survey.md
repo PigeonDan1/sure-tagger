@@ -1,13 +1,11 @@
 # sure-tagger / captioner 结构性标签评测：开源音频数据集调研
 
 更新时间：2026-09-06  
-状态：当前 650 条 T1-T3 子集已物化并验收；历史含 T4 的 1,000 条版本和源树保留供审计（暂不评 `descriptive.*`）
+范围：650 条 T1-T3 结构能力 benchmark 设计；暂不评 `descriptive.*`。
 
 本文是 [`tag-schema.md`](tag-schema.md) 的配套 benchmark 设计，不修改 schema。第一阶段评
 六个原始结构分组和 `deterministic_derived` 中已冻结的能力字段；所有 `descriptive.*` 均不参与样本选择、GT
 coverage、能力指标或系统排名。系统即使继续输出这些字段，本轮也只检查 JSON/schema 合法性。
-首轮实际下载、AMI 兼容基线和 30 条 shared-audio Phase 0 结果见
-[`structural-benchmark-v0-results.md`](structural-benchmark-v0-results.md)。
 
 benchmark-v1 的默认能力雷达包含 18 个 Headline 叶字段；字段角色、单项评分和
 `score_rate` 以 [`SCORING_STANDARD.md`](../dataset/benchmark/SCORING_STANDARD.md)
@@ -52,44 +50,6 @@ T1 当前采用完整 AMI utterance 树已有的切片单位：170 个 meeting �
 quantile，另对确定性的 10 个 meeting 各取第三条，共 350 条。`t1-ami/manifest.jsonl` 保存对应的
 原始 transcript/turn 记录，只能作为 GT；统一系统输入 manifest 已清空这些字段。后续若扩展到固定
 30 s 窗口，须另起版本并冻结尾段、padding、stride 和边界归属规则，不能与本版混报。
-
-### 1.2 当前下载与执行状态
-
-以下状态截至 2026-09-02，来自本地文件计数、SHA256、压缩包完整性和已生成产物，不把调研计划
-当作已下载事实。逐文件来源、实际 transport、revision、字节数、license 证据和阻塞原因见
-[`download_manifest.jsonl`](../dataset/open_benchmark/download_manifest.jsonl)。其中 `unknown` 表示当前
-工作区没有足够证据；第三方副本即使通过本地结构/音频验收，也只记为 `local-integrity complete`，
-不记为官方 release complete。LibriSpeech/FLEURS 的
-`transport_mirror` 来自本次下载操作记录，工作区没有单独持久化 wget 日志；文件 hash 能证明内容，
-不能单独证明传输路径。
-
-| 数据集 / 冻结子集 | 下载状态 | 本地验收 | 当前执行状态与限制 |
-| --- | --- | --- | --- |
-| AMI local utterance tree | **complete（本地抽取树）** | 170 个 meeting、12,568 条 manifest 记录及对应 WAV；正式子集 350 条覆盖全部 meeting | 旧 300 条只作 structural-v0 兼容基线；新 350 条的源 manifest 路径、原行号及 manifest/record/audio SHA256 均已保存。官方下载记录、release revision 和本地 LICENSE 仍为 `unknown` |
-| ESC-50 commit `33c8ce9...` | **complete** | archive 647,303,505 bytes，SHA256 `f3dabe6a...`，gzip 通过；解包后 2,000 WAV、官方 CSV/README/LICENSE | 10 条 shared-audio pilot 已完成 Phase 0 审计；原类是 weak positive，不把未标类当负例 |
-| LibriSpeech `all/test.clean` commit `71cacbfb...` | **complete** | 单个 parquet 350,452,636 bytes，SHA256 `7113aa4c...` 与冻结 builder 一致 | 10 条 deterministic shared-audio pilot 已完成 Phase 0 审计；这里只覆盖干净英语 anchor，不覆盖 overlap/event/room |
-| FLEURS 10-language `test` panel commit `70bb2e84...` | **complete** | 10 个 TSV + 10 个音频 archive，共 6,316 条；archive 共 3,668,559,793 bytes（3.417 GiB），全部 SHA256/gzip/builder 验收通过 | 400 条上游面板（每语言 40）审计为 pass；正式 benchmark 从中确定性抽取 100 条（每语言 10）；另记录 1 个源包损坏成员并拒收 |
-| DESED DCASE 2021 task-data commit `f7dc296e...`；代码 archive `0686178d...` | **complete（含显式拒收）** | 本地 task-data 树 44,422 WAV；代码/metadata archive 6,172,092 bytes、SHA256 `bed197b6...`；task-data 无统一 archive hash | 强标注/weak/unlabelled/validation/public-eval metadata 已对齐；正式 T3 使用 75 条 synthetic-strong；1 个 58-byte 零帧 WAV 记为 rejected |
-| MUSAN OpenSLR 17 本地 extracted tree | **complete（本地完整性）** | 2,016 WAV（music 660、noise 930、speech 426），九类计数及各目录 LICENSE/README 通过 | archive、revision 和官方 transport hash 未取得；混合来源条款仍需逐目录核对，不能据此宣称可自由再分发 |
-| RIRS_NOISES OpenSLR 28 mirror commit `db444a69...` | **complete（归档及解压树）** | `rirs_noises.zip` 1,311,166,223 bytes，SHA256 `3b50cfde...c05dc7`；解压后 61,260 WAV，list/room_info/路径安全及 zip payload 通过 | 镜像与 OpenSLR 官方 release 的等价性未独立证明；按第三方 mirror 处理，源条款需审阅 |
-| DEMAND local extracted tree | **complete（本地完整性）** | 560 WAV，18 场景、16 通道，16k/48k 变体；`demand_noise_durations.scp` 560/560 对齐 | 官方 archive/transport hash 和本地再分发许可证据未知；仅用于本地完整性和受控实验，不作许可确认 |
-| FSD50K local extracted tree | **complete（本地完整性）** | 51,197 WAV（dev 40,966、eval 10,231）；ground truth/vocabulary 对齐，逐文件 license 字段存在 | Freesound 文件许可混合；250 条上游候选池保留，正式 T3 使用 75 条（dev 38、eval 37），按冻结 crosswalk 作闭世界解释 |
-
-这里的 complete 只对表中冻结 subset 或本地 extracted tree 的完整性成立，不表示整个 corpus 已下载，
-也不等于取得再分发许可。官方 archive transport/provenance 未知的树仍只能在本工作区使用，除非另有
-许可证据。Phase 0 的中间运行文件与正式面板报告分开管理；只有统一 scorer 产出的冻结报告才称为
-“评测完成”。全树机器审计见 [`open_benchmark_audit.json`](../dataset/open_benchmark/open_benchmark_audit.json)。
-
-本轮 Phase 0 的 artifact audit 为 complete：30/30 音频 SHA 和 WAV 格式通过，sure-tagger header
-三字段均为 100%，captioner audio-only runtime 为 30/30 success。但两边 native current-schema
-valid 均为 0/30，因此 runtime gate 为 GO，schema/head-to-head gate 为 NO-GO；这批结果不产生新的
-结构能力排名。
-
-正式产物位于 [`dataset/benchmark/`](../dataset/benchmark/)，当前总计 650 条：T1 AMI 350；T2
-FLEURS 100 + LibriSpeech 50；T3 DESED 75 + FSD50K 75。统一 audio-only manifest、GT/provenance
-metadata、T3 closed-world GT 和 350 条 AMI 对应 manifest 记录均已逐条验收。旧 T2 500、T3 500、
-T4 2,000 条产物继续作为上游/历史来源池，不再是正式评测规模；旧
-T3 `pending_human_full_review` 占位状态没有复制到新子集。
 
 ### 1.3 字段分级
 
@@ -623,18 +583,7 @@ audibility 或 hash 验收失败的样本进入 rejected 清单，不能以请�
 7. **训练污染**：记录两个系统已知训练集、公开模型卡和可比对的 source ID/hash；公开 test 不自动
    等于 unseen。发现精确或同源重叠时单列 contaminated 结果，不能静默并入 headline。
 
-本轮冻结产物和复现入口：
-
-- 源树总览：[`dataset/open_benchmark/README.md`](../dataset/open_benchmark/README.md)；机器审计：
-  [`open_benchmark_audit.json`](../dataset/open_benchmark/open_benchmark_audit.json)。
-- 当前 650 条 bundle：[`dataset/benchmark/README.md`](../dataset/benchmark/README.md)；重建和验收均用
-  `python3 compare/dataset/benchmark/build_benchmark_subset.py`，仅验收追加 `--validate-only`。
-- T2 上游面板：[`evaluation/t2-panel/README.md`](../evaluation/t2-panel/README.md)，保留 500 条来源池；
-  正式版使用 FLEURS 100 + LibriSpeech 50。
-- T3 上游候选池：[`evaluation/t3-event-panel/README.md`](../evaluation/t3-event-panel/README.md)；正式版
-  使用 150 条，并已物化版本化 native-label closed-world GT。
-- T4 上游 controlled render：`evaluation/t4-controlled/` 保留历史 2,000 条，仅供审计；不再生成
-  混音/stems，也不进入系统输入。
+重建 benchmark 使用 `python3 compare/dataset/benchmark/build_benchmark_subset.py`；仅验收时追加 `--validate-only`。
 
 ## 8. 暂缓的描述性数据集
 
