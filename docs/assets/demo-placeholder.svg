@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360" role="img" aria-labelledby="title desc">
+  <title id="title">SureTagger demo video placeholder</title>
+  <desc id="desc">An abstract audio waveform with the text Demo video coming soon.</desc>
+  <rect width="1000" height="360" rx="8" fill="#F4F8F7"/>
+  <rect x="1" y="1" width="998" height="358" rx="7" fill="none" stroke="#D4E0DD" stroke-width="2"/>
+  <rect x="43" y="43" width="8" height="28" rx="4" fill="#E4624B"/>
+  <text x="67" y="65" fill="#24535A" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700">SURETAGGER / DEMO</text>
+  <text x="44" y="153" fill="#23353D" font-family="DejaVu Sans, Arial, sans-serif" font-size="38" font-weight="700">Demo video coming soon</text>
+  <text x="45" y="193" fill="#526A70" font-family="DejaVu Sans, Arial, sans-serif" font-size="19">The sample explorer is available in the repository.</text>
+  <path d="M44 282 H74 L88 260 L101 303 L116 235 L130 314 L147 272 L161 289 L177 247 L190 310 L206 265 L221 283 L239 254 L255 306 L270 279 L286 270 L303 293 L320 247 L337 310 L351 264 L366 283 L382 274 L398 294 L414 259 L430 301 L447 269 L464 283 L478 283 H955" fill="none" stroke="#19887F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="896" cy="108" r="45" fill="#E4624B"/>
+  <path d="M885 86 L921 108 L885 130 Z" fill="#FFFFFF"/>
+  <text x="45" y="330" fill="#637A7E" font-family="DejaVu Sans, Arial, sans-serif" font-size="15">AUDIO  /  TAGS  /  SCENES</text>
+</svg>
