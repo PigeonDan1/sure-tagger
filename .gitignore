@@ -31,6 +31,8 @@
 *.flac
 *.ogg
 *.mp4
+!/assets/readme/video/*.mp4
+!/assets/readme/tagbench/audio/*.wav
 
 # Clustering input snapshots and generated artifacts.
 /clustering/data/

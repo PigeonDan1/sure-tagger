@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">SURE-Tagger 图标</title>
+  <desc id="desc">一段声音波形连接到三行结构化标签。</desc>
+  <rect x="1" y="1" width="94" height="94" rx="19" fill="#f6f7f2" stroke="#dbe2dc" stroke-width="2"/>
+  <path d="M14 48h5l3-11 5 22 5-30 5 38 5-23 3 8h6" fill="none" stroke="#16796f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  <path d="M54 20v56" stroke="#dbe2dc" stroke-width="2"/>
+  <g fill="#17201d">
+    <rect x="63" y="28" width="21" height="6" rx="2"/>
+    <rect x="63" y="45" width="16" height="6" rx="2"/>
+    <rect x="63" y="62" width="19" height="6" rx="2"/>
+  </g>
+</svg>
