@@ -1,0 +1,518 @@
+[
+  {
+    "id": "Q04",
+    "number": 4,
+    "sample_id": "fleurs_t2_0055",
+    "track": "T2_multilingual_fleurs",
+    "layer": "D",
+    "layer_name": "D 描述性",
+    "audio": "audio/fleurs_t2_0055.wav",
+    "fields": [
+      {
+        "key": "caption",
+        "label": "caption",
+        "A": "一段约 15 秒的普通话单人朗读，内容提到一份文件将涉及边界争端，并以一九六七年中东战争前的边界为基础。录音为单声道 16 kHz，speech_music_events 仅含 speech，背景以静音为主，信噪比与 DNSMOS 指标均较高、混响很低。",
+        "B": "文本称一份文件将提及边界争端，巴勒斯坦希望以1967年中东战争前的边界为基础；未提供录音声学背景。",
+        "C": "一段中文语音，内容提及巴勒斯坦希望以1967年中东战争前的边界为基础，涉及边界争端议题。"
+      },
+      {
+        "key": "topic",
+        "label": "topic",
+        "A": "涉及边界争端的文件报道（巴勒斯坦与一九六七年中东战争前边界）",
+        "B": "边界争端与1967年边界",
+        "C": "边界争端"
+      },
+      {
+        "key": "background_condition",
+        "label": "background_condition",
+        "A": "背景接近安静：noise_composition 中仅 formless 标注 Silence，external_noise_type 为空数组；SNR 约 38.9 dB，RT60 约 0.164 s、C50 约 33.7 dB 提示混响很低。15.1 s 内含多段静音，其中 11.68–15.1 s 为较长的尾部静音。far_field 为 null，无法判断是否为远场。",
+        "B": null,
+        "C": "安静，无明显背景干扰"
+      },
+      {
+        "key": "dominant_content_impression",
+        "label": "dominant_content_impression",
+        "A": "可听内容以单人语音为主：speech_music_events 仅含 speech，music_present 为 false；nonspeech_ratio 约 0.32，非语音主要是静音段（含结尾约 3.4 s），未观测到语音重叠。",
+        "B": null,
+        "C": "speech"
+      },
+      {
+        "key": "clarity_intelligibility_impression",
+        "label": "clarity_intelligibility_impression",
+        "A": "SNR 约 38.9 dB，DNSMOS 的 sig/bak/ovrl/p808 分别约 3.40/3.91/3.03/3.82，配合低 RT60 与高 C50，信号条件整体有利于听清；ASR 也给出 37 字符文本且无重复、无填充词，但由此不能断言识别结果完全无误。",
+        "B": null,
+        "C": "清晰，可完全听懂"
+      },
+      {
+        "key": "background_sound_summary",
+        "label": "background_sound_summary",
+        "A": "未报告任何外部噪声类型（external_noise_type 为空数组）；noise_composition 中仅 formless 类别列出 Silence，机械、动物、自然、音乐、信道环境等类别均为空。除此之外没有关于其它背景声源的已知信息。",
+        "B": null,
+        "C": "无背景音"
+      },
+      {
+        "key": "descriptive_phrases",
+        "label": "descriptive_phrases",
+        "A": "[\"单人普通话朗读\", \"背景安静，无外部噪声标注\", \"低混响\", \"语速正常，无重复与口头填充\", \"内容涉边界争端报道\"]",
+        "B": "[\"提及边界争端\", \"以1967年中东战争前的边界为基础\"]",
+        "C": "[\"单人发言\", \"语速正常\", \"内容正式\"]"
+      },
+      {
+        "key": "facets",
+        "label": "facets",
+        "A": "1. speaker_interaction — speaker_count 为 1，multi_speaker、speaker_overlap、speaker_change 均为 false，speaker_change_count 为 0 且切换速率为 0，属于纯单人、无交替、无重叠的语音。\n2. acoustic_environment — RT60 约 0.164 s、C50 约 33.7 dB，混响很低；噪声构成只标注 Silence，未标注任何外部噪声类别。\n3. signal_quality — SNR 约 38.9 dB，DNSMOS 各项处于较高区间（sig 约 3.40、bak 约 3.91、ovrl 约 3.03、p808 约 3.82）。\n4. content_type — speech_music_events 仅含 speech，music_present 为 false；nonspeech_ratio 约 0.32，非语音区间由多段静音构成。\n5. transcript_surface — 文本 37 字符，punctuation_count 为 0 且无终止标点，has_repetition 为 false、repetition_count 为 0，filler 为 0、filler_ratio 为 0。",
+        "B": null,
+        "C": "1. interaction_pattern — 单人陈述，无对话或互动\n2. delivery_style — 语速正常，音量稳定，无明显填充词或重复\n3. soundscape — 安静环境，无背景音乐或噪音\n4. content_impression — 涉及政治或外交议题，聚焦边界问题\n5. recording_impression — 录音清晰，无明显失真或干扰"
+      },
+      {
+        "key": "speaker_descriptions",
+        "label": "speaker_descriptions",
+        "A": "1. speaker_1 — gender=male — 唯一的说话人，语速约 3.48 汉字/秒（normal 档），音高标为 low，音量标为 variable。",
+        "B": null,
+        "C": "1. speaker_1 — 单人用中文陈述关于边界争端的内容，语速正常，音量稳定。"
+      },
+      {
+        "key": "scene_hypotheses",
+        "label": "scene_hypotheses",
+        "A": "1. 可能是一人在安静环境下朗读或播报一段新闻/资讯类文本。\n2. 录音条件可能较干、混响极低，接近近距离录制；但缺失 far_field，无法确认是否为远场。",
+        "B": null,
+        "C": "1. 可能为新闻播报或政策说明场景\n2. 可能为会议或访谈中的发言片段"
+      }
+    ]
+  },
+  {
+    "id": "Q09",
+    "number": 9,
+    "sample_id": "fleurs_t2_0055",
+    "track": "T2_multilingual_fleurs",
+    "layer": "L5",
+    "layer_name": "L5 声学场景与事件",
+    "audio": "audio/fleurs_t2_0055.wav",
+    "fields": [
+      {
+        "key": "basic_acoustic.nonspeech_ratio",
+        "label": "非语音占比",
+        "A": "0.321854",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "sound_field_scene.speech_music_events",
+        "label": "语音/音乐/事件",
+        "A": "[\"speech\"]",
+        "B": null,
+        "C": "[\"speech\"]"
+      },
+      {
+        "key": "sound_field_scene.music_present",
+        "label": "是否有音乐",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "sound_field_scene.external_noise_type",
+        "label": "外部噪声类型",
+        "A": "[]",
+        "B": null,
+        "C": null
+      }
+    ]
+  },
+  {
+    "id": "Q14",
+    "number": 14,
+    "sample_id": "fleurs_t2_0055",
+    "track": "T2_multilingual_fleurs",
+    "layer": "L3",
+    "layer_name": "L3 时间结构",
+    "audio": "audio/fleurs_t2_0055.wav",
+    "fields": [
+      {
+        "key": "speaker.speaker_change_count",
+        "label": "切换次数",
+        "A": "0",
+        "B": null,
+        "C": "0"
+      },
+      {
+        "key": "speaker.speaker_change",
+        "label": "是否切换",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "speaker.overlap_ratio",
+        "label": "重叠比例",
+        "A": "0",
+        "B": null,
+        "C": "0"
+      },
+      {
+        "key": "deterministic_derived.speaker_change_rate_per_min",
+        "label": "每分钟切换率",
+        "A": "0",
+        "B": null,
+        "C": null
+      }
+    ]
+  },
+  {
+    "id": "Q19",
+    "number": 19,
+    "sample_id": "fleurs_t2_0055",
+    "track": "T2_multilingual_fleurs",
+    "layer": "L1",
+    "layer_name": "L1 词汇内容",
+    "audio": "audio/fleurs_t2_0055.wav",
+    "fields": [
+      {
+        "key": "speaker.asr_transcript",
+        "label": "转写",
+        "A": "据透露这份文件将提及边界争端巴勒斯坦希望以一九六七年中东战争前的边界为基础",
+        "B": null,
+        "C": "据透露，这份文件将提及边界争端，巴勒斯坦希望以1967年中东战争前的边界为基础。"
+      },
+      {
+        "key": "language_content.language",
+        "label": "语种",
+        "A": "zh",
+        "B": null,
+        "C": "zh"
+      },
+      {
+        "key": "language_content.word_count",
+        "label": "词数",
+        "A": "37",
+        "B": null,
+        "C": "20"
+      },
+      {
+        "key": "language_content.repetition.has_repetition",
+        "label": "是否重复",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "language_content.repetition.repetition_count",
+        "label": "重复次数",
+        "A": "0",
+        "B": null,
+        "C": "0"
+      },
+      {
+        "key": "deterministic_derived.filler_ratio",
+        "label": "filler 占比",
+        "A": "0",
+        "B": null,
+        "C": "0"
+      }
+    ]
+  },
+  {
+    "id": "Q24",
+    "number": 24,
+    "sample_id": "fleurs_t2_0055",
+    "track": "T2_multilingual_fleurs",
+    "layer": "L2",
+    "layer_name": "L2 说话人",
+    "audio": "audio/fleurs_t2_0055.wav",
+    "fields": [
+      {
+        "key": "speaker.speaker_count",
+        "label": "说话人数",
+        "A": "1",
+        "B": null,
+        "C": "1"
+      },
+      {
+        "key": "speaker.speaker_present",
+        "label": "是否有人声",
+        "A": "true",
+        "B": null,
+        "C": "true"
+      },
+      {
+        "key": "speaker.multi_speaker",
+        "label": "是否多人",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "speaker.speaker_overlap",
+        "label": "是否重叠",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "speaker.gender_sequence",
+        "label": "性别序列",
+        "A": "[\"male\"]",
+        "B": null,
+        "C": "[null]"
+      }
+    ]
+  },
+  {
+    "id": "Q03",
+    "number": 3,
+    "sample_id": "librispeech_t2_0048",
+    "track": "T2_clean_librispeech",
+    "layer": "L2",
+    "layer_name": "L2 说话人",
+    "audio": "audio/librispeech_t2_0048.wav",
+    "fields": [
+      {
+        "key": "speaker.speaker_count",
+        "label": "说话人数",
+        "A": "1",
+        "B": null,
+        "C": "1"
+      },
+      {
+        "key": "speaker.speaker_present",
+        "label": "是否有人声",
+        "A": "true",
+        "B": null,
+        "C": "true"
+      },
+      {
+        "key": "speaker.multi_speaker",
+        "label": "是否多人",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "speaker.speaker_overlap",
+        "label": "是否重叠",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "speaker.gender_sequence",
+        "label": "性别序列",
+        "A": "[\"male\"]",
+        "B": null,
+        "C": "[null]"
+      }
+    ]
+  },
+  {
+    "id": "Q08",
+    "number": 8,
+    "sample_id": "librispeech_t2_0048",
+    "track": "T2_clean_librispeech",
+    "layer": "L3",
+    "layer_name": "L3 时间结构",
+    "audio": "audio/librispeech_t2_0048.wav",
+    "fields": [
+      {
+        "key": "speaker.speaker_change_count",
+        "label": "切换次数",
+        "A": "0",
+        "B": null,
+        "C": "0"
+      },
+      {
+        "key": "speaker.speaker_change",
+        "label": "是否切换",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "speaker.overlap_ratio",
+        "label": "重叠比例",
+        "A": "0",
+        "B": null,
+        "C": "0"
+      },
+      {
+        "key": "deterministic_derived.speaker_change_rate_per_min",
+        "label": "每分钟切换率",
+        "A": "0",
+        "B": null,
+        "C": null
+      }
+    ]
+  },
+  {
+    "id": "Q13",
+    "number": 13,
+    "sample_id": "librispeech_t2_0048",
+    "track": "T2_clean_librispeech",
+    "layer": "L1",
+    "layer_name": "L1 词汇内容",
+    "audio": "audio/librispeech_t2_0048.wav",
+    "fields": [
+      {
+        "key": "speaker.asr_transcript",
+        "label": "转写",
+        "A": "angry with himself he tried to hide his face from their eyes by gazing down sideways into the shallow swirling water under the bridge but he still saw a reflection therein of their top heavy silk hats and humble tape like collars and loosely hanging clerical clothes brother hickey",
+        "B": null,
+        "C": "Angry with himself, he tried to hide his face from their eyes by gazing down sideways into the shallow swirling water under the bridge, but he still saw a reflection therein of their top-heavy silk hats, and humble tape-like collars, and loosely hanging clerical clothes. Brother Hickey."
+      },
+      {
+        "key": "language_content.language",
+        "label": "语种",
+        "A": "en",
+        "B": null,
+        "C": "en"
+      },
+      {
+        "key": "language_content.word_count",
+        "label": "词数",
+        "A": "49",
+        "B": null,
+        "C": "47"
+      },
+      {
+        "key": "language_content.repetition.has_repetition",
+        "label": "是否重复",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "language_content.repetition.repetition_count",
+        "label": "重复次数",
+        "A": "0",
+        "B": null,
+        "C": "0"
+      },
+      {
+        "key": "deterministic_derived.filler_ratio",
+        "label": "filler 占比",
+        "A": "0",
+        "B": null,
+        "C": "0"
+      }
+    ]
+  },
+  {
+    "id": "Q18",
+    "number": 18,
+    "sample_id": "librispeech_t2_0048",
+    "track": "T2_clean_librispeech",
+    "layer": "D",
+    "layer_name": "D 描述性",
+    "audio": "audio/librispeech_t2_0048.wav",
+    "fields": [
+      {
+        "key": "caption",
+        "label": "caption",
+        "A": "A 20.055 s, 16 kHz mono single-speaker segment with a 49-word English literary narrative transcript. No music or external noise is labeled, speaker count is 1 with no overlap or changes, and acoustic metrics show high SNR and low reverberation indicators.",
+        "B": "The text is a meta-commentary about a scene from a story or novel, possibly involving Brother Hickey looking down into the water under a bridge. It does not provide any acoustic or speaker information.",
+        "C": "单一说话人朗读一段英文叙述，语气平稳、叙事性强，内容描述一个角色在桥下的情绪状态和视觉观察，包括他人服饰的倒影。"
+      },
+      {
+        "key": "topic",
+        "label": "topic",
+        "A": "literary narrative excerpt",
+        "B": "scene from a story or novel involving Brother Hickey",
+        "C": "一个角色的内心情绪挣扎及对他人衣着的观察"
+      },
+      {
+        "key": "background_condition",
+        "label": "background_condition",
+        "A": "No external noise types or music are present in the labels; nonspeech ratio is 0.112441 with several short silence segments. RT60 is 0.057144 s and C50 is 40.141568 dB, while far-field status is unknown.",
+        "B": null,
+        "C": "安静，无明显背景噪声"
+      },
+      {
+        "key": "dominant_content_impression",
+        "label": "dominant_content_impression",
+        "A": "Speech is the dominant and only speech/music event; music_present is false, external_noise_type is empty, and all noise_composition categories are empty. Nonspeech ratio is 0.112441.",
+        "B": null,
+        "C": "speech"
+      },
+      {
+        "key": "clarity_intelligibility_impression",
+        "label": "clarity_intelligibility_impression",
+        "A": "The ASR transcript has 49 English words, no punctuation, no repetition, and no fillers; SNR is 45.280067 dB and DNSMOS overall is 3.366106. These cues suggest usable speech, but they do not by themselves establish full intelligibility.",
+        "B": null,
+        "C": "清晰可懂"
+      },
+      {
+        "key": "background_sound_summary",
+        "label": "background_sound_summary",
+        "A": "No external noise types are listed, music_present is false, and every noise_composition category is empty; only speech appears in speech_music_events.",
+        "B": null,
+        "C": "未检测到背景声音"
+      },
+      {
+        "key": "descriptive_phrases",
+        "label": "descriptive_phrases",
+        "A": "[\"single speaker\", \"no speaker overlap\", \"no speaker changes\", \"English transcript\", \"49 words\", \"no punctuation\", \"no repetition\", \"no fillers\", \"no music\", \"no external noise labels\", \"low reverberation indicators\", \"speech-only event\"]",
+        "B": "[\"possible scene from a story or novel\", \"Brother Hickey feeling self-conscious\", \"looking down into the water under a bridge\", \"attire suggests a member of a religious order\"]",
+        "C": "[\"单一说话人\", \"叙述语气\", \"安静背景\", \"发音清晰\"]"
+      },
+      {
+        "key": "facets",
+        "label": "facets",
+        "A": "1. speaker_interaction — Single speaker present; multi_speaker false, speaker_count 1, overlap_ratio 0.0, speaker_overlap false, speaker_change false, speaker_change_count 0, and change rate 0.0 per min.\n2. speech_content — English transcript with 49 words; no punctuation, no terminal punctuation, no repetition, and no fillers.\n3. acoustic_quality — High SNR (45.280067 dB) and DNSMOS scores (sig 3.645185, bak 4.082083, ovrl 3.366106, p808 4.230292).\n4. speech_music_content — speech_music_events contains only 'speech'; music_present is false.\n5. background_absence — No music or external noise labels; noise_composition categories are empty and nonspeech_ratio is 0.112441.\n6. room_acoustics — RT60 is 0.057144 s and C50 is 40.141568 dB.\n7. temporal_structure — Duration is 20.055 s with seven short silence segments and nonspeech_ratio 0.112441.",
+        "B": null,
+        "C": "1. delivery_style — 平稳的叙述性语音，音高中等，音量正常\n2. soundscape — 安静，无明显背景噪声或音乐\n3. content_impression — 具有情绪和视觉元素的叙述内容"
+      },
+      {
+        "key": "speaker_descriptions",
+        "label": "speaker_descriptions",
+        "A": "1. speaker_1 — gender=male — pitch is low, speaker_volume is variable, and speech_rate is normal (158.2 word_per_min).",
+        "B": null,
+        "C": "1. speaker_1 — 单一说话人朗读一段叙述，语气清晰平稳"
+      },
+      {
+        "key": "scene_hypotheses",
+        "label": "scene_hypotheses",
+        "A": "1. The segment may be a single-speaker literary reading or recitation, based on the narrative transcript and single-speaker profile, but the source and mode are not confirmed.\n2. The low RT60 and high C50/SNR may indicate a low-reverberation, close-capture or treated acoustic setting, though location and setup are not structurally confirmed.",
+        "B": "1. The text may be describing a scene from a story or novel involving Brother Hickey; the attire might indicate a religious order.",
+        "C": "1. 可能是单人朗读或有声书叙述"
+      }
+    ]
+  },
+  {
+    "id": "Q23",
+    "number": 23,
+    "sample_id": "librispeech_t2_0048",
+    "track": "T2_clean_librispeech",
+    "layer": "L5",
+    "layer_name": "L5 声学场景与事件",
+    "audio": "audio/librispeech_t2_0048.wav",
+    "fields": [
+      {
+        "key": "basic_acoustic.nonspeech_ratio",
+        "label": "非语音占比",
+        "A": "0.112441",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "sound_field_scene.speech_music_events",
+        "label": "语音/音乐/事件",
+        "A": "[\"speech\"]",
+        "B": null,
+        "C": "[\"speech\"]"
+      },
+      {
+        "key": "sound_field_scene.music_present",
+        "label": "是否有音乐",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "sound_field_scene.external_noise_type",
+        "label": "外部噪声类型",
+        "A": "[]",
+        "B": null,
+        "C": null
+      }
+    ]
+  }
+]
