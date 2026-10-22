@@ -1,0 +1,28 @@
+{
+  "sample_id": "t3_fsd50k_0045",
+  "source_dataset": "FSD50K",
+  "benchmark_track": "T3_events_noise",
+  "audio": {
+    "duration_sec": 1.5185,
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "sha256": "f17f3fa9b86727c5eb19cb58f5e489a71d40bba6bbd3562028679bad5b69bce6"
+  },
+  "closed_world_event_gt": {
+    "sound_field_scene.external_noise_type": [
+      "music"
+    ],
+    "sound_field_scene.music_present": true,
+    "sound_field_scene.speech_music_events": [
+      "music"
+    ]
+  },
+  "gt_caveat": "derived negatives are not human-confirmed and may contain false negatives",
+  "native_labels": [
+    "Rattle_(instrument)",
+    "Percussion",
+    "Musical_instrument",
+    "Music"
+  ],
+  "source_license_record": "http://creativecommons.org/publicdomain/zero/1.0/"
+}

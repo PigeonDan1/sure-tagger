@@ -1,0 +1,532 @@
+{
+  "sure_tagger": {
+    "audio_quality": {
+      "dnsmos_bak": 4.011157,
+      "dnsmos_ovrl": 3.095793,
+      "dnsmos_p808": 3.206077,
+      "dnsmos_sig": 3.440333,
+      "snr_db": 23.733044
+    },
+    "basic_acoustic": {
+      "channels": 1,
+      "duration_sec": 17.7155,
+      "nonspeech_ratio": 0.118851,
+      "sample_rate_hz": 16000,
+      "silence_segments": [
+        {
+          "end_sec": 0.18,
+          "start_sec": 0.0
+        },
+        {
+          "end_sec": 1.67,
+          "start_sec": 1.03
+        },
+        {
+          "end_sec": 4.37,
+          "start_sec": 3.78
+        },
+        {
+          "end_sec": 5.78,
+          "start_sec": 5.74
+        },
+        {
+          "end_sec": 7.76,
+          "start_sec": 7.47
+        },
+        {
+          "end_sec": 9.73,
+          "start_sec": 9.48
+        },
+        {
+          "end_sec": 17.7155,
+          "start_sec": 17.6
+        }
+      ]
+    },
+    "descriptive": {
+      "background_condition": "SNR is 23.7 dB and DNSMOS background is 4.01; the recording has a nonspeech ratio of 0.119 and multiple short silence segments. No external noise types or noise composition categories were detected, music is absent, RT60 is 0.057 s, and C50 is 38.95 dB. Far-field status is unknown.",
+      "background_sound_summary": "external_noise_type is empty and noise_composition has no detected categories; music_present is false. This structural output indicates no labeled noise or music classes, rather than confirming absolute silence outside speech.",
+      "caption": "A 17.7-second mono 16 kHz recording contains a two-speaker English dialogue with six speaker changes and occasional overlap. The speakers discuss how to provide scores in a file format, mentioning dialogue numbers and combining both scores in one file. The acoustic background is relatively clean with no detected music or external noise categories, short silences, low reverberation, and high early-to-late sound ratio.",
+      "clarity_intelligibility_impression": "An English transcript is available with punctuation and some repetitions. SNR and DNSMOS background are relatively high, while DNSMOS overall is 3.10 and p808 is 3.21; low RT60 and high C50 support direct low-reverberation speech. These factors suggest generally usable intelligibility, though far-field status and perceptual listening quality remain uncertain.",
+      "descriptive_phrases": [
+        "two-speaker dialogue with six speaker changes",
+        "speech-only content with no detected music or external noise",
+        "mono 16 kHz recording with low nonspeech ratio",
+        "fast and variable speech rates across speakers",
+        "transcript discusses file format for scores and dialogue numbers"
+      ],
+      "dominant_content_impression": "Speech is the only detected content class. Two speakers are present with active turn-taking and a small overlap ratio; nonspeech segments are limited and no labeled music or external noise categories are present.",
+      "facets": [
+        {
+          "confidence": 0.95,
+          "description": "Two speakers alternate with six changes in 17.7 seconds, corresponding to 20.3 speaker changes per minute and an overlap ratio of 0.139.",
+          "evidence_tags": [
+            "speaker.speaker_count",
+            "speaker.multi_speaker",
+            "speaker.speaker_change_count",
+            "speaker.speaker_overlap",
+            "speaker.overlap_ratio",
+            "deterministic_derived.speaker_change_rate_per_min",
+            "basic_acoustic.duration_sec"
+          ],
+          "name": "speech_turn_dynamics"
+        },
+        {
+          "confidence": 0.9,
+          "description": "The mono 16 kHz recording has SNR 23.7 dB and DNSMOS background 4.01; overall DNSMOS is 3.10. C50 is 38.95 dB and RT60 is 0.057 s, consistent with strong direct sound and low reverberation.",
+          "evidence_tags": [
+            "basic_acoustic.sample_rate_hz",
+            "basic_acoustic.channels",
+            "audio_quality.snr_db",
+            "audio_quality.dnsmos_bak",
+            "audio_quality.dnsmos_ovrl",
+            "room_acoustic.c50_db",
+            "room_acoustic.rt60_sec"
+          ],
+          "name": "audio_quality_profile"
+        },
+        {
+          "confidence": 0.9,
+          "description": "Speech is the only detected event class; there is no music and no labeled external noise category, with a nonspeech ratio of 0.119.",
+          "evidence_tags": [
+            "sound_field_scene.speech_music_events",
+            "sound_field_scene.music_present",
+            "sound_field_scene.external_noise_type",
+            "sound_field_scene.noise_composition",
+            "basic_acoustic.nonspeech_ratio"
+          ],
+          "name": "content_composition"
+        }
+      ],
+      "scene_hypotheses": [
+        {
+          "confidence": 0.75,
+          "description": "Two speakers are engaged in a fast-paced dialogue, likely a collaborative or editorial exchange about how to format scores in a file.",
+          "evidence_tags": [
+            "speaker.multi_speaker",
+            "speaker.speaker_count",
+            "speaker.speaker_change_count",
+            "speaker.speaker_overlap",
+            "speaker.asr_transcript",
+            "deterministic_derived.speaker_change_rate_per_min"
+          ]
+        }
+      ],
+      "speaker_descriptions": [
+        {
+          "confidence": 0.9,
+          "description": "Speaker 1 has a variable speech rate with an observed 304.5 words per minute and variable volume; pitch is unknown.",
+          "descriptive_phrases": [
+            "variable speech rate",
+            "variable volume",
+            "unknown pitch"
+          ],
+          "evidence_tags": [
+            "speaker.profiles"
+          ],
+          "gender": "male",
+          "speaker_id": "speaker_1"
+        },
+        {
+          "confidence": 0.9,
+          "description": "Speaker 2 has a fast speech rate with an observed 347.5 words per minute, a mid pitch, and variable volume.",
+          "descriptive_phrases": [
+            "fast speech rate",
+            "mid pitch",
+            "variable volume"
+          ],
+          "evidence_tags": [
+            "speaker.profiles"
+          ],
+          "gender": "female",
+          "speaker_id": "speaker_2"
+        }
+      ],
+      "topic": "discussion about providing scores and dialogue numbers in a file format",
+      "uncertainties": [
+        "room_acoustic.far_field is null",
+        "speaker_1 pitch is null",
+        "external_noise_type and noise_composition are empty, which may mean no detections or missing labels",
+        "gender cannot be determined from pitch and should not be inferred",
+        "DNSMOS overall and p808 are lower than background, so intelligibility is not fully guaranteed",
+        "silence segments are present but their cause is not labeled"
+      ],
+      "usability_notes": [
+        "The available transcript and two-speaker labels can support downstream diarization and ASR evaluation, especially with the clean background, low RT60, and high C50. However, one speaker profile has unknown pitch and both have variable speech rates or volume; the DNSMOS overall 3.10 and p808 3.21 values suggest checking possible intelligibility issues before using as ground truth."
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": 0.041096,
+      "speaker_change_rate_per_min": 20.321188
+    },
+    "field_universe_version": "structural-v0.1",
+    "language_content": {
+      "filler": 3,
+      "language": "en",
+      "punctuation": {
+        "has_terminal_punctuation": true,
+        "punctuation_count": 11
+      },
+      "repetition": {
+        "has_repetition": true,
+        "repetition_count": 3
+      },
+      "word_count": 73
+    },
+    "room_acoustic": {
+      "c50_db": 38.951783,
+      "far_field": null,
+      "rt60_sec": 0.057437
+    },
+    "sample_id": "EN2001e_utterance_00071",
+    "schema_version": "structural-prediction-v0.1",
+    "sound_field_scene": {
+      "external_noise_type": [],
+      "music_present": false,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [],
+        "mechanical": [],
+        "music": [],
+        "nature": []
+      },
+      "speech_music_events": [
+        "speech"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": "Alright, okay. So I could probably I could probably read it from uh. Yeah, I can just give it to you in the format you want. So I I would just My preferred would be dialogue at number and And then the score, yeah, this was just for showing it. You can put both scores in one file. Huh? You can put both the scores in one file if it makes it easier.",
+      "multi_speaker": true,
+      "overlap_ratio": 0.139151,
+      "profiles": [
+        {
+          "gender": "male",
+          "pitch": null,
+          "speaker_id": "speaker_1",
+          "speaker_volume": "variable",
+          "speech_rate": {
+            "band": "variable",
+            "unit": "word_per_min",
+            "value": 304.5
+          }
+        },
+        {
+          "gender": "female",
+          "pitch": "mid",
+          "speaker_id": "speaker_2",
+          "speaker_volume": "variable",
+          "speech_rate": {
+            "band": "fast",
+            "unit": "word_per_min",
+            "value": 347.5
+          }
+        }
+      ],
+      "speaker_change": true,
+      "speaker_change_count": 6,
+      "speaker_count": 2,
+      "speaker_overlap": true,
+      "speaker_present": true
+    }
+  },
+  "captioner": {
+    "audio_quality": {
+      "dnsmos_bak": null,
+      "dnsmos_ovrl": null,
+      "dnsmos_p808": null,
+      "dnsmos_sig": null,
+      "snr_db": null
+    },
+    "basic_acoustic": {
+      "channels": null,
+      "duration_sec": null,
+      "nonspeech_ratio": null,
+      "sample_rate_hz": null,
+      "silence_segments": null
+    },
+    "descriptive": {
+      "background_condition": null,
+      "background_sound_summary": null,
+      "caption": "The text reads as a first-person conversational utterance in which the person indicates they can provide information in the requested format, prefers dialogue number followed by the score, and notes both scores can be placed in one file. A <gap> placeholder appears in the text.",
+      "clarity_intelligibility_impression": null,
+      "descriptive_phrases": [
+        "dialogue number and then the score",
+        "both the scores in one file",
+        "format you want",
+        "could probably read it from <gap>"
+      ],
+      "dominant_content_impression": "First-person spoken commentary about file and score formatting preferences.",
+      "facets": [
+        {
+          "confidence": 0.9,
+          "description": "The text discusses preferred data formatting for dialogue scores.",
+          "evidence_tags": [],
+          "name": "content_topic"
+        },
+        {
+          "confidence": 0.8,
+          "description": "The text contains informal conversational language with first-person pronouns and hedges.",
+          "evidence_tags": [],
+          "name": "linguistic_style"
+        }
+      ],
+      "scene_hypotheses": [
+        {
+          "confidence": 0.4,
+          "description": "The utterance may be part of a dialogue about data annotation file formatting.",
+          "evidence_tags": []
+        }
+      ],
+      "speaker_descriptions": null,
+      "topic": "Preferred dialogue score output format",
+      "uncertainties": [
+        "It is not stated whether the text is a verbatim ASR transcript or a paraphrase.",
+        "The number of speakers is not explicitly identified.",
+        "Acoustic conditions and audio quality are not described.",
+        "The exact meaning of the <gap> placeholder is unclear."
+      ],
+      "usability_notes": [
+        "The transcript contains a <gap> placeholder; downstream processing should not treat <gap> as a spoken word."
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": null,
+      "speaker_change_rate_per_min": null
+    },
+    "field_universe_version": "structural-v0.1",
+    "language_content": {
+      "filler": null,
+      "language": null,
+      "punctuation": {
+        "has_terminal_punctuation": null,
+        "punctuation_count": null
+      },
+      "repetition": {
+        "has_repetition": null,
+        "repetition_count": null
+      },
+      "word_count": null
+    },
+    "room_acoustic": {
+      "c50_db": null,
+      "far_field": null,
+      "rt60_sec": null
+    },
+    "sample_id": "EN2001e_utterance_00071",
+    "schema_version": "structural-prediction-v0.1",
+    "sound_field_scene": {
+      "external_noise_type": null,
+      "music_present": null,
+      "noise_composition": null,
+      "speech_music_events": null
+    },
+    "speaker": {
+      "asr_transcript": null,
+      "multi_speaker": null,
+      "overlap_ratio": null,
+      "profiles": null,
+      "speaker_change": null,
+      "speaker_change_count": null,
+      "speaker_count": null,
+      "speaker_overlap": null,
+      "speaker_present": null
+    }
+  },
+  "qwen3_omni": {
+    "audio_quality": {
+      "dnsmos_bak": null,
+      "dnsmos_ovrl": null,
+      "dnsmos_p808": null,
+      "dnsmos_sig": null,
+      "snr_db": null
+    },
+    "basic_acoustic": {
+      "channels": null,
+      "duration_sec": null,
+      "nonspeech_ratio": null,
+      "sample_rate_hz": null,
+      "silence_segments": null
+    },
+    "descriptive": {
+      "background_condition": "安静背景，无可辨别的环境噪声。",
+      "background_sound_summary": "未检测到背景声音。",
+      "caption": "两名说话者进行对话，讨论如何格式化并呈现分数，其中一名说话者提出可按所需格式提供。语气为协作且务实，无背景噪声或音乐。",
+      "clarity_intelligibility_impression": "语音清晰可懂。",
+      "descriptive_phrases": [
+        "两名说话者对话",
+        "协作性语气",
+        "清晰语音，无背景噪声"
+      ],
+      "dominant_content_impression": "speech",
+      "facets": [
+        {
+          "confidence": 0.95,
+          "description": "两名说话者交替发言，围绕分数格式化进行协作讨论。",
+          "evidence_tags": [
+            "speaker.speaker_count",
+            "speaker.multi_speaker",
+            "speaker.speaker_change_count",
+            "speaker.speaker_change"
+          ],
+          "name": "interaction_pattern"
+        },
+        {
+          "confidence": 0.9,
+          "description": "语速正常，音高和音量适中；包含填充词和重复。",
+          "evidence_tags": [
+            "speaker.profiles",
+            "language_content.filler",
+            "language_content.repetition.has_repetition"
+          ],
+          "name": "delivery_style"
+        },
+        {
+          "confidence": 0.98,
+          "description": "安静环境，无背景音乐、自然声或机械声。",
+          "evidence_tags": [
+            "sound_field_scene.music_present",
+            "sound_field_scene.noise_composition"
+          ],
+          "name": "soundscape"
+        },
+        {
+          "confidence": 0.92,
+          "description": "对话围绕格式化和交付分数的实用指令。",
+          "evidence_tags": [
+            "speaker.asr_transcript"
+          ],
+          "name": "content_impression"
+        },
+        {
+          "confidence": 0.5,
+          "description": "清晰度和可懂度高，无可听干扰或失真。",
+          "evidence_tags": [],
+          "name": "recording_impression"
+        }
+      ],
+      "scene_hypotheses": [
+        {
+          "confidence": 0.5,
+          "description": "可能是同事或合作者之间围绕数据呈现的非正式工作对话。",
+          "evidence_tags": []
+        },
+        {
+          "confidence": 0.5,
+          "description": "可能是在安静室内（如家中或办公室）进行的轻松对话，侧重于任务协调。",
+          "evidence_tags": []
+        }
+      ],
+      "speaker_descriptions": [
+        {
+          "confidence": 0.9,
+          "description": "第一位说话者，以对话语气说话，语速和音量适中，使用填充词。",
+          "descriptive_phrases": [
+            "第一位说话者，对话语气",
+            "使用填充词"
+          ],
+          "evidence_tags": [
+            "speaker.profiles",
+            "language_content.filler"
+          ],
+          "gender": null,
+          "speaker_id": "speaker_1"
+        },
+        {
+          "confidence": 0.9,
+          "description": "第二位说话者，回应时表示同意并提出调整格式，表达清晰平静。",
+          "descriptive_phrases": [
+            "第二位说话者，合作语气",
+            "表达清晰平静"
+          ],
+          "evidence_tags": [
+            "speaker.profiles"
+          ],
+          "gender": null,
+          "speaker_id": "speaker_2"
+        }
+      ],
+      "topic": "分数格式化与呈现",
+      "uncertainties": [
+        "仅凭音频无法确定说话人性别。",
+        "仅凭音频无法推断具体地点或环境。",
+        "缺少有效时长，无法计算每分钟说话人转换率。"
+      ],
+      "usability_notes": [
+        "该转写可用于需要格式说明的文档或任务协调场景。"
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": 0.104167,
+      "speaker_change_rate_per_min": null
+    },
+    "field_universe_version": "structural-v0.1",
+    "language_content": {
+      "filler": 5,
+      "language": "en",
+      "punctuation": {
+        "has_terminal_punctuation": true,
+        "punctuation_count": 6
+      },
+      "repetition": {
+        "has_repetition": true,
+        "repetition_count": 2
+      },
+      "word_count": 48
+    },
+    "room_acoustic": {
+      "c50_db": null,
+      "far_field": null,
+      "rt60_sec": null
+    },
+    "sample_id": "EN2001e_utterance_00071",
+    "schema_version": "structural-prediction-v0.1",
+    "sound_field_scene": {
+      "external_noise_type": null,
+      "music_present": false,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [],
+        "mechanical": [],
+        "music": [],
+        "nature": []
+      },
+      "speech_music_events": [
+        "speech"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": "All right, okay. So I could probably I could probably read it from uh. Yeah, I can just give it to you in the format you want. So it would just be dialogue act number, then the score. Yeah, this was just for showing it. Huh? You can put both the scores in one file if it makes it easier.",
+      "multi_speaker": true,
+      "overlap_ratio": 0,
+      "profiles": [
+        {
+          "pitch": "mid",
+          "speaker_id": "speaker_1",
+          "speaker_volume": "normal",
+          "speech_rate": {
+            "band": "normal",
+            "unit": null,
+            "value": null
+          }
+        },
+        {
+          "pitch": "mid",
+          "speaker_id": "speaker_2",
+          "speaker_volume": "normal",
+          "speech_rate": {
+            "band": "normal",
+            "unit": null,
+            "value": null
+          }
+        }
+      ],
+      "speaker_change": true,
+      "speaker_change_count": 1,
+      "speaker_count": 2,
+      "speaker_overlap": false,
+      "speaker_present": true
+    }
+  }
+}

@@ -1,0 +1,260 @@
+[
+  {
+    "id": "Q01",
+    "number": 1,
+    "sample_id": "t3_desed_0112",
+    "track": "T3_events_noise",
+    "layer": "L1",
+    "layer_name": "L1 词汇内容",
+    "audio": "audio/t3_desed_0112.wav",
+    "fields": [
+      {
+        "key": "speaker.asr_transcript",
+        "label": "转写",
+        "A": "tom smith records this is an unreal exclusive",
+        "B": null,
+        "C": "Thomas Smith records. This is an Unreal exclusive."
+      },
+      {
+        "key": "language_content.language",
+        "label": "语种",
+        "A": "en",
+        "B": null,
+        "C": "en"
+      },
+      {
+        "key": "language_content.word_count",
+        "label": "词数",
+        "A": "8",
+        "B": null,
+        "C": "8"
+      },
+      {
+        "key": "language_content.repetition.has_repetition",
+        "label": "是否重复",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "language_content.repetition.repetition_count",
+        "label": "重复次数",
+        "A": "0",
+        "B": null,
+        "C": "0"
+      },
+      {
+        "key": "deterministic_derived.filler_ratio",
+        "label": "filler 占比",
+        "A": "0",
+        "B": null,
+        "C": "0"
+      }
+    ]
+  },
+  {
+    "id": "Q07",
+    "number": 7,
+    "sample_id": "t3_desed_0112",
+    "track": "T3_events_noise",
+    "layer": "L3",
+    "layer_name": "L3 时间结构",
+    "audio": "audio/t3_desed_0112.wav",
+    "fields": [
+      {
+        "key": "speaker.speaker_change_count",
+        "label": "切换次数",
+        "A": "0",
+        "B": null,
+        "C": "0"
+      },
+      {
+        "key": "speaker.speaker_change",
+        "label": "是否切换",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "speaker.overlap_ratio",
+        "label": "重叠比例",
+        "A": "0",
+        "B": null,
+        "C": "0"
+      },
+      {
+        "key": "deterministic_derived.speaker_change_rate_per_min",
+        "label": "每分钟切换率",
+        "A": "0",
+        "B": null,
+        "C": null
+      }
+    ]
+  },
+  {
+    "id": "Q12",
+    "number": 12,
+    "sample_id": "t3_desed_0112",
+    "track": "T3_events_noise",
+    "layer": "L5",
+    "layer_name": "L5 声学场景与事件",
+    "audio": "audio/t3_desed_0112.wav",
+    "fields": [
+      {
+        "key": "basic_acoustic.nonspeech_ratio",
+        "label": "非语音占比",
+        "A": "0.697",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "sound_field_scene.speech_music_events",
+        "label": "语音/音乐/事件",
+        "A": "[\"speech\"]",
+        "B": null,
+        "C": "[\"speech\"]"
+      },
+      {
+        "key": "sound_field_scene.music_present",
+        "label": "是否有音乐",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "sound_field_scene.external_noise_type",
+        "label": "外部噪声类型",
+        "A": "[]",
+        "B": null,
+        "C": null
+      }
+    ]
+  },
+  {
+    "id": "Q17",
+    "number": 17,
+    "sample_id": "t3_desed_0112",
+    "track": "T3_events_noise",
+    "layer": "D",
+    "layer_name": "D 描述性",
+    "audio": "audio/t3_desed_0112.wav",
+    "fields": [
+      {
+        "key": "caption",
+        "label": "caption",
+        "A": "A single speaker delivers a short English phrase (\"tom smith records this is an unreal exclusive\") in a 10-second mono recording. Speech occupies only about 30% of the clip, with silence segments around it and no music or speaker changes. Signal quality metrics are low, suggesting a degraded or noisy capture.",
+        "B": "The caption states that Thomas Smith records and includes the phrase 'this is an unreal exclusive'.",
+        "C": "单一说话人以清晰、中性的语气说出“Thomas Smith records. This is an Unreal exclusive.”，无背景噪声或音乐。"
+      },
+      {
+        "key": "topic",
+        "label": "topic",
+        "A": "Tom Smith Records unreal exclusive",
+        "B": null,
+        "C": "与 Thomas Smith records 和 Unreal 相关的音频品牌或介绍内容。"
+      },
+      {
+        "key": "background_condition",
+        "label": "background_condition",
+        "A": "Mono 16 kHz clip with about 70% silence/nonspeech; three silence segments account for most of the duration. Reverberation metrics show RT60 0.669 s and C50 15.82 dB, while SNR is 5.25 dB and DNSMOS values are low, indicating degraded or noisy capture despite no categorized external noise labels.",
+        "B": null,
+        "C": "安静背景，无明显环境噪声或干扰。"
+      },
+      {
+        "key": "dominant_content_impression",
+        "label": "dominant_content_impression",
+        "A": "Speech is the only active content event; a single speaker is present, and no music was detected. Non-speech/silence occupies most of the recording duration.",
+        "B": null,
+        "C": "语音主导"
+      },
+      {
+        "key": "clarity_intelligibility_impression",
+        "label": "clarity_intelligibility_impression",
+        "A": "Speech is limited to short segments and metrics suggest low perceptual quality (SNR 5.25 dB; DNSMOS overall 1.47), so intelligibility is likely impaired even though an 8-word transcript was returned. C50 is 15.82 dB and RT60 is 0.669 s, but ASR output should still be treated as low-reliability.",
+        "B": null,
+        "C": "语音清晰，可懂度高。"
+      },
+      {
+        "key": "background_sound_summary",
+        "label": "background_sound_summary",
+        "A": "No specific background sound categories were detected: external_noise_type is empty and all noise_composition subcategories are empty, with music_present false.",
+        "B": null,
+        "C": "除语音外未检测到背景声音。"
+      },
+      {
+        "key": "descriptive_phrases",
+        "label": "descriptive_phrases",
+        "A": "[\"single-speaker English clip\", \"speech occupies roughly 30% of duration\", \"no music or labeled background noise\", \"low DNSMOS and SNR metrics\", \"mono 16 kHz recording\", \"RT60 0.669 s and C50 15.82 dB\", \"three silence segments totaling 6.97 s\"]",
+        "B": "[\"unreal exclusive\"]",
+        "C": "[\"单一说话人\", \"清晰语音\", \"中性语气\", \"无背景噪声\"]"
+      },
+      {
+        "key": "facets",
+        "label": "facets",
+        "A": "1. speech_sparsity — Speech is the sole event but covers only about 30% of the 10 s clip, with three silence segments accounting for 6.97 s.\n2. signal_quality — Low SNR and DNSMOS values indicate degraded capture quality.\n3. single_speaker_monologue — One speaker profile is present, multi_speaker is false, and there are no speaker changes or overlaps.\n4. room_reverberation — RT60 is 0.669 s and C50 is 15.82 dB; far_field is unknown.",
+        "B": null,
+        "C": "1. interaction_pattern — 单一说话人独白。\n2. delivery_style — 中性语气，正常语速，中等音高，正常音量。\n3. soundscape — 安静、仅语音，无背景音乐或噪声。\n4. content_impression — 媒体或内容实体的品牌或开场介绍。\n5. recording_impression — 清晰度和可懂度高，可能为受控环境录音。"
+      },
+      {
+        "key": "speaker_descriptions",
+        "label": "speaker_descriptions",
+        "A": "1. speaker_1 — gender=male — speaker_1 has low pitch and variable volume; speech-rate metrics are not available.",
+        "B": null,
+        "C": "1. speaker_1 — gender=male — 一名说话人发布清晰、中性的公告。"
+      },
+      {
+        "key": "scene_hypotheses",
+        "label": "scene_hypotheses",
+        "A": "1. Single-person recorded announcement or intro segment, possibly from a low-quality capture environment.\n2. Speech may have been recorded in a distant or noisy setting given low SNR/DNSMOS and moderate RT60, although far_field is unknown.",
+        "B": null,
+        "C": "1. 可能是媒体品牌或内容介绍的录音室录音或配音。\n2. 用于独家内容发布的独白公告。"
+      }
+    ]
+  },
+  {
+    "id": "Q22",
+    "number": 22,
+    "sample_id": "t3_desed_0112",
+    "track": "T3_events_noise",
+    "layer": "L2",
+    "layer_name": "L2 说话人",
+    "audio": "audio/t3_desed_0112.wav",
+    "fields": [
+      {
+        "key": "speaker.speaker_count",
+        "label": "说话人数",
+        "A": "1",
+        "B": null,
+        "C": "1"
+      },
+      {
+        "key": "speaker.speaker_present",
+        "label": "是否有人声",
+        "A": "true",
+        "B": null,
+        "C": "true"
+      },
+      {
+        "key": "speaker.multi_speaker",
+        "label": "是否多人",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "speaker.speaker_overlap",
+        "label": "是否重叠",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "speaker.gender_sequence",
+        "label": "性别序列",
+        "A": "[\"male\"]",
+        "B": null,
+        "C": "[null]"
+      }
+    ]
+  }
+]

@@ -1,0 +1,260 @@
+[
+  {
+    "id": "Q05",
+    "number": 5,
+    "sample_id": "ES2012d_utterance_00018",
+    "track": "T1_natural_meeting_utterance",
+    "layer": "L3",
+    "layer_name": "L3 时间结构",
+    "audio": "audio/ES2012d_utterance_00018.wav",
+    "fields": [
+      {
+        "key": "speaker.speaker_change_count",
+        "label": "切换次数",
+        "A": "4",
+        "B": null,
+        "C": "1"
+      },
+      {
+        "key": "speaker.speaker_change",
+        "label": "是否切换",
+        "A": "true",
+        "B": null,
+        "C": "true"
+      },
+      {
+        "key": "speaker.overlap_ratio",
+        "label": "重叠比例",
+        "A": "0.125651",
+        "B": null,
+        "C": "0"
+      },
+      {
+        "key": "deterministic_derived.speaker_change_rate_per_min",
+        "label": "每分钟切换率",
+        "A": "10.118",
+        "B": null,
+        "C": "3.75"
+      }
+    ]
+  },
+  {
+    "id": "Q10",
+    "number": 10,
+    "sample_id": "ES2012d_utterance_00018",
+    "track": "T1_natural_meeting_utterance",
+    "layer": "L5",
+    "layer_name": "L5 声学场景与事件",
+    "audio": "audio/ES2012d_utterance_00018.wav",
+    "fields": [
+      {
+        "key": "basic_acoustic.nonspeech_ratio",
+        "label": "非语音占比",
+        "A": "0.500422",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "sound_field_scene.speech_music_events",
+        "label": "语音/音乐/事件",
+        "A": "[\"speech\"]",
+        "B": "[\"speech\"]",
+        "C": "[\"speech\"]"
+      },
+      {
+        "key": "sound_field_scene.music_present",
+        "label": "是否有音乐",
+        "A": "false",
+        "B": "false",
+        "C": "false"
+      },
+      {
+        "key": "sound_field_scene.external_noise_type",
+        "label": "外部噪声类型",
+        "A": "[\"formless\"]",
+        "B": null,
+        "C": null
+      }
+    ]
+  },
+  {
+    "id": "Q15",
+    "number": 15,
+    "sample_id": "ES2012d_utterance_00018",
+    "track": "T1_natural_meeting_utterance",
+    "layer": "D",
+    "layer_name": "D 描述性",
+    "audio": "audio/ES2012d_utterance_00018.wav",
+    "fields": [
+      {
+        "key": "caption",
+        "label": "caption",
+        "A": "A short multi-speaker English conversation evaluates a device as flashy/fashionable and technologically innovative. Speech is the only detected content type, with frequent short pauses, some overlapping turns, and clicking noise in a mono 16 kHz recording.",
+        "B": "The audio contains a conversation between two people discussing the characteristics of a device. They describe it as flashy and fashionable, technologically innovative, and featuring voice technology.",
+        "C": "Two speakers engage in a conversational exchange, discussing whether a device is flashy, fashionable, and technologically innovative, with one speaker initiating and the other responding, both speaking in clear, standard English with some filler words."
+      },
+      {
+        "key": "topic",
+        "label": "topic",
+        "A": "Product/device evaluation: whether the device is flashy/fashionable and technologically innovative",
+        "B": "Discussion of device characteristics",
+        "C": "Device features and innovation"
+      },
+      {
+        "key": "background_condition",
+        "label": "background_condition",
+        "A": "Mono 16 kHz recording with about 50% non-speech time and many short silence segments; external noise is limited to formless clicking and silence, with no music detected. Room acoustic estimates show low RT60 (≈0.056 s) and high C50 (≈39.5 dB), but far-field status is unknown.",
+        "B": null,
+        "C": "Quiet background with no persistent interference"
+      },
+      {
+        "key": "dominant_content_impression",
+        "label": "dominant_content_impression",
+        "A": "Speech is the only detected event type. The recording contains multiple speakers interacting in short turns with declared overlap, while roughly half the duration is non-speech/silence and some clicking noise is present.",
+        "B": "Two-person conversation about device characteristics",
+        "C": "speech"
+      },
+      {
+        "key": "clarity_intelligibility_impression",
+        "label": "clarity_intelligibility_impression",
+        "A": "The ASR transcript is readable and punctuated, but contains fillers and a repetition. SNR is moderate (≈9.8 dB) and DNSMOS scores are modest, so intelligibility is usable but not pristine; intelligibility should not be assumed excellent from transcript presence alone.",
+        "B": null,
+        "C": "clear and intelligible"
+      },
+      {
+        "key": "background_sound_summary",
+        "label": "background_sound_summary",
+        "A": "External noise is reported only as formless: clicking and silence. No animal, channel environment, mechanical, music, or nature noise categories are reported.",
+        "B": null,
+        "C": "No discernible background sounds other than speech"
+      },
+      {
+        "key": "descriptive_phrases",
+        "label": "descriptive_phrases",
+        "A": "[\"Multi-speaker English conversation\", \"Device evaluation discussion\", \"Speech-only content with no music\", \"About 50% non-speech time and frequent short silences\", \"Clicking noise under formless background\", \"Moderate SNR and fair DNSMOS quality\"]",
+        "B": "[\"conversation between two people\", \"discussing the characteristics of a device\", \"flashy and fashionable\", \"technologically innovative\", \"features voice technology\"]",
+        "C": "[\"conversational exchange\", \"clear speech\", \"standard English\", \"filler words used\", \"two speakers\"]"
+      },
+      {
+        "key": "facets",
+        "label": "facets",
+        "A": "1. speaker_interaction — Four speaker profiles are present with speaker change and overlap flags true; four speaker changes occur across 23.7 seconds, with an overlap ratio around 0.126 and a derived change rate around 10.1 changes per minute.\n2. speech_fluency — The English transcript shows eight filler items and one marked repetition, with a filler ratio around 0.178 and terminal punctuation present, suggesting conversational rather than scripted speech.\n3. acoustic_quality — SNR is moderate at around 9.8 dB and DNSMOS overall is about 2.48, indicating noticeable background quality limitations; low RT60 and high C50 suggest limited reverberation but do not alone establish a specific room type.",
+        "B": null,
+        "C": "1. interaction_pattern — Two speakers taking turns in a conversational exchange with no overlap.\n2. delivery_style — Normal speech rate with mid-pitch and normal volume; includes filler words and repetitions.\n3. soundscape — Dominant speech content with no background music or noise.\n4. content_impression — Discussion focused on evaluating device aesthetics and technological innovation.\n5. recording_impression — High clarity and intelligibility with minimal background interference."
+      },
+      {
+        "key": "speaker_descriptions",
+        "label": "speaker_descriptions",
+        "A": "1. speaker_1 — gender=male — Speaker 1 is observed with low pitch, variable volume, and a variable speech rate estimated at 137.6 words per minute; no additional profile attributes are provided.\n2. speaker_2 — gender=male — Speaker 2 has a low-pitch profile and normal volume; speech rate information is unavailable.",
+        "B": null,
+        "C": "1. speaker_1 — First speaker initiates the conversation with a question about device features, using a normal speech rate and mid-pitch.\n2. speaker_2 — Second speaker responds affirmatively to the question, also speaking at a normal rate with mid-pitch and using filler words."
+      },
+      {
+        "key": "scene_hypotheses",
+        "label": "scene_hypotheses",
+        "A": "1. The conversation may be an informal group review or discussion in which participants evaluate a device as flashy/fashionable and technologically innovative, though the recording context and speaker roles are unknown.\n2. Frequent short pauses and reported clicking may reflect an unscripted conversational setting or recording artifacts, but the exact source cannot be identified from the available structural data.",
+        "B": null,
+        "C": "1. Possibly a product review or evaluation discussion between two individuals.\n2. Informal conversation in a quiet indoor setting, possibly a studio or office."
+      }
+    ]
+  },
+  {
+    "id": "Q20",
+    "number": 20,
+    "sample_id": "ES2012d_utterance_00018",
+    "track": "T1_natural_meeting_utterance",
+    "layer": "L2",
+    "layer_name": "L2 说话人",
+    "audio": "audio/ES2012d_utterance_00018.wav",
+    "fields": [
+      {
+        "key": "speaker.speaker_count",
+        "label": "说话人数",
+        "A": "4",
+        "B": "2",
+        "C": "2"
+      },
+      {
+        "key": "speaker.speaker_present",
+        "label": "是否有人声",
+        "A": "true",
+        "B": "true",
+        "C": "true"
+      },
+      {
+        "key": "speaker.multi_speaker",
+        "label": "是否多人",
+        "A": "true",
+        "B": "true",
+        "C": "true"
+      },
+      {
+        "key": "speaker.speaker_overlap",
+        "label": "是否重叠",
+        "A": "true",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "speaker.gender_sequence",
+        "label": "性别序列",
+        "A": "[\"male\", \"male\", \"female\", null]",
+        "B": null,
+        "C": "[null, null]"
+      }
+    ]
+  },
+  {
+    "id": "Q25",
+    "number": 25,
+    "sample_id": "ES2012d_utterance_00018",
+    "track": "T1_natural_meeting_utterance",
+    "layer": "L1",
+    "layer_name": "L1 词汇内容",
+    "audio": "audio/ES2012d_utterance_00018.wav",
+    "fields": [
+      {
+        "key": "speaker.asr_transcript",
+        "label": "转写",
+        "A": "So look at these questions. Is the device f flashy and fashionable? Well, I think most definitely. Yeah, it's a definitely a one, yeah. I think it is, yeah. So uh and also uh technologically innovative? Yes, the point is technology indeed. Yeah, yeah. Yeah.",
+        "B": null,
+        "C": "So look at these questions. Is the device flashy and fashionable? Well, I think definitely. Definitely a one. So, uh, and also, uh, technologically innovative. Yes, the voice technology, indeed."
+      },
+      {
+        "key": "language_content.language",
+        "label": "语种",
+        "A": "en",
+        "B": null,
+        "C": "en"
+      },
+      {
+        "key": "language_content.word_count",
+        "label": "词数",
+        "A": "45",
+        "B": null,
+        "C": "38"
+      },
+      {
+        "key": "language_content.repetition.has_repetition",
+        "label": "是否重复",
+        "A": "true",
+        "B": null,
+        "C": "true"
+      },
+      {
+        "key": "language_content.repetition.repetition_count",
+        "label": "重复次数",
+        "A": "1",
+        "B": null,
+        "C": "2"
+      },
+      {
+        "key": "deterministic_derived.filler_ratio",
+        "label": "filler 占比",
+        "A": "0.177778",
+        "B": null,
+        "C": "0.105263"
+      }
+    ]
+  }
+]

@@ -1,0 +1,497 @@
+{
+  "sure_tagger": {
+    "audio_quality": {
+      "dnsmos_bak": 4.007017,
+      "dnsmos_ovrl": 2.890914,
+      "dnsmos_p808": 3.380317,
+      "dnsmos_sig": 3.206643,
+      "snr_db": 35.368307
+    },
+    "basic_acoustic": {
+      "channels": 1,
+      "duration_sec": 8.64,
+      "nonspeech_ratio": 0.206019,
+      "sample_rate_hz": 16000,
+      "silence_segments": [
+        {
+          "end_sec": 1.16,
+          "start_sec": 0.0
+        },
+        {
+          "end_sec": 8.64,
+          "start_sec": 8.02
+        }
+      ]
+    },
+    "descriptive": {
+      "background_condition": "未检测到或未标注外部噪声类别与音乐；nonspeech_ratio约0.206，含开头0–1.16 s和结尾8.02–8.64 s静音；RT60约0.233 s、C50约31.25 dB，指标层面显示较低混响与较高早期能量。",
+      "background_sound_summary": "external_noise_type与noise_composition各子类均为空，music_present=false；证据只能确认未标注外部噪声类别，不能确认绝对无声。",
+      "caption": "一段约8.64秒的单人俄语语音，转写内容为警方称被告被带见法官的陈述；录音为单声道、16 kHz，信噪比约35.4 dB，首尾有短暂静音，未标注音乐或外部噪声。",
+      "clarity_intelligibility_impression": "转写文本存在且语义连贯，SNR约35.37 dB较高；但DNSMOS ovrl约2.89、sig约3.21，且word_count=0与非空转写冲突，清晰与可懂度不能只凭转写判定，整体可能可懂但需人工复核。",
+      "descriptive_phrases": [
+        "单人语音",
+        "俄语转写",
+        "约8.64秒",
+        "高信噪比",
+        "低混响指标",
+        "单声道16kHz",
+        "无音乐标签",
+        "无外部噪声类别",
+        "首尾静音",
+        "无说话人切换",
+        "无语音重叠"
+      ],
+      "dominant_content_impression": "主导可听内容为单人语音；speech_music_events仅含speech，music_present=false，非语音占比约0.206，未列出外部噪声类型。",
+      "facets": [
+        {
+          "confidence": 0.95,
+          "description": "speech_music_events仅含speech，music_present=false，speaker_present=true且speaker_count=1，主导内容为单人语音。",
+          "evidence_tags": [
+            "sound_field_scene.speech_music_events",
+            "sound_field_scene.music_present",
+            "speaker.speaker_present",
+            "speaker.speaker_count"
+          ],
+          "name": "speech_dominance"
+        },
+        {
+          "confidence": 0.9,
+          "description": "单声道、16 kHz、时长8.64秒；SNR约35.37 dB；RT60约0.233 s、C50约31.25 dB，指标层面指向低混响、较高早期能量的短录音。",
+          "evidence_tags": [
+            "basic_acoustic.channels",
+            "basic_acoustic.sample_rate_hz",
+            "basic_acoustic.duration_sec",
+            "audio_quality.snr_db",
+            "room_acoustic.rt60_sec",
+            "room_acoustic.c50_db"
+          ],
+          "name": "recording_conditions"
+        },
+        {
+          "confidence": 0.9,
+          "description": "nonspeech_ratio约0.206；silence_segments包括0–1.16 s与8.02–8.64 s；external_noise_type为空，noise_composition各子类为空，music_present=false。",
+          "evidence_tags": [
+            "basic_acoustic.nonspeech_ratio",
+            "basic_acoustic.silence_segments",
+            "sound_field_scene.external_noise_type",
+            "sound_field_scene.noise_composition",
+            "sound_field_scene.music_present"
+          ],
+          "name": "nonspeech_and_silence"
+        },
+        {
+          "confidence": 0.9,
+          "description": "ASR转写为俄语，含终结标点和2个标点；无重复、filler=0；但word_count=0与非空转写文本不一致。",
+          "evidence_tags": [
+            "speaker.asr_transcript",
+            "language_content.language",
+            "language_content.punctuation.has_terminal_punctuation",
+            "language_content.punctuation.punctuation_count",
+            "language_content.repetition.has_repetition",
+            "language_content.repetition.repetition_count",
+            "language_content.filler",
+            "language_content.word_count"
+          ],
+          "name": "transcript_language_stats"
+        },
+        {
+          "confidence": 0.9,
+          "description": "仅一个profile：speaker_1，pitch=low，speaker_volume=variable；speech_rate的value/band/unit均为null；speaker_change=false、speaker_overlap=false。",
+          "evidence_tags": [
+            "speaker.profiles",
+            "speaker.multi_speaker",
+            "speaker.speaker_change",
+            "speaker.speaker_change_count",
+            "speaker.overlap_ratio",
+            "speaker.speaker_overlap",
+            "deterministic_derived.speaker_change_rate_per_min"
+          ],
+          "name": "single_speaker_profile"
+        }
+      ],
+      "scene_hypotheses": [
+        {
+          "confidence": 0.55,
+          "description": "可能是一段单人朗读或播报式语音片段，而非多人交互；依据是单说话人、无换人、无重叠且事件仅含语音。",
+          "evidence_tags": [
+            "speaker.speaker_count",
+            "speaker.multi_speaker",
+            "speaker.speaker_change",
+            "speaker.overlap_ratio",
+            "speaker.speaker_overlap",
+            "sound_field_scene.speech_music_events"
+          ]
+        }
+      ],
+      "speaker_descriptions": [
+        {
+          "confidence": 0.85,
+          "description": "唯一出现的说话人；现有结构只有pitch=low、speaker_volume=variable，speech_rate数值/band/unit均缺失，无法据此判断性别、年龄、情绪、口音或距离。",
+          "descriptive_phrases": [
+            "音高偏低",
+            "音量可变",
+            "语速未标注"
+          ],
+          "evidence_tags": [
+            "speaker.profiles",
+            "speaker.speaker_count",
+            "speaker.speaker_present",
+            "speaker.multi_speaker",
+            "speaker.speaker_change",
+            "speaker.overlap_ratio",
+            "speaker.speaker_overlap"
+          ],
+          "gender": "male",
+          "speaker_id": "speaker_1"
+        }
+      ],
+      "topic": "警方声明：被告被带见法官",
+      "uncertainties": [
+        "word_count=0与asr_transcript非空俄语文本冲突，无法据现有字段解释。",
+        "speaker.profiles[0].speech_rate的value、band、unit均为null，语速不可判定。",
+        "room_acoustic.far_field为null，无法确认是否远场。",
+        "external_noise_type与noise_composition均为空数组，无法区分“未检出”与“未标注”。",
+        "DNSMOS ovrl约2.89与SNR约35.37 dB的取向不完全一致，清晰度印象只能谨慎给出。",
+        "无法从pitch/volume/language推断性别、年龄、情绪、口音、距离或身份。"
+      ],
+      "usability_notes": [
+        "适合单人ASR转写与语音筛选；diarization需求低；需先处理word_count=0与转写文本的冲突，并注意speaker profile的speech_rate缺失、外部噪声未标注，建议人工复核语言和内容一致性。"
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": null,
+      "speaker_change_rate_per_min": 0.0
+    },
+    "field_universe_version": "structural-v0.1",
+    "language_content": {
+      "filler": 0,
+      "language": "ru",
+      "punctuation": {
+        "has_terminal_punctuation": true,
+        "punctuation_count": 2
+      },
+      "repetition": {
+        "has_repetition": false,
+        "repetition_count": 0
+      },
+      "word_count": 0
+    },
+    "room_acoustic": {
+      "c50_db": 31.250096,
+      "far_field": null,
+      "rt60_sec": 0.233284
+    },
+    "sample_id": "fleurs_t2_0347",
+    "schema_version": "structural-prediction-v0.1",
+    "sound_field_scene": {
+      "external_noise_type": [],
+      "music_present": false,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [],
+        "mechanical": [],
+        "music": [],
+        "nature": []
+      },
+      "speech_music_events": [
+        "speech"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": "Начальник полиции Чандра Шехар Саланки заявил, что обвиняемые были представлены перед судьями с закрытыми лицами.",
+      "multi_speaker": false,
+      "overlap_ratio": 0.0,
+      "profiles": [
+        {
+          "gender": "male",
+          "pitch": "low",
+          "speaker_id": "speaker_1",
+          "speaker_volume": "variable",
+          "speech_rate": {
+            "band": null,
+            "unit": null,
+            "value": null
+          }
+        }
+      ],
+      "speaker_change": false,
+      "speaker_change_count": 0,
+      "speaker_count": 1,
+      "speaker_overlap": false,
+      "speaker_present": true
+    }
+  },
+  "captioner": {
+    "audio_quality": {
+      "dnsmos_bak": null,
+      "dnsmos_ovrl": null,
+      "dnsmos_p808": null,
+      "dnsmos_sig": null,
+      "snr_db": null
+    },
+    "basic_acoustic": {
+      "channels": null,
+      "duration_sec": null,
+      "nonspeech_ratio": null,
+      "sample_rate_hz": null,
+      "silence_segments": null
+    },
+    "descriptive": {
+      "background_condition": null,
+      "background_sound_summary": null,
+      "caption": "The caption reports that the police chief of Chandrashekar Salanki stated that the accused were presented before judges with their faces covered.",
+      "clarity_intelligibility_impression": null,
+      "descriptive_phrases": [
+        "Police chief's statement",
+        "Accused presented before judges with faces covered"
+      ],
+      "dominant_content_impression": "Speech by a police chief",
+      "facets": null,
+      "scene_hypotheses": [
+        {
+          "confidence": 0.7,
+          "description": "The recording likely captures a formal statement by a police chief.",
+          "evidence_tags": [
+            "speaker.speaker_present"
+          ]
+        }
+      ],
+      "speaker_descriptions": [
+        {
+          "confidence": 0.5,
+          "description": "No additional speaker attributes are supported by the caption.",
+          "descriptive_phrases": [],
+          "evidence_tags": [],
+          "gender": null,
+          "speaker_id": "speaker_1"
+        }
+      ],
+      "topic": "Police chief's statement about accused presented before judges",
+      "uncertainties": [
+        "Speaker count is not explicitly stated.",
+        "Language of the audio is unknown.",
+        "No acoustic or environmental details are provided."
+      ],
+      "usability_notes": [
+        "No verbatim transcript is provided; only a summary of speech content is available."
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": null,
+      "speaker_change_rate_per_min": null
+    },
+    "field_universe_version": "structural-v0.1",
+    "language_content": {
+      "filler": null,
+      "language": null,
+      "punctuation": {
+        "has_terminal_punctuation": null,
+        "punctuation_count": null
+      },
+      "repetition": {
+        "has_repetition": null,
+        "repetition_count": null
+      },
+      "word_count": null
+    },
+    "room_acoustic": {
+      "c50_db": null,
+      "far_field": null,
+      "rt60_sec": null
+    },
+    "sample_id": "fleurs_t2_0347",
+    "schema_version": "structural-prediction-v0.1",
+    "sound_field_scene": {
+      "external_noise_type": null,
+      "music_present": null,
+      "noise_composition": null,
+      "speech_music_events": null
+    },
+    "speaker": {
+      "asr_transcript": null,
+      "multi_speaker": null,
+      "overlap_ratio": null,
+      "profiles": [
+        {
+          "pitch": null,
+          "speaker_id": "speaker_1",
+          "speaker_volume": null,
+          "speech_rate": {
+            "band": null,
+            "unit": null,
+            "value": null
+          }
+        }
+      ],
+      "speaker_change": null,
+      "speaker_change_count": null,
+      "speaker_count": null,
+      "speaker_overlap": null,
+      "speaker_present": true
+    }
+  },
+  "qwen3_omni": {
+    "audio_quality": {
+      "dnsmos_bak": null,
+      "dnsmos_ovrl": null,
+      "dnsmos_p808": null,
+      "dnsmos_sig": null,
+      "snr_db": null
+    },
+    "basic_acoustic": {
+      "channels": null,
+      "duration_sec": null,
+      "nonspeech_ratio": null,
+      "sample_rate_hz": null,
+      "silence_segments": null
+    },
+    "descriptive": {
+      "background_condition": "安静，无明显干扰",
+      "background_sound_summary": "无背景音",
+      "caption": "一名说话者用俄语陈述一段关于警察局长和被告被提交给法官的声明。",
+      "clarity_intelligibility_impression": "清晰可懂",
+      "descriptive_phrases": [
+        "单人发言",
+        "语速正常",
+        "俄语发言"
+      ],
+      "dominant_content_impression": "speech",
+      "facets": [
+        {
+          "confidence": 1.0,
+          "description": "单人陈述",
+          "evidence_tags": [
+            "speaker.speaker_count"
+          ],
+          "name": "interaction_pattern"
+        },
+        {
+          "confidence": 0.95,
+          "description": "语速正常，无填充词，无重复",
+          "evidence_tags": [
+            "speaker.profiles",
+            "language_content.filler",
+            "language_content.repetition.has_repetition"
+          ],
+          "name": "delivery_style"
+        },
+        {
+          "confidence": 1.0,
+          "description": "安静，无背景音",
+          "evidence_tags": [
+            "sound_field_scene.music_present",
+            "sound_field_scene.noise_composition"
+          ],
+          "name": "soundscape"
+        },
+        {
+          "confidence": 0.9,
+          "description": "司法相关陈述",
+          "evidence_tags": [
+            "speaker.asr_transcript"
+          ],
+          "name": "content_impression"
+        },
+        {
+          "confidence": 0.4,
+          "description": "清晰可懂，无明显干扰",
+          "evidence_tags": [],
+          "name": "recording_impression"
+        }
+      ],
+      "scene_hypotheses": [
+        {
+          "confidence": 0.7,
+          "description": "可能为新闻播报或官方声明",
+          "evidence_tags": [
+            "speaker.asr_transcript"
+          ]
+        }
+      ],
+      "speaker_descriptions": [
+        {
+          "confidence": 0.5,
+          "description": "说话者用俄语陈述司法相关声明，语速正常，音量稳定，无填充词或重复。",
+          "descriptive_phrases": [
+            "单人发言",
+            "语速正常",
+            "俄语发言"
+          ],
+          "evidence_tags": [
+            "speaker.asr_transcript",
+            "speaker.speaker_count",
+            "language_content.language"
+          ],
+          "gender": null,
+          "speaker_id": "speaker_1"
+        }
+      ],
+      "topic": "司法程序与被告出席情况",
+      "uncertainties": [],
+      "usability_notes": []
+    },
+    "deterministic_derived": {
+      "filler_ratio": 0.0,
+      "speaker_change_rate_per_min": null
+    },
+    "field_universe_version": "structural-v0.1",
+    "language_content": {
+      "filler": 0,
+      "language": "ru",
+      "punctuation": {
+        "has_terminal_punctuation": true,
+        "punctuation_count": 2
+      },
+      "repetition": {
+        "has_repetition": false,
+        "repetition_count": 0
+      },
+      "word_count": 15
+    },
+    "room_acoustic": {
+      "c50_db": null,
+      "far_field": null,
+      "rt60_sec": null
+    },
+    "sample_id": "fleurs_t2_0347",
+    "schema_version": "structural-prediction-v0.1",
+    "sound_field_scene": {
+      "external_noise_type": null,
+      "music_present": false,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [],
+        "mechanical": [],
+        "music": [],
+        "nature": []
+      },
+      "speech_music_events": [
+        "speech"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": "Начальник полиции Чандра Шехар Саланки заявил, что обвиняемые были представлены перед судьями с закрытыми лицами.",
+      "multi_speaker": false,
+      "overlap_ratio": 0,
+      "profiles": [
+        {
+          "pitch": "mid",
+          "speaker_id": "speaker_1",
+          "speaker_volume": "normal",
+          "speech_rate": {
+            "band": "normal",
+            "unit": null,
+            "value": null
+          }
+        }
+      ],
+      "speaker_change": false,
+      "speaker_change_count": 0,
+      "speaker_count": 1,
+      "speaker_overlap": false,
+      "speaker_present": true
+    }
+  }
+}

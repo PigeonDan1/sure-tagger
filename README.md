@@ -2,13 +2,13 @@
 
 <h1 align="center">SURE-Tagger</h1>
 
-<h2 align="center">Help agents understand speech</h2>
+<h2 align="center">Help agents truly understand speech</h2>
 
 <p align="center"><strong>From audio evidence to structured tags and compositional evaluation</strong></p>
 
 <p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
-<p align="center"><a href="#motivation">Motivation</a> · <a href="#demo">Demo</a> · <a href="#tag-bench">Tag-Bench</a> · <a href="#usage">Usage</a> · <a href="#license">License</a></p>
+<p align="center"><a href="#motivation">Motivation</a> · <a href="#demo">Demo</a> · <a href="#how-it-works">How it works</a> · <a href="#tag-bench">Tag-Bench</a> · <a href="#paper-results">Results</a> · <a href="#usage">Usage</a> · <a href="#license">License</a></p>
 
 SURE-Tagger turns evidence from specialized speech models into queryable tags and descriptions. It keeps `null` when evidence is insufficient. The research explores how these representations support evaluation across datasets and targeted data selection; this repository provides tagging, description, and scoring entry points.
 
@@ -22,35 +22,55 @@ SURE-Tagger turns evidence from specialized speech models into queryable tags an
 
 A free-form caption can summarize a recording, but it cannot tell whether an omitted property is absent or simply unsupported by evidence. Explicit fields, descriptions, and `null` make speech conditions easier to query and evaluate individually.
 
-<p align="center"><img src="./assets/readme/paper-figure-1.png" width="100%" alt="Paper Figure 1: free-form captions omit properties, while structured speech representations distinguish values from unknowns"></p>
+<p align="center"><img src="./assets/readme/paper-figure-1.png" width="100%" alt="Free-form captions omit attributes; structured tags distinguish known values from missing evidence"></p>
 
-<p align="center"><sub>Paper Figure 1. The diagram shows selected concepts; the actual CLI fields appear in the demo below.</sub></p>
+<p align="center"><sub>Structured tags make missing evidence explicit.</sub></p>
 
 <a id="demo"></a>
 
 ## Demo · Audio to tags
 
-Given audio and a JSONL manifest, the tagger writes tags-only JSONL. This excerpt comes from the [tag documentation](sure-tagger-main/docs/tags-and-methods.md#5-输出-json-示例):
+Hear this [AMI meeting clip](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav), then follow its SURE-Tagger labels from audio to structured evidence.
+
+<p align="center"><a href="./assets/readme/demo-tag-tree-en.svg"><img src="./assets/readme/demo-tag-tree-en.svg" width="760" alt="An AMI meeting clip is tagged as 23.72 seconds of English speech with four speakers and overlapping turns"></a></p>
+
+<details>
+<summary>View this clip's tag excerpt</summary>
+
+Values from the [complete SURE-Tagger prediction](assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json):
 
 ```json
 {
-  "basic_acoustic": {"duration_sec": 15.963062, "nonspeech_ratio": 0.674248},
-  "sound_field_scene": {"speech_music_events": ["singing", "music"], "music_present": true},
-  "speaker": {"speaker_count": null, "asr_transcript": "Good morning. Let us begin the meeting."},
-  "language_content": {"language": "en", "word_count": 12}
+  "basic_acoustic": {"duration_sec": 23.72, "nonspeech_ratio": 0.500422},
+  "sound_field_scene": {"speech_music_events": ["speech"], "music_present": false},
+  "speaker": {"speaker_count": 4, "speaker_overlap": true},
+  "language_content": {"language": "en", "word_count": 45}
 }
 ```
 
-Two attributed Tag-Bench clips let you hear the input and inspect the same-audio comparison across SURE-Tagger, Captioner, and Qwen3-Omni:
+</details>
 
-| Clip | What to listen for | Files |
+Explore five Tag-Bench clips with complete same-audio predictions from SURE-Tagger, Captioner, and Qwen3-Omni:
+
+| Clip | Listen for | Files |
 | --- | --- | --- |
-| Mandarin · FLEURS | Single-speaker reading; quiet background | [Listen / download](assets/readme/tagbench/audio/fleurs_t2_0055.wav) |
-| English · LibriSpeech | Single-speaker reading; no labeled external noise | [Listen / download](assets/readme/tagbench/audio/librispeech_t2_0048.wav) |
+| AMI · `ES2012d` | Four speakers and overlap | [Listen](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav) · [Full predictions](assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json) |
+| AMI · `EN2001e` | Two speakers and brief overlap | [Listen](assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav) · [Full predictions](assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json) |
+| FLEURS · Russian | Language and speech content | [Listen](assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav) · [Full predictions](assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json) |
+| DESED | Speech with a mechanical event | [Listen](assets/readme/tagbench/samples/t3_desed_0112/audio.wav) · [Full predictions](assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json) |
+| FSD50K | Music event missed by the tagger | [Listen](assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav) · [Full predictions](assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json) |
 
-[Compare the three descriptions](assets/readme/tagbench/COMPARISON.md) · [Machine-readable labels](assets/readme/tagbench/labels.json) · [Audio attribution](assets/readme/tagbench/ATTRIBUTION.md)
+[All five samples and references](assets/readme/tagbench/README.md) · [Same-audio comparison](assets/readme/tagbench/COMPARISON.md) · [Audio attribution](assets/readme/tagbench/ATTRIBUTION.md)
 
 For the complete fields and input format, see the [tag guide](sure-tagger-main/docs/tags-and-methods.md). The [interactive demo](sure-tagger-main/demo/index.html) needs your own audio and `demo/data.js`; [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) prepares that data.
+
+<a id="how-it-works"></a>
+
+## How it works
+
+Specialized observers collect acoustic, temporal, lexical, and speaker evidence. SURE-Tagger reconciles it into explicit fields and descriptions, then uses those fields to form comparable subsets across datasets.
+
+<p align="center"><a href="./assets/readme/how-it-works.png"><img src="./assets/readme/how-it-works.png" width="100%" alt="Specialized speech observers feed an evidence record, which is reconciled into structured tags for compositional evaluation"></a></p>
 
 <a id="tag-bench"></a>
 
@@ -66,9 +86,19 @@ Tag-Bench combines selected recordings from existing datasets with controlled sy
 | Existing data · T3 | DESED, FSD50K | 150 |
 | **Total** | **Synthesis + existing data** | **1,150** |
 
-<p align="center"><img src="./assets/readme/tagbench-workflow.png" width="100%" alt="Paper Figure 3: select attribute combinations, generate and validate speech, then combine it with existing recordings for Tag-Bench"></p>
+<p align="center"><img src="./assets/readme/tagbench-workflow.png" width="100%" alt="Attribute combinations guide controlled speech generation and validation alongside selected recordings from existing datasets"></p>
 
-<p align="center"><sub>Paper Figure 3. The repository's full evaluation launcher currently uses the existing-data subset; see its <a href="compare/docs/benchmark-650-dataset-composition.md">composition</a> and <a href="compare/docs/benchmark-v1-29-metrics.md">scoring rules</a>.</sub></p>
+<p align="center"><sub>Controlled synthesis and existing recordings together form Tag-Bench.</sub></p>
+
+The repository's full evaluation launcher currently uses the existing-data subset; see its [composition](compare/docs/benchmark-650-dataset-composition.md) and [scoring rules](compare/docs/benchmark-v1-29-metrics.md).
+
+<a id="paper-results"></a>
+
+## Paper results
+
+The radar plots compare attribute-level relative performance on existing and synthetic recordings. Each axis is normalized to its best method within that source; SURE-Tagger performs strongest across most speaker, temporal, and acoustic attributes.
+
+<p align="center"><a href="./assets/readme/paper-results-rps.png"><img src="./assets/readme/paper-results-rps.png" width="100%" alt="Relative performance scores across speech attributes for SURE-Tagger and two Qwen3-Omni baselines on existing and synthetic recordings"></a></p>
 
 <a id="usage"></a>
 

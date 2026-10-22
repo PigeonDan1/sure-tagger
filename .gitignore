@@ -32,7 +32,7 @@
 *.ogg
 *.mp4
 !/assets/readme/video/*.mp4
-!/assets/readme/tagbench/audio/*.wav
+!/assets/readme/tagbench/samples/*/audio.wav
 
 # Clustering input snapshots and generated artifacts.
 /clustering/data/

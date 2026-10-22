@@ -1,0 +1,328 @@
+{
+  "sure_tagger": {
+    "audio_quality": {
+      "dnsmos_bak": 1.11247,
+      "dnsmos_ovrl": 1.101082,
+      "dnsmos_p808": 2.698291,
+      "dnsmos_sig": 1.22437,
+      "snr_db": 1.550942
+    },
+    "basic_acoustic": {
+      "channels": 1,
+      "duration_sec": 1.5185,
+      "nonspeech_ratio": 1.0,
+      "sample_rate_hz": 16000,
+      "silence_segments": [
+        {
+          "end_sec": 1.5185,
+          "start_sec": 0.0
+        }
+      ]
+    },
+    "descriptive": {
+      "background_condition": "整段为非语音区间：nonspeech_ratio 为 1.0，唯一的静音段覆盖 0–1.5185 秒；snr_db 约 1.55 dB，DNSMOS sig/bak/ovrl 约 1.10–1.22，提示信号质量较差。外部噪声类型仅标注为 music，但 noise_composition 各子类为空且 music_present 为 false，无法确认实际背景声源；rt60 约 0.35 秒、c50 约 30.4 dB 虽已知，但不足以据此判定具体房间类型。",
+      "background_sound_summary": "external_noise_type 只给出 music 一个标签，但 music_present 为 false、speech_music_events 为空，noise_composition 的动物、机械、音乐、自然等各类别也均为空数组，因此没有可确认的背景声源成分；该标签与事件观测不一致，应保留为不确定。",
+      "caption": "约1.5秒的单声道片段，整段被单一静音区间覆盖，未检测到说话人，也未检测到语音或音乐事件。信噪比与 DNSMOS 等信号质量指标均处于偏低水平，外部噪声类型被标注为 music，但缺乏相应事件与成分支撑。",
+      "clarity_intelligibility_impression": "样本未检测到说话人、无语音或音乐事件且转写为空，因此无法评估语音清晰度或可懂度；已知的 snr_db 约 1.55 dB 与较低的 DNSMOS 数值只能说明该片段整体信号质量指标不佳，不能等同于对语音可懂度的判断。",
+      "descriptive_phrases": [
+        "整段静音或非语音",
+        "未检测到语音或音乐事件",
+        "无说话人在场",
+        "信号质量指标偏低",
+        "外部噪声标签与事件不一致"
+      ],
+      "dominant_content_impression": "主导可听内容为非语音/静音区间：speech_music_events 为空、music_present 为 false、speaker_present 为 false，且 nonspeech_ratio 为 1.0，样本中没有可确认的语音或音乐内容。",
+      "facets": [
+        {
+          "confidence": 0.9,
+          "description": "全段被单一静音区间覆盖，非语音比例为 1.0，且无语音/音乐事件、无说话人，属于无可用语音内容的片段。",
+          "evidence_tags": [
+            "basic_acoustic.nonspeech_ratio",
+            "basic_acoustic.silence_segments",
+            "basic_acoustic.duration_sec",
+            "sound_field_scene.speech_music_events",
+            "sound_field_scene.music_present",
+            "speaker.speaker_present"
+          ],
+          "name": "content_absence"
+        },
+        {
+          "confidence": 0.8,
+          "description": "snr_db 约 1.55 dB，DNSMOS sig/bak/ovrl 约 1.10–1.22、p808 约 2.70，信号质量指标整体偏低。",
+          "evidence_tags": [
+            "audio_quality.snr_db",
+            "audio_quality.dnsmos_sig",
+            "audio_quality.dnsmos_bak",
+            "audio_quality.dnsmos_ovrl",
+            "audio_quality.dnsmos_p808"
+          ],
+          "name": "signal_quality"
+        },
+        {
+          "confidence": 0.7,
+          "description": "external_noise_type 含 music，但 music_present 为 false、noise_composition 音乐类别为空且 speech_music_events 为空，噪声标签与事件观测不一致。",
+          "evidence_tags": [
+            "sound_field_scene.external_noise_type",
+            "sound_field_scene.music_present",
+            "sound_field_scene.noise_composition",
+            "sound_field_scene.speech_music_events"
+          ],
+          "name": "noise_label_consistency"
+        },
+        {
+          "confidence": 0.6,
+          "description": "rt60_sec 约 0.348 秒、c50_db 约 30.44 dB 为已知连续声学指标，但远场标识缺失，不足以据此推断房间类型或录音场景。",
+          "evidence_tags": [
+            "room_acoustic.rt60_sec",
+            "room_acoustic.c50_db"
+          ],
+          "name": "room_acoustics"
+        }
+      ],
+      "scene_hypotheses": [
+        {
+          "confidence": 0.6,
+          "description": "该片段可能是无人声的间隙或空录片段，例如录音起止前后的静音区间。",
+          "evidence_tags": [
+            "basic_acoustic.nonspeech_ratio",
+            "basic_acoustic.silence_segments",
+            "speaker.speaker_present",
+            "speaker.speaker_count"
+          ]
+        },
+        {
+          "confidence": 0.5,
+          "description": "music 噪声标签可能来自片段之外的相邻时段或标注偏差，而非本片段内实际可听到的内容。",
+          "evidence_tags": [
+            "sound_field_scene.external_noise_type",
+            "sound_field_scene.music_present",
+            "sound_field_scene.speech_music_events",
+            "sound_field_scene.noise_composition"
+          ]
+        }
+      ],
+      "speaker_descriptions": null,
+      "topic": null,
+      "uncertainties": [
+        "speaker.asr_transcript 为 null，word_count、标点与重复统计也均为 null，无法进行文本层面判断",
+        "speaker.profiles 为空，没有任何说话人属性可供描述",
+        "speaker.overlap_ratio 为 null，无法量化重叠程度",
+        "room_acoustic.far_field 为 null，远场/近场条件未知",
+        "language_content.language 标注为 pt，但无任何转写文本支撑，语言无法核验",
+        "sound_field_scene.external_noise_type 标注 music，与 music_present=false、noise_composition 音乐类别为空及 speech_music_events 为空相冲突",
+        "speech_music_events 为空，无法获知任何事件的时间分布"
+      ],
+      "usability_notes": [
+        "该片段无说话人且无语音/音乐事件，不适合用于 ASR 或说话人分离的训练与评测；如需做标注一致性核查，可将 external_noise_type 为 music 而事件与成分均为空这一点作为可疑样本复核。"
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": null,
+      "speaker_change_rate_per_min": 0.0
+    },
+    "field_universe_version": "structural-v0.1",
+    "language_content": {
+      "filler": null,
+      "language": "pt",
+      "punctuation": null,
+      "repetition": null,
+      "word_count": null
+    },
+    "room_acoustic": {
+      "c50_db": 30.442523,
+      "far_field": null,
+      "rt60_sec": 0.34796
+    },
+    "sample_id": "t3_fsd50k_0045",
+    "schema_version": "structural-prediction-v0.1",
+    "sound_field_scene": {
+      "external_noise_type": [
+        "music"
+      ],
+      "music_present": false,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [],
+        "mechanical": [],
+        "music": [],
+        "nature": []
+      },
+      "speech_music_events": []
+    },
+    "speaker": {
+      "asr_transcript": null,
+      "multi_speaker": false,
+      "overlap_ratio": null,
+      "profiles": [],
+      "speaker_change": false,
+      "speaker_change_count": 0,
+      "speaker_count": 0,
+      "speaker_overlap": false,
+      "speaker_present": false
+    }
+  },
+  "captioner": {
+    "audio_quality": {
+      "dnsmos_bak": null,
+      "dnsmos_ovrl": null,
+      "dnsmos_p808": null,
+      "dnsmos_sig": null,
+      "snr_db": null
+    },
+    "basic_acoustic": {
+      "channels": null,
+      "duration_sec": null,
+      "nonspeech_ratio": null,
+      "sample_rate_hz": null,
+      "silence_segments": null
+    },
+    "descriptive": {
+      "background_condition": null,
+      "background_sound_summary": "The text describes the target sound as a loud, sharp popping sound likely produced by ignition of a small charge in a cap gun or airsoft gun; no separate background sound sources are explicitly identified.",
+      "caption": "The input describes a sound that is likely a loud, sharp popping sound produced by a cap gun or airsoft gun, often used for recreational shooting. It explains the source as ignition of a small charge and asks for further context if the guess is incorrect.",
+      "clarity_intelligibility_impression": null,
+      "descriptive_phrases": [
+        "cap gun",
+        "airsoft gun",
+        "loud sharp popping sound",
+        "small charge ignition",
+        "recreational shooting"
+      ],
+      "dominant_content_impression": "A loud, sharp popping sound, likely from a cap gun or airsoft gun.",
+      "facets": [
+        {
+          "confidence": 0.6,
+          "description": "The sound is likely produced by a cap gun or airsoft gun used for recreational shooting.",
+          "evidence_tags": [],
+          "name": "sound_source_hypothesis"
+        }
+      ],
+      "scene_hypotheses": [
+        {
+          "confidence": 0.6,
+          "description": "The sound may be a cap gun or airsoft gun fired recreationally.",
+          "evidence_tags": []
+        }
+      ],
+      "speaker_descriptions": null,
+      "topic": "sound identification (possible cap gun or airsoft gun)",
+      "uncertainties": [
+        "The text uses 'likely', so the cap gun/airsoft gun source is not confirmed.",
+        "No duration, sample rate, channel count, SNR, room acoustics, speech/music presence, or speaker details are specified.",
+        "The input appears to be a response seeking clarification rather than a direct audio caption."
+      ],
+      "usability_notes": [
+        "No exact acoustic measurements are provided; the text is a source hypothesis. Downstream ASR/audio analysis should request a raw audio sample or structured metadata."
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": null,
+      "speaker_change_rate_per_min": null
+    },
+    "field_universe_version": "structural-v0.1",
+    "language_content": {
+      "filler": null,
+      "language": null,
+      "punctuation": {
+        "has_terminal_punctuation": null,
+        "punctuation_count": null
+      },
+      "repetition": {
+        "has_repetition": null,
+        "repetition_count": null
+      },
+      "word_count": null
+    },
+    "room_acoustic": {
+      "c50_db": null,
+      "far_field": null,
+      "rt60_sec": null
+    },
+    "sample_id": "t3_fsd50k_0045",
+    "schema_version": "structural-prediction-v0.1",
+    "sound_field_scene": {
+      "external_noise_type": null,
+      "music_present": null,
+      "noise_composition": null,
+      "speech_music_events": null
+    },
+    "speaker": {
+      "asr_transcript": null,
+      "multi_speaker": null,
+      "overlap_ratio": null,
+      "profiles": null,
+      "speaker_change": null,
+      "speaker_change_count": null,
+      "speaker_count": null,
+      "speaker_overlap": null,
+      "speaker_present": null
+    }
+  },
+  "qwen3_omni": {
+    "audio_quality": {
+      "dnsmos_bak": null,
+      "dnsmos_ovrl": null,
+      "dnsmos_p808": null,
+      "dnsmos_sig": null,
+      "snr_db": null
+    },
+    "basic_acoustic": {
+      "channels": null,
+      "duration_sec": null,
+      "nonspeech_ratio": null,
+      "sample_rate_hz": null,
+      "silence_segments": null
+    },
+    "descriptive": {
+      "background_condition": null,
+      "background_sound_summary": null,
+      "caption": null,
+      "clarity_intelligibility_impression": null,
+      "descriptive_phrases": [],
+      "dominant_content_impression": null,
+      "facets": [],
+      "scene_hypotheses": [],
+      "speaker_descriptions": [],
+      "topic": null,
+      "uncertainties": [],
+      "usability_notes": []
+    },
+    "deterministic_derived": {
+      "filler_ratio": null,
+      "speaker_change_rate_per_min": null
+    },
+    "field_universe_version": "structural-v0.1",
+    "language_content": {
+      "filler": null,
+      "language": null,
+      "punctuation": null,
+      "repetition": null,
+      "word_count": null
+    },
+    "room_acoustic": {
+      "c50_db": null,
+      "far_field": null,
+      "rt60_sec": null
+    },
+    "sample_id": "t3_fsd50k_0045",
+    "schema_version": "structural-prediction-v0.1",
+    "sound_field_scene": {
+      "external_noise_type": null,
+      "music_present": null,
+      "noise_composition": null,
+      "speech_music_events": null
+    },
+    "speaker": {
+      "asr_transcript": null,
+      "multi_speaker": null,
+      "overlap_ratio": null,
+      "profiles": null,
+      "speaker_change": null,
+      "speaker_change_count": null,
+      "speaker_count": null,
+      "speaker_overlap": null,
+      "speaker_present": null
+    }
+  }
+}
