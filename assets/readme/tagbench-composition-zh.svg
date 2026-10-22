@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="485" viewBox="0 0 1200 485" role="img" aria-labelledby="title desc">
+  <title id="title">Tag-Bench 样本构成</title>
+  <desc id="desc">共 1,150 条：受控合成 500 条，AMI 会议 350 条，FLEURS 与 LibriSpeech 150 条，DESED 与 FSD50K 150 条。条形长度以最大组为基准。</desc>
+  <rect x="1" y="1" width="1198" height="483" rx="22" fill="#FFFFFF" stroke="#DCE7E4" stroke-width="2"/>
+  <text x="40" y="68" fill="#18302A" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="42" font-weight="700">Tag-Bench</text>
+  <text x="1160" y="68" text-anchor="end" fill="#18302A" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="42" font-weight="700">共 1,150 条</text>
+  <path d="M40 95h1120" stroke="#DCE7E4" stroke-width="2"/>
+
+  <text x="40" y="150" fill="#18302A" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="32">受控合成 · Agent 生成与核验</text>
+  <text x="1160" y="150" text-anchor="end" fill="#0C806F" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="38" font-weight="700">500</text>
+  <rect x="40" y="169" width="1120" height="18" rx="9" fill="#EDF4F1"/>
+  <rect x="40" y="169" width="1120" height="18" rx="9" fill="#1A9F7D"/>
+
+  <text x="40" y="235" fill="#18302A" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="32">T1 · AMI 会议</text>
+  <text x="1160" y="235" text-anchor="end" fill="#2878A3" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="38" font-weight="700">350</text>
+  <rect x="40" y="254" width="1120" height="18" rx="9" fill="#EDF4F1"/>
+  <rect x="40" y="254" width="784" height="18" rx="9" fill="#3A93C6"/>
+
+  <text x="40" y="320" fill="#18302A" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="32">T2 · FLEURS + LibriSpeech</text>
+  <text x="1160" y="320" text-anchor="end" fill="#6A52B3" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="38" font-weight="700">150</text>
+  <rect x="40" y="339" width="1120" height="18" rx="9" fill="#EDF4F1"/>
+  <rect x="40" y="339" width="336" height="18" rx="9" fill="#8064C8"/>
+
+  <text x="40" y="405" fill="#18302A" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="32">T3 · DESED + FSD50K</text>
+  <text x="1160" y="405" text-anchor="end" fill="#A86A27" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="38" font-weight="700">150</text>
+  <rect x="40" y="424" width="1120" height="18" rx="9" fill="#EDF4F1"/>
+  <rect x="40" y="424" width="336" height="18" rx="9" fill="#D28B44"/>
+</svg>

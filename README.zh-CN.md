@@ -1,4 +1,4 @@
-<p align="center"><img src="./assets/readme/mark.svg" width="76" alt="SURE-Tagger 图标：波形连接结构化标签"></p>
+<p align="center"><img src="./assets/readme/three-layer-audio-metadata-tag.png" width="112" alt="SURE-Tagger 图标：三层音频元数据标签"></p>
 
 <h1 align="center">SURE-Tagger</h1>
 
@@ -50,13 +50,11 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 五段 Tag-Bench 音频均提供 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的完整预测：
 
-| 样本 | 试听重点 | 资源 |
-| --- | --- | --- |
-| AMI · `ES2012d` | 四人对话与重叠语音 | [试听](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav) · [完整预测](assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json) |
-| AMI · `EN2001e` | 两人对话与短暂重叠 | [试听](assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav) · [完整预测](assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json) |
-| FLEURS · 俄语 | 语种与语音内容 | [试听](assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav) · [完整预测](assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json) |
-| DESED | 语音与机械事件 | [试听](assets/readme/tagbench/samples/t3_desed_0112/audio.wav) · [完整预测](assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json) |
-| FSD50K | 音乐事件被打标器漏检 | [试听](assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav) · [完整预测](assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json) |
+- **AMI · `ES2012d`** — 四人对话与重叠语音 · [试听](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav) · [完整预测](assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json)
+- **AMI · `EN2001e`** — 两人对话与短暂重叠 · [试听](assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav) · [完整预测](assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json)
+- **FLEURS · 俄语** — 语种与语音内容 · [试听](assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav) · [完整预测](assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json)
+- **DESED** — 语音与机械事件 · [试听](assets/readme/tagbench/samples/t3_desed_0112/audio.wav) · [完整预测](assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json)
+- **FSD50K** — 音乐事件被打标器漏检 · [试听](assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav) · [完整预测](assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json)
 
 [五条样本与参考信息](assets/readme/tagbench/README.md) · [同音频输出对照](assets/readme/tagbench/COMPARISON.md) · [音频来源与归属](assets/readme/tagbench/ATTRIBUTION.md)
 
@@ -76,13 +74,7 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 Tag-Bench 将受控合成场景与现有数据集样本结合。合成部分从属性组合选定场景，由 agent 调度语音生成、时间安排和声学处理，再验证生成结果。
 
-| 构成 | 来源或生成方式 | 样本数 |
-| --- | --- | ---: |
-| 受控合成 | Agent 调度工具生成并核验 | 500 |
-| 现有数据集 · T1 | AMI 会议 | 350 |
-| 现有数据集 · T2 | FLEURS、LibriSpeech | 150 |
-| 现有数据集 · T3 | DESED、FSD50K | 150 |
-| **合计** | **合成 + 现有数据集** | **1,150** |
+<p align="center"><img src="./assets/readme/tagbench-composition-zh.svg" width="100%" alt="Tag-Bench 共 1,150 条：受控合成 500 条，AMI 会议 350 条，FLEURS 与 LibriSpeech 150 条，DESED 与 FSD50K 150 条"></p>
 
 <p align="center"><img src="./assets/readme/tagbench-workflow.png" width="100%" alt="属性组合引导受控语音生成和核验，并与现有数据集录音共同组成 Tag-Bench"></p>
 
@@ -130,10 +122,8 @@ bash compare/eval/run_sure_tagger_pipeline_1.sh
 # 八卡：bash compare/eval/run_sure_tagger_pipeline_8.sh
 ```
 
-| 评测范围 | 样本数 | 入口设置 |
-| --- | ---: | --- |
-| 现有数据集结构性 benchmark | 650 | 默认输入 |
-| 原冻结描述性 GT | 648 | `ALLOW_FROZEN_GT_EXCLUSIONS=1`，仅允许既定缺失样本 |
+- **650 条：** 现有数据集结构性 benchmark，使用默认输入。
+- **648 条：** 原冻结描述性 GT；设置 `ALLOW_FROZEN_GT_EXCLUSIONS=1`，仅允许既定缺失样本。
 
 单卡与八卡运行请使用各自的 `OUTPUT_ROOT` / `STAGE_ROOT`。
 
