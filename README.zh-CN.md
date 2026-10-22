@@ -2,9 +2,7 @@
 
 <h1 align="center">SURE-Tagger</h1>
 
-<h2 align="center">让 agent 真正听懂语音</h2>
-
-<p align="center"><strong>从语音证据到结构化标签与可组合评测</strong></p>
+<h2 align="center">一种语音的半结构化表征，让智能体真正听懂并分析声音</h2>
 
 <p align="center"><a href="README.md">English</a> · <strong>简体中文</strong></p>
 
@@ -12,9 +10,9 @@
 
 SURE-Tagger 将专项模型的语音证据整理为可查询的标签与描述，并在证据不足时保留 `null`。论文研究这些表示如何支持跨数据集的组合评测与目标数据选择；本仓库提供打标、描述和评分入口。
 
-<p align="center"><a href="./assets/readme/video/suretagger-intro-zh.mp4"><img src="./assets/readme/video/suretagger-intro-zh-poster.jpg" width="100%" alt="点击观看 SURE-Tagger 中文介绍视频"></a></p>
+<p align="center"><video src="https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f" controls playsinline preload="metadata" poster="./assets/readme/video/suretagger-intro-zh-poster.jpg" width="100%" aria-label="SURE-Tagger 中文介绍视频">SURE-Tagger 中文介绍视频</video></p>
 
-<p align="center"><sub><a href="./assets/readme/video/suretagger-intro-zh.mp4">观看中文介绍视频</a></sub></p>
+<p align="center"><sub>SURE-Tagger 中文介绍视频</sub></p>
 
 <a id="motivation"></a>
 

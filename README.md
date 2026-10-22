@@ -2,9 +2,7 @@
 
 <h1 align="center">SURE-Tagger</h1>
 
-<h2 align="center">Help agents truly understand speech</h2>
-
-<p align="center"><strong>From audio evidence to structured tags and compositional evaluation</strong></p>
+<h2 align="center">A semi-structured representation of speech that lets agents truly understand and analyze sound</h2>
 
 <p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
@@ -12,9 +10,9 @@
 
 SURE-Tagger turns evidence from specialized speech models into queryable tags and descriptions. It keeps `null` when evidence is insufficient. The research explores how these representations support evaluation across datasets and targeted data selection; this repository provides tagging, description, and scoring entry points.
 
-<p align="center"><a href="./assets/readme/video/suretagger-intro-zh.mp4"><img src="./assets/readme/video/suretagger-intro-zh-poster.jpg" width="100%" alt="Watch the SURE-Tagger introduction video in Chinese"></a></p>
+<p align="center"><video src="https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f" controls playsinline preload="metadata" poster="./assets/readme/video/suretagger-intro-zh-poster.jpg" width="100%" aria-label="SURE-Tagger introduction video with Chinese narration">SURE-Tagger introduction video</video></p>
 
-<p align="center"><sub><a href="./assets/readme/video/suretagger-intro-zh.mp4">Watch the introduction video</a> · Chinese narration</sub></p>
+<p align="center"><sub>Introduction video · Chinese narration</sub></p>
 
 <a id="motivation"></a>
 
