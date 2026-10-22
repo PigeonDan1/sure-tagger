@@ -1,0 +1,542 @@
+{
+  "sure_tagger": {
+    "audio_quality": {
+      "dnsmos_bak": 3.495056,
+      "dnsmos_ovrl": 2.483595,
+      "dnsmos_p808": 3.223372,
+      "dnsmos_sig": 3.088907,
+      "snr_db": 9.773655
+    },
+    "basic_acoustic": {
+      "channels": 1,
+      "duration_sec": 23.72,
+      "nonspeech_ratio": 0.500422,
+      "sample_rate_hz": 16000,
+      "silence_segments": [
+        {
+          "end_sec": 4.29,
+          "start_sec": 0.0
+        },
+        {
+          "end_sec": 6.52,
+          "start_sec": 5.5
+        },
+        {
+          "end_sec": 7.78,
+          "start_sec": 7.55
+        },
+        {
+          "end_sec": 10.36,
+          "start_sec": 9.05
+        },
+        {
+          "end_sec": 12.82,
+          "start_sec": 12.79
+        },
+        {
+          "end_sec": 15.0,
+          "start_sec": 13.28
+        },
+        {
+          "end_sec": 16.21,
+          "start_sec": 15.75
+        },
+        {
+          "end_sec": 17.9,
+          "start_sec": 17.29
+        },
+        {
+          "end_sec": 19.65,
+          "start_sec": 19.17
+        },
+        {
+          "end_sec": 23.72,
+          "start_sec": 22.0
+        }
+      ]
+    },
+    "descriptive": {
+      "background_condition": "Mono 16 kHz recording with about 50% non-speech time and many short silence segments; external noise is limited to formless clicking and silence, with no music detected. Room acoustic estimates show low RT60 (≈0.056 s) and high C50 (≈39.5 dB), but far-field status is unknown.",
+      "background_sound_summary": "External noise is reported only as formless: clicking and silence. No animal, channel environment, mechanical, music, or nature noise categories are reported.",
+      "caption": "A short multi-speaker English conversation evaluates a device as flashy/fashionable and technologically innovative. Speech is the only detected content type, with frequent short pauses, some overlapping turns, and clicking noise in a mono 16 kHz recording.",
+      "clarity_intelligibility_impression": "The ASR transcript is readable and punctuated, but contains fillers and a repetition. SNR is moderate (≈9.8 dB) and DNSMOS scores are modest, so intelligibility is usable but not pristine; intelligibility should not be assumed excellent from transcript presence alone.",
+      "descriptive_phrases": [
+        "Multi-speaker English conversation",
+        "Device evaluation discussion",
+        "Speech-only content with no music",
+        "About 50% non-speech time and frequent short silences",
+        "Clicking noise under formless background",
+        "Moderate SNR and fair DNSMOS quality"
+      ],
+      "dominant_content_impression": "Speech is the only detected event type. The recording contains multiple speakers interacting in short turns with declared overlap, while roughly half the duration is non-speech/silence and some clicking noise is present.",
+      "facets": [
+        {
+          "confidence": 0.88,
+          "description": "Four speaker profiles are present with speaker change and overlap flags true; four speaker changes occur across 23.7 seconds, with an overlap ratio around 0.126 and a derived change rate around 10.1 changes per minute.",
+          "evidence_tags": [
+            "speaker.speaker_count",
+            "speaker.multi_speaker",
+            "speaker.speaker_change",
+            "speaker.speaker_change_count",
+            "speaker.speaker_overlap",
+            "speaker.overlap_ratio",
+            "deterministic_derived.speaker_change_rate_per_min"
+          ],
+          "name": "speaker_interaction"
+        },
+        {
+          "confidence": 0.85,
+          "description": "The English transcript shows eight filler items and one marked repetition, with a filler ratio around 0.178 and terminal punctuation present, suggesting conversational rather than scripted speech.",
+          "evidence_tags": [
+            "language_content.filler",
+            "language_content.repetition.has_repetition",
+            "language_content.repetition.repetition_count",
+            "language_content.punctuation.has_terminal_punctuation",
+            "deterministic_derived.filler_ratio"
+          ],
+          "name": "speech_fluency"
+        },
+        {
+          "confidence": 0.75,
+          "description": "SNR is moderate at around 9.8 dB and DNSMOS overall is about 2.48, indicating noticeable background quality limitations; low RT60 and high C50 suggest limited reverberation but do not alone establish a specific room type.",
+          "evidence_tags": [
+            "audio_quality.snr_db",
+            "audio_quality.dnsmos_sig",
+            "audio_quality.dnsmos_bak",
+            "audio_quality.dnsmos_ovrl",
+            "audio_quality.dnsmos_p808",
+            "room_acoustic.rt60_sec",
+            "room_acoustic.c50_db"
+          ],
+          "name": "acoustic_quality"
+        }
+      ],
+      "scene_hypotheses": [
+        {
+          "confidence": 0.5,
+          "description": "The conversation may be an informal group review or discussion in which participants evaluate a device as flashy/fashionable and technologically innovative, though the recording context and speaker roles are unknown.",
+          "evidence_tags": [
+            "speaker.asr_transcript",
+            "speaker.multi_speaker",
+            "speaker.speaker_change"
+          ]
+        },
+        {
+          "confidence": 0.4,
+          "description": "Frequent short pauses and reported clicking may reflect an unscripted conversational setting or recording artifacts, but the exact source cannot be identified from the available structural data.",
+          "evidence_tags": [
+            "basic_acoustic.nonspeech_ratio",
+            "basic_acoustic.silence_segments",
+            "sound_field_scene.external_noise_type",
+            "sound_field_scene.noise_composition"
+          ]
+        }
+      ],
+      "speaker_descriptions": [
+        {
+          "confidence": 0.8,
+          "description": "Speaker 1 is observed with low pitch, variable volume, and a variable speech rate estimated at 137.6 words per minute; no additional profile attributes are provided.",
+          "descriptive_phrases": [
+            "low pitch",
+            "variable volume",
+            "variable speech rate"
+          ],
+          "evidence_tags": [
+            "speaker.profiles"
+          ],
+          "gender": "male",
+          "speaker_id": "speaker_1"
+        },
+        {
+          "confidence": 0.65,
+          "description": "Speaker 2 has a low-pitch profile and normal volume; speech rate information is unavailable.",
+          "descriptive_phrases": [
+            "low pitch",
+            "normal volume"
+          ],
+          "evidence_tags": [
+            "speaker.profiles"
+          ],
+          "gender": "male",
+          "speaker_id": "speaker_2"
+        }
+      ],
+      "topic": "Product/device evaluation: whether the device is flashy/fashionable and technologically innovative",
+      "uncertainties": [
+        "room_acoustic.far_field is null; near/far field cannot be confirmed",
+        "Speaker 3 and Speaker 4 have no pitch, volume, or speech rate information in profiles",
+        "Background clicking source is not identified beyond the formless category",
+        "No explicit semantic topic categories are provided beyond the transcript itself",
+        "DNSMOS and SNR have no fixed thresholds in this schema for intelligibility grading"
+      ],
+      "usability_notes": [
+        "ASR text is usable for content-based filtering. Diarization may be difficult due to four speakers, overlapping speech, and a short 23.7s sample; moderate SNR and DNSMOS overall below 3 suggest noise reduction could help downstream processing."
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": 0.177778,
+      "speaker_change_rate_per_min": 10.118044
+    },
+    "field_universe_version": "structural-v0.1",
+    "language_content": {
+      "filler": 8,
+      "language": "en",
+      "punctuation": {
+        "has_terminal_punctuation": true,
+        "punctuation_count": 16
+      },
+      "repetition": {
+        "has_repetition": true,
+        "repetition_count": 1
+      },
+      "word_count": 45
+    },
+    "room_acoustic": {
+      "c50_db": 39.494684,
+      "far_field": null,
+      "rt60_sec": 0.055599
+    },
+    "sample_id": "ES2012d_utterance_00018",
+    "schema_version": "structural-prediction-v0.1",
+    "sound_field_scene": {
+      "external_noise_type": [
+        "formless"
+      ],
+      "music_present": false,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [
+          "Clicking",
+          "Silence"
+        ],
+        "mechanical": [],
+        "music": [],
+        "nature": []
+      },
+      "speech_music_events": [
+        "speech"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": "So look at these questions. Is the device f flashy and fashionable? Well, I think most definitely. Yeah, it's a definitely a one, yeah. I think it is, yeah. So uh and also uh technologically innovative? Yes, the point is technology indeed. Yeah, yeah. Yeah.",
+      "multi_speaker": true,
+      "overlap_ratio": 0.125651,
+      "profiles": [
+        {
+          "gender": "male",
+          "pitch": "low",
+          "speaker_id": "speaker_1",
+          "speaker_volume": "variable",
+          "speech_rate": {
+            "band": "variable",
+            "unit": "word_per_min",
+            "value": 137.6
+          }
+        },
+        {
+          "gender": "male",
+          "pitch": "low",
+          "speaker_id": "speaker_2",
+          "speaker_volume": "normal",
+          "speech_rate": {
+            "band": null,
+            "unit": null,
+            "value": null
+          }
+        },
+        {
+          "gender": "female",
+          "pitch": null,
+          "speaker_id": "speaker_3",
+          "speaker_volume": null,
+          "speech_rate": {
+            "band": null,
+            "unit": null,
+            "value": null
+          }
+        },
+        {
+          "gender": null,
+          "pitch": null,
+          "speaker_id": "speaker_4",
+          "speaker_volume": null,
+          "speech_rate": {
+            "band": null,
+            "unit": null,
+            "value": null
+          }
+        }
+      ],
+      "speaker_change": true,
+      "speaker_change_count": 4,
+      "speaker_count": 4,
+      "speaker_overlap": true,
+      "speaker_present": true
+    }
+  },
+  "captioner": {
+    "audio_quality": {
+      "dnsmos_bak": null,
+      "dnsmos_ovrl": null,
+      "dnsmos_p808": null,
+      "dnsmos_sig": null,
+      "snr_db": null
+    },
+    "basic_acoustic": {
+      "channels": null,
+      "duration_sec": null,
+      "nonspeech_ratio": null,
+      "sample_rate_hz": null,
+      "silence_segments": null
+    },
+    "descriptive": {
+      "background_condition": null,
+      "background_sound_summary": null,
+      "caption": "The audio contains a conversation between two people discussing the characteristics of a device. They describe it as flashy and fashionable, technologically innovative, and featuring voice technology.",
+      "clarity_intelligibility_impression": null,
+      "descriptive_phrases": [
+        "conversation between two people",
+        "discussing the characteristics of a device",
+        "flashy and fashionable",
+        "technologically innovative",
+        "features voice technology"
+      ],
+      "dominant_content_impression": "Two-person conversation about device characteristics",
+      "facets": null,
+      "scene_hypotheses": null,
+      "speaker_descriptions": null,
+      "topic": "Discussion of device characteristics",
+      "uncertainties": [
+        "No verbatim transcript is provided, so language content and lexical metrics remain unknown.",
+        "No acoustic quality, room, or noise details are described.",
+        "Speaker turn-taking and overlap are not explicitly stated."
+      ],
+      "usability_notes": null
+    },
+    "deterministic_derived": {
+      "filler_ratio": null,
+      "speaker_change_rate_per_min": null
+    },
+    "field_universe_version": "structural-v0.1",
+    "language_content": {
+      "filler": null,
+      "language": null,
+      "punctuation": {
+        "has_terminal_punctuation": null,
+        "punctuation_count": null
+      },
+      "repetition": {
+        "has_repetition": null,
+        "repetition_count": null
+      },
+      "word_count": null
+    },
+    "room_acoustic": {
+      "c50_db": null,
+      "far_field": null,
+      "rt60_sec": null
+    },
+    "sample_id": "ES2012d_utterance_00018",
+    "schema_version": "structural-prediction-v0.1",
+    "sound_field_scene": {
+      "external_noise_type": null,
+      "music_present": false,
+      "noise_composition": null,
+      "speech_music_events": [
+        "speech"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": null,
+      "multi_speaker": true,
+      "overlap_ratio": null,
+      "profiles": null,
+      "speaker_change": null,
+      "speaker_change_count": null,
+      "speaker_count": 2,
+      "speaker_overlap": null,
+      "speaker_present": true
+    }
+  },
+  "qwen3_omni": {
+    "audio_quality": {
+      "dnsmos_bak": null,
+      "dnsmos_ovrl": null,
+      "dnsmos_p808": null,
+      "dnsmos_sig": null,
+      "snr_db": null
+    },
+    "basic_acoustic": {
+      "channels": null,
+      "duration_sec": 16.0,
+      "nonspeech_ratio": null,
+      "sample_rate_hz": null,
+      "silence_segments": null
+    },
+    "descriptive": {
+      "background_condition": "Quiet background with no persistent interference",
+      "background_sound_summary": "No discernible background sounds other than speech",
+      "caption": "Two speakers engage in a conversational exchange, discussing whether a device is flashy, fashionable, and technologically innovative, with one speaker initiating and the other responding, both speaking in clear, standard English with some filler words.",
+      "clarity_intelligibility_impression": "clear and intelligible",
+      "descriptive_phrases": [
+        "conversational exchange",
+        "clear speech",
+        "standard English",
+        "filler words used",
+        "two speakers"
+      ],
+      "dominant_content_impression": "speech",
+      "facets": [
+        {
+          "confidence": 0.95,
+          "description": "Two speakers taking turns in a conversational exchange with no overlap.",
+          "evidence_tags": [],
+          "name": "interaction_pattern"
+        },
+        {
+          "confidence": 0.9,
+          "description": "Normal speech rate with mid-pitch and normal volume; includes filler words and repetitions.",
+          "evidence_tags": [],
+          "name": "delivery_style"
+        },
+        {
+          "confidence": 0.98,
+          "description": "Dominant speech content with no background music or noise.",
+          "evidence_tags": [],
+          "name": "soundscape"
+        },
+        {
+          "confidence": 0.92,
+          "description": "Discussion focused on evaluating device aesthetics and technological innovation.",
+          "evidence_tags": [],
+          "name": "content_impression"
+        },
+        {
+          "confidence": 0.97,
+          "description": "High clarity and intelligibility with minimal background interference.",
+          "evidence_tags": [],
+          "name": "recording_impression"
+        }
+      ],
+      "scene_hypotheses": [
+        {
+          "confidence": 0.85,
+          "description": "Possibly a product review or evaluation discussion between two individuals.",
+          "evidence_tags": []
+        },
+        {
+          "confidence": 0.8,
+          "description": "Informal conversation in a quiet indoor setting, possibly a studio or office.",
+          "evidence_tags": []
+        }
+      ],
+      "speaker_descriptions": [
+        {
+          "confidence": 0.95,
+          "description": "First speaker initiates the conversation with a question about device features, using a normal speech rate and mid-pitch.",
+          "descriptive_phrases": [
+            "initiates conversation",
+            "normal speech rate",
+            "mid-pitch"
+          ],
+          "evidence_tags": [],
+          "gender": null,
+          "speaker_id": "speaker_1"
+        },
+        {
+          "confidence": 0.93,
+          "description": "Second speaker responds affirmatively to the question, also speaking at a normal rate with mid-pitch and using filler words.",
+          "descriptive_phrases": [
+            "affirmative response",
+            "uses filler words",
+            "mid-pitch"
+          ],
+          "evidence_tags": [],
+          "gender": null,
+          "speaker_id": "speaker_2"
+        }
+      ],
+      "topic": "Device features and innovation",
+      "uncertainties": [
+        "Gender of speakers cannot be determined from audio alone.",
+        "Exact location or context of conversation is not discernible from audio."
+      ],
+      "usability_notes": [
+        "Suitable for transcription and content analysis due to clear speech and minimal background noise."
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": 0.105263,
+      "speaker_change_rate_per_min": 3.75
+    },
+    "field_universe_version": "structural-v0.1",
+    "language_content": {
+      "filler": 4,
+      "language": "en",
+      "punctuation": {
+        "has_terminal_punctuation": true,
+        "punctuation_count": 5
+      },
+      "repetition": {
+        "has_repetition": true,
+        "repetition_count": 2
+      },
+      "word_count": 38
+    },
+    "room_acoustic": {
+      "c50_db": null,
+      "far_field": null,
+      "rt60_sec": null
+    },
+    "sample_id": "ES2012d_utterance_00018",
+    "schema_version": "structural-prediction-v0.1",
+    "sound_field_scene": {
+      "external_noise_type": null,
+      "music_present": false,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [],
+        "mechanical": [],
+        "music": [],
+        "nature": []
+      },
+      "speech_music_events": [
+        "speech"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": "So look at these questions. Is the device flashy and fashionable? Well, I think definitely. Definitely a one. So, uh, and also, uh, technologically innovative. Yes, the voice technology, indeed.",
+      "multi_speaker": true,
+      "overlap_ratio": 0.0,
+      "profiles": [
+        {
+          "pitch": "mid",
+          "speaker_id": "speaker_1",
+          "speaker_volume": "normal",
+          "speech_rate": {
+            "band": "normal",
+            "unit": null,
+            "value": null
+          }
+        },
+        {
+          "pitch": "mid",
+          "speaker_id": "speaker_2",
+          "speaker_volume": "normal",
+          "speech_rate": {
+            "band": "normal",
+            "unit": null,
+            "value": null
+          }
+        }
+      ],
+      "speaker_change": true,
+      "speaker_change_count": 1,
+      "speaker_count": 2,
+      "speaker_overlap": false,
+      "speaker_present": true
+    }
+  }
+}

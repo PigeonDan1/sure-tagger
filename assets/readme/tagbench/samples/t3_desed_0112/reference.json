@@ -1,0 +1,39 @@
+{
+  "sample_id": "t3_desed_0112",
+  "source_dataset": "DESED",
+  "benchmark_track": "T3_events_noise",
+  "audio": {
+    "duration_sec": 10.0,
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "sha256": "174ef3c4a2d501dcbad0cefd3b921d0be4124854b22bb132d8938e3f924c79b7"
+  },
+  "closed_world_event_gt": {
+    "sound_field_scene.external_noise_type": [
+      "mechanical"
+    ],
+    "sound_field_scene.music_present": false,
+    "sound_field_scene.speech_music_events": [
+      "speech"
+    ]
+  },
+  "gt_caveat": "derived negatives are not human-confirmed and may contain false negatives",
+  "native_labels": [
+    {
+      "event_label": "Blender",
+      "offset_sec": 7.06,
+      "onset_sec": 1.519
+    },
+    {
+      "event_label": "Speech",
+      "offset_sec": 5.735,
+      "onset_sec": 2.755
+    },
+    {
+      "event_label": "Speech",
+      "offset_sec": 8.228,
+      "onset_sec": 6.552
+    }
+  ],
+  "source_license_record": "dataset-specific; see DESED/DCASE release terms"
+}

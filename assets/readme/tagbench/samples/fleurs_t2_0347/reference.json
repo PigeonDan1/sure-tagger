@@ -1,0 +1,14 @@
+{
+  "sample_id": "fleurs_t2_0347",
+  "source_dataset": "FLEURS",
+  "benchmark_track": "T2_multilingual_fleurs",
+  "audio": {
+    "duration_sec": 8.64,
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "sha256": "3b1cb3c63ae154fe57c4e6bbee365e17a3061ce2d86de37d875fb5398d4ee500"
+  },
+  "language": "ru",
+  "reference_transcript": "начальник полиции чандра шехар соланки заявил что обвиняемые были представлены перед судьями с закрытыми лицами",
+  "source_license_record": "CC-BY-4.0"
+}

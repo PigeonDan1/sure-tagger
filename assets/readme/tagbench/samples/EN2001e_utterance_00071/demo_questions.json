@@ -1,0 +1,260 @@
+[
+  {
+    "id": "Q01",
+    "number": 1,
+    "sample_id": "EN2001e_utterance_00071",
+    "track": "T1_natural_meeting_utterance",
+    "layer": "L5",
+    "layer_name": "L5 声学场景与事件",
+    "audio": "audio/EN2001e_utterance_00071.wav",
+    "fields": [
+      {
+        "key": "basic_acoustic.nonspeech_ratio",
+        "label": "非语音占比",
+        "A": "0.118851",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "sound_field_scene.speech_music_events",
+        "label": "语音/音乐/事件",
+        "A": "[\"speech\"]",
+        "B": null,
+        "C": "[\"speech\"]"
+      },
+      {
+        "key": "sound_field_scene.music_present",
+        "label": "是否有音乐",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "sound_field_scene.external_noise_type",
+        "label": "外部噪声类型",
+        "A": "[]",
+        "B": null,
+        "C": null
+      }
+    ]
+  },
+  {
+    "id": "Q06",
+    "number": 6,
+    "sample_id": "EN2001e_utterance_00071",
+    "track": "T1_natural_meeting_utterance",
+    "layer": "L2",
+    "layer_name": "L2 说话人",
+    "audio": "audio/EN2001e_utterance_00071.wav",
+    "fields": [
+      {
+        "key": "speaker.speaker_count",
+        "label": "说话人数",
+        "A": "2",
+        "B": null,
+        "C": "2"
+      },
+      {
+        "key": "speaker.speaker_present",
+        "label": "是否有人声",
+        "A": "true",
+        "B": null,
+        "C": "true"
+      },
+      {
+        "key": "speaker.multi_speaker",
+        "label": "是否多人",
+        "A": "true",
+        "B": null,
+        "C": "true"
+      },
+      {
+        "key": "speaker.speaker_overlap",
+        "label": "是否重叠",
+        "A": "true",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "speaker.gender_sequence",
+        "label": "性别序列",
+        "A": "[\"male\", \"female\"]",
+        "B": null,
+        "C": "[null, null]"
+      }
+    ]
+  },
+  {
+    "id": "Q12",
+    "number": 12,
+    "sample_id": "EN2001e_utterance_00071",
+    "track": "T1_natural_meeting_utterance",
+    "layer": "L1",
+    "layer_name": "L1 词汇内容",
+    "audio": "audio/EN2001e_utterance_00071.wav",
+    "fields": [
+      {
+        "key": "speaker.asr_transcript",
+        "label": "转写",
+        "A": "Alright, okay. So I could probably I could probably read it from uh. Yeah, I can just give it to you in the format you want. So I I would just My preferred would be dialogue at number and And then the score, yeah, this was just for showing it. You can put both scores in one file. Huh? You can put both the scores in one file if it makes it easier.",
+        "B": null,
+        "C": "All right, okay. So I could probably I could probably read it from uh. Yeah, I can just give it to you in the format you want. So it would just be dialogue act number, then the score. Yeah, this was just for showing it. Huh? You can put both the scores in one file if it makes it easier."
+      },
+      {
+        "key": "language_content.language",
+        "label": "语种",
+        "A": "en",
+        "B": null,
+        "C": "en"
+      },
+      {
+        "key": "language_content.word_count",
+        "label": "词数",
+        "A": "73",
+        "B": null,
+        "C": "48"
+      },
+      {
+        "key": "language_content.repetition.has_repetition",
+        "label": "是否重复",
+        "A": "true",
+        "B": null,
+        "C": "true"
+      },
+      {
+        "key": "language_content.repetition.repetition_count",
+        "label": "重复次数",
+        "A": "3",
+        "B": null,
+        "C": "2"
+      },
+      {
+        "key": "deterministic_derived.filler_ratio",
+        "label": "filler 占比",
+        "A": "0.041096",
+        "B": null,
+        "C": "0.104167"
+      }
+    ]
+  },
+  {
+    "id": "Q16",
+    "number": 16,
+    "sample_id": "EN2001e_utterance_00071",
+    "track": "T1_natural_meeting_utterance",
+    "layer": "D",
+    "layer_name": "D 描述性",
+    "audio": "audio/EN2001e_utterance_00071.wav",
+    "fields": [
+      {
+        "key": "caption",
+        "label": "caption",
+        "A": "A 17.7-second mono 16 kHz recording contains a two-speaker English dialogue with six speaker changes and occasional overlap. The speakers discuss how to provide scores in a file format, mentioning dialogue numbers and combining both scores in one file. The acoustic background is relatively clean with no detected music or external noise categories, short silences, low reverberation, and high early-to-late sound ratio.",
+        "B": "The text reads as a first-person conversational utterance in which the person indicates they can provide information in the requested format, prefers dialogue number followed by the score, and notes both scores can be placed in one file. A <gap> placeholder appears in the text.",
+        "C": "两名说话者进行对话，讨论如何格式化并呈现分数，其中一名说话者提出可按所需格式提供。语气为协作且务实，无背景噪声或音乐。"
+      },
+      {
+        "key": "topic",
+        "label": "topic",
+        "A": "discussion about providing scores and dialogue numbers in a file format",
+        "B": "Preferred dialogue score output format",
+        "C": "分数格式化与呈现"
+      },
+      {
+        "key": "background_condition",
+        "label": "background_condition",
+        "A": "SNR is 23.7 dB and DNSMOS background is 4.01; the recording has a nonspeech ratio of 0.119 and multiple short silence segments. No external noise types or noise composition categories were detected, music is absent, RT60 is 0.057 s, and C50 is 38.95 dB. Far-field status is unknown.",
+        "B": null,
+        "C": "安静背景，无可辨别的环境噪声。"
+      },
+      {
+        "key": "dominant_content_impression",
+        "label": "dominant_content_impression",
+        "A": "Speech is the only detected content class. Two speakers are present with active turn-taking and a small overlap ratio; nonspeech segments are limited and no labeled music or external noise categories are present.",
+        "B": "First-person spoken commentary about file and score formatting preferences.",
+        "C": "speech"
+      },
+      {
+        "key": "clarity_intelligibility_impression",
+        "label": "clarity_intelligibility_impression",
+        "A": "An English transcript is available with punctuation and some repetitions. SNR and DNSMOS background are relatively high, while DNSMOS overall is 3.10 and p808 is 3.21; low RT60 and high C50 support direct low-reverberation speech. These factors suggest generally usable intelligibility, though far-field status and perceptual listening quality remain uncertain.",
+        "B": null,
+        "C": "语音清晰可懂。"
+      },
+      {
+        "key": "background_sound_summary",
+        "label": "background_sound_summary",
+        "A": "external_noise_type is empty and noise_composition has no detected categories; music_present is false. This structural output indicates no labeled noise or music classes, rather than confirming absolute silence outside speech.",
+        "B": null,
+        "C": "未检测到背景声音。"
+      },
+      {
+        "key": "descriptive_phrases",
+        "label": "descriptive_phrases",
+        "A": "[\"two-speaker dialogue with six speaker changes\", \"speech-only content with no detected music or external noise\", \"mono 16 kHz recording with low nonspeech ratio\", \"fast and variable speech rates across speakers\", \"transcript discusses file format for scores and dialogue numbers\"]",
+        "B": "[\"dialogue number and then the score\", \"both the scores in one file\", \"format you want\", \"could probably read it from <gap>\"]",
+        "C": "[\"两名说话者对话\", \"协作性语气\", \"清晰语音，无背景噪声\"]"
+      },
+      {
+        "key": "facets",
+        "label": "facets",
+        "A": "1. speech_turn_dynamics — Two speakers alternate with six changes in 17.7 seconds, corresponding to 20.3 speaker changes per minute and an overlap ratio of 0.139.\n2. audio_quality_profile — The mono 16 kHz recording has SNR 23.7 dB and DNSMOS background 4.01; overall DNSMOS is 3.10. C50 is 38.95 dB and RT60 is 0.057 s, consistent with strong direct sound and low reverberation.\n3. content_composition — Speech is the only detected event class; there is no music and no labeled external noise category, with a nonspeech ratio of 0.119.",
+        "B": "1. content_topic — The text discusses preferred data formatting for dialogue scores.\n2. linguistic_style — The text contains informal conversational language with first-person pronouns and hedges.",
+        "C": "1. interaction_pattern — 两名说话者交替发言，围绕分数格式化进行协作讨论。\n2. delivery_style — 语速正常，音高和音量适中；包含填充词和重复。\n3. soundscape — 安静环境，无背景音乐、自然声或机械声。\n4. content_impression — 对话围绕格式化和交付分数的实用指令。\n5. recording_impression — 清晰度和可懂度高，无可听干扰或失真。"
+      },
+      {
+        "key": "speaker_descriptions",
+        "label": "speaker_descriptions",
+        "A": "1. speaker_1 — gender=male — Speaker 1 has a variable speech rate with an observed 304.5 words per minute and variable volume; pitch is unknown.\n2. speaker_2 — gender=female — Speaker 2 has a fast speech rate with an observed 347.5 words per minute, a mid pitch, and variable volume.",
+        "B": null,
+        "C": "1. speaker_1 — 第一位说话者，以对话语气说话，语速和音量适中，使用填充词。\n2. speaker_2 — 第二位说话者，回应时表示同意并提出调整格式，表达清晰平静。"
+      },
+      {
+        "key": "scene_hypotheses",
+        "label": "scene_hypotheses",
+        "A": "1. Two speakers are engaged in a fast-paced dialogue, likely a collaborative or editorial exchange about how to format scores in a file.",
+        "B": "1. The utterance may be part of a dialogue about data annotation file formatting.",
+        "C": "1. 可能是同事或合作者之间围绕数据呈现的非正式工作对话。\n2. 可能是在安静室内（如家中或办公室）进行的轻松对话，侧重于任务协调。"
+      }
+    ]
+  },
+  {
+    "id": "Q21",
+    "number": 21,
+    "sample_id": "EN2001e_utterance_00071",
+    "track": "T1_natural_meeting_utterance",
+    "layer": "L3",
+    "layer_name": "L3 时间结构",
+    "audio": "audio/EN2001e_utterance_00071.wav",
+    "fields": [
+      {
+        "key": "speaker.speaker_change_count",
+        "label": "切换次数",
+        "A": "6",
+        "B": null,
+        "C": "1"
+      },
+      {
+        "key": "speaker.speaker_change",
+        "label": "是否切换",
+        "A": "true",
+        "B": null,
+        "C": "true"
+      },
+      {
+        "key": "speaker.overlap_ratio",
+        "label": "重叠比例",
+        "A": "0.139151",
+        "B": null,
+        "C": "0"
+      },
+      {
+        "key": "deterministic_derived.speaker_change_rate_per_min",
+        "label": "每分钟切换率",
+        "A": "20.3212",
+        "B": null,
+        "C": null
+      }
+    ]
+  }
+]

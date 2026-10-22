@@ -1,0 +1,260 @@
+[
+  {
+    "id": "Q01",
+    "number": 1,
+    "sample_id": "fleurs_t2_0347",
+    "track": "T2_multilingual_fleurs",
+    "layer": "L2",
+    "layer_name": "L2 说话人",
+    "audio": "audio/fleurs_t2_0347.wav",
+    "fields": [
+      {
+        "key": "speaker.speaker_count",
+        "label": "说话人数",
+        "A": "1",
+        "B": null,
+        "C": "1"
+      },
+      {
+        "key": "speaker.speaker_present",
+        "label": "是否有人声",
+        "A": "true",
+        "B": "true",
+        "C": "true"
+      },
+      {
+        "key": "speaker.multi_speaker",
+        "label": "是否多人",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "speaker.speaker_overlap",
+        "label": "是否重叠",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "speaker.gender_sequence",
+        "label": "性别序列",
+        "A": "[\"male\"]",
+        "B": "[null]",
+        "C": "[null]"
+      }
+    ]
+  },
+  {
+    "id": "Q06",
+    "number": 6,
+    "sample_id": "fleurs_t2_0347",
+    "track": "T2_multilingual_fleurs",
+    "layer": "L3",
+    "layer_name": "L3 时间结构",
+    "audio": "audio/fleurs_t2_0347.wav",
+    "fields": [
+      {
+        "key": "speaker.speaker_change_count",
+        "label": "切换次数",
+        "A": "0",
+        "B": null,
+        "C": "0"
+      },
+      {
+        "key": "speaker.speaker_change",
+        "label": "是否切换",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "speaker.overlap_ratio",
+        "label": "重叠比例",
+        "A": "0",
+        "B": null,
+        "C": "0"
+      },
+      {
+        "key": "deterministic_derived.speaker_change_rate_per_min",
+        "label": "每分钟切换率",
+        "A": "0",
+        "B": null,
+        "C": null
+      }
+    ]
+  },
+  {
+    "id": "Q12",
+    "number": 12,
+    "sample_id": "fleurs_t2_0347",
+    "track": "T2_multilingual_fleurs",
+    "layer": "L5",
+    "layer_name": "L5 声学场景与事件",
+    "audio": "audio/fleurs_t2_0347.wav",
+    "fields": [
+      {
+        "key": "basic_acoustic.nonspeech_ratio",
+        "label": "非语音占比",
+        "A": "0.206019",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "sound_field_scene.speech_music_events",
+        "label": "语音/音乐/事件",
+        "A": "[\"speech\"]",
+        "B": null,
+        "C": "[\"speech\"]"
+      },
+      {
+        "key": "sound_field_scene.music_present",
+        "label": "是否有音乐",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "sound_field_scene.external_noise_type",
+        "label": "外部噪声类型",
+        "A": "[]",
+        "B": null,
+        "C": null
+      }
+    ]
+  },
+  {
+    "id": "Q17",
+    "number": 17,
+    "sample_id": "fleurs_t2_0347",
+    "track": "T2_multilingual_fleurs",
+    "layer": "D",
+    "layer_name": "D 描述性",
+    "audio": "audio/fleurs_t2_0347.wav",
+    "fields": [
+      {
+        "key": "caption",
+        "label": "caption",
+        "A": "一段约8.64秒的单人俄语语音，转写内容为警方称被告被带见法官的陈述；录音为单声道、16 kHz，信噪比约35.4 dB，首尾有短暂静音，未标注音乐或外部噪声。",
+        "B": "The caption reports that the police chief of Chandrashekar Salanki stated that the accused were presented before judges with their faces covered.",
+        "C": "一名说话者用俄语陈述一段关于警察局长和被告被提交给法官的声明。"
+      },
+      {
+        "key": "topic",
+        "label": "topic",
+        "A": "警方声明：被告被带见法官",
+        "B": "Police chief's statement about accused presented before judges",
+        "C": "司法程序与被告出席情况"
+      },
+      {
+        "key": "background_condition",
+        "label": "background_condition",
+        "A": "未检测到或未标注外部噪声类别与音乐；nonspeech_ratio约0.206，含开头0–1.16 s和结尾8.02–8.64 s静音；RT60约0.233 s、C50约31.25 dB，指标层面显示较低混响与较高早期能量。",
+        "B": null,
+        "C": "安静，无明显干扰"
+      },
+      {
+        "key": "dominant_content_impression",
+        "label": "dominant_content_impression",
+        "A": "主导可听内容为单人语音；speech_music_events仅含speech，music_present=false，非语音占比约0.206，未列出外部噪声类型。",
+        "B": "Speech by a police chief",
+        "C": "speech"
+      },
+      {
+        "key": "clarity_intelligibility_impression",
+        "label": "clarity_intelligibility_impression",
+        "A": "转写文本存在且语义连贯，SNR约35.37 dB较高；但DNSMOS ovrl约2.89、sig约3.21，且word_count=0与非空转写冲突，清晰与可懂度不能只凭转写判定，整体可能可懂但需人工复核。",
+        "B": null,
+        "C": "清晰可懂"
+      },
+      {
+        "key": "background_sound_summary",
+        "label": "background_sound_summary",
+        "A": "external_noise_type与noise_composition各子类均为空，music_present=false；证据只能确认未标注外部噪声类别，不能确认绝对无声。",
+        "B": null,
+        "C": "无背景音"
+      },
+      {
+        "key": "descriptive_phrases",
+        "label": "descriptive_phrases",
+        "A": "[\"单人语音\", \"俄语转写\", \"约8.64秒\", \"高信噪比\", \"低混响指标\", \"单声道16kHz\", \"无音乐标签\", \"无外部噪声类别\", \"首尾静音\", \"无说话人切换\", \"无语音重叠\"]",
+        "B": "[\"Police chief's statement\", \"Accused presented before judges with faces covered\"]",
+        "C": "[\"单人发言\", \"语速正常\", \"俄语发言\"]"
+      },
+      {
+        "key": "facets",
+        "label": "facets",
+        "A": "1. speech_dominance — speech_music_events仅含speech，music_present=false，speaker_present=true且speaker_count=1，主导内容为单人语音。\n2. recording_conditions — 单声道、16 kHz、时长8.64秒；SNR约35.37 dB；RT60约0.233 s、C50约31.25 dB，指标层面指向低混响、较高早期能量的短录音。\n3. nonspeech_and_silence — nonspeech_ratio约0.206；silence_segments包括0–1.16 s与8.02–8.64 s；external_noise_type为空，noise_composition各子类为空，music_present=false。\n4. transcript_language_stats — ASR转写为俄语，含终结标点和2个标点；无重复、filler=0；但word_count=0与非空转写文本不一致。\n5. single_speaker_profile — 仅一个profile：speaker_1，pitch=low，speaker_volume=variable；speech_rate的value/band/unit均为null；speaker_change=false、speaker_overlap=false。",
+        "B": null,
+        "C": "1. interaction_pattern — 单人陈述\n2. delivery_style — 语速正常，无填充词，无重复\n3. soundscape — 安静，无背景音\n4. content_impression — 司法相关陈述\n5. recording_impression — 清晰可懂，无明显干扰"
+      },
+      {
+        "key": "speaker_descriptions",
+        "label": "speaker_descriptions",
+        "A": "1. speaker_1 — gender=male — 唯一出现的说话人；现有结构只有pitch=low、speaker_volume=variable，speech_rate数值/band/unit均缺失，无法据此判断性别、年龄、情绪、口音或距离。",
+        "B": "1. speaker_1 — No additional speaker attributes are supported by the caption.",
+        "C": "1. speaker_1 — 说话者用俄语陈述司法相关声明，语速正常，音量稳定，无填充词或重复。"
+      },
+      {
+        "key": "scene_hypotheses",
+        "label": "scene_hypotheses",
+        "A": "1. 可能是一段单人朗读或播报式语音片段，而非多人交互；依据是单说话人、无换人、无重叠且事件仅含语音。",
+        "B": "1. The recording likely captures a formal statement by a police chief.",
+        "C": "1. 可能为新闻播报或官方声明"
+      }
+    ]
+  },
+  {
+    "id": "Q21",
+    "number": 21,
+    "sample_id": "fleurs_t2_0347",
+    "track": "T2_multilingual_fleurs",
+    "layer": "L1",
+    "layer_name": "L1 词汇内容",
+    "audio": "audio/fleurs_t2_0347.wav",
+    "fields": [
+      {
+        "key": "speaker.asr_transcript",
+        "label": "转写",
+        "A": "Начальник полиции Чандра Шехар Саланки заявил, что обвиняемые были представлены перед судьями с закрытыми лицами.",
+        "B": null,
+        "C": "Начальник полиции Чандра Шехар Саланки заявил, что обвиняемые были представлены перед судьями с закрытыми лицами."
+      },
+      {
+        "key": "language_content.language",
+        "label": "语种",
+        "A": "ru",
+        "B": null,
+        "C": "ru"
+      },
+      {
+        "key": "language_content.word_count",
+        "label": "词数",
+        "A": "0",
+        "B": null,
+        "C": "15"
+      },
+      {
+        "key": "language_content.repetition.has_repetition",
+        "label": "是否重复",
+        "A": "false",
+        "B": null,
+        "C": "false"
+      },
+      {
+        "key": "language_content.repetition.repetition_count",
+        "label": "重复次数",
+        "A": "0",
+        "B": null,
+        "C": "0"
+      },
+      {
+        "key": "deterministic_derived.filler_ratio",
+        "label": "filler 占比",
+        "A": null,
+        "B": null,
+        "C": "0"
+      }
+    ]
+  }
+]

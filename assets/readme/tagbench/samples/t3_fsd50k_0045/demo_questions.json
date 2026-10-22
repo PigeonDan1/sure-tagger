@@ -1,0 +1,260 @@
+[
+  {
+    "id": "Q04",
+    "number": 4,
+    "sample_id": "t3_fsd50k_0045",
+    "track": "T3_events_noise",
+    "layer": "L3",
+    "layer_name": "L3 时间结构",
+    "audio": "audio/t3_fsd50k_0045.wav",
+    "fields": [
+      {
+        "key": "speaker.speaker_change_count",
+        "label": "切换次数",
+        "A": "0",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "speaker.speaker_change",
+        "label": "是否切换",
+        "A": "false",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "speaker.overlap_ratio",
+        "label": "重叠比例",
+        "A": null,
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "deterministic_derived.speaker_change_rate_per_min",
+        "label": "每分钟切换率",
+        "A": "0",
+        "B": null,
+        "C": null
+      }
+    ]
+  },
+  {
+    "id": "Q09",
+    "number": 9,
+    "sample_id": "t3_fsd50k_0045",
+    "track": "T3_events_noise",
+    "layer": "D",
+    "layer_name": "D 描述性",
+    "audio": "audio/t3_fsd50k_0045.wav",
+    "fields": [
+      {
+        "key": "caption",
+        "label": "caption",
+        "A": "约1.5秒的单声道片段，整段被单一静音区间覆盖，未检测到说话人，也未检测到语音或音乐事件。信噪比与 DNSMOS 等信号质量指标均处于偏低水平，外部噪声类型被标注为 music，但缺乏相应事件与成分支撑。",
+        "B": "The input describes a sound that is likely a loud, sharp popping sound produced by a cap gun or airsoft gun, often used for recreational shooting. It explains the source as ignition of a small charge and asks for further context if the guess is incorrect.",
+        "C": null
+      },
+      {
+        "key": "topic",
+        "label": "topic",
+        "A": null,
+        "B": "sound identification (possible cap gun or airsoft gun)",
+        "C": null
+      },
+      {
+        "key": "background_condition",
+        "label": "background_condition",
+        "A": "整段为非语音区间：nonspeech_ratio 为 1.0，唯一的静音段覆盖 0–1.5185 秒；snr_db 约 1.55 dB，DNSMOS sig/bak/ovrl 约 1.10–1.22，提示信号质量较差。外部噪声类型仅标注为 music，但 noise_composition 各子类为空且 music_present 为 false，无法确认实际背景声源；rt60 约 0.35 秒、c50 约 30.4 dB 虽已知，但不足以据此判定具体房间类型。",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "dominant_content_impression",
+        "label": "dominant_content_impression",
+        "A": "主导可听内容为非语音/静音区间：speech_music_events 为空、music_present 为 false、speaker_present 为 false，且 nonspeech_ratio 为 1.0，样本中没有可确认的语音或音乐内容。",
+        "B": "A loud, sharp popping sound, likely from a cap gun or airsoft gun.",
+        "C": null
+      },
+      {
+        "key": "clarity_intelligibility_impression",
+        "label": "clarity_intelligibility_impression",
+        "A": "样本未检测到说话人、无语音或音乐事件且转写为空，因此无法评估语音清晰度或可懂度；已知的 snr_db 约 1.55 dB 与较低的 DNSMOS 数值只能说明该片段整体信号质量指标不佳，不能等同于对语音可懂度的判断。",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "background_sound_summary",
+        "label": "background_sound_summary",
+        "A": "external_noise_type 只给出 music 一个标签，但 music_present 为 false、speech_music_events 为空，noise_composition 的动物、机械、音乐、自然等各类别也均为空数组，因此没有可确认的背景声源成分；该标签与事件观测不一致，应保留为不确定。",
+        "B": "The text describes the target sound as a loud, sharp popping sound likely produced by ignition of a small charge in a cap gun or airsoft gun; no separate background sound sources are explicitly identified.",
+        "C": null
+      },
+      {
+        "key": "descriptive_phrases",
+        "label": "descriptive_phrases",
+        "A": "[\"整段静音或非语音\", \"未检测到语音或音乐事件\", \"无说话人在场\", \"信号质量指标偏低\", \"外部噪声标签与事件不一致\"]",
+        "B": "[\"cap gun\", \"airsoft gun\", \"loud sharp popping sound\", \"small charge ignition\", \"recreational shooting\"]",
+        "C": "[]"
+      },
+      {
+        "key": "facets",
+        "label": "facets",
+        "A": "1. content_absence — 全段被单一静音区间覆盖，非语音比例为 1.0，且无语音/音乐事件、无说话人，属于无可用语音内容的片段。\n2. signal_quality — snr_db 约 1.55 dB，DNSMOS sig/bak/ovrl 约 1.10–1.22、p808 约 2.70，信号质量指标整体偏低。\n3. noise_label_consistency — external_noise_type 含 music，但 music_present 为 false、noise_composition 音乐类别为空且 speech_music_events 为空，噪声标签与事件观测不一致。\n4. room_acoustics — rt60_sec 约 0.348 秒、c50_db 约 30.44 dB 为已知连续声学指标，但远场标识缺失，不足以据此推断房间类型或录音场景。",
+        "B": "1. sound_source_hypothesis — The sound is likely produced by a cap gun or airsoft gun used for recreational shooting.",
+        "C": "[]"
+      },
+      {
+        "key": "speaker_descriptions",
+        "label": "speaker_descriptions",
+        "A": null,
+        "B": null,
+        "C": "[]"
+      },
+      {
+        "key": "scene_hypotheses",
+        "label": "scene_hypotheses",
+        "A": "1. 该片段可能是无人声的间隙或空录片段，例如录音起止前后的静音区间。\n2. music 噪声标签可能来自片段之外的相邻时段或标注偏差，而非本片段内实际可听到的内容。",
+        "B": "1. The sound may be a cap gun or airsoft gun fired recreationally.",
+        "C": "[]"
+      }
+    ]
+  },
+  {
+    "id": "Q14",
+    "number": 14,
+    "sample_id": "t3_fsd50k_0045",
+    "track": "T3_events_noise",
+    "layer": "L2",
+    "layer_name": "L2 说话人",
+    "audio": "audio/t3_fsd50k_0045.wav",
+    "fields": [
+      {
+        "key": "speaker.speaker_count",
+        "label": "说话人数",
+        "A": "0",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "speaker.speaker_present",
+        "label": "是否有人声",
+        "A": "false",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "speaker.multi_speaker",
+        "label": "是否多人",
+        "A": "false",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "speaker.speaker_overlap",
+        "label": "是否重叠",
+        "A": "false",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "speaker.gender_sequence",
+        "label": "性别序列",
+        "A": "[]",
+        "B": null,
+        "C": null
+      }
+    ]
+  },
+  {
+    "id": "Q19",
+    "number": 19,
+    "sample_id": "t3_fsd50k_0045",
+    "track": "T3_events_noise",
+    "layer": "L1",
+    "layer_name": "L1 词汇内容",
+    "audio": "audio/t3_fsd50k_0045.wav",
+    "fields": [
+      {
+        "key": "speaker.asr_transcript",
+        "label": "转写",
+        "A": null,
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "language_content.language",
+        "label": "语种",
+        "A": "pt",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "language_content.word_count",
+        "label": "词数",
+        "A": null,
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "language_content.repetition.has_repetition",
+        "label": "是否重复",
+        "A": null,
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "language_content.repetition.repetition_count",
+        "label": "重复次数",
+        "A": null,
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "deterministic_derived.filler_ratio",
+        "label": "filler 占比",
+        "A": null,
+        "B": null,
+        "C": null
+      }
+    ]
+  },
+  {
+    "id": "Q24",
+    "number": 24,
+    "sample_id": "t3_fsd50k_0045",
+    "track": "T3_events_noise",
+    "layer": "L5",
+    "layer_name": "L5 声学场景与事件",
+    "audio": "audio/t3_fsd50k_0045.wav",
+    "fields": [
+      {
+        "key": "basic_acoustic.nonspeech_ratio",
+        "label": "非语音占比",
+        "A": "1",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "sound_field_scene.speech_music_events",
+        "label": "语音/音乐/事件",
+        "A": "[]",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "sound_field_scene.music_present",
+        "label": "是否有音乐",
+        "A": "false",
+        "B": null,
+        "C": null
+      },
+      {
+        "key": "sound_field_scene.external_noise_type",
+        "label": "外部噪声类型",
+        "A": "[\"music\"]",
+        "B": null,
+        "C": null
+      }
+    ]
+  }
+]

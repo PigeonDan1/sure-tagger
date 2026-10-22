@@ -41,14 +41,17 @@ SURE-Tagger 将专项模型的语音证据整理为可查询的标签与描述�
 }
 ```
 
-仓库附带两条标明来源的 Tag-Bench 音频，可以边听边查看 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的描述：
+仓库附带来自 Tag-Bench `demo-web` 评审集的五条音频，可以边听边查看 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的**完整逐样本标签**：
 
-| 样本 | 试听重点 | 资源 |
-| --- | --- | --- |
-| 普通话 · FLEURS | 单人朗读，背景安静 | [试听 / 下载](assets/readme/tagbench/audio/fleurs_t2_0055.wav) |
-| 英语 · LibriSpeech | 单人朗读，无外部噪声标注 | [试听 / 下载](assets/readme/tagbench/audio/librispeech_t2_0048.wav) |
+| 样本 | 试听重点 | 音频 | 标签 |
+| --- | --- | --- | --- |
+| AMI · `ES2012d_utterance_00018` | 四人对话、轮换与重叠 | [试听](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav) | [完整预测](assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json) |
+| AMI · `EN2001e_utterance_00071` | 两人对话与短暂重叠 | [试听](assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav) | [完整预测](assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json) |
+| FLEURS · `fleurs_t2_0347` | 俄语语音、语种及内容标签 | [试听](assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav) | [完整预测](assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json) |
+| DESED · `t3_desed_0112` | 语音伴随机械事件 | [试听](assets/readme/tagbench/samples/t3_desed_0112/audio.wav) | [完整预测](assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json) |
+| FSD50K · `t3_fsd50k_0045` | 短音乐事件与音乐标签漏检 | [试听](assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav) | [完整预测](assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json) |
 
-[查看三系统描述对照](assets/readme/tagbench/COMPARISON.md) · [机器可读标签](assets/readme/tagbench/labels.json) · [音频来源与归属](assets/readme/tagbench/ATTRIBUTION.md)
+[查看五条样本、五层评审题和参考信息](assets/readme/tagbench/README.md) · [三系统输出对照](assets/readme/tagbench/COMPARISON.md) · [音频来源与归属](assets/readme/tagbench/ATTRIBUTION.md)
 
 [完整字段与输入格式](sure-tagger-main/docs/tags-and-methods.md)见标签文档。[交互演示页面](sure-tagger-main/demo/index.html)需自行准备音频和 `demo/data.js`，可用 [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) 生成页面数据。
 

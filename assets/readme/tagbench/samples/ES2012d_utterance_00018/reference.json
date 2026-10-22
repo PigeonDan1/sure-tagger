@@ -1,0 +1,56 @@
+{
+  "sample_id": "ES2012d_utterance_00018",
+  "source_dataset": "AMI",
+  "benchmark_track": "T1_natural_meeting_utterance",
+  "audio": {
+    "duration_sec": 23.72,
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "sha256": "4438973b35c3e7bfd70e063073f1a08cf99f4f97bc88934f54ef0c4182f9ea55"
+  },
+  "speaker_count": 4,
+  "speaker_overlap": true,
+  "reference_transcript": "So, look at these questions. Is the device f flashy and fashionable? Well I think most definitely. Yeah I'd say definitely a one yeah. I think it is yeah. So uh and also uh technologically innovative? Yes the voice technology indeed. Yeah, defi yeah, yeah Yeah.",
+  "turns": [
+    {
+      "speaker": "D",
+      "start_sec": 3.944,
+      "end_sec": 9.576
+    },
+    {
+      "speaker": "A",
+      "start_sec": 10.312,
+      "end_sec": 12.217
+    },
+    {
+      "speaker": "B",
+      "start_sec": 10.71,
+      "end_sec": 13.534
+    },
+    {
+      "speaker": "C",
+      "start_sec": 10.728,
+      "end_sec": 12.474
+    },
+    {
+      "speaker": "D",
+      "start_sec": 14.953,
+      "end_sec": 19.519
+    },
+    {
+      "speaker": "A",
+      "start_sec": 19.362,
+      "end_sec": 22.088
+    },
+    {
+      "speaker": "B",
+      "start_sec": 19.681,
+      "end_sec": 21.913
+    },
+    {
+      "speaker": "C",
+      "start_sec": 20.104,
+      "end_sec": 20.596
+    }
+  ]
+}

@@ -41,14 +41,17 @@ Given audio and a JSONL manifest, the tagger writes tags-only JSONL. This excerp
 }
 ```
 
-Two attributed Tag-Bench clips let you hear the input and inspect the same-audio comparison across SURE-Tagger, Captioner, and Qwen3-Omni:
+Five examples from the Tag-Bench `demo-web` review set let you hear the input and inspect the **complete per-sample predictions** from SURE-Tagger, Captioner, and Qwen3-Omni:
 
-| Clip | What to listen for | Files |
-| --- | --- | --- |
-| Mandarin · FLEURS | Single-speaker reading; quiet background | [Listen / download](assets/readme/tagbench/audio/fleurs_t2_0055.wav) |
-| English · LibriSpeech | Single-speaker reading; no labeled external noise | [Listen / download](assets/readme/tagbench/audio/librispeech_t2_0048.wav) |
+| Clip | What to listen for | Audio | Labels |
+| --- | --- | --- | --- |
+| AMI · `ES2012d_utterance_00018` | Four speakers, turn-taking and overlap | [Listen](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav) | [Full predictions](assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json) |
+| AMI · `EN2001e_utterance_00071` | Two speakers and brief overlap | [Listen](assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav) | [Full predictions](assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json) |
+| FLEURS · `fleurs_t2_0347` | Russian speech and language/content labels | [Listen](assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav) | [Full predictions](assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json) |
+| DESED · `t3_desed_0112` | Speech alongside a mechanical event | [Listen](assets/readme/tagbench/samples/t3_desed_0112/audio.wav) | [Full predictions](assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json) |
+| FSD50K · `t3_fsd50k_0045` | Short music event and a missed music tag | [Listen](assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav) | [Full predictions](assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json) |
 
-[Compare the three descriptions](assets/readme/tagbench/COMPARISON.md) · [Machine-readable labels](assets/readme/tagbench/labels.json) · [Audio attribution](assets/readme/tagbench/ATTRIBUTION.md)
+[Browse all five samples, review questions, and references](assets/readme/tagbench/README.md) · [Compare system outputs](assets/readme/tagbench/COMPARISON.md) · [Audio attribution](assets/readme/tagbench/ATTRIBUTION.md)
 
 For the complete fields and input format, see the [tag guide](sure-tagger-main/docs/tags-and-methods.md). The [interactive demo](sure-tagger-main/demo/index.html) needs your own audio and `demo/data.js`; [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) prepares that data.
 

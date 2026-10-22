@@ -1,0 +1,36 @@
+{
+  "sample_id": "EN2001e_utterance_00071",
+  "source_dataset": "AMI",
+  "benchmark_track": "T1_natural_meeting_utterance",
+  "audio": {
+    "duration_sec": 17.7155,
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "sha256": "5b4c51e1a88cfefbead1771f07a9b48742d4c248ccac720f8a3b6c873458864e"
+  },
+  "speaker_count": 2,
+  "speaker_overlap": true,
+  "reference_transcript": "Oh right, okay. So I could probably I could probably read it from uh that file already. Yeah, I can just give it to you in the format you want. So it w it will just k My preferred would be dialogue act number, then you can put both the scores in one file. You can put both the scores in one file if it makes it easier. And then score, yeah, it this was just for showing it. Huh?",
+  "turns": [
+    {
+      "speaker": "D",
+      "start_sec": 0.142,
+      "end_sec": 5.971
+    },
+    {
+      "speaker": "A",
+      "start_sec": 4.333,
+      "end_sec": 8.995
+    },
+    {
+      "speaker": "D",
+      "start_sec": 7.942,
+      "end_sec": 17.577
+    },
+    {
+      "speaker": "A",
+      "start_sec": 10.94,
+      "end_sec": 14.948
+    }
+  ]
+}

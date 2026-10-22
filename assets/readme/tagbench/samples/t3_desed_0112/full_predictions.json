@@ -1,0 +1,437 @@
+{
+  "sure_tagger": {
+    "audio_quality": {
+      "dnsmos_bak": 1.525256,
+      "dnsmos_ovrl": 1.474242,
+      "dnsmos_p808": 2.770706,
+      "dnsmos_sig": 2.045374,
+      "snr_db": 5.250191
+    },
+    "basic_acoustic": {
+      "channels": 1,
+      "duration_sec": 10.0,
+      "nonspeech_ratio": 0.697,
+      "sample_rate_hz": 16000,
+      "silence_segments": [
+        {
+          "end_sec": 4.42,
+          "start_sec": 0.0
+        },
+        {
+          "end_sec": 6.6,
+          "start_sec": 5.65
+        },
+        {
+          "end_sec": 10.0,
+          "start_sec": 8.4
+        }
+      ]
+    },
+    "descriptive": {
+      "background_condition": "Mono 16 kHz clip with about 70% silence/nonspeech; three silence segments account for most of the duration. Reverberation metrics show RT60 0.669 s and C50 15.82 dB, while SNR is 5.25 dB and DNSMOS values are low, indicating degraded or noisy capture despite no categorized external noise labels.",
+      "background_sound_summary": "No specific background sound categories were detected: external_noise_type is empty and all noise_composition subcategories are empty, with music_present false.",
+      "caption": "A single speaker delivers a short English phrase (\"tom smith records this is an unreal exclusive\") in a 10-second mono recording. Speech occupies only about 30% of the clip, with silence segments around it and no music or speaker changes. Signal quality metrics are low, suggesting a degraded or noisy capture.",
+      "clarity_intelligibility_impression": "Speech is limited to short segments and metrics suggest low perceptual quality (SNR 5.25 dB; DNSMOS overall 1.47), so intelligibility is likely impaired even though an 8-word transcript was returned. C50 is 15.82 dB and RT60 is 0.669 s, but ASR output should still be treated as low-reliability.",
+      "descriptive_phrases": [
+        "single-speaker English clip",
+        "speech occupies roughly 30% of duration",
+        "no music or labeled background noise",
+        "low DNSMOS and SNR metrics",
+        "mono 16 kHz recording",
+        "RT60 0.669 s and C50 15.82 dB",
+        "three silence segments totaling 6.97 s"
+      ],
+      "dominant_content_impression": "Speech is the only active content event; a single speaker is present, and no music was detected. Non-speech/silence occupies most of the recording duration.",
+      "facets": [
+        {
+          "confidence": 0.9,
+          "description": "Speech is the sole event but covers only about 30% of the 10 s clip, with three silence segments accounting for 6.97 s.",
+          "evidence_tags": [
+            "basic_acoustic.duration_sec",
+            "basic_acoustic.nonspeech_ratio",
+            "basic_acoustic.silence_segments",
+            "sound_field_scene.speech_music_events"
+          ],
+          "name": "speech_sparsity"
+        },
+        {
+          "confidence": 0.8,
+          "description": "Low SNR and DNSMOS values indicate degraded capture quality.",
+          "evidence_tags": [
+            "audio_quality.snr_db",
+            "audio_quality.dnsmos_ovrl",
+            "audio_quality.dnsmos_sig",
+            "audio_quality.dnsmos_bak",
+            "audio_quality.dnsmos_p808"
+          ],
+          "name": "signal_quality"
+        },
+        {
+          "confidence": 0.95,
+          "description": "One speaker profile is present, multi_speaker is false, and there are no speaker changes or overlaps.",
+          "evidence_tags": [
+            "speaker.speaker_present",
+            "speaker.speaker_count",
+            "speaker.multi_speaker",
+            "speaker.speaker_change",
+            "speaker.speaker_change_count",
+            "speaker.speaker_overlap",
+            "speaker.overlap_ratio",
+            "deterministic_derived.speaker_change_rate_per_min"
+          ],
+          "name": "single_speaker_monologue"
+        },
+        {
+          "confidence": 0.6,
+          "description": "RT60 is 0.669 s and C50 is 15.82 dB; far_field is unknown.",
+          "evidence_tags": [
+            "room_acoustic.rt60_sec",
+            "room_acoustic.c50_db"
+          ],
+          "name": "room_reverberation"
+        }
+      ],
+      "scene_hypotheses": [
+        {
+          "confidence": 0.45,
+          "description": "Single-person recorded announcement or intro segment, possibly from a low-quality capture environment.",
+          "evidence_tags": [
+            "speaker.asr_transcript",
+            "speaker.multi_speaker",
+            "speaker.speaker_count",
+            "audio_quality.snr_db"
+          ]
+        },
+        {
+          "confidence": 0.4,
+          "description": "Speech may have been recorded in a distant or noisy setting given low SNR/DNSMOS and moderate RT60, although far_field is unknown.",
+          "evidence_tags": [
+            "audio_quality.snr_db",
+            "audio_quality.dnsmos_ovrl",
+            "room_acoustic.rt60_sec"
+          ]
+        }
+      ],
+      "speaker_descriptions": [
+        {
+          "confidence": 0.8,
+          "description": "speaker_1 has low pitch and variable volume; speech-rate metrics are not available.",
+          "descriptive_phrases": [
+            "low pitch",
+            "variable volume",
+            "speech rate unavailable"
+          ],
+          "evidence_tags": [
+            "speaker.profiles"
+          ],
+          "gender": "male",
+          "speaker_id": "speaker_1"
+        }
+      ],
+      "topic": "Tom Smith Records unreal exclusive",
+      "uncertainties": [
+        "room_acoustic.far_field is missing",
+        "speaker_1 speech rate fields are null",
+        "noise_composition and external_noise_type are empty, so background character is unknown beyond metrics",
+        "transcript reliability is questionable given low SNR and DNSMOS"
+      ],
+      "usability_notes": [
+        "Because SNR and DNSMOS are low and speech occupies only about 30% of duration, downstream ASR and diarization should treat the transcript as low-reliability. Diarization is straightforward due to one speaker and no overlaps, but silence segmentation may help isolate speech."
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": 0.0,
+      "speaker_change_rate_per_min": 0.0
+    },
+    "field_universe_version": "structural-v0.1",
+    "language_content": {
+      "filler": 0,
+      "language": "en",
+      "punctuation": {
+        "has_terminal_punctuation": false,
+        "punctuation_count": 0
+      },
+      "repetition": {
+        "has_repetition": false,
+        "repetition_count": 0
+      },
+      "word_count": 8
+    },
+    "room_acoustic": {
+      "c50_db": 15.821694,
+      "far_field": null,
+      "rt60_sec": 0.669398
+    },
+    "sample_id": "t3_desed_0112",
+    "schema_version": "structural-prediction-v0.1",
+    "sound_field_scene": {
+      "external_noise_type": [],
+      "music_present": false,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [],
+        "mechanical": [],
+        "music": [],
+        "nature": []
+      },
+      "speech_music_events": [
+        "speech"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": "tom smith records this is an unreal exclusive",
+      "multi_speaker": false,
+      "overlap_ratio": 0.0,
+      "profiles": [
+        {
+          "gender": "male",
+          "pitch": "low",
+          "speaker_id": "speaker_1",
+          "speaker_volume": "variable",
+          "speech_rate": {
+            "band": null,
+            "unit": null,
+            "value": null
+          }
+        }
+      ],
+      "speaker_change": false,
+      "speaker_change_count": 0,
+      "speaker_count": 1,
+      "speaker_overlap": false,
+      "speaker_present": true
+    }
+  },
+  "captioner": {
+    "audio_quality": {
+      "dnsmos_bak": null,
+      "dnsmos_ovrl": null,
+      "dnsmos_p808": null,
+      "dnsmos_sig": null,
+      "snr_db": null
+    },
+    "basic_acoustic": {
+      "channels": null,
+      "duration_sec": null,
+      "nonspeech_ratio": null,
+      "sample_rate_hz": null,
+      "silence_segments": null
+    },
+    "descriptive": {
+      "background_condition": null,
+      "background_sound_summary": null,
+      "caption": "The caption states that Thomas Smith records and includes the phrase 'this is an unreal exclusive'.",
+      "clarity_intelligibility_impression": null,
+      "descriptive_phrases": [
+        "unreal exclusive"
+      ],
+      "dominant_content_impression": null,
+      "facets": null,
+      "scene_hypotheses": null,
+      "speaker_descriptions": null,
+      "topic": null,
+      "uncertainties": [
+        "No acoustic, speaker, or language details are provided.",
+        "It is not clear whether the phrase 'this is an unreal exclusive' represents spoken audio or descriptive text."
+      ],
+      "usability_notes": null
+    },
+    "deterministic_derived": {
+      "filler_ratio": null,
+      "speaker_change_rate_per_min": null
+    },
+    "field_universe_version": "structural-v0.1",
+    "language_content": {
+      "filler": null,
+      "language": null,
+      "punctuation": {
+        "has_terminal_punctuation": null,
+        "punctuation_count": null
+      },
+      "repetition": {
+        "has_repetition": null,
+        "repetition_count": null
+      },
+      "word_count": null
+    },
+    "room_acoustic": {
+      "c50_db": null,
+      "far_field": null,
+      "rt60_sec": null
+    },
+    "sample_id": "t3_desed_0112",
+    "schema_version": "structural-prediction-v0.1",
+    "sound_field_scene": {
+      "external_noise_type": null,
+      "music_present": null,
+      "noise_composition": null,
+      "speech_music_events": null
+    },
+    "speaker": {
+      "asr_transcript": null,
+      "multi_speaker": null,
+      "overlap_ratio": null,
+      "profiles": null,
+      "speaker_change": null,
+      "speaker_change_count": null,
+      "speaker_count": null,
+      "speaker_overlap": null,
+      "speaker_present": null
+    }
+  },
+  "qwen3_omni": {
+    "audio_quality": {
+      "dnsmos_bak": null,
+      "dnsmos_ovrl": null,
+      "dnsmos_p808": null,
+      "dnsmos_sig": null,
+      "snr_db": null
+    },
+    "basic_acoustic": {
+      "channels": null,
+      "duration_sec": null,
+      "nonspeech_ratio": null,
+      "sample_rate_hz": null,
+      "silence_segments": null
+    },
+    "descriptive": {
+      "background_condition": "安静背景，无明显环境噪声或干扰。",
+      "background_sound_summary": "除语音外未检测到背景声音。",
+      "caption": "单一说话人以清晰、中性的语气说出“Thomas Smith records. This is an Unreal exclusive.”，无背景噪声或音乐。",
+      "clarity_intelligibility_impression": "语音清晰，可懂度高。",
+      "descriptive_phrases": [
+        "单一说话人",
+        "清晰语音",
+        "中性语气",
+        "无背景噪声"
+      ],
+      "dominant_content_impression": "语音主导",
+      "facets": [
+        {
+          "confidence": 0.5,
+          "description": "单一说话人独白。",
+          "evidence_tags": [],
+          "name": "interaction_pattern"
+        },
+        {
+          "confidence": 0.5,
+          "description": "中性语气，正常语速，中等音高，正常音量。",
+          "evidence_tags": [],
+          "name": "delivery_style"
+        },
+        {
+          "confidence": 0.5,
+          "description": "安静、仅语音，无背景音乐或噪声。",
+          "evidence_tags": [],
+          "name": "soundscape"
+        },
+        {
+          "confidence": 0.4,
+          "description": "媒体或内容实体的品牌或开场介绍。",
+          "evidence_tags": [],
+          "name": "content_impression"
+        },
+        {
+          "confidence": 0.5,
+          "description": "清晰度和可懂度高，可能为受控环境录音。",
+          "evidence_tags": [],
+          "name": "recording_impression"
+        }
+      ],
+      "scene_hypotheses": [
+        {
+          "confidence": 0.4,
+          "description": "可能是媒体品牌或内容介绍的录音室录音或配音。",
+          "evidence_tags": []
+        },
+        {
+          "confidence": 0.4,
+          "description": "用于独家内容发布的独白公告。",
+          "evidence_tags": []
+        }
+      ],
+      "speaker_descriptions": [
+        {
+          "confidence": 0.5,
+          "description": "一名说话人发布清晰、中性的公告。",
+          "descriptive_phrases": [
+            "单一说话人",
+            "中性语气",
+            "清晰发音"
+          ],
+          "evidence_tags": [],
+          "gender": "male",
+          "speaker_id": "speaker_1"
+        }
+      ],
+      "topic": "与 Thomas Smith records 和 Unreal 相关的音频品牌或介绍内容。",
+      "uncertainties": [],
+      "usability_notes": [
+        "适合用作媒体制作中的开场或品牌片段。"
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": 0.0,
+      "speaker_change_rate_per_min": null
+    },
+    "field_universe_version": "structural-v0.1",
+    "language_content": {
+      "filler": 0,
+      "language": "en",
+      "punctuation": {
+        "has_terminal_punctuation": true,
+        "punctuation_count": 2
+      },
+      "repetition": {
+        "has_repetition": false,
+        "repetition_count": 0
+      },
+      "word_count": 8
+    },
+    "room_acoustic": {
+      "c50_db": null,
+      "far_field": null,
+      "rt60_sec": null
+    },
+    "sample_id": "t3_desed_0112",
+    "schema_version": "structural-prediction-v0.1",
+    "sound_field_scene": {
+      "external_noise_type": null,
+      "music_present": false,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [],
+        "mechanical": [],
+        "music": [],
+        "nature": []
+      },
+      "speech_music_events": [
+        "speech"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": "Thomas Smith records. This is an Unreal exclusive.",
+      "multi_speaker": false,
+      "overlap_ratio": 0,
+      "profiles": [
+        {
+          "pitch": "mid",
+          "speaker_id": "speaker_1",
+          "speaker_volume": "normal",
+          "speech_rate": {
+            "band": "normal",
+            "unit": null,
+            "value": null
+          }
+        }
+      ],
+      "speaker_change": false,
+      "speaker_change_count": 0,
+      "speaker_count": 1,
+      "speaker_overlap": false,
+      "speaker_present": true
+    }
+  }
+}
