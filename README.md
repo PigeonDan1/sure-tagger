@@ -31,7 +31,7 @@ A free-form caption can summarize a recording, but it cannot tell whether an omi
 Hear this [AMI meeting clip](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav), then follow the evidence into its SURE-Tagger labels.
 
 <table width="100%">
-<thead><tr><th width="38%">Evidence</th><th width="62%">Structured tags</th></tr></thead>
+<thead><tr><th width="300">Evidence</th><th width="600">Structured tags</th></tr></thead>
 <tbody>
 <tr><td><strong>Acoustic timing</strong><br><sub>WAV duration + speech regions</sub></td><td><code>basic_acoustic</code><br>Duration <strong>23.72 s</strong> · Non-speech ratio <strong>0.500</strong></td></tr>
 <tr><td><strong>Sound events</strong><br><sub>FireRed AED</sub></td><td><code>sound_field_scene</code><br>Speech detected · Music <strong>false</strong></td></tr>
@@ -61,7 +61,7 @@ Values from the [complete SURE-Tagger prediction](assets/readme/tagbench/samples
 Explore five Tag-Bench clips with complete same-audio predictions from SURE-Tagger, Captioner, and Qwen3-Omni:
 
 <table width="100%">
-<thead><tr><th width="22%">Clip</th><th width="38%">Listen for</th><th width="40%">Files</th></tr></thead>
+<thead><tr><th width="200">Clip</th><th width="320">Listen for</th><th width="380">Files</th></tr></thead>
 <tbody>
 <tr><td>AMI · <code>ES2012d</code></td><td>Four speakers and overlap</td><td><a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">Full predictions</a></td></tr>
 <tr><td>AMI · <code>EN2001e</code></td><td>Two speakers and brief overlap</td><td><a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">Full predictions</a></td></tr>
@@ -90,7 +90,7 @@ Specialized observers collect acoustic, temporal, lexical, and speaker evidence.
 Tag-Bench combines selected recordings from existing datasets with controlled synthetic scenarios. For the latter, an agent chooses attribute combinations, schedules speech generation and acoustic processing, then validates the resulting clips.
 
 <table width="100%">
-<thead><tr><th width="32%">Component</th><th width="52%">Source or process</th><th width="16%" align="right">Clips</th></tr></thead>
+<thead><tr><th width="280">Component</th><th width="480">Source or process</th><th width="140" align="right">Clips</th></tr></thead>
 <tbody>
 <tr><td>Controlled synthesis</td><td>Agent-orchestrated generation and validation</td><td align="right">500</td></tr>
 <tr><td>Existing data · T1</td><td>AMI meetings</td><td align="right">350</td></tr>
@@ -147,7 +147,7 @@ bash compare/eval/run_sure_tagger_pipeline_1.sh
 ```
 
 <table width="100%">
-<thead><tr><th width="37%">Evaluation scope</th><th width="12%" align="right">Clips</th><th width="51%">Setting</th></tr></thead>
+<thead><tr><th width="330">Evaluation scope</th><th width="110" align="right">Clips</th><th width="460">Setting</th></tr></thead>
 <tbody>
 <tr><td>Existing-data structural benchmark</td><td align="right">650</td><td>Default inputs</td></tr>
 <tr><td>Original frozen descriptive ground truth</td><td align="right">648</td><td><code>ALLOW_FROZEN_GT_EXCLUSIONS=1</code> for the predefined missing clips only</td></tr>

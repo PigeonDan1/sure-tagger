@@ -31,7 +31,7 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 先[试听这段 AMI 会议音频](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav)，再查看各类证据如何形成结构化标签。
 
 <table width="100%">
-<thead><tr><th width="38%">证据</th><th width="62%">结构化标签</th></tr></thead>
+<thead><tr><th width="300">证据</th><th width="600">结构化标签</th></tr></thead>
 <tbody>
 <tr><td><strong>基础声学</strong><br><sub>WAV 时长与语音区间</sub></td><td><code>basic_acoustic</code><br>时长 <strong>23.72 秒</strong> · 非语音占比 <strong>0.500</strong></td></tr>
 <tr><td><strong>声音事件</strong><br><sub>FireRed AED</sub></td><td><code>sound_field_scene</code><br>检测到语音 · 音乐 <strong>false</strong></td></tr>
@@ -61,7 +61,7 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 五段 Tag-Bench 音频均提供 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的完整预测：
 
 <table width="100%">
-<thead><tr><th width="22%">样本</th><th width="38%">试听重点</th><th width="40%">资源</th></tr></thead>
+<thead><tr><th width="200">样本</th><th width="320">试听重点</th><th width="380">资源</th></tr></thead>
 <tbody>
 <tr><td>AMI · <code>ES2012d</code></td><td>四人对话与重叠语音</td><td><a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">完整预测</a></td></tr>
 <tr><td>AMI · <code>EN2001e</code></td><td>两人对话与短暂重叠</td><td><a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">完整预测</a></td></tr>
@@ -147,7 +147,7 @@ bash compare/eval/run_sure_tagger_pipeline_1.sh
 ```
 
 <table width="100%">
-<thead><tr><th width="37%">评测范围</th><th width="12%" align="right">样本数</th><th width="51%">入口设置</th></tr></thead>
+<thead><tr><th width="330">评测范围</th><th width="110" align="right">样本数</th><th width="460">入口设置</th></tr></thead>
 <tbody>
 <tr><td>现有数据集结构性 benchmark</td><td align="right">650</td><td>默认输入</td></tr>
 <tr><td>原冻结描述性 GT</td><td align="right">648</td><td><code>ALLOW_FROZEN_GT_EXCLUSIONS=1</code>，仅允许既定缺失样本</td></tr>
