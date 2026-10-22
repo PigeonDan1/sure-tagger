@@ -28,9 +28,19 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 ## Demo · 从音频到标签
 
-先[试听这段 AMI 会议音频](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav)，再顺着图表查看 SURE-Tagger 如何将其整理为结构化标签。
+先[试听这段 AMI 会议音频](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav)，再查看各类证据如何形成结构化标签。
 
-<p align="center"><a href="./assets/readme/demo-tag-tree-zh.svg"><img src="./assets/readme/demo-tag-tree-zh.svg" width="760" alt="AMI 会议片段被标注为 23.72 秒的英语语音，包含四位说话人和重叠语音"></a></p>
+<table width="100%">
+<thead><tr><th width="38%">证据</th><th width="62%">结构化标签</th></tr></thead>
+<tbody>
+<tr><td><strong>基础声学</strong><br><sub>WAV 时长与语音区间</sub></td><td><code>basic_acoustic</code><br>时长 <strong>23.72 秒</strong> · 非语音占比 <strong>0.500</strong></td></tr>
+<tr><td><strong>声音事件</strong><br><sub>FireRed AED</sub></td><td><code>sound_field_scene</code><br>检测到语音 · 音乐 <strong>false</strong></td></tr>
+<tr><td><strong>说话人与转写</strong><br><sub>MOSS / Nemotron + ASR</sub></td><td><code>speaker</code><br><strong>4</strong> 位说话人 · 重叠语音 <strong>true</strong></td></tr>
+<tr><td><strong>语言与文本</strong><br><sub>FireRed LID + 转写文本</sub></td><td><code>language_content</code><br>英语 · <strong>45</strong> 词</td></tr>
+</tbody>
+</table>
+
+<sub>AMI 参考标注：四位说话人，存在重叠语音。</sub>
 
 <details>
 <summary>展开这段音频的标签节选</summary>
@@ -50,11 +60,16 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 五段 Tag-Bench 音频均提供 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的完整预测：
 
-- **AMI · `ES2012d`** — 四人对话与重叠语音 · [试听](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav) · [完整预测](assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json)
-- **AMI · `EN2001e`** — 两人对话与短暂重叠 · [试听](assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav) · [完整预测](assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json)
-- **FLEURS · 俄语** — 语种与语音内容 · [试听](assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav) · [完整预测](assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json)
-- **DESED** — 语音与机械事件 · [试听](assets/readme/tagbench/samples/t3_desed_0112/audio.wav) · [完整预测](assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json)
-- **FSD50K** — 音乐事件被打标器漏检 · [试听](assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav) · [完整预测](assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json)
+<table width="100%">
+<thead><tr><th width="22%">样本</th><th width="38%">试听重点</th><th width="40%">资源</th></tr></thead>
+<tbody>
+<tr><td>AMI · <code>ES2012d</code></td><td>四人对话与重叠语音</td><td><a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">完整预测</a></td></tr>
+<tr><td>AMI · <code>EN2001e</code></td><td>两人对话与短暂重叠</td><td><a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">完整预测</a></td></tr>
+<tr><td>FLEURS · 俄语</td><td>语种与语音内容</td><td><a href="assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">完整预测</a></td></tr>
+<tr><td>DESED</td><td>语音与机械事件</td><td><a href="assets/readme/tagbench/samples/t3_desed_0112/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">完整预测</a></td></tr>
+<tr><td>FSD50K</td><td>音乐事件被打标器漏检</td><td><a href="assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">完整预测</a></td></tr>
+</tbody>
+</table>
 
 [五条样本与参考信息](assets/readme/tagbench/README.md) · [同音频输出对照](assets/readme/tagbench/COMPARISON.md) · [音频来源与归属](assets/readme/tagbench/ATTRIBUTION.md)
 
@@ -74,7 +89,16 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 Tag-Bench 将受控合成场景与现有数据集样本结合。合成部分从属性组合选定场景，由 agent 调度语音生成、时间安排和声学处理，再验证生成结果。
 
-<p align="center"><img src="./assets/readme/tagbench-composition-zh.svg" width="100%" alt="Tag-Bench 共 1,150 条：受控合成 500 条，AMI 会议 350 条，FLEURS 与 LibriSpeech 150 条，DESED 与 FSD50K 150 条"></p>
+<table width="100%">
+<thead><tr><th width="32%">构成</th><th width="52%">来源或生成方式</th><th width="16%" align="right">样本数</th></tr></thead>
+<tbody>
+<tr><td>受控合成</td><td>Agent 调度工具生成并核验</td><td align="right">500</td></tr>
+<tr><td>现有数据集 · T1</td><td>AMI 会议</td><td align="right">350</td></tr>
+<tr><td>现有数据集 · T2</td><td>FLEURS、LibriSpeech</td><td align="right">150</td></tr>
+<tr><td>现有数据集 · T3</td><td>DESED、FSD50K</td><td align="right">150</td></tr>
+<tr><td><strong>合计</strong></td><td><strong>合成 + 现有数据集</strong></td><td align="right"><strong>1,150</strong></td></tr>
+</tbody>
+</table>
 
 <p align="center"><img src="./assets/readme/tagbench-workflow.png" width="100%" alt="属性组合引导受控语音生成和核验，并与现有数据集录音共同组成 Tag-Bench"></p>
 
@@ -122,8 +146,13 @@ bash compare/eval/run_sure_tagger_pipeline_1.sh
 # 八卡：bash compare/eval/run_sure_tagger_pipeline_8.sh
 ```
 
-- **650 条：** 现有数据集结构性 benchmark，使用默认输入。
-- **648 条：** 原冻结描述性 GT；设置 `ALLOW_FROZEN_GT_EXCLUSIONS=1`，仅允许既定缺失样本。
+<table width="100%">
+<thead><tr><th width="37%">评测范围</th><th width="12%" align="right">样本数</th><th width="51%">入口设置</th></tr></thead>
+<tbody>
+<tr><td>现有数据集结构性 benchmark</td><td align="right">650</td><td>默认输入</td></tr>
+<tr><td>原冻结描述性 GT</td><td align="right">648</td><td><code>ALLOW_FROZEN_GT_EXCLUSIONS=1</code>，仅允许既定缺失样本</td></tr>
+</tbody>
+</table>
 
 单卡与八卡运行请使用各自的 `OUTPUT_ROOT` / `STAGE_ROOT`。
 

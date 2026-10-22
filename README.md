@@ -28,9 +28,19 @@ A free-form caption can summarize a recording, but it cannot tell whether an omi
 
 ## Demo · Audio to tags
 
-Hear this [AMI meeting clip](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav), then follow its SURE-Tagger labels from audio to structured evidence.
+Hear this [AMI meeting clip](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav), then follow the evidence into its SURE-Tagger labels.
 
-<p align="center"><a href="./assets/readme/demo-tag-tree-en.svg"><img src="./assets/readme/demo-tag-tree-en.svg" width="760" alt="An AMI meeting clip is tagged as 23.72 seconds of English speech with four speakers and overlapping turns"></a></p>
+<table width="100%">
+<thead><tr><th width="38%">Evidence</th><th width="62%">Structured tags</th></tr></thead>
+<tbody>
+<tr><td><strong>Acoustic timing</strong><br><sub>WAV duration + speech regions</sub></td><td><code>basic_acoustic</code><br>Duration <strong>23.72 s</strong> · Non-speech ratio <strong>0.500</strong></td></tr>
+<tr><td><strong>Sound events</strong><br><sub>FireRed AED</sub></td><td><code>sound_field_scene</code><br>Speech detected · Music <strong>false</strong></td></tr>
+<tr><td><strong>Speaker + ASR</strong><br><sub>MOSS / Nemotron + ASR</sub></td><td><code>speaker</code><br><strong>4</strong> speakers · Overlap <strong>true</strong></td></tr>
+<tr><td><strong>Language + text</strong><br><sub>FireRed LID + transcript</sub></td><td><code>language_content</code><br>English · <strong>45</strong> words</td></tr>
+</tbody>
+</table>
+
+<sub>AMI reference: four speakers with overlapping turns.</sub>
 
 <details>
 <summary>View this clip's tag excerpt</summary>
@@ -50,11 +60,16 @@ Values from the [complete SURE-Tagger prediction](assets/readme/tagbench/samples
 
 Explore five Tag-Bench clips with complete same-audio predictions from SURE-Tagger, Captioner, and Qwen3-Omni:
 
-- **AMI · `ES2012d`** — Four speakers and overlap · [Listen](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav) · [Full predictions](assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json)
-- **AMI · `EN2001e`** — Two speakers and brief overlap · [Listen](assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav) · [Full predictions](assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json)
-- **FLEURS · Russian** — Language and speech content · [Listen](assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav) · [Full predictions](assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json)
-- **DESED** — Speech with a mechanical event · [Listen](assets/readme/tagbench/samples/t3_desed_0112/audio.wav) · [Full predictions](assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json)
-- **FSD50K** — Music event missed by the tagger · [Listen](assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav) · [Full predictions](assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json)
+<table width="100%">
+<thead><tr><th width="22%">Clip</th><th width="38%">Listen for</th><th width="40%">Files</th></tr></thead>
+<tbody>
+<tr><td>AMI · <code>ES2012d</code></td><td>Four speakers and overlap</td><td><a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">Full predictions</a></td></tr>
+<tr><td>AMI · <code>EN2001e</code></td><td>Two speakers and brief overlap</td><td><a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">Full predictions</a></td></tr>
+<tr><td>FLEURS · Russian</td><td>Language and speech content</td><td><a href="assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">Full predictions</a></td></tr>
+<tr><td>DESED</td><td>Speech with a mechanical event</td><td><a href="assets/readme/tagbench/samples/t3_desed_0112/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">Full predictions</a></td></tr>
+<tr><td>FSD50K</td><td>Music event missed by the tagger</td><td><a href="assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">Full predictions</a></td></tr>
+</tbody>
+</table>
 
 [All five samples and references](assets/readme/tagbench/README.md) · [Same-audio comparison](assets/readme/tagbench/COMPARISON.md) · [Audio attribution](assets/readme/tagbench/ATTRIBUTION.md)
 
@@ -74,7 +89,16 @@ Specialized observers collect acoustic, temporal, lexical, and speaker evidence.
 
 Tag-Bench combines selected recordings from existing datasets with controlled synthetic scenarios. For the latter, an agent chooses attribute combinations, schedules speech generation and acoustic processing, then validates the resulting clips.
 
-<p align="center"><img src="./assets/readme/tagbench-composition-en.svg" width="100%" alt="Tag-Bench has 1,150 clips: 500 controlled synthetic clips, 350 AMI meetings, 150 FLEURS and LibriSpeech clips, and 150 DESED and FSD50K clips"></p>
+<table width="100%">
+<thead><tr><th width="32%">Component</th><th width="52%">Source or process</th><th width="16%" align="right">Clips</th></tr></thead>
+<tbody>
+<tr><td>Controlled synthesis</td><td>Agent-orchestrated generation and validation</td><td align="right">500</td></tr>
+<tr><td>Existing data · T1</td><td>AMI meetings</td><td align="right">350</td></tr>
+<tr><td>Existing data · T2</td><td>FLEURS, LibriSpeech</td><td align="right">150</td></tr>
+<tr><td>Existing data · T3</td><td>DESED, FSD50K</td><td align="right">150</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>Synthesis + existing data</strong></td><td align="right"><strong>1,150</strong></td></tr>
+</tbody>
+</table>
 
 <p align="center"><img src="./assets/readme/tagbench-workflow.png" width="100%" alt="Attribute combinations guide controlled speech generation and validation alongside selected recordings from existing datasets"></p>
 
@@ -122,8 +146,13 @@ bash compare/eval/run_sure_tagger_pipeline_1.sh
 # Eight GPUs: bash compare/eval/run_sure_tagger_pipeline_8.sh
 ```
 
-- **650 clips:** Existing-data structural benchmark; default inputs.
-- **648 clips:** Original frozen descriptive ground truth; set `ALLOW_FROZEN_GT_EXCLUSIONS=1` for the predefined missing clips only.
+<table width="100%">
+<thead><tr><th width="37%">Evaluation scope</th><th width="12%" align="right">Clips</th><th width="51%">Setting</th></tr></thead>
+<tbody>
+<tr><td>Existing-data structural benchmark</td><td align="right">650</td><td>Default inputs</td></tr>
+<tr><td>Original frozen descriptive ground truth</td><td align="right">648</td><td><code>ALLOW_FROZEN_GT_EXCLUSIONS=1</code> for the predefined missing clips only</td></tr>
+</tbody>
+</table>
 
 Use separate `OUTPUT_ROOT` / `STAGE_ROOT` directories for one-GPU and eight-GPU runs.
 
