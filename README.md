@@ -10,7 +10,7 @@
 
 SURE-Tagger turns evidence from specialized speech models into queryable tags and descriptions. It keeps `null` when evidence is insufficient. The research explores how these representations support evaluation across datasets and targeted data selection; this repository provides tagging, description, and scoring entry points.
 
-<p align="center"><video src="https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f" controls playsinline preload="metadata" poster="./assets/readme/video/suretagger-intro-zh-poster.jpg" width="100%" aria-label="SURE-Tagger introduction video with Chinese narration">SURE-Tagger introduction video</video></p>
+https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 <p align="center"><sub>Introduction video · Chinese narration</sub></p>
 

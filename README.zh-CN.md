@@ -10,7 +10,7 @@
 
 SURE-Tagger 将专项模型的语音证据整理为可查询的标签与描述，并在证据不足时保留 `null`。论文研究这些表示如何支持跨数据集的组合评测与目标数据选择；本仓库提供打标、描述和评分入口。
 
-<p align="center"><video src="https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f" controls playsinline preload="metadata" poster="./assets/readme/video/suretagger-intro-zh-poster.jpg" width="100%" aria-label="SURE-Tagger 中文介绍视频">SURE-Tagger 中文介绍视频</video></p>
+https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 <p align="center"><sub>SURE-Tagger 中文介绍视频</sub></p>
 
