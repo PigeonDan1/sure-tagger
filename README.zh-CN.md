@@ -2,7 +2,7 @@
 
 <h1 align="center">SURE-Tagger</h1>
 
-<h2 align="center">一种语音的半结构化表征，让智能体真正听懂并分析声音</h2>
+<h2 align="center">通过丰富的半结构化表征，让智能体读懂音频。</h2>
 
 <p align="center"><a href="README.md">English</a> · <strong>简体中文</strong></p>
 
@@ -134,7 +134,7 @@ Tag-Bench 将受控合成场景与现有数据集样本结合。合成部分从�
 
 <a id="paper-results"></a>
 
-## 论文结果
+## 系统性能
 
 雷达图对比现有录音与合成录音上的逐属性相对表现。每类数据的每个轴都以该轴最优方法归一化；SURE-Tagger 在多数说话人、时间与声学属性上表现领先。
 
