@@ -1,0 +1,53 @@
+{
+  "cluster_id": "C01",
+  "cluster_name": "低信噪比短语音",
+  "n": 122,
+  "share": 0.122,
+  "anchors": [
+    {
+      "feature": "audio_quality.snr_db",
+      "value": 17.2516,
+      "lift": 0.7983008822802748,
+      "n": 122,
+      "effect": -0.7983008822802748,
+      "direction": "lower"
+    },
+    {
+      "feature": "basic_acoustic.nonspeech_ratio",
+      "value": 0.0,
+      "lift": 0.7451164646003613,
+      "n": 122,
+      "effect": -0.7451164646003613,
+      "direction": "lower"
+    },
+    {
+      "feature": "room_acoustic.rt60_sec",
+      "value": 0.3718,
+      "lift": 0.49274512809876375,
+      "n": 122,
+      "effect": 0.49274512809876375,
+      "direction": "higher"
+    }
+  ],
+  "secondary_tags": {
+    "interaction": "single",
+    "quality": "high",
+    "room": "ordinary",
+    "language_group": "other_known",
+    "content": [
+      "speech"
+    ],
+    "noise": [],
+    "temporal": [
+      "short_fragment"
+    ]
+  },
+  "snr_db_median": 17.25161,
+  "rt60_sec_median": 0.371792,
+  "duration_sec_median": 1.25,
+  "nonspeech_ratio_median": 0.0,
+  "error_driven": false,
+  "error_heterogeneous": true,
+  "cluster_name_status": "posthoc_reviewed",
+  "cluster_name_version": "cluster_names_v0.5"
+}

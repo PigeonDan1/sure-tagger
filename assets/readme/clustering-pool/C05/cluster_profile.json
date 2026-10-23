@@ -1,0 +1,95 @@
+{
+  "cluster_id": "C05",
+  "cluster_name": "短片段带乐低信噪比语音",
+  "n": 38,
+  "share": 0.038,
+  "anchors": [
+    {
+      "feature": "music",
+      "value": true,
+      "lift": 21.052631578947366,
+      "n": 16
+    },
+    {
+      "feature": "events",
+      "value": [
+        "music",
+        "speech"
+      ],
+      "lift": 20.123839009287924,
+      "n": 13
+    },
+    {
+      "feature": "events",
+      "value": [],
+      "lift": 12.280701754385964,
+      "n": 14
+    },
+    {
+      "feature": "noise",
+      "value": [
+        "music"
+      ],
+      "lift": 9.33786078098472,
+      "n": 11
+    },
+    {
+      "feature": "audio_quality.snr_db",
+      "value": 12.5716,
+      "lift": 0.9771311862214576,
+      "n": 38,
+      "effect": -0.9771311862214576,
+      "direction": "lower"
+    },
+    {
+      "feature": "basic_acoustic.nonspeech_ratio",
+      "value": 0.2234,
+      "lift": 0.9683111961737172,
+      "n": 38,
+      "effect": 0.9683111961737172,
+      "direction": "higher"
+    },
+    {
+      "feature": "room_acoustic.rt60_sec",
+      "value": 0.4422,
+      "lift": 0.9159925813035625,
+      "n": 38,
+      "effect": 0.9159925813035625,
+      "direction": "higher"
+    },
+    {
+      "feature": "basic_acoustic.duration_sec",
+      "value": 0.7,
+      "lift": 0.49923720342995426,
+      "n": 38,
+      "effect": -0.49923720342995426,
+      "direction": "lower"
+    }
+  ],
+  "secondary_tags": {
+    "interaction": "single",
+    "quality": "low",
+    "room": "dry",
+    "language_group": "en",
+    "content": [
+      "speech",
+      "music",
+      "non_speech_candidate"
+    ],
+    "noise": [
+      "music"
+    ],
+    "temporal": [
+      "short_fragment",
+      "sparse_speech"
+    ]
+  },
+  "snr_db_median": 12.5715905,
+  "rt60_sec_median": 0.4421935,
+  "duration_sec_median": 0.7,
+  "nonspeech_ratio_median": 0.223365,
+  "error_driven": false,
+  "error_heterogeneous": false,
+  "cluster_name_status": "posthoc_reviewed",
+  "cluster_name_version": "cluster_names_v0.5"
+}

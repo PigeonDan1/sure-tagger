@@ -1,0 +1,113 @@
+{
+  "sample_id": "multi_000513_CCFBDCI-001454_EN",
+  "dataset": "ContextASR-Bench_Speech_en__v1.0.1",
+  "tags": {
+    "audio_quality": {
+      "dnsmos_bak": 4.198241,
+      "dnsmos_ovrl": 3.46264,
+      "dnsmos_p808": 3.904635,
+      "dnsmos_sig": 3.671713,
+      "snr_db": 67.574043
+    },
+    "basic_acoustic": {
+      "channels": 1,
+      "duration_sec": 36.91975,
+      "nonspeech_ratio": 0.056338,
+      "sample_rate_hz": 16000,
+      "silence_segments": [
+        {
+          "end_sec": 0.51,
+          "start_sec": 0.0
+        },
+        {
+          "end_sec": 2.23,
+          "start_sec": 1.94
+        },
+        {
+          "end_sec": 9.96,
+          "start_sec": 9.81
+        },
+        {
+          "end_sec": 15.59,
+          "start_sec": 15.46
+        },
+        {
+          "end_sec": 18.33,
+          "start_sec": 18.09
+        },
+        {
+          "end_sec": 19.38,
+          "start_sec": 19.34
+        },
+        {
+          "end_sec": 25.27,
+          "start_sec": 24.82
+        },
+        {
+          "end_sec": 31.12,
+          "start_sec": 30.85
+        }
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": 0.012195,
+      "speaker_change_rate_per_min": 0.0
+    },
+    "language_content": {
+      "filler": 1,
+      "language": "en",
+      "punctuation": {
+        "has_terminal_punctuation": true,
+        "punctuation_count": 11
+      },
+      "repetition": {
+        "has_repetition": false,
+        "repetition_count": 0
+      },
+      "word_count": 82
+    },
+    "room_acoustic": {
+      "c50_db": 33.196112,
+      "far_field": null,
+      "rt60_sec": 0.070462
+    },
+    "sound_field_scene": {
+      "external_noise_type": [],
+      "music_present": false,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [],
+        "mechanical": [],
+        "music": [],
+        "nature": []
+      },
+      "speech_music_events": [
+        "speech"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": "Hey Chris, remember when we got lost in Shinjuku Station during that Japan trip? The neon lights in Akihabara were blinding! That sushi master at Tsukiji Market kept explaining toro vs. chutoro cuts like we were culinary students. Oh man, the ion sins in Hakone with those soper springs made our skin feel brand new! Did you see the N H K report about sakurazentin moving north faster this year? We should've stayed longer in Kyoto's Geon district to catch Diego performances.",
+      "multi_speaker": false,
+      "overlap_ratio": 0.0,
+      "profiles": [
+        {
+          "gender": "female",
+          "pitch": "mid",
+          "speaker_id": "speaker_1",
+          "speaker_volume": "variable",
+          "speech_rate": {
+            "band": "normal",
+            "unit": "word_per_min",
+            "value": 136.0
+          }
+        }
+      ],
+      "speaker_change": false,
+      "speaker_change_count": 0,
+      "speaker_count": 1,
+      "speaker_overlap": false,
+      "speaker_present": true
+    }
+  }
+}

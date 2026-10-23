@@ -1,0 +1,14 @@
+{
+  "cluster_rules_version": "cluster_rules_v0.5",
+  "mode": "model_agnostic",
+  "assignment_basis": "audio_tags_only",
+  "partition_scope": "shared",
+  "started": "2026-09-13T17:56:34.600575+08:00",
+  "sample_count": 1000,
+  "cluster_count": 6,
+  "tag_snapshot_sha256": "7fe87530179fdf575c1c17946ecb30aea006e5e0570404db5a6ba9e3391f354d",
+  "index_map_sha256": "d93f8a3339228b25c094aca2c38cd1f2870223ef4461bb52287c82143c94ec2d",
+  "sampled_manifest_sha256": "2366b9282f27c8150382f4e6621b69d5ad16593142db9ad344d33d7ab10b4dbd",
+  "cluster_assignments_sha256": "4d7191752fccdc4408fbe52d70337941bf2174403b20f2228d18d532ecffd163",
+  "cluster_summary_sha256": "ed00757bad210f6b0432fbd6caacabb9c0b5a6ad7a221a03c9a0a9a8e517ec19"
+}

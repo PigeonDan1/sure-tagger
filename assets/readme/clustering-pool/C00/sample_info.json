@@ -1,0 +1,16 @@
+{
+  "sample_id": "multi_000525_CCFBDCI-001982_EN",
+  "dataset": "ContextASR-Bench_Speech_en__v1.0.1",
+  "source_key": "CCFBDCI-001982_EN",
+  "language": "en",
+  "split": "test",
+  "selection_kind": "representative_member",
+  "selection_note": "Long, clean single-speaker English speech; weather report content.",
+  "upstream_url": "https://huggingface.co/datasets/MrSupW/ContextASR-Bench",
+  "audio": {
+    "duration_sec": 33.567375,
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "sha256": "ed9865d7916aedf70aa1f1485fa6bc92d3ef62e81ccd8ffd4ded1cc6f8228de5"
+  }
+}

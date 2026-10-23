@@ -53,6 +53,19 @@ SURE-Tagger 将专项模型的语音证据整理为可查询的标签与描述�
 
 [查看五条样本、五层评审题和参考信息](assets/readme/tagbench/README.md) · [三系统输出对照](assets/readme/tagbench/COMPARISON.md) · [音频来源与归属](assets/readme/tagbench/ATTRIBUTION.md)
 
+下面列出基于冻结标签聚类选出的六条代表样本，包含音频、结构化标签和簇分配：
+
+| 簇 | 场景画像 | 音频 | 标签与簇分配 |
+| --- | --- | --- | --- |
+| C00 · 341 条 | 干净、较长的单人语音 | [试听](assets/readme/clustering-pool/C00/audio.wav) | [标签](assets/readme/clustering-pool/C00/tags.json) · [簇分配](assets/readme/clustering-pool/C00/cluster_assignment.json) |
+| C01 · 122 条 | 较低信噪比的短语音 | [试听](assets/readme/clustering-pool/C01/audio.wav) | [标签](assets/readme/clustering-pool/C01/tags.json) · [簇分配](assets/readme/clustering-pool/C01/cluster_assignment.json) |
+| C02 · 286 条 | 普通室内声学条件下的中文短语音 | [试听](assets/readme/clustering-pool/C02/audio.wav) | [标签](assets/readme/clustering-pool/C02/tags.json) · [簇分配](assets/readme/clustering-pool/C02/cluster_assignment.json) |
+| C03 · 196 条 | 高信噪比的较长中文语音 | [试听](assets/readme/clustering-pool/C03/audio.wav) | [标签](assets/readme/clustering-pool/C03/tags.json) · [簇分配](assets/readme/clustering-pool/C03/cluster_assignment.json) |
+| C04 · 17 条 | 极短非语音边界样本 | [试听](assets/readme/clustering-pool/C04/audio.wav) | [标签](assets/readme/clustering-pool/C04/tags.json) · [簇分配](assets/readme/clustering-pool/C04/cluster_assignment.json) |
+| C05 · 38 条 | 带音乐、低信噪比的泰语短语音 | [试听](assets/readme/clustering-pool/C05/audio.wav) | [标签](assets/readme/clustering-pool/C05/tags.json) · [簇分配](assets/readme/clustering-pool/C05/cluster_assignment.json) |
+
+更多信息见[六条样本与聚类说明](assets/readme/clustering-pool/README.md)、[来源说明](assets/readme/clustering-pool/ATTRIBUTION.md)。这些样本来自一次冻结的 1,000 条聚类运行；上游数据集条款仍然适用。
+
 [完整字段与输入格式](sure-tagger-main/docs/tags-and-methods.md)见标签文档。[交互演示页面](sure-tagger-main/demo/index.html)需自行准备音频和 `demo/data.js`，可用 [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) 生成页面数据。
 
 <a id="tag-bench"></a>

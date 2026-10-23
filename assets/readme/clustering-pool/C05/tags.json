@@ -1,0 +1,90 @@
+{
+  "sample_id": "multi_000347_gigaspeech2_th_test__v1.0.1__00047__0-79",
+  "dataset": "gigaspeech2_th_test__v1.0.1",
+  "tags": {
+    "audio_quality": {
+      "dnsmos_bak": 2.157255,
+      "dnsmos_ovrl": 2.279318,
+      "dnsmos_p808": 2.802495,
+      "dnsmos_sig": 3.484565,
+      "snr_db": 5.104404
+    },
+    "basic_acoustic": {
+      "channels": 1,
+      "duration_sec": 4.579,
+      "nonspeech_ratio": 0.002184,
+      "sample_rate_hz": 16000,
+      "silence_segments": [
+        {
+          "end_sec": 3.42,
+          "start_sec": 3.41
+        }
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": null,
+      "speaker_change_rate_per_min": 0.0
+    },
+    "language_content": {
+      "filler": 0,
+      "language": "th",
+      "punctuation": {
+        "has_terminal_punctuation": false,
+        "punctuation_count": 0
+      },
+      "repetition": {
+        "has_repetition": false,
+        "repetition_count": 0
+      },
+      "word_count": 0
+    },
+    "room_acoustic": {
+      "c50_db": 37.4596,
+      "far_field": null,
+      "rt60_sec": 0.081477
+    },
+    "sound_field_scene": {
+      "external_noise_type": [
+        "music"
+      ],
+      "music_present": true,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [],
+        "mechanical": [],
+        "music": [
+          "Music"
+        ],
+        "nature": []
+      },
+      "speech_music_events": [
+        "speech",
+        "music"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": "สดายมากเลย ย้ายมาอยู่เชียงใหม่สละนี่ผักถูกมาก ห้าบาทติดบาท",
+      "multi_speaker": false,
+      "overlap_ratio": 0.0,
+      "profiles": [
+        {
+          "gender": "male",
+          "pitch": "low",
+          "speaker_id": "speaker_1",
+          "speaker_volume": "variable",
+          "speech_rate": {
+            "band": null,
+            "unit": null,
+            "value": null
+          }
+        }
+      ],
+      "speaker_change": false,
+      "speaker_change_count": 0,
+      "speaker_count": 1,
+      "speaker_overlap": false,
+      "speaker_present": true
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "sample_id": "multi_000347_gigaspeech2_th_test__v1.0.1__00047__0-79",
+  "dataset": "gigaspeech2_th_test__v1.0.1",
+  "source_key": "gigaspeech2_th_test__v1.0.1__00047__0-79",
+  "language": "th",
+  "split": "test",
+  "selection_kind": "representative_member",
+  "selection_note": "簇内典型带乐成员；替代标签与簇画像不一致的 medoid",
+  "audio": {
+    "duration_sec": 4.579,
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "sha256": "5256b9cf1ddfd7f31a2adfe4291d6bae60be17045ecdaee76b565ddfcd84f81f"
+  },
+  "source_audio_path_omitted": true
+}

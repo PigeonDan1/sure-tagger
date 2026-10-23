@@ -53,6 +53,19 @@ Five examples from the Tag-Bench `demo-web` review set let you hear the input an
 
 [Browse all five samples, review questions, and references](assets/readme/tagbench/README.md) · [Compare system outputs](assets/readme/tagbench/COMPARISON.md) · [Audio attribution](assets/readme/tagbench/ATTRIBUTION.md)
 
+Six representative samples from the frozen, tag-based scene clusters are available with audio, structured tags, and cluster assignments:
+
+| Cluster | Scene profile | Audio | Tags and assignment |
+| --- | --- | --- | --- |
+| C00 · 341 samples | Clean, long single-speaker speech | [Listen](assets/readme/clustering-pool/C00/audio.wav) | [Tags](assets/readme/clustering-pool/C00/tags.json) · [Cluster](assets/readme/clustering-pool/C00/cluster_assignment.json) |
+| C01 · 122 samples | Short speech with lower SNR | [Listen](assets/readme/clustering-pool/C01/audio.wav) | [Tags](assets/readme/clustering-pool/C01/tags.json) · [Cluster](assets/readme/clustering-pool/C01/cluster_assignment.json) |
+| C02 · 286 samples | Short Mandarin speech, ordinary room acoustics | [Listen](assets/readme/clustering-pool/C02/audio.wav) | [Tags](assets/readme/clustering-pool/C02/tags.json) · [Cluster](assets/readme/clustering-pool/C02/cluster_assignment.json) |
+| C03 · 196 samples | Long, high-SNR Mandarin speech | [Listen](assets/readme/clustering-pool/C03/audio.wav) | [Tags](assets/readme/clustering-pool/C03/tags.json) · [Cluster](assets/readme/clustering-pool/C03/cluster_assignment.json) |
+| C04 · 17 samples | Extremely short non-speech boundary case | [Listen](assets/readme/clustering-pool/C04/audio.wav) | [Tags](assets/readme/clustering-pool/C04/tags.json) · [Cluster](assets/readme/clustering-pool/C04/cluster_assignment.json) |
+| C05 · 38 samples | Short Thai speech with music and low SNR | [Listen](assets/readme/clustering-pool/C05/audio.wav) | [Tags](assets/readme/clustering-pool/C05/tags.json) · [Cluster](assets/readme/clustering-pool/C05/cluster_assignment.json) |
+
+See the [complete sample index](assets/readme/clustering-pool/README.md), [cluster profiles](assets/readme/clustering-pool/README.md), and [source notes](assets/readme/clustering-pool/ATTRIBUTION.md). These are exemplars from one 1,000-sample frozen run; upstream dataset terms still apply.
+
 For the complete fields and input format, see the [tag guide](sure-tagger-main/docs/tags-and-methods.md). The [interactive demo](sure-tagger-main/demo/index.html) needs your own audio and `demo/data.js`; [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) prepares that data.
 
 <a id="tag-bench"></a>

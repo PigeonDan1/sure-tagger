@@ -1,0 +1,16 @@
+{
+  "sample_id": "multi_000901_aishell1_test_BAC009S0766W0141",
+  "dataset": "speech_asr_aishell1_testsets",
+  "source_key": "aishell1_test_BAC009S0766W0141",
+  "language": "zh",
+  "split": "test",
+  "selection_kind": "representative_member",
+  "selection_note": "Short single-speaker Mandarin read speech; ordinary room-acoustic measurements.",
+  "upstream_url": "https://www.openslr.org/33/",
+  "audio": {
+    "duration_sec": 3.813,
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "sha256": "02a8dcd9ec467dd921881813b92853d27161beab6d9aebf888f033c027f0ffaa"
+  }
+}

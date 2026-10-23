@@ -1,0 +1,37 @@
+{
+  "cluster_id": "C02",
+  "cluster_name": "中等混响的短单人语句",
+  "n": 286,
+  "share": 0.286,
+  "anchors": [
+    {
+      "feature": "basic_acoustic.nonspeech_ratio",
+      "value": 0.1641,
+      "lift": 0.5140666531146082,
+      "n": 286,
+      "effect": 0.5140666531146082,
+      "direction": "higher"
+    }
+  ],
+  "secondary_tags": {
+    "interaction": "single",
+    "quality": "high",
+    "room": "ordinary",
+    "language_group": "zh",
+    "content": [
+      "speech"
+    ],
+    "noise": [],
+    "temporal": [
+      "short_fragment"
+    ]
+  },
+  "snr_db_median": 33.83796,
+  "rt60_sec_median": 0.304577,
+  "duration_sec_median": 3.0365,
+  "nonspeech_ratio_median": 0.164149,
+  "error_driven": false,
+  "error_heterogeneous": false,
+  "cluster_name_status": "posthoc_reviewed",
+  "cluster_name_version": "cluster_names_v0.5"
+}

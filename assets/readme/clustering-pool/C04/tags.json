@@ -1,0 +1,85 @@
+{
+  "sample_id": "multi_000803_AMI_EN2002a_H02_FEO072_0033513_0033555",
+  "dataset": "esb_ami__v1.0.1",
+  "tags": {
+    "audio_quality": {
+      "dnsmos_bak": 3.267683,
+      "dnsmos_ovrl": 1.875821,
+      "dnsmos_p808": 2.699472,
+      "dnsmos_sig": 2.508679,
+      "snr_db": 39.784457
+    },
+    "basic_acoustic": {
+      "channels": 1,
+      "duration_sec": 0.42,
+      "nonspeech_ratio": 1.0,
+      "sample_rate_hz": 16000,
+      "silence_segments": [
+        {
+          "end_sec": 0.42,
+          "start_sec": 0.0
+        }
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": 0.0,
+      "speaker_change_rate_per_min": 0.0
+    },
+    "language_content": {
+      "filler": 0,
+      "language": null,
+      "punctuation": {
+        "has_terminal_punctuation": false,
+        "punctuation_count": 0
+      },
+      "repetition": {
+        "has_repetition": false,
+        "repetition_count": 0
+      },
+      "word_count": 2
+    },
+    "room_acoustic": {
+      "c50_db": 19.281131,
+      "far_field": null,
+      "rt60_sec": 0.500293
+    },
+    "sound_field_scene": {
+      "external_noise_type": [],
+      "music_present": false,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [
+          "Silence"
+        ],
+        "mechanical": [],
+        "music": [],
+        "nature": []
+      },
+      "speech_music_events": []
+    },
+    "speaker": {
+      "asr_transcript": "I mean.",
+      "multi_speaker": false,
+      "overlap_ratio": 0.0,
+      "profiles": [
+        {
+          "gender": "female",
+          "pitch": null,
+          "speaker_id": "speaker_1",
+          "speaker_volume": null,
+          "speech_rate": {
+            "band": null,
+            "unit": null,
+            "value": null
+          }
+        }
+      ],
+      "speaker_change": false,
+      "speaker_change_count": 0,
+      "speaker_count": 1,
+      "speaker_overlap": false,
+      "speaker_present": true
+    }
+  }
+}

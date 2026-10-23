@@ -1,0 +1,91 @@
+{
+  "sample_id": "multi_000901_aishell1_test_BAC009S0766W0141",
+  "dataset": "speech_asr_aishell1_testsets",
+  "tags": {
+    "audio_quality": {
+      "dnsmos_bak": 3.809123,
+      "dnsmos_ovrl": 2.798504,
+      "dnsmos_p808": 3.207603,
+      "dnsmos_sig": 3.206901,
+      "snr_db": 33.162307
+    },
+    "basic_acoustic": {
+      "channels": 1,
+      "duration_sec": 3.813,
+      "nonspeech_ratio": 0.189614,
+      "sample_rate_hz": 16000,
+      "silence_segments": [
+        {
+          "end_sec": 0.54,
+          "start_sec": 0.0
+        },
+        {
+          "end_sec": 3.813,
+          "start_sec": 3.63
+        }
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": 0.0,
+      "speaker_change_rate_per_min": 0.0
+    },
+    "language_content": {
+      "filler": 0,
+      "language": "zh-mandarin",
+      "punctuation": {
+        "has_terminal_punctuation": false,
+        "punctuation_count": 0
+      },
+      "repetition": {
+        "has_repetition": false,
+        "repetition_count": 0
+      },
+      "word_count": 13
+    },
+    "room_acoustic": {
+      "c50_db": 20.062732,
+      "far_field": null,
+      "rt60_sec": 0.294295
+    },
+    "sound_field_scene": {
+      "external_noise_type": [],
+      "music_present": false,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [
+          "Silence"
+        ],
+        "mechanical": [],
+        "music": [],
+        "nature": []
+      },
+      "speech_music_events": [
+        "speech"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": "为房地产商提供系统化的服务",
+      "multi_speaker": false,
+      "overlap_ratio": 0.0,
+      "profiles": [
+        {
+          "gender": "female",
+          "pitch": "mid",
+          "speaker_id": "speaker_1",
+          "speaker_volume": "variable",
+          "speech_rate": {
+            "band": "normal",
+            "unit": "zh_char_per_sec",
+            "value": 4.28
+          }
+        }
+      ],
+      "speaker_change": false,
+      "speaker_change_count": 0,
+      "speaker_count": 1,
+      "speaker_overlap": false,
+      "speaker_present": true
+    }
+  }
+}
