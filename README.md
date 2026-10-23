@@ -60,7 +60,7 @@ Values from the [complete SURE-Tagger prediction](assets/readme/tagbench/samples
 
 </details>
 
-For the complete fields and input format, see the [tag guide](sure-tagger-main/docs/tags-and-methods.md). The [interactive demo](sure-tagger-main/demo/index.html) needs your own audio and `demo/data.js`; [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) prepares that data.
+For the complete fields and input format, see the [tag guide](sure-tagger-main/docs/tags-and-methods.md). The [interactive demo](sure-tagger-main/demo/index.html) includes the five clips below; [run it locally](sure-tagger-main/demo/README.md), or use [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) with your own audio and tags.
 
 <a id="from-tags-to-analysis"></a>
 

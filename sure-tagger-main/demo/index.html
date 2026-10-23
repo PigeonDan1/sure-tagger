@@ -1,193 +1,152 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ASR 数据集二次打标 Demo</title>
+    <meta name="theme-color" content="#f8fafb" />
+    <title>SURE-Tagger · Interactive demo</title>
+    <link rel="icon" href="../../assets/readme/three-layer-audio-metadata-tag.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">Sure Tagger / Phase 2</p>
-        <h1>ASR 数据集二次打标展示</h1>
-        <p class="lead">
-          将 phase2 ASR manifest、音频、transcript 和原始 metadata 转换为统一标签：基础声学、音频质量（Brouhaha/DNSMOS）、空间声学（Rec-RIR）、声场场景（FireRed AED + DASS 分类背景声）、语言内容和多说话人信息。
-        </p>
-      </div>
-      <nav class="topnav" aria-label="页面导航">
-        <a href="#workflow">流程</a>
-        <a href="#samples">样本</a>
-        <a href="#coverage">覆盖</a>
-        <a href="#caption-compare">Captioner 对比</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="summary-band" aria-labelledby="summary-title">
-        <div class="section-heading">
-          <p class="eyebrow">Current run</p>
-          <h2 id="summary-title">Phase 2 全量打标结果</h2>
-        </div>
-        <div class="metric-grid" id="metricGrid"></div>
-      </section>
-
-      <section class="workflow-band" id="workflow" aria-labelledby="workflow-title">
-        <div class="section-heading">
-          <p class="eyebrow">Pipeline</p>
-          <h2 id="workflow-title">从 ASR 样本到可检索标签</h2>
-        </div>
-        <div class="pipeline">
-          <article class="pipeline-step">
-            <span class="step-index">01</span>
-            <h3>Manifest + Audio</h3>
-            <p>读取每条样本的音频路径、transcript 和原始 metadata。</p>
-          </article>
-          <article class="pipeline-step">
-            <span class="step-index">02</span>
-            <h3>Language Layer</h3>
-            <p>对 transcript 做确定性文本统计，音频语言始终由 FireRed LID 识别；输入为空时仅文本统计使用 speaker 路由 ASR，语言复用同一次 LID 证据。</p>
-          </article>
-          <article class="pipeline-step">
-            <span class="step-index">03</span>
-            <h3>Acoustic + Scene</h3>
-            <p>提取时长、静音片段、SNR、DNSMOS、RT60、C50；AED 检出 speech/singing/music，DASS 输出背景噪音类别与分类组成。</p>
-          </article>
-          <article class="pipeline-step">
-            <span class="step-index">04</span>
-            <h3>Unified Tags</h3>
-            <p>输出按 tag group 组织的 JSON；speaker 中文和英文使用 MOSS/FireRed，其他、混合或未知语言使用官方 DiariZen + Qwen3 ASR 链路。</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="workspace" id="samples" aria-labelledby="samples-title">
-        <aside class="sample-rail">
-          <div class="rail-heading">
-            <div>
-              <p class="eyebrow">Representative audio</p>
-              <h2 id="samples-title">样本切换</h2>
-            </div>
-            <span class="count-pill" id="visibleCount"></span>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="../../README.md" aria-label="SURE-Tagger README">
+          <img src="../../assets/readme/three-layer-audio-metadata-tag.png" alt="" />
+          <span>SURE-Tagger</span>
+        </a>
+        <div class="header-actions">
+          <a class="readme-link" href="../../README.md" id="readmeLink">README ↗</a>
+          <div class="language-switch" role="group" aria-label="Language">
+            <button type="button" data-language="en" aria-pressed="true">EN</button>
+            <button type="button" data-language="zh" aria-pressed="false">中文</button>
           </div>
-          <div class="filter-row" id="filterRow" aria-label="按数据集筛选"></div>
-          <div class="sample-list" id="sampleList"></div>
-        </aside>
+        </div>
+      </header>
 
-        <section class="sample-detail" aria-live="polite">
-          <div class="detail-header">
-            <div>
-              <p class="eyebrow" id="activeDataset"></p>
-              <h2 id="activeTitle"></h2>
-              <p class="sample-note" id="activeNote"></p>
-            </div>
-            <div class="sample-id" id="activeSampleId"></div>
-          </div>
-
-          <div class="audio-stage">
-            <audio id="audioPlayer" controls preload="metadata"></audio>
-            <canvas id="waveform" height="160" aria-label="音频波形"></canvas>
-            <div class="waveform-hint">点击波形可跳转播放位置；琥珀色区段表示静音片段。</div>
-          </div>
-
-          <div class="transcript-strip">
-            <div>
-              <p class="eyebrow">Transcript</p>
-              <p class="transcript" id="transcriptText"></p>
+      <main>
+        <section class="hero" aria-labelledby="heroTitle">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="heroEyebrow">Interactive demo · curated audio</p>
+            <h1 id="heroTitle" data-i18n="heroTitle">From speech evidence to useful tags.</h1>
+            <p class="hero-lead" data-i18n="heroLead">Listen to a real clip, inspect the structured fields and descriptions, then combine tags to find comparable recordings.</p>
+            <div class="hero-pills" aria-label="Demo scope">
+              <span data-i18n="heroPillOne">5 audio clips</span>
+              <span data-i18n="heroPillTwo">3 prediction sources</span>
+              <span data-i18n="heroPillThree">Tag-driven queries</span>
             </div>
           </div>
-
-          <div class="tag-toolbar" id="tagToolbar" role="tablist" aria-label="标签分组"></div>
-          <div class="tag-grid" id="tagGrid"></div>
-
-          <div class="json-panels">
-            <details class="json-panel">
-              <summary>查看当前样本输入 JSON</summary>
-              <pre id="inputJson"></pre>
-            </details>
-            <details class="json-panel">
-              <summary>查看当前样本完整 tag JSON</summary>
-              <pre id="rawJson"></pre>
-            </details>
+          <div class="hero-mark" aria-hidden="true">
+            <span class="mark-wave"></span>
+            <span class="mark-arrow">→</span>
+            <span class="mark-tags">{ tags }</span>
           </div>
         </section>
-      </section>
 
-      <section class="coverage-band" id="coverage" aria-labelledby="coverage-title">
-        <div class="section-heading">
-          <p class="eyebrow">Coverage</p>
-          <h2 id="coverage-title">数据集分布与标签覆盖</h2>
-        </div>
-        <div class="coverage-grid">
-          <div class="coverage-panel">
-            <h3>Phase 2 数据构成</h3>
-            <div id="datasetBars"></div>
-          </div>
-          <div class="coverage-panel">
-            <h3>Tag group 覆盖情况</h3>
-            <div id="coverageBars"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="summary-band caption-band" id="caption-compare" aria-labelledby="caption-title">
-        <div class="section-heading">
-          <p class="eyebrow">Cross-check / caption_pairs_3000 前 20 条</p>
-          <h2 id="caption-title">sound_field 标签 vs qwen-omni captioner</h2>
-          <p class="lead">
-            对纯音频只跑 sound_field 类标签（FireRed AED + DASS 分类背景声），与 qwen-omni captioner 提取的结构化标注逐条对比：音乐判定、语音/歌声/音乐事件、背景噪音标签。
-          </p>
-        </div>
-        <div class="metric-grid" id="captionMetrics"></div>
-      </section>
-
-      <section class="workspace" id="caption-workspace" aria-labelledby="caption-samples-title">
-        <aside class="sample-rail">
-          <div class="rail-heading">
+        <section class="section" id="listen" aria-labelledby="listenTitle">
+          <div class="section-title">
+            <span class="section-number">01</span>
             <div>
-              <p class="eyebrow">caption_pairs_3000</p>
-              <h2 id="caption-samples-title">对比样本</h2>
+              <p class="eyebrow" data-i18n="listenEyebrow">Listen</p>
+              <h2 id="listenTitle" data-i18n="listenTitle">Choose a recording</h2>
+              <p data-i18n="listenLead">Listen to each clip and inspect its saved predictions.</p>
             </div>
-            <span class="count-pill" id="captionCount"></span>
           </div>
-          <div class="sample-list" id="captionList"></div>
-        </aside>
+          <div class="explorer">
+            <div class="sample-rail" id="sampleList" aria-label="Audio samples"></div>
+            <article class="player-panel">
+              <div class="player-heading">
+                <div>
+                  <p class="eyebrow" id="activeDataset"></p>
+                  <h3 id="activeTitle"></h3>
+                  <p class="sample-focus" id="activeFocus"></p>
+                </div>
+                <span class="track-badge" id="activeTrack"></span>
+              </div>
+              <audio id="audioPlayer" controls preload="metadata"></audio>
+              <div class="player-links">
+                <a id="audioLink" target="_blank" rel="noopener" data-i18n="openAudio">Open audio ↗</a>
+                <a id="predictionsLink" target="_blank" rel="noopener" data-i18n="openPredictions">Full predictions ↗</a>
+              </div>
+              <div class="fact-grid" id="quickFacts"></div>
+              <div class="transcript-panel">
+                <p class="eyebrow" data-i18n="transcriptLabel">ASR transcript</p>
+                <p id="transcriptText"></p>
+              </div>
+            </article>
+          </div>
+        </section>
 
-        <section class="sample-detail" aria-live="polite">
-          <div class="detail-header">
+        <section class="section" id="tags" aria-labelledby="tagsTitle">
+          <div class="section-title">
+            <span class="section-number">02</span>
             <div>
-              <p class="eyebrow">caption_pairs_3000 · 前 20 条</p>
-              <h2 id="captionSampleTitle"></h2>
-              <p class="sample-note" id="captionSampleNote"></p>
-            </div>
-            <div class="sample-id" id="captionSampleId"></div>
-          </div>
-
-          <div class="audio-stage">
-            <audio id="captionAudio" controls preload="none"></audio>
-            <div class="waveform-hint">
-              sure-tagger 侧只跑 sound_field 标签（FireRed AED + DASS 分类背景声）；captioner 侧来自 qwen-omni 描述的结构化提取（external_noise_info.type / music_state / sound_event）。
+              <p class="eyebrow" data-i18n="tagsEyebrow">Representation</p>
+              <h2 id="tagsTitle" data-i18n="tagsTitle">What the tags say</h2>
+              <p data-i18n="tagsLead">Typed fields make conditions queryable. A short description preserves context; unknown values stay unknown.</p>
             </div>
           </div>
-
-          <div class="caption-compare-grid" id="captionCompareGrid"></div>
-
-          <details class="json-panel">
-            <summary>查看 captioner 完整描述</summary>
-            <div class="caption-text" id="captionText"></div>
+          <div class="tag-grid" id="tagGrid"></div>
+          <div class="description-strip">
+            <div class="description-heading">
+              <span class="description-dot"></span>
+              <span data-i18n="tagDescription">Evidence-linked description</span>
+            </div>
+            <p id="tagCaption"></p>
+          </div>
+          <details class="data-details">
+            <summary data-i18n="showJson">View complete SURE-Tagger JSON</summary>
+            <pre id="rawJson"></pre>
           </details>
         </section>
-      </section>
-    </main>
 
-    <footer class="footer">
-      <span>Demo data: phase2 full pipeline tags（outputs/phase2_full_tags.jsonl，scripts/build_demo_data.py 生成）</span>
-      <span>speaker 按 FireRed LID 选择中文/英文 MOSS/FireRed 或其他语言官方 DiariZen + Qwen3 ASR；无 transcript 噪声样本按 guard 跳过 speech 相关 stage。</span>
-      <span>Captioner 对比：caption_pairs_3000 前 20 条，sound_field 标签 vs qwen-omni captioner（scripts/build_caption_compare.py 生成）。</span>
-    </footer>
+        <section class="section" id="query" aria-labelledby="queryTitle">
+          <div class="section-title">
+            <span class="section-number">03</span>
+            <div>
+              <p class="eyebrow" data-i18n="queryEyebrow">Compose conditions</p>
+              <h2 id="queryTitle" data-i18n="queryTitle">Find a speech scene</h2>
+              <p data-i18n="queryLead">Combine tag values to make a small, comparable subset. This preview does not compute ASR error rates.</p>
+            </div>
+          </div>
+          <div class="query-panel">
+            <div class="query-fields">
+              <label><span data-i18n="speakerFilter">Speakers</span><select id="speakerFilter"></select></label>
+              <label><span data-i18n="overlapFilter">Overlap</span><select id="overlapFilter"></select></label>
+              <label><span data-i18n="languageFilter">Language</span><select id="languageFilter"></select></label>
+              <label><span data-i18n="noiseFilter">External noise tag</span><select id="noiseFilter"></select></label>
+            </div>
+            <div class="query-result-header">
+              <strong id="matchCount"></strong>
+              <button type="button" class="text-button" id="clearFilters" data-i18n="clearFilters">Clear filters</button>
+            </div>
+            <div class="query-results" id="queryResults" aria-live="polite"></div>
+          </div>
+        </section>
 
-    <script src="data.js"></script>
-    <script src="caption_compare.js"></script>
+        <section class="section" id="compare" aria-labelledby="compareTitle">
+          <div class="section-title">
+            <span class="section-number">04</span>
+            <div>
+              <p class="eyebrow" data-i18n="compareEyebrow">Same audio</p>
+              <h2 id="compareTitle" data-i18n="compareTitle">Compare descriptions</h2>
+              <p data-i18n="compareLead">Read each system's output for the selected clip. Differences are visible without hiding the full records.</p>
+            </div>
+          </div>
+          <div class="comparison-grid" id="comparisonGrid"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p data-i18n="footerCaveat">These clips are examples, not a performance summary. Some labels are uncertain or disagree with the available references.</p>
+        <div class="footer-links">
+          <a href="../../assets/readme/tagbench/README.md" data-i18n="sourceLink">Samples and references ↗</a>
+          <a href="../../assets/readme/tagbench/ATTRIBUTION.md" data-i18n="attributionLink">Audio attribution ↗</a>
+          <a href="README.md" data-i18n="usageLink">Run this demo ↗</a>
+        </div>
+      </footer>
+    </div>
+    <script src="fixture-data.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
