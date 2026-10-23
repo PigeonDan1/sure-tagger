@@ -133,12 +133,12 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s clustering/tests -p 't
 
 ## Tag-Bench
 
-Tag-Bench 将受控合成场景与现有数据集样本结合。合成部分从属性组合选定场景，由 agent 调度语音生成、时间安排和声学处理，再验证生成结果。
+Tag-Bench 将现有数据集样本与 500 条受控合成场景结合。公开的 [LayeredSpeech-500](LayeredSpeech-500/README.md) 流水线依据冻结的 L1–L5 场景脚本生成并核验合成部分。
 
 <table width="100%">
 <thead><tr><th width="520">构成</th><th width="850">来源或生成方式</th><th width="230" align="right">样本数</th></tr></thead>
 <tbody>
-<tr><td>受控合成</td><td>Agent 调度工具生成并核验</td><td align="right">500</td></tr>
+<tr><td>受控合成</td><td>LayeredSpeech-500 场景脚本与渲染器</td><td align="right">500</td></tr>
 <tr><td>现有数据集 · T1</td><td>AMI 会议</td><td align="right">350</td></tr>
 <tr><td>现有数据集 · T2</td><td>FLEURS、LibriSpeech</td><td align="right">150</td></tr>
 <tr><td>现有数据集 · T3</td><td>DESED、FSD50K</td><td align="right">150</td></tr>
@@ -152,7 +152,17 @@ Tag-Bench 将受控合成场景与现有数据集样本结合。合成部分从�
 
 ### 生成 Agent
 
-> 待补充：生成 Agent 的实现与可复现运行说明。
+[冻结的场景脚本](LayeredSpeech-500/data/scene_scripts_v4.jsonl)定义语种、对白、说话人、重叠和声学条件。[运行入口](LayeredSpeech-500/scripts/reproduce.py)依次执行 **准备 → 基础 TTS → 编辑 → 派生 → 渲染 → 质检**，导出混合音频、说话人音轨、RTTM、manifest 和 Ground Truth。公开流程按脚本运行，无需在运行时调用大模型规划。
+
+在 Linux 与 Python 3.10–3.12 环境按[模块说明](LayeredSpeech-500/README.md#quick-start)安装依赖后，可先运行离线测试：
+
+```bash
+cd LayeredSpeech-500
+python scripts/verify_release.py
+python scripts/reproduce.py --profile fixture --output runs/fixture
+```
+
+`fixture` 只生成不含语言内容的测试音频；仓库不附带论文 WAV。完整复现还需要 CUDA、FFmpeg、另行授权的参考音频、RIR、音乐及固定版本的 Dots 模型。依次运行 `python scripts/reproduce.py --profile full --check` 和 `python scripts/reproduce.py --profile full --gpus 0 --output runs/v4_multilingual`；素材目录和预期质检结果见[完整复现指南](LayeredSpeech-500/docs/REPRODUCE.md)。
 
 五段 Tag-Bench 音频均提供 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的完整预测：
 
@@ -301,4 +311,4 @@ python3 clustering/scripts/cluster_scenes.py \
 
 ## 协议
 
-仓库目前没有 `LICENSE` 文件，尚未声明源码开源协议；外部模型与数据遵循各自条款。演示音频的来源见[归属说明](assets/readme/tagbench/ATTRIBUTION.md)。
+仓库根目录目前没有 `LICENSE` 文件，尚未声明覆盖全仓库的源码协议；[LayeredSpeech-500 自有代码](LayeredSpeech-500/LICENSE)采用 Apache-2.0。外部模型与数据遵循各自条款，见[数据许可说明](LayeredSpeech-500/docs/DATA_LICENSES.md)与[演示音频归属](assets/readme/tagbench/ATTRIBUTION.md)。

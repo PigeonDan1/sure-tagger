@@ -1,0 +1,47 @@
+{
+  "scene_id": "crowded_12spk",
+  "topic": "rapid status round in a busy operations room",
+  "language": "English",
+  "speakers": [
+    {"speaker_index": 0, "role": "coordinator"},
+    {"speaker_index": 1, "role": "network"},
+    {"speaker_index": 2, "role": "power"},
+    {"speaker_index": 3, "role": "audio"},
+    {"speaker_index": 4, "role": "video"},
+    {"speaker_index": 5, "role": "safety"},
+    {"speaker_index": 6, "role": "logistics"},
+    {"speaker_index": 7, "role": "software"},
+    {"speaker_index": 8, "role": "hardware"},
+    {"speaker_index": 9, "role": "quality"},
+    {"speaker_index": 10, "role": "support"},
+    {"speaker_index": 11, "role": "observer"}
+  ],
+  "utterances": [
+    {"utterance_id": "u000", "speaker_index": 0, "text": "Quick status round. Keep each update brief."},
+    {"utterance_id": "u001", "speaker_index": 1, "text": "Network is stable, with one backup route active."},
+    {"utterance_id": "u002", "speaker_index": 2, "text": "Power is normal and the battery test passed.", "overlap_hint": "backchannel"},
+    {"utterance_id": "u003", "speaker_index": 3, "text": "Audio channels are armed, but channel six is slightly noisy."},
+    {"utterance_id": "u004", "speaker_index": 4, "text": "Video synchronization is within one frame."},
+    {"utterance_id": "u005", "speaker_index": 5, "text": "The east aisle must remain clear."},
+    {"utterance_id": "u006", "speaker_index": 6, "text": "The final equipment case arrives in ten minutes.", "overlap_hint": "interrupt"},
+    {"utterance_id": "u007", "speaker_index": 7, "text": "Software checks are complete except for one warning."},
+    {"utterance_id": "u008", "speaker_index": 8, "text": "The replacement interface is connected and ready."},
+    {"utterance_id": "u009", "speaker_index": 9, "text": "I need a fresh checksum after the next save."},
+    {"utterance_id": "u010", "speaker_index": 10, "text": "Support has two people standing by."},
+    {"utterance_id": "u011", "speaker_index": 11, "text": "I am logging decisions and unresolved items."},
+    {"utterance_id": "u012", "speaker_index": 0, "text": "Good. What is the warning from software?"},
+    {"utterance_id": "u013", "speaker_index": 7, "text": "A temporary file was left from yesterday, nothing is corrupted."},
+    {"utterance_id": "u014", "speaker_index": 9, "text": "Please remove it before the checksum.", "overlap_hint": "interrupt"},
+    {"utterance_id": "u015", "speaker_index": 3, "text": "Can someone confirm whether channel six is required?"},
+    {"utterance_id": "u016", "speaker_index": 4, "text": "Not for video, but we may need it for the room feed.", "overlap_hint": "backchannel"},
+    {"utterance_id": "u017", "speaker_index": 8, "text": "I can swap the cable without stopping the system."},
+    {"utterance_id": "u018", "speaker_index": 5, "text": "Wait until the aisle is clear before moving it."},
+    {"utterance_id": "u019", "speaker_index": 6, "text": "The delivery team is entering now.", "overlap_hint": "interrupt"},
+    {"utterance_id": "u020", "speaker_index": 2, "text": "Battery load remains steady."},
+    {"utterance_id": "u021", "speaker_index": 1, "text": "Backup traffic just returned to the primary route."},
+    {"utterance_id": "u022", "speaker_index": 10, "text": "No new support requests."},
+    {"utterance_id": "u023", "speaker_index": 11, "text": "All updates are recorded."},
+    {"utterance_id": "u024", "speaker_index": 0, "text": "Then proceed with the cable swap and final verification."}
+  ]
+}
+

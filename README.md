@@ -133,12 +133,12 @@ Explore the [tagger](sure-tagger-main/README.md), [scoring and comparison](compa
 
 ## Tag-Bench
 
-Tag-Bench combines selected recordings from existing datasets with controlled synthetic scenarios. For the latter, an agent chooses attribute combinations, schedules speech generation and acoustic processing, then validates the resulting clips.
+Tag-Bench combines selected recordings from existing datasets with 500 controlled synthetic scenes. The released [LayeredSpeech-500](LayeredSpeech-500/README.md) pipeline follows frozen L1–L5 scene scripts to generate and validate the synthetic half.
 
 <table width="100%">
 <thead><tr><th width="520">Component</th><th width="850">Source or process</th><th width="230" align="right">Clips</th></tr></thead>
 <tbody>
-<tr><td>Controlled synthesis</td><td>Agent-orchestrated generation and validation</td><td align="right">500</td></tr>
+<tr><td>Controlled synthesis</td><td>LayeredSpeech-500 scene scripts and renderer</td><td align="right">500</td></tr>
 <tr><td>Existing data · T1</td><td>AMI meetings</td><td align="right">350</td></tr>
 <tr><td>Existing data · T2</td><td>FLEURS, LibriSpeech</td><td align="right">150</td></tr>
 <tr><td>Existing data · T3</td><td>DESED, FSD50K</td><td align="right">150</td></tr>
@@ -152,7 +152,17 @@ Tag-Bench combines selected recordings from existing datasets with controlled sy
 
 ### Generation agent
 
-> Coming soon: implementation details and reproducible instructions for the generation agent.
+The [frozen scene scripts](LayeredSpeech-500/data/scene_scripts_v4.jsonl) specify language, dialogue, speakers, overlap, and acoustic conditions. [The runner](LayeredSpeech-500/scripts/reproduce.py) executes **prepare → base TTS → edit → derive → render → QC**, then exports mixed audio, speaker stems, RTTM, manifests, and ground truth. The released workflow runs these scripts without a live LLM planning step.
+
+On Linux with Python 3.10–3.12, install the [release dependencies](LayeredSpeech-500/README.md#quick-start), then try the offline fixture:
+
+```bash
+cd LayeredSpeech-500
+python scripts/verify_release.py
+python scripts/reproduce.py --profile fixture --output runs/fixture
+```
+
+The fixture makes non-linguistic test audio; paper WAVs are not bundled. Full reproduction also needs CUDA, FFmpeg, separately licensed reference audio, RIRs, music, and pinned Dots models. Run `python scripts/reproduce.py --profile full --check`, then `python scripts/reproduce.py --profile full --gpus 0 --output runs/v4_multilingual`. See the [full reproduction guide](LayeredSpeech-500/docs/REPRODUCE.md) for setup and expected QC results.
 
 Explore five Tag-Bench clips with complete same-audio predictions from SURE-Tagger, Captioner, and Qwen3-Omni:
 
@@ -301,4 +311,4 @@ The repository's full evaluation launcher currently uses the existing-data subse
 
 ## License
 
-The repository does not currently include a `LICENSE` file, so no source-code license has been declared. External models and datasets follow their own terms; see the [demo audio attribution](assets/readme/tagbench/ATTRIBUTION.md).
+The repository root has no `LICENSE` file, so no repository-wide source-code license has been declared. [LayeredSpeech-500's project-owned code](LayeredSpeech-500/LICENSE) is Apache-2.0. External models and datasets follow their own terms; see the [release data licenses](LayeredSpeech-500/docs/DATA_LICENSES.md) and [demo audio attribution](assets/readme/tagbench/ATTRIBUTION.md).

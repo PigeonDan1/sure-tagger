@@ -1,0 +1,30 @@
+version: 1
+file_inventory: data/asset_hashes.json
+policy: user-obtained-and-verified
+note: >-
+  No upstream recordings, RIRs or music are redistributed here. Place the
+  exact files under external_assets/ and run scripts/verify_assets.py.
+sources:
+  - id: ami_headset
+    location: https://groups.inf.ed.ac.uk/ami/corpus/
+    use: English reference voices
+    terms: review upstream dataset terms
+  - id: alimeeting_headset
+    location: https://www.openslr.org/119/
+    use: Mandarin reference voices
+    terms: review upstream and mirror terms; non-commercial restrictions may apply
+  - id: aishell3
+    location: https://huggingface.co/datasets/AISHELL/AISHELL-3
+    revision: f20d5db4a31fe779ef07bb1af4ea92da5c786622
+    use: Mandarin reference voices
+    terms: review upstream dataset terms
+  - id: fleurs
+    location: https://huggingface.co/datasets/google/fleurs
+    use: additional-language reference voices
+    terms: review upstream dataset terms
+  - id: measured_rir
+    use: 14 measured room impulse responses
+    terms: user must establish rights to use the source files
+  - id: real_music
+    use: two music assets for music-enabled scenes
+    terms: user must establish rights to use the source files
