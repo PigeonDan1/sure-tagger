@@ -178,7 +178,7 @@ Explore five Tag-Bench clips with complete same-audio predictions from SURE-Tagg
 On Tag-Bench, SURE-Tagger scores higher than Qwen3-Omni-Captioner on rich speech annotation. All methods use the same language model to construct the final schema. The overall score covers 29 structured and descriptive axes; higher is better.
 
 <table width="100%">
-<thead><tr><th width="52%">Data</th><th width="24%" align="right">SURE-Tagger</th><th width="24%" align="right">Captioner</th></tr></thead>
+<thead><tr><th width="830">Data</th><th width="385" align="right">SURE-Tagger</th><th width="385" align="right">Captioner</th></tr></thead>
 <tbody>
 <tr><td>Existing recordings</td><td align="right"><strong>76.28%</strong></td><td align="right">51.23%</td></tr>
 <tr><td>Synthetic scenes</td><td align="right"><strong>78.88%</strong></td><td align="right">63.54%</td></tr>
@@ -202,7 +202,7 @@ The same tags can select conditions across datasets or group clips into speech s
 The table shows representative clips from six groups in one frozen run. Each clip links to its audio, tags, and assignment; group names describe this run only.
 
 <table width="100%">
-<thead><tr><th width="18%">Group · clips</th><th width="48%">Representative clip</th><th width="34%">Explore</th></tr></thead>
+<thead><tr><th width="290">Group · clips</th><th width="770">Representative clip</th><th width="540">Explore</th></tr></thead>
 <tbody>
 <tr><td><code>C00</code> · 341</td><td>Long single-speaker English speech</td><td><a href="assets/readme/clustering-pool/C00/audio.wav">Audio</a> · <a href="assets/readme/clustering-pool/C00/tags.json">Tags</a> · <a href="assets/readme/clustering-pool/C00/cluster_assignment.json">Group</a></td></tr>
 <tr><td><code>C01</code> · 122</td><td>Short Mandarin speech · lower SNR</td><td><a href="assets/readme/clustering-pool/C01/audio.wav">Audio</a> · <a href="assets/readme/clustering-pool/C01/tags.json">Tags</a> · <a href="assets/readme/clustering-pool/C01/cluster_assignment.json">Group</a></td></tr>
@@ -267,7 +267,7 @@ Tags such as short duration, low SNR, and speaker overlap can also be combined i
 Condition-level errors guide candidate selection for about one hour of Qwen3-ASR-1.7B fine-tuning. SURE-Tagger-guided pool selection lowers error from 5.50% to 4.71% ± 0.08%, a 14.3% relative reduction; the same strategy with Captioner-derived tags reaches 6.17% ± 1.02% (three sampling seeds).
 
 <table width="100%">
-<thead><tr><th align="left">Selection</th><th align="right">Error (%) · mean ± SD</th><th align="right">Δ vs. original</th></tr></thead>
+<thead><tr><th width="560" align="left">Selection</th><th width="600" align="right">Error (%) · mean ± SD</th><th width="440" align="right">Δ vs. original</th></tr></thead>
 <tbody>
 <tr><td>Original · no fine-tuning</td><td align="right">5.50</td><td align="right">—</td></tr>
 <tr><td>Random</td><td align="right">6.17 ± 0.34</td><td align="right">+12.3%</td></tr>
@@ -284,7 +284,7 @@ Condition-level errors guide candidate selection for about one hour of Qwen3-ASR
 <summary>How the fine-tuning data is selected</summary>
 
 <table width="100%">
-<thead><tr><th align="left">Step</th><th align="left">Cluster-weighted selection</th></tr></thead>
+<thead><tr><th width="340" align="left">Step</th><th width="1260" align="left">Cluster-weighted selection</th></tr></thead>
 <tbody>
 <tr><td>1 · Score</td><td>Reuse evaluation clusters and errors (<code>Eval</code>) or cluster and score the candidate pool with the original ASR model (<code>Pool</code>).</td></tr>
 <tr><td>2 · Assign</td><td>Assign each candidate to its nearest representation-space cluster medoid.</td></tr>

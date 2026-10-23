@@ -178,7 +178,7 @@ Tag-Bench 将受控合成场景与现有数据集样本结合。合成部分从�
 在 Tag-Bench 的结构化与描述性标注评测中，SURE-Tagger 的整体得分高于 Qwen3-Omni-Captioner。各方法使用相同的语言模型构建最终标签；下表汇总 29 个评测维度，越高越好。
 
 <table width="100%">
-<thead><tr><th width="52%">数据</th><th width="24%" align="right">SURE-Tagger</th><th width="24%" align="right">Captioner</th></tr></thead>
+<thead><tr><th width="830">数据</th><th width="385" align="right">SURE-Tagger</th><th width="385" align="right">Captioner</th></tr></thead>
 <tbody>
 <tr><td>现有录音</td><td align="right"><strong>76.28%</strong></td><td align="right">51.23%</td></tr>
 <tr><td>合成场景</td><td align="right"><strong>78.88%</strong></td><td align="right">63.54%</td></tr>
@@ -202,7 +202,7 @@ Tag-Bench 将受控合成场景与现有数据集样本结合。合成部分从�
 下表展示一次冻结运行的六组代表音频。每条都可查看音频、标签和分组记录；组名仅描述这次运行。
 
 <table width="100%">
-<thead><tr><th width="18%">分组 · 条数</th><th width="48%">代表音频</th><th width="34%">查看</th></tr></thead>
+<thead><tr><th width="290">分组 · 条数</th><th width="770">代表音频</th><th width="540">查看</th></tr></thead>
 <tbody>
 <tr><td><code>C00</code> · 341</td><td>较长的单人英语语音</td><td><a href="assets/readme/clustering-pool/C00/audio.wav">音频</a> · <a href="assets/readme/clustering-pool/C00/tags.json">标签</a> · <a href="assets/readme/clustering-pool/C00/cluster_assignment.json">分组</a></td></tr>
 <tr><td><code>C01</code> · 122</td><td>短中文语音 · 较低信噪比</td><td><a href="assets/readme/clustering-pool/C01/audio.wav">音频</a> · <a href="assets/readme/clustering-pool/C01/tags.json">标签</a> · <a href="assets/readme/clustering-pool/C01/cluster_assignment.json">分组</a></td></tr>
@@ -267,7 +267,7 @@ python3 clustering/scripts/cluster_scenes.py \
 将场景错误率用于候选音频抽样，再用约一小时音频微调 Qwen3-ASR-1.7B：SURE-Tagger 引导的候选池选择把错误率从 5.50% 降至 4.71% ± 0.08%，相对下降 14.3%；相同策略的 Captioner 标签得到 6.17% ± 1.02%（三次抽样种子）。
 
 <table width="100%">
-<thead><tr><th align="left">数据选择</th><th align="right">错误率（%）· 均值 ± 标准差</th><th align="right">相对原始模型</th></tr></thead>
+<thead><tr><th width="560" align="left">数据选择</th><th width="600" align="right">错误率（%）· 均值 ± 标准差</th><th width="440" align="right">相对原始模型</th></tr></thead>
 <tbody>
 <tr><td>原始模型 · 未微调</td><td align="right">5.50</td><td align="right">—</td></tr>
 <tr><td>随机抽样</td><td align="right">6.17 ± 0.34</td><td align="right">+12.3%</td></tr>
@@ -284,7 +284,7 @@ python3 clustering/scripts/cluster_scenes.py \
 <summary>微调数据如何选择</summary>
 
 <table width="100%">
-<thead><tr><th align="left">步骤</th><th align="left">按簇错误率加权抽样</th></tr></thead>
+<thead><tr><th width="340" align="left">步骤</th><th width="1260" align="left">按簇错误率加权抽样</th></tr></thead>
 <tbody>
 <tr><td>1 · 评分</td><td><code>Eval</code> 复用评测集的簇与错误率；<code>Pool</code> 则对候选池聚类，并用原始 ASR 模型评分。</td></tr>
 <tr><td>2 · 分配</td><td>按表征空间距离，将每条候选音频分配给最近的簇中心。</td></tr>
