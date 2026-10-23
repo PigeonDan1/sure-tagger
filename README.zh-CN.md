@@ -7,8 +7,8 @@
 <p align="center"><a href="README.md">English</a> · <strong>简体中文</strong></p>
 
 <p align="center">
-<a href="#motivation"><kbd>01</kbd> 项目动机</a> · <a href="#demo"><kbd>02</kbd> Demo</a> · <a href="#from-tags-to-analysis"><kbd>03</kbd> 场景分析</a> · <a href="#how-it-works"><kbd>04</kbd> 工作原理</a><br>
-<a href="#tag-bench"><kbd>05</kbd> Tag-Bench</a> · <a href="#paper-results"><kbd>06</kbd> 论文结果</a> · <a href="#usage"><kbd>07</kbd> 使用方式</a> · <a href="#license"><kbd>08</kbd> 协议</a>
+<a href="#motivation"><kbd>01</kbd> 项目动机</a> · <a href="#sure-tagger"><kbd>02</kbd> SURE-Tagger</a> · <a href="#how-it-works"><kbd>03</kbd> 工作原理</a> · <a href="#usage"><kbd>04</kbd> 使用方式</a><br>
+<a href="#tag-bench"><kbd>05</kbd> Tag-Bench</a> · <a href="#system-performance"><kbd>06</kbd> 系统表现</a> · <a href="#compositional-benchmark"><kbd>07</kbd> 组合式评测</a> · <a href="#license"><kbd>08</kbd> 协议</a>
 </p>
 
 SURE-Tagger 将语音证据整理为可查询的标签与有证据支撑的描述。
@@ -27,9 +27,10 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 <p align="center"><sub>结构化标签让缺失的证据变得明确。</sub></p>
 
+<a id="sure-tagger"></a>
 <a id="demo"></a>
 
-## Demo · 从音频到标签
+## SURE-Tagger · 从音频到标签
 
 半结构化标签将可查询的显式字段与简短描述放在一起；无法从证据确认的属性保留为 `null`。先[试听这段 AMI 会议音频](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav)，再看它的标签：
 
@@ -65,27 +66,6 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 [完整字段与输入格式](sure-tagger-main/docs/tags-and-methods.md)见标签文档。[交互演示页面](sure-tagger-main/demo/index.html)已内置下方五条音频；可[在本地运行](sure-tagger-main/demo/README.md)，也可用 [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) 导入自己的音频与标签。
 
-<a id="from-tags-to-analysis"></a>
-
-## 从标签到场景分析
-
-组合 `speaker.speaker_count > 1` 与 `speaker.speaker_overlap = true`，即可筛出可比较的音频。在另一组[冻结的场景聚类运行](clustering/README.md)中，仅凭音频标签得到下表分组；ASR WER/CER 只在分组固定后用于评测。
-
-<table width="100%">
-<thead><tr><th width="18%">分组 · 条数</th><th width="48%">代表音频</th><th width="34%">查看</th></tr></thead>
-<tbody>
-<tr><td><code>C00</code> · 341</td><td>较长的单人英语语音</td><td><a href="assets/readme/clustering-pool/C00/audio.wav">音频</a> · <a href="assets/readme/clustering-pool/C00/tags.json">标签</a> · <a href="assets/readme/clustering-pool/C00/cluster_assignment.json">分组</a></td></tr>
-<tr><td><code>C01</code> · 122</td><td>短中文语音 · 较低信噪比</td><td><a href="assets/readme/clustering-pool/C01/audio.wav">音频</a> · <a href="assets/readme/clustering-pool/C01/tags.json">标签</a> · <a href="assets/readme/clustering-pool/C01/cluster_assignment.json">分组</a></td></tr>
-<tr><td><code>C02</code> · 286</td><td>短单人中文朗读</td><td><a href="assets/readme/clustering-pool/C02/audio.wav">音频</a> · <a href="assets/readme/clustering-pool/C02/tags.json">标签</a> · <a href="assets/readme/clustering-pool/C02/cluster_assignment.json">分组</a></td></tr>
-<tr><td><code>C03</code> · 196</td><td>较长的单人英语语音 · 高信噪比</td><td><a href="assets/readme/clustering-pool/C03/audio.wav">音频</a> · <a href="assets/readme/clustering-pool/C03/tags.json">标签</a> · <a href="assets/readme/clustering-pool/C03/cluster_assignment.json">分组</a></td></tr>
-<tr><td><code>C04</code> · 17</td><td>极短边界片段 · 语音证据冲突</td><td><a href="assets/readme/clustering-pool/C04/audio.wav">音频</a> · <a href="assets/readme/clustering-pool/C04/tags.json">标签</a> · <a href="assets/readme/clustering-pool/C04/cluster_assignment.json">分组</a></td></tr>
-<tr><td><code>C05</code> · 38</td><td>泰语语音伴随音乐 · 低信噪比</td><td><a href="assets/readme/clustering-pool/C05/audio.wav">音频</a> · <a href="assets/readme/clustering-pool/C05/tags.json">标签</a> · <a href="assets/readme/clustering-pool/C05/cluster_assignment.json">分组</a></td></tr>
-</tbody>
-<tfoot><tr><td><strong>合计 · 1,000</strong></td><td colspan="2">六个基于标签形成的场景分组</td></tr></tfoot>
-</table>
-
-<sub>这些编号只对应本次冻结分组；音频用于展示分组方式，不代表 ASR 得分。[样本说明](assets/readme/clustering-pool/README.md) · [运行来源](assets/readme/clustering-pool/source_run.json) · [音频归属](assets/readme/clustering-pool/ATTRIBUTION.md)</sub>
-
 <a id="how-it-works"></a>
 
 ## 工作原理
@@ -93,52 +73,6 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 专项模型分别提取声学、时间、词汇和说话人证据。SURE-Tagger 核对不确定或冲突的信息，生成有类型的字段与证据支撑的描述。
 
 <p align="center"><a href="./assets/readme/how-it-works.png"><img src="./assets/readme/how-it-works.png" width="100%" alt="专项语音模型产生证据，经核对形成结构化标签，再用于跨数据集的组合评测"></a></p>
-
-<a id="tag-bench"></a>
-
-## Tag-Bench
-
-Tag-Bench 将受控合成场景与现有数据集样本结合。合成部分从属性组合选定场景，由 agent 调度语音生成、时间安排和声学处理，再验证生成结果。
-
-<table width="100%">
-<thead><tr><th width="520">构成</th><th width="850">来源或生成方式</th><th width="230" align="right">样本数</th></tr></thead>
-<tbody>
-<tr><td>受控合成</td><td>Agent 调度工具生成并核验</td><td align="right">500</td></tr>
-<tr><td>现有数据集 · T1</td><td>AMI 会议</td><td align="right">350</td></tr>
-<tr><td>现有数据集 · T2</td><td>FLEURS、LibriSpeech</td><td align="right">150</td></tr>
-<tr><td>现有数据集 · T3</td><td>DESED、FSD50K</td><td align="right">150</td></tr>
-<tr><td><strong>合计</strong></td><td><strong>合成 + 现有数据集</strong></td><td align="right"><strong>1,150</strong></td></tr>
-</tbody>
-</table>
-
-<p align="center"><img src="./assets/readme/tagbench-workflow.png" width="100%" alt="属性组合引导受控语音生成和核验，并与现有数据集录音共同组成 Tag-Bench"></p>
-
-<p align="center"><sub>受控合成与现有录音共同组成 Tag-Bench。</sub></p>
-
-五段 Tag-Bench 音频均提供 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的完整预测：
-
-<table width="100%">
-<thead><tr><th width="350">样本</th><th width="570">试听重点</th><th width="680">资源</th></tr></thead>
-<tbody>
-<tr><td>AMI · <code>ES2012d</code></td><td>四人对话与重叠语音</td><td><a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">完整预测</a></td></tr>
-<tr><td>AMI · <code>EN2001e</code></td><td>两人对话与短暂重叠</td><td><a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">完整预测</a></td></tr>
-<tr><td>FLEURS · 俄语</td><td>语种与语音内容</td><td><a href="assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">完整预测</a></td></tr>
-<tr><td>DESED</td><td>语音与机械事件</td><td><a href="assets/readme/tagbench/samples/t3_desed_0112/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">完整预测</a></td></tr>
-<tr><td>FSD50K</td><td>音乐事件被打标器漏检</td><td><a href="assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">完整预测</a></td></tr>
-</tbody>
-</table>
-
-[五条样本与参考信息](assets/readme/tagbench/README.md) · [同音频输出对照](assets/readme/tagbench/COMPARISON.md) · [音频来源与归属](assets/readme/tagbench/ATTRIBUTION.md)
-
-当前仓库的完整评测入口使用现有数据集子集；[数据构成](compare/docs/benchmark-650-dataset-composition.md)与[评分规则](compare/docs/benchmark-v1-29-metrics.md)另见文档。
-
-<a id="paper-results"></a>
-
-## 系统性能
-
-雷达图对比现有录音与合成录音上的逐属性相对表现。每类数据的每个轴都以该轴最优方法归一化；SURE-Tagger 在多数说话人、时间与声学属性上表现领先。
-
-<p align="center"><a href="./assets/readme/paper-results-rps.png"><img src="./assets/readme/paper-results-rps.png" width="100%" alt="SURE-Tagger 与两种 Qwen3-Omni 基线在现有录音和合成录音各属性上的相对表现雷达图"></a></p>
 
 <a id="usage"></a>
 
@@ -194,6 +128,174 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s clustering/tests -p 't
 </details>
 
 主程序：[sure-tagger-main](sure-tagger-main/README.md) · 评分与比较：[compare](compare/docs/benchmark-v1-29-metrics.md) · 独立的 k-medoids 场景聚类：[clustering](clustering/README.md)
+
+<a id="tag-bench"></a>
+
+## Tag-Bench
+
+Tag-Bench 将受控合成场景与现有数据集样本结合。合成部分从属性组合选定场景，由 agent 调度语音生成、时间安排和声学处理，再验证生成结果。
+
+<table width="100%">
+<thead><tr><th width="520">构成</th><th width="850">来源或生成方式</th><th width="230" align="right">样本数</th></tr></thead>
+<tbody>
+<tr><td>受控合成</td><td>Agent 调度工具生成并核验</td><td align="right">500</td></tr>
+<tr><td>现有数据集 · T1</td><td>AMI 会议</td><td align="right">350</td></tr>
+<tr><td>现有数据集 · T2</td><td>FLEURS、LibriSpeech</td><td align="right">150</td></tr>
+<tr><td>现有数据集 · T3</td><td>DESED、FSD50K</td><td align="right">150</td></tr>
+<tr><td><strong>合计</strong></td><td><strong>合成 + 现有数据集</strong></td><td align="right"><strong>1,150</strong></td></tr>
+</tbody>
+</table>
+
+<p align="center"><img src="./assets/readme/tagbench-workflow.png" width="100%" alt="属性组合引导受控语音生成和核验，并与现有数据集录音共同组成 Tag-Bench"></p>
+
+<p align="center"><sub>受控合成与现有录音共同组成 Tag-Bench。</sub></p>
+
+### 生成 Agent
+
+> 待补充：生成 Agent 的实现与可复现运行说明。
+
+五段 Tag-Bench 音频均提供 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的完整预测：
+
+<table width="100%">
+<thead><tr><th width="350">样本</th><th width="570">试听重点</th><th width="680">资源</th></tr></thead>
+<tbody>
+<tr><td>AMI · <code>ES2012d</code></td><td>四人对话与重叠语音</td><td><a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">完整预测</a></td></tr>
+<tr><td>AMI · <code>EN2001e</code></td><td>两人对话与短暂重叠</td><td><a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">完整预测</a></td></tr>
+<tr><td>FLEURS · 俄语</td><td>语种与语音内容</td><td><a href="assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">完整预测</a></td></tr>
+<tr><td>DESED</td><td>语音与机械事件</td><td><a href="assets/readme/tagbench/samples/t3_desed_0112/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">完整预测</a></td></tr>
+<tr><td>FSD50K</td><td>音乐事件被打标器漏检</td><td><a href="assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">完整预测</a></td></tr>
+</tbody>
+</table>
+
+[五条样本与参考信息](assets/readme/tagbench/README.md) · [同音频输出对照](assets/readme/tagbench/COMPARISON.md) · [音频来源与归属](assets/readme/tagbench/ATTRIBUTION.md)
+
+
+<a id="system-performance"></a>
+<a id="paper-results"></a>
+
+## 系统表现
+
+在 Tag-Bench 的结构化与描述性标注评测中，SURE-Tagger 的整体得分高于 Qwen3-Omni-Captioner。各方法使用相同的语言模型构建最终标签；下表汇总 29 个评测维度，越高越好。
+
+<table width="100%">
+<thead><tr><th width="52%">数据</th><th width="24%" align="right">SURE-Tagger</th><th width="24%" align="right">Captioner</th></tr></thead>
+<tbody>
+<tr><td>现有录音</td><td align="right"><strong>76.28%</strong></td><td align="right">51.23%</td></tr>
+<tr><td>合成场景</td><td align="right"><strong>78.88%</strong></td><td align="right">63.54%</td></tr>
+<tr><td>合并评测</td><td align="right"><strong>77.28%</strong></td><td align="right">58.20%</td></tr>
+</tbody>
+</table>
+
+<p align="center"><a href="./assets/readme/paper-results-rps.png"><img src="./assets/readme/paper-results-rps.png" width="100%" alt="现有录音与合成场景上的逐属性相对表现；SURE-Tagger 对比 Qwen3-Omni-Captioner 与 Qwen3-Omni-Flash"></a></p>
+
+<p align="center"><sub>逐属性相对表现：每个维度以该数据来源中的最高分归一化。</sub></p>
+
+<a id="compositional-benchmark"></a>
+<a id="from-tags-to-analysis"></a>
+
+## 组合式评测
+
+同一组标签可以跨数据集筛选条件，也能把音频按声学与说话人特征聚成场景。我们对十个数据集的 1,000 段录音使用音频侧标签进行 k-medoids 聚类；分组时不使用数据集身份、语言、转写或 ASR 错误率。
+
+### 场景聚类
+
+下表展示一次冻结运行的六组代表音频。每条都可查看音频、标签和分组记录；组名仅描述这次运行。
+
+<table width="100%">
+<thead><tr><th width="18%">分组 · 条数</th><th width="48%">代表音频</th><th width="34%">查看</th></tr></thead>
+<tbody>
+<tr><td><code>C00</code> · 341</td><td>较长的单人英语语音</td><td><a href="assets/readme/clustering-pool/C00/audio.wav">音频</a> · <a href="assets/readme/clustering-pool/C00/tags.json">标签</a> · <a href="assets/readme/clustering-pool/C00/cluster_assignment.json">分组</a></td></tr>
+<tr><td><code>C01</code> · 122</td><td>短中文语音 · 较低信噪比</td><td><a href="assets/readme/clustering-pool/C01/audio.wav">音频</a> · <a href="assets/readme/clustering-pool/C01/tags.json">标签</a> · <a href="assets/readme/clustering-pool/C01/cluster_assignment.json">分组</a></td></tr>
+<tr><td><code>C02</code> · 286</td><td>短单人中文朗读</td><td><a href="assets/readme/clustering-pool/C02/audio.wav">音频</a> · <a href="assets/readme/clustering-pool/C02/tags.json">标签</a> · <a href="assets/readme/clustering-pool/C02/cluster_assignment.json">分组</a></td></tr>
+<tr><td><code>C03</code> · 196</td><td>较长的单人英语语音 · 高信噪比</td><td><a href="assets/readme/clustering-pool/C03/audio.wav">音频</a> · <a href="assets/readme/clustering-pool/C03/tags.json">标签</a> · <a href="assets/readme/clustering-pool/C03/cluster_assignment.json">分组</a></td></tr>
+<tr><td><code>C04</code> · 17</td><td>极短边界片段 · 语音证据冲突</td><td><a href="assets/readme/clustering-pool/C04/audio.wav">音频</a> · <a href="assets/readme/clustering-pool/C04/tags.json">标签</a> · <a href="assets/readme/clustering-pool/C04/cluster_assignment.json">分组</a></td></tr>
+<tr><td><code>C05</code> · 38</td><td>泰语语音伴随音乐 · 低信噪比</td><td><a href="assets/readme/clustering-pool/C05/audio.wav">音频</a> · <a href="assets/readme/clustering-pool/C05/tags.json">标签</a> · <a href="assets/readme/clustering-pool/C05/cluster_assignment.json">分组</a></td></tr>
+</tbody>
+<tfoot><tr><td><strong>合计 · 1,000</strong></td><td colspan="2">六个基于标签形成的场景分组</td></tr></tfoot>
+</table>
+
+<sub>这些编号只对应本次冻结分组；音频用于展示分组方式，不代表 ASR 得分。[样本说明](assets/readme/clustering-pool/README.md) · [运行来源](assets/readme/clustering-pool/source_run.json) · [音频归属](assets/readme/clustering-pool/ATTRIBUTION.md)</sub>
+
+<details>
+<summary>用自己的标签运行聚类</summary>
+
+准备 `tags.jsonl`、`index_map.jsonl` 和 `manifest.jsonl`，路径与格式见[聚类说明](clustering/README.md)。从仓库根目录运行：
+
+```bash
+export INPUT_ROOT=/path/to/multi-data
+export CLUSTER_OUTPUT=/path/to/clustering-output
+
+python3 clustering/scripts/cluster_scenes.py \
+  --tags "$INPUT_ROOT/sampled-100-per-source/tags.jsonl" \
+  --index-map "$INPUT_ROOT/sampled-100-per-source/index_map.jsonl" \
+  --sampled-manifest "$INPUT_ROOT/sampled-100-per-source/manifest.jsonl" \
+  --cluster-methods kmedoids --k-min 6 --k-max 12 --seeds 0,1,2 \
+  --no-wer-filter --skip-diagnostics --output-dir "$CLUSTER_OUTPUT"
+```
+
+脚本输出分组、分组摘要和运行元数据。冻结分组后可用 [`error_homogeneity.py`](clustering/scripts/error_homogeneity.py) 计算 WER/CER 诊断；错误率不参与聚类。
+
+</details>
+
+各场景的 ASR 错误率（%，越低越好）：
+
+<table width="100%">
+<thead><tr><th align="left">ASR 模型</th><th align="right">C00<br><sub>中等长度、低混响</sub></th><th align="right">C01<br><sub>短语音、低信噪比</sub></th><th align="right">C02<br><sub>短语音、适度混响</sub></th><th align="right">C03<br><sub>长语音、干净声学</sub></th><th align="right">C04<br><sub>极短、语音稀疏</sub></th><th align="right">C05<br><sub>短语音、噪声与音乐</sub></th></tr></thead>
+<tbody>
+<tr><td>Parakeet-TDT</td><td align="right">15.47</td><td align="right">48.06</td><td align="right">14.84</td><td align="right">20.18</td><td align="right">100.00</td><td align="right">100.00</td></tr>
+<tr><td>Qwen3-ASR-1.7B</td><td align="right">14.70</td><td align="right">21.53</td><td align="right">12.59</td><td align="right">5.12</td><td align="right">86.36</td><td align="right">17.26</td></tr>
+<tr><td>MOSS-Transcribe</td><td align="right">12.50</td><td align="right">36.43</td><td align="right">12.83</td><td align="right">15.03</td><td align="right">85.71</td><td align="right">91.30</td></tr>
+<tr><td>SenseVoiceSmall</td><td align="right">10.04</td><td align="right">25.00</td><td align="right">10.00</td><td align="right">13.67</td><td align="right">18.18</td><td align="right">34.78</td></tr>
+<tr><td>Whisper large-v3 turbo</td><td align="right">17.82</td><td align="right">51.55</td><td align="right">18.35</td><td align="right">17.82</td><td align="right">104.55</td><td align="right">130.43</td></tr>
+<tr><td>Granite Speech 4.1</td><td align="right">15.51</td><td align="right">24.81</td><td align="right">16.04</td><td align="right">22.06</td><td align="right">33.33</td><td align="right">73.91</td></tr>
+<tr><td>FunASR-Flash</td><td align="right">13.90</td><td align="right">19.85</td><td align="right">13.03</td><td align="right">11.25</td><td align="right">86.36</td><td align="right">13.57</td></tr>
+</tbody>
+</table>
+
+<sub>不同场景暴露不同的识别弱点；各模型的语言支持不同，因此有效评测覆盖率也可能不同。</sub>
+
+### 条件组合与错误热力图
+
+也可以组合“短语音”“低信噪比”“说话人重叠”等标签，构造更具体的评测子集。下图比较同一批 500 段英语录音上的 ASR WER；样本数少的子集仅作探索。
+
+<p align="center"><a href="./assets/readme/asr-condition-heatmap-cropped.svg"><img src="./assets/readme/asr-condition-heatmap-cropped.svg" width="100%" alt="单一及组合语音条件下，Qwen、Whisper 与 FunASR 的 WER 热力图"></a></p>
+
+<p align="center"><sub>部分组合条件下错误率明显升高；颜色表示 WER，彩色圆点对应标签组合，列下方为子集样本数。</sub></p>
+
+### 用场景结果优化 Qwen ASR
+
+将场景错误率用于候选音频抽样，再用约一小时音频微调 Qwen3-ASR-1.7B：SURE-Tagger 引导的候选池选择把错误率从 5.50% 降至 4.71% ± 0.08%，相对下降 14.3%；相同策略的 Captioner 标签得到 6.17% ± 1.02%（三次抽样种子）。
+
+<table width="100%">
+<thead><tr><th align="left">数据选择</th><th align="right">错误率（%）· 均值 ± 标准差</th><th align="right">相对原始模型</th></tr></thead>
+<tbody>
+<tr><td>原始模型 · 未微调</td><td align="right">5.50</td><td align="right">—</td></tr>
+<tr><td>随机抽样</td><td align="right">6.17 ± 0.34</td><td align="right">+12.3%</td></tr>
+<tr><td><strong>候选池 / SURE-Tagger</strong></td><td align="right"><strong>4.71 ± 0.08</strong></td><td align="right"><strong>−14.3%</strong></td></tr>
+<tr><td>候选池 / Captioner</td><td align="right">6.17 ± 1.02</td><td align="right">+12.4%</td></tr>
+<tr><td>评测集 / SURE-Tagger</td><td align="right">4.96 ± 0.27</td><td align="right">−9.7%</td></tr>
+<tr><td>评测集 / Captioner</td><td align="right">6.83 ± 0.61</td><td align="right">+24.4%</td></tr>
+</tbody>
+</table>
+
+<sub>数据预算为一小时（3,600 秒）；结果来自三次抽样种子。在相同的 1,000 条评测录音上，错误率按参考单元汇总英语 WER 与中文、泰语 CER。</sub>
+
+<details>
+<summary>微调数据如何选择</summary>
+
+<table width="100%">
+<thead><tr><th align="left">步骤</th><th align="left">按簇错误率加权抽样</th></tr></thead>
+<tbody>
+<tr><td>1 · 评分</td><td><code>Eval</code> 复用评测集的簇与错误率；<code>Pool</code> 则对候选池聚类，并用原始 ASR 模型评分。</td></tr>
+<tr><td>2 · 分配</td><td>按表征空间距离，将每条候选音频分配给最近的簇中心。</td></tr>
+<tr><td>3 · 加权</td><td>将抽样权重设为 <code>(簇错误率 + 10⁻³)²</code>。</td></tr>
+<tr><td>4 · 选择</td><td>不放回抽样，总音频时长不超过 3,600 秒。</td></tr>
+</tbody>
+</table>
+
+</details>
+
+当前仓库的完整评测入口使用现有数据集子集；[数据构成](compare/docs/benchmark-650-dataset-composition.md)与[评分规则](compare/docs/benchmark-v1-29-metrics.md)另见文档。
 
 <a id="license"></a>
 
