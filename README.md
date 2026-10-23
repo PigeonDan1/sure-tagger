@@ -6,9 +6,9 @@
 
 <p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
-<p align="center"><a href="#motivation">Motivation</a> · <a href="#demo">Demo</a> · <a href="#how-it-works">How it works</a> · <a href="#tag-bench">Tag-Bench</a> · <a href="#paper-results">Results</a> · <a href="#usage">Usage</a> · <a href="#license">License</a></p>
+<p align="center"><a href="#motivation">Motivation</a> · <a href="#demo">Demo</a> · <a href="#from-tags-to-analysis">Analysis</a> · <a href="#how-it-works">How it works</a> · <a href="#tag-bench">Tag-Bench</a> · <a href="#paper-results">Results</a> · <a href="#usage">Usage</a> · <a href="#license">License</a></p>
 
-SURE-Tagger turns evidence from specialized speech models into queryable tags and descriptions. It keeps `null` when evidence is insufficient. The research explores how these representations support evaluation across datasets and targeted data selection; this repository provides tagging, description, and scoring entry points.
+SURE-Tagger turns speech evidence into queryable tags and evidence-linked descriptions.
 
 https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
@@ -28,7 +28,7 @@ A free-form caption can summarize a recording, but it cannot tell whether an omi
 
 ## Demo · Audio to tags
 
-Hear this [AMI meeting clip](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav), then follow the evidence into its SURE-Tagger labels.
+Semi-structured tags pair explicit, queryable fields with short descriptions; `null` marks what the evidence cannot establish. Hear this [AMI meeting clip](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav) and inspect its tags:
 
 <table width="100%">
 <thead><tr><th width="520">Evidence</th><th width="1080">Structured tags</th></tr></thead>
@@ -37,6 +37,7 @@ Hear this [AMI meeting clip](assets/readme/tagbench/samples/ES2012d_utterance_00
 <tr><td><strong>Sound events</strong><br><sub>FireRed AED</sub></td><td><code>sound_field_scene</code><br>Speech detected · Music <strong>false</strong></td></tr>
 <tr><td><strong>Speaker + ASR</strong><br><sub>MOSS / Nemotron + ASR</sub></td><td><code>speaker</code><br><strong>4</strong> speakers · Overlap <strong>true</strong></td></tr>
 <tr><td><strong>Language + text</strong><br><sub>FireRed LID + transcript</sub></td><td><code>language_content</code><br>English · <strong>45</strong> words</td></tr>
+<tr><td><strong>Evidence-linked description</strong><br><sub>Transcript + speaker tags</sub></td><td><code>descriptive.caption</code><br>A short multi-speaker English conversation evaluates a device…</td></tr>
 </tbody>
 </table>
 
@@ -52,34 +53,26 @@ Values from the [complete SURE-Tagger prediction](assets/readme/tagbench/samples
   "basic_acoustic": {"duration_sec": 23.72, "nonspeech_ratio": 0.500422},
   "sound_field_scene": {"speech_music_events": ["speech"], "music_present": false},
   "speaker": {"speaker_count": 4, "speaker_overlap": true},
-  "language_content": {"language": "en", "word_count": 45}
+  "language_content": {"language": "en", "word_count": 45},
+  "descriptive": {"topic": "Product/device evaluation: whether the device is flashy/fashionable and technologically innovative"}
 }
 ```
 
 </details>
 
-Explore five Tag-Bench clips with complete same-audio predictions from SURE-Tagger, Captioner, and Qwen3-Omni:
-
-<table width="100%">
-<thead><tr><th width="350">Clip</th><th width="570">Listen for</th><th width="680">Files</th></tr></thead>
-<tbody>
-<tr><td>AMI · <code>ES2012d</code></td><td>Four speakers and overlap</td><td><a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>AMI · <code>EN2001e</code></td><td>Two speakers and brief overlap</td><td><a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>FLEURS · Russian</td><td>Language and speech content</td><td><a href="assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>DESED</td><td>Speech with a mechanical event</td><td><a href="assets/readme/tagbench/samples/t3_desed_0112/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>FSD50K</td><td>Music event missed by the tagger</td><td><a href="assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">Full predictions</a></td></tr>
-</tbody>
-</table>
-
-[All five samples and references](assets/readme/tagbench/README.md) · [Same-audio comparison](assets/readme/tagbench/COMPARISON.md) · [Audio attribution](assets/readme/tagbench/ATTRIBUTION.md)
-
 For the complete fields and input format, see the [tag guide](sure-tagger-main/docs/tags-and-methods.md). The [interactive demo](sure-tagger-main/demo/index.html) needs your own audio and `demo/data.js`; [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) prepares that data.
+
+<a id="from-tags-to-analysis"></a>
+
+## From tags to analysis
+
+An agent can combine fields such as `speaker.speaker_count > 1` and `speaker.speaker_overlap = true` to select comparable clips across datasets. It can also [group clips by tag patterns](clustering/README.md) into acoustic and speaker-interaction scenes. Once groups are fixed, comparing ASR WER/CER by condition or scene reveals where each recognizer struggles.
 
 <a id="how-it-works"></a>
 
 ## How it works
 
-Specialized observers collect acoustic, temporal, lexical, and speaker evidence. SURE-Tagger reconciles it into explicit fields and descriptions, then uses those fields to form comparable subsets across datasets.
+Specialized observers collect acoustic, temporal, lexical, and speaker evidence. SURE-Tagger reconciles uncertainty and conflicts into typed fields and evidence-linked descriptions.
 
 <p align="center"><a href="./assets/readme/how-it-works.png"><img src="./assets/readme/how-it-works.png" width="100%" alt="Specialized speech observers feed an evidence record, which is reconciled into structured tags for compositional evaluation"></a></p>
 
@@ -103,6 +96,21 @@ Tag-Bench combines selected recordings from existing datasets with controlled sy
 <p align="center"><img src="./assets/readme/tagbench-workflow.png" width="100%" alt="Attribute combinations guide controlled speech generation and validation alongside selected recordings from existing datasets"></p>
 
 <p align="center"><sub>Controlled synthesis and existing recordings together form Tag-Bench.</sub></p>
+
+Explore five Tag-Bench clips with complete same-audio predictions from SURE-Tagger, Captioner, and Qwen3-Omni:
+
+<table width="100%">
+<thead><tr><th width="350">Clip</th><th width="570">Listen for</th><th width="680">Files</th></tr></thead>
+<tbody>
+<tr><td>AMI · <code>ES2012d</code></td><td>Four speakers and overlap</td><td><a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">Full predictions</a></td></tr>
+<tr><td>AMI · <code>EN2001e</code></td><td>Two speakers and brief overlap</td><td><a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">Full predictions</a></td></tr>
+<tr><td>FLEURS · Russian</td><td>Language and speech content</td><td><a href="assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">Full predictions</a></td></tr>
+<tr><td>DESED</td><td>Speech with a mechanical event</td><td><a href="assets/readme/tagbench/samples/t3_desed_0112/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">Full predictions</a></td></tr>
+<tr><td>FSD50K</td><td>Music event missed by the tagger</td><td><a href="assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">Full predictions</a></td></tr>
+</tbody>
+</table>
+
+[All five samples and references](assets/readme/tagbench/README.md) · [Same-audio comparison](assets/readme/tagbench/COMPARISON.md) · [Audio attribution](assets/readme/tagbench/ATTRIBUTION.md)
 
 The repository's full evaluation launcher currently uses the existing-data subset; see its [composition](compare/docs/benchmark-650-dataset-composition.md) and [scoring rules](compare/docs/benchmark-v1-29-metrics.md).
 

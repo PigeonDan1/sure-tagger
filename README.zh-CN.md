@@ -6,9 +6,9 @@
 
 <p align="center"><a href="README.md">English</a> · <strong>简体中文</strong></p>
 
-<p align="center"><a href="#motivation">项目动机</a> · <a href="#demo">Demo</a> · <a href="#how-it-works">工作原理</a> · <a href="#tag-bench">Tag-Bench</a> · <a href="#paper-results">论文结果</a> · <a href="#usage">使用方式</a> · <a href="#license">协议</a></p>
+<p align="center"><a href="#motivation">项目动机</a> · <a href="#demo">Demo</a> · <a href="#from-tags-to-analysis">场景分析</a> · <a href="#how-it-works">工作原理</a> · <a href="#tag-bench">Tag-Bench</a> · <a href="#paper-results">论文结果</a> · <a href="#usage">使用方式</a> · <a href="#license">协议</a></p>
 
-SURE-Tagger 将专项模型的语音证据整理为可查询的标签与描述，并在证据不足时保留 `null`。论文研究这些表示如何支持跨数据集的组合评测与目标数据选择；本仓库提供打标、描述和评分入口。
+SURE-Tagger 将语音证据整理为可查询的标签与有证据支撑的描述。
 
 https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
@@ -28,7 +28,7 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 ## Demo · 从音频到标签
 
-先[试听这段 AMI 会议音频](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav)，再查看各类证据如何形成结构化标签。
+半结构化标签将可查询的显式字段与简短描述放在一起；无法从证据确认的属性保留为 `null`。先[试听这段 AMI 会议音频](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav)，再看它的标签：
 
 <table width="100%">
 <thead><tr><th width="520">证据</th><th width="1080">结构化标签</th></tr></thead>
@@ -37,6 +37,7 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 <tr><td><strong>声音事件</strong><br><sub>FireRed AED</sub></td><td><code>sound_field_scene</code><br>检测到语音 · 音乐 <strong>false</strong></td></tr>
 <tr><td><strong>说话人与转写</strong><br><sub>MOSS / Nemotron + ASR</sub></td><td><code>speaker</code><br><strong>4</strong> 位说话人 · 重叠语音 <strong>true</strong></td></tr>
 <tr><td><strong>语言与文本</strong><br><sub>FireRed LID + 转写文本</sub></td><td><code>language_content</code><br>英语 · <strong>45</strong> 词</td></tr>
+<tr><td><strong>证据支撑的描述</strong><br><sub>转写与说话人标签</sub></td><td><code>descriptive.caption</code><br>多人用英语讨论一件设备的外观与技术特点……</td></tr>
 </tbody>
 </table>
 
@@ -52,34 +53,26 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
   "basic_acoustic": {"duration_sec": 23.72, "nonspeech_ratio": 0.500422},
   "sound_field_scene": {"speech_music_events": ["speech"], "music_present": false},
   "speaker": {"speaker_count": 4, "speaker_overlap": true},
-  "language_content": {"language": "en", "word_count": 45}
+  "language_content": {"language": "en", "word_count": 45},
+  "descriptive": {"topic": "Product/device evaluation: whether the device is flashy/fashionable and technologically innovative"}
 }
 ```
 
 </details>
 
-五段 Tag-Bench 音频均提供 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的完整预测：
-
-<table width="100%">
-<thead><tr><th width="350">样本</th><th width="570">试听重点</th><th width="680">资源</th></tr></thead>
-<tbody>
-<tr><td>AMI · <code>ES2012d</code></td><td>四人对话与重叠语音</td><td><a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">完整预测</a></td></tr>
-<tr><td>AMI · <code>EN2001e</code></td><td>两人对话与短暂重叠</td><td><a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">完整预测</a></td></tr>
-<tr><td>FLEURS · 俄语</td><td>语种与语音内容</td><td><a href="assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">完整预测</a></td></tr>
-<tr><td>DESED</td><td>语音与机械事件</td><td><a href="assets/readme/tagbench/samples/t3_desed_0112/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">完整预测</a></td></tr>
-<tr><td>FSD50K</td><td>音乐事件被打标器漏检</td><td><a href="assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">完整预测</a></td></tr>
-</tbody>
-</table>
-
-[五条样本与参考信息](assets/readme/tagbench/README.md) · [同音频输出对照](assets/readme/tagbench/COMPARISON.md) · [音频来源与归属](assets/readme/tagbench/ATTRIBUTION.md)
-
 [完整字段与输入格式](sure-tagger-main/docs/tags-and-methods.md)见标签文档。[交互演示页面](sure-tagger-main/demo/index.html)需自行准备音频和 `demo/data.js`，可用 [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) 生成页面数据。
+
+<a id="from-tags-to-analysis"></a>
+
+## 从标签到场景分析
+
+智能体可组合 `speaker.speaker_count > 1` 与 `speaker.speaker_overlap = true` 等条件，从不同数据集选出可比较的音频；也可[按标签特征分组](clustering/README.md)，形成可观测的声学与说话人交互场景。分组固定后，再比较各条件或场景的 ASR WER/CER，找出模型容易出错的语音条件。
 
 <a id="how-it-works"></a>
 
 ## 工作原理
 
-专项模型分别提取声学、时间、词汇和说话人证据。SURE-Tagger 核对证据后生成明确的字段与描述，再用这些字段跨数据集组合可比较的样本。
+专项模型分别提取声学、时间、词汇和说话人证据。SURE-Tagger 核对不确定或冲突的信息，生成有类型的字段与证据支撑的描述。
 
 <p align="center"><a href="./assets/readme/how-it-works.png"><img src="./assets/readme/how-it-works.png" width="100%" alt="专项语音模型产生证据，经核对形成结构化标签，再用于跨数据集的组合评测"></a></p>
 
@@ -103,6 +96,21 @@ Tag-Bench 将受控合成场景与现有数据集样本结合。合成部分从�
 <p align="center"><img src="./assets/readme/tagbench-workflow.png" width="100%" alt="属性组合引导受控语音生成和核验，并与现有数据集录音共同组成 Tag-Bench"></p>
 
 <p align="center"><sub>受控合成与现有录音共同组成 Tag-Bench。</sub></p>
+
+五段 Tag-Bench 音频均提供 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的完整预测：
+
+<table width="100%">
+<thead><tr><th width="350">样本</th><th width="570">试听重点</th><th width="680">资源</th></tr></thead>
+<tbody>
+<tr><td>AMI · <code>ES2012d</code></td><td>四人对话与重叠语音</td><td><a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">完整预测</a></td></tr>
+<tr><td>AMI · <code>EN2001e</code></td><td>两人对话与短暂重叠</td><td><a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">完整预测</a></td></tr>
+<tr><td>FLEURS · 俄语</td><td>语种与语音内容</td><td><a href="assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">完整预测</a></td></tr>
+<tr><td>DESED</td><td>语音与机械事件</td><td><a href="assets/readme/tagbench/samples/t3_desed_0112/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">完整预测</a></td></tr>
+<tr><td>FSD50K</td><td>音乐事件被打标器漏检</td><td><a href="assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">完整预测</a></td></tr>
+</tbody>
+</table>
+
+[五条样本与参考信息](assets/readme/tagbench/README.md) · [同音频输出对照](assets/readme/tagbench/COMPARISON.md) · [音频来源与归属](assets/readme/tagbench/ATTRIBUTION.md)
 
 当前仓库的完整评测入口使用现有数据集子集；[数据构成](compare/docs/benchmark-650-dataset-composition.md)与[评分规则](compare/docs/benchmark-v1-29-metrics.md)另见文档。
 
