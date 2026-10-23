@@ -222,7 +222,9 @@
       document.querySelector('[data-i18n="heroPillTwo"]').textContent = tr("oneTagSource");
       document.querySelector('[data-i18n="footerCaveat"]').textContent = tr("localCaveat");
     }
-    byId("readmeLink").href = language === "zh" ? "../../README.zh-CN.md" : "../../README.md";
+    byId("readmeLink").href =
+      "https://github.com/PigeonDan1/sure-tagger/blob/docs/bilingual-readme/" +
+      (language === "zh" ? "README.zh-CN.md" : "README.md");
   }
 
   function renderSampleList() {

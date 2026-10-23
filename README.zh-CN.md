@@ -6,7 +6,10 @@
 
 <p align="center"><a href="README.md">English</a> · <strong>简体中文</strong></p>
 
-<p align="center"><a href="#motivation">项目动机</a> · <a href="#demo">Demo</a> · <a href="#from-tags-to-analysis">场景分析</a> · <a href="#how-it-works">工作原理</a> · <a href="#tag-bench">Tag-Bench</a> · <a href="#paper-results">论文结果</a> · <a href="#usage">使用方式</a> · <a href="#license">协议</a></p>
+<p align="center">
+<a href="#motivation"><kbd>01</kbd> 项目动机</a> · <a href="#demo"><kbd>02</kbd> Demo</a> · <a href="#from-tags-to-analysis"><kbd>03</kbd> 场景分析</a> · <a href="#how-it-works"><kbd>04</kbd> 工作原理</a><br>
+<a href="#tag-bench"><kbd>05</kbd> Tag-Bench</a> · <a href="#paper-results"><kbd>06</kbd> 论文结果</a> · <a href="#usage"><kbd>07</kbd> 使用方式</a> · <a href="#license"><kbd>08</kbd> 协议</a>
+</p>
 
 SURE-Tagger 将语音证据整理为可查询的标签与有证据支撑的描述。
 
@@ -66,7 +69,22 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 ## 从标签到场景分析
 
-智能体可组合 `speaker.speaker_count > 1` 与 `speaker.speaker_overlap = true` 等条件，从不同数据集选出可比较的音频；也可[按标签特征分组](clustering/README.md)，形成可观测的声学与说话人交互场景。分组固定后，再比较各条件或场景的 ASR WER/CER，找出模型容易出错的语音条件。
+组合 `speaker.speaker_count > 1` 与 `speaker.speaker_overlap = true`，即可筛出可比较的音频。在另一组[冻结的场景聚类运行](clustering/README.md)中，仅凭音频标签得到下表分组；ASR WER/CER 只在分组固定后用于评测。
+
+<table width="100%">
+<thead><tr><th width="18%">分组 · 条数</th><th width="48%">代表音频</th><th width="34%">查看</th></tr></thead>
+<tbody>
+<tr><td><code>C00</code> · 341</td><td>较长的单人英语语音</td><td><a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C00/audio.wav">音频</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C00/tags.json">标签</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C00/cluster_assignment.json">分组</a></td></tr>
+<tr><td><code>C01</code> · 122</td><td>短中文语音 · 较低信噪比</td><td><a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C01/audio.wav">音频</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C01/tags.json">标签</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C01/cluster_assignment.json">分组</a></td></tr>
+<tr><td><code>C02</code> · 286</td><td>短单人中文朗读</td><td><a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C02/audio.wav">音频</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C02/tags.json">标签</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C02/cluster_assignment.json">分组</a></td></tr>
+<tr><td><code>C03</code> · 196</td><td>较长的单人英语语音 · 高信噪比</td><td><a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C03/audio.wav">音频</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C03/tags.json">标签</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C03/cluster_assignment.json">分组</a></td></tr>
+<tr><td><code>C04</code> · 17</td><td>极短边界片段 · 语音证据冲突</td><td><a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C04/audio.wav">音频</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C04/tags.json">标签</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C04/cluster_assignment.json">分组</a></td></tr>
+<tr><td><code>C05</code> · 38</td><td>泰语语音伴随音乐 · 低信噪比</td><td><a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C05/audio.wav">音频</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C05/tags.json">标签</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C05/cluster_assignment.json">分组</a></td></tr>
+</tbody>
+<tfoot><tr><td><strong>合计 · 1,000</strong></td><td colspan="2">六个基于标签形成的场景分组</td></tr></tfoot>
+</table>
+
+<sub>这些编号只对应本次冻结分组；音频用于展示分组方式，不代表 ASR 得分。[样本说明](https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/README.md) · [运行来源](https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/source_run.json) · [音频归属](https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/ATTRIBUTION.md)</sub>
 
 <a id="how-it-works"></a>
 

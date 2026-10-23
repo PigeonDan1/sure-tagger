@@ -6,7 +6,10 @@
 
 <p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
-<p align="center"><a href="#motivation">Motivation</a> · <a href="#demo">Demo</a> · <a href="#from-tags-to-analysis">Analysis</a> · <a href="#how-it-works">How it works</a> · <a href="#tag-bench">Tag-Bench</a> · <a href="#paper-results">Results</a> · <a href="#usage">Usage</a> · <a href="#license">License</a></p>
+<p align="center">
+<a href="#motivation"><kbd>01</kbd> Motivation</a> · <a href="#demo"><kbd>02</kbd> Demo</a> · <a href="#from-tags-to-analysis"><kbd>03</kbd> Analysis</a> · <a href="#how-it-works"><kbd>04</kbd> How it works</a><br>
+<a href="#tag-bench"><kbd>05</kbd> Tag-Bench</a> · <a href="#paper-results"><kbd>06</kbd> Results</a> · <a href="#usage"><kbd>07</kbd> Usage</a> · <a href="#license"><kbd>08</kbd> License</a>
+</p>
 
 SURE-Tagger turns speech evidence into queryable tags and evidence-linked descriptions.
 
@@ -66,7 +69,22 @@ For the complete fields and input format, see the [tag guide](sure-tagger-main/d
 
 ## From tags to analysis
 
-An agent can combine fields such as `speaker.speaker_count > 1` and `speaker.speaker_overlap = true` to select comparable clips across datasets. It can also [group clips by tag patterns](clustering/README.md) into acoustic and speaker-interaction scenes. Once groups are fixed, comparing ASR WER/CER by condition or scene reveals where each recognizer struggles.
+Combine `speaker.speaker_count > 1` with `speaker.speaker_overlap = true` to retrieve comparable clips. In a separate [frozen scene-clustering run](clustering/README.md), audio tags alone formed the groups below; ASR WER/CER is assessed only after assignment.
+
+<table width="100%">
+<thead><tr><th width="18%">Group · clips</th><th width="48%">Representative clip</th><th width="34%">Explore</th></tr></thead>
+<tbody>
+<tr><td><code>C00</code> · 341</td><td>Long single-speaker English speech</td><td><a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C00/audio.wav">Audio</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C00/tags.json">Tags</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C00/cluster_assignment.json">Group</a></td></tr>
+<tr><td><code>C01</code> · 122</td><td>Short Mandarin speech · lower SNR</td><td><a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C01/audio.wav">Audio</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C01/tags.json">Tags</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C01/cluster_assignment.json">Group</a></td></tr>
+<tr><td><code>C02</code> · 286</td><td>Short single-speaker Mandarin reading</td><td><a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C02/audio.wav">Audio</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C02/tags.json">Tags</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C02/cluster_assignment.json">Group</a></td></tr>
+<tr><td><code>C03</code> · 196</td><td>Long single-speaker English speech · high SNR</td><td><a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C03/audio.wav">Audio</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C03/tags.json">Tags</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C03/cluster_assignment.json">Group</a></td></tr>
+<tr><td><code>C04</code> · 17</td><td>Very short boundary clip · conflicting speech evidence</td><td><a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C04/audio.wav">Audio</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C04/tags.json">Tags</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C04/cluster_assignment.json">Group</a></td></tr>
+<tr><td><code>C05</code> · 38</td><td>Thai speech with music · low SNR</td><td><a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C05/audio.wav">Audio</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C05/tags.json">Tags</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/C05/cluster_assignment.json">Group</a></td></tr>
+</tbody>
+<tfoot><tr><td><strong>Total · 1,000</strong></td><td colspan="2">Six tag-derived scene groups</td></tr></tfoot>
+</table>
+
+<sub>These IDs belong to one frozen run, not universal scene labels. The clips illustrate grouping rather than ASR scores. <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/README.md">Sample notes</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/source_run.json">Run provenance</a> · <a href="https://github.com/PigeonDan1/sure-tagger/blob/assets/readme-demo/assets/readme/clustering-pool/ATTRIBUTION.md">Audio attribution</a></sub>
 
 <a id="how-it-works"></a>
 
