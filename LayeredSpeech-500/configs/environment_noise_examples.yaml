@@ -1,0 +1,100 @@
+# Add one noise_path to a scene. Paths are relative to this config directory.
+# ``environment`` is the scene-level acoustic label; ``noise_asset_id`` is the
+# DEMAND directory code used only to make the example path easy to identify.
+# The library contains five clips for every DEMAND environment (clip00..clip04).
+
+noise_examples:
+  # Domestic
+  - environment: residential
+    noise_environment: residential
+    noise_asset_id: DKITCHEN
+    snr_db: 15.0
+    noise_path: ../../background_noise_library/demand_16k/DKITCHEN/DKITCHEN_ch01_clip00.wav
+  - environment: residential
+    noise_environment: residential
+    noise_asset_id: DLIVING
+    snr_db: 15.0
+    noise_path: ../../background_noise_library/demand_16k/DLIVING/DLIVING_ch01_clip00.wav
+  - environment: residential
+    noise_environment: residential
+    noise_asset_id: DWASHING
+    snr_db: 10.0
+    noise_path: ../../background_noise_library/demand_16k/DWASHING/DWASHING_ch01_clip00.wav
+
+  # Nature
+  - environment: open_space
+    noise_environment: open_space
+    noise_asset_id: NFIELD
+    snr_db: 15.0
+    noise_path: ../../background_noise_library/demand_16k/NFIELD/NFIELD_ch01_clip00.wav
+  - environment: open_space
+    noise_environment: open_space
+    noise_asset_id: NPARK
+    snr_db: 12.0
+    noise_path: ../../background_noise_library/demand_16k/NPARK/NPARK_ch01_clip00.wav
+  - environment: open_space
+    noise_environment: open_space
+    noise_asset_id: NRIVER
+    snr_db: 10.0
+    noise_path: ../../background_noise_library/demand_16k/NRIVER/NRIVER_ch01_clip00.wav
+
+  # Office
+  - environment: meeting_room
+    noise_environment: meeting_room
+    noise_asset_id: OHALLWAY
+    snr_db: 15.0
+    noise_path: ../../background_noise_library/demand_16k/OHALLWAY/OHALLWAY_ch01_clip00.wav
+  - environment: meeting_room
+    noise_environment: meeting_room
+    noise_asset_id: OMEETING
+    snr_db: 18.0
+    noise_path: ../../background_noise_library/demand_16k/OMEETING/OMEETING_ch01_clip00.wav
+  - environment: meeting_room
+    noise_environment: meeting_room
+    noise_asset_id: OOFFICE
+    snr_db: 15.0
+    noise_path: ../../background_noise_library/demand_16k/OOFFICE/OOFFICE_ch01_clip00.wav
+
+  # Public spaces
+  - environment: restaurant
+    noise_environment: restaurant
+    noise_asset_id: PCAFETER
+    snr_db: 10.0
+    noise_path: ../../background_noise_library/demand_16k/PCAFETER/PCAFETER_ch01_clip00.wav
+  - environment: public_transit
+    noise_environment: public_transit
+    noise_asset_id: PRESTO
+    snr_db: 12.0
+    noise_path: ../../background_noise_library/demand_16k/PRESTO/PRESTO_ch01_clip00.wav
+  - environment: public_transit
+    noise_environment: public_transit
+    noise_asset_id: PSTATION
+    snr_db: 8.0
+    noise_path: ../../background_noise_library/demand_16k/PSTATION/PSTATION_ch01_clip00.wav
+  - environment: open_space
+    noise_environment: open_space
+    noise_asset_id: SPSQUARE
+    snr_db: 10.0
+    noise_path: ../../background_noise_library/demand_16k/SPSQUARE/SPSQUARE_ch01_clip00.wav
+
+  # Transport
+  - environment: open_space
+    noise_environment: open_space
+    noise_asset_id: STRAFFIC
+    snr_db: 8.0
+    noise_path: ../../background_noise_library/demand_16k/STRAFFIC/STRAFFIC_ch01_clip00.wav
+  - environment: public_transit
+    noise_environment: public_transit
+    noise_asset_id: TBUS
+    snr_db: 10.0
+    noise_path: ../../background_noise_library/demand_16k/TBUS/TBUS_ch01_clip00.wav
+  - environment: vehicle
+    noise_environment: vehicle
+    noise_asset_id: TCAR
+    snr_db: 12.0
+    noise_path: ../../background_noise_library/demand_16k/TCAR/TCAR_ch01_clip00.wav
+  - environment: public_transit
+    noise_environment: public_transit
+    noise_asset_id: TMETRO
+    snr_db: 8.0
+    noise_path: ../../background_noise_library/demand_16k/TMETRO/TMETRO_ch01_clip00.wav

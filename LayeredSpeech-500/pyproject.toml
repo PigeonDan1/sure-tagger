@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "layeredspeech-500"
+version = "0.1.0"
+description = "A 500-scene multilingual speech benchmark with layered scene controls"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "numpy>=1.24,<3",
+  "PyYAML>=6,<7",
+  "scipy>=1.10,<2",
+  "soundfile>=0.12,<1",
+  "typer>=0.12,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+  "ruff>=0.8,<1",
+  "build>=1.2,<2",
+]
+assets = [
+  "huggingface_hub>=0.24,<1",
+  "requests>=2.31,<3",
+]
+
+[project.scripts]
+layeredspeech-fixture = "saasr_mini.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
