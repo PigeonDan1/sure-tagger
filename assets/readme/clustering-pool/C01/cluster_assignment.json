@@ -1,0 +1,87 @@
+{
+  "sample_id": "multi_000454_Elderly0014S0046W0055__s0_000055",
+  "global_index": 454,
+  "dataset": "BAAI_SeniorTalk_sentence_test__v1.0.1",
+  "mode": "model_agnostic",
+  "partition_scope": "shared",
+  "cluster_id": "C01",
+  "cluster_name": "低信噪比短语音",
+  "cluster_name_status": "posthoc_reviewed",
+  "cluster_name_source": "human_review_from_profile_and_source_metadata",
+  "cluster_name_version": "cluster_names_v0.5",
+  "cluster_profile_ref": "cluster_summary.json#C01",
+  "secondary_tags": {
+    "content": [
+      "speech"
+    ],
+    "interaction": "single",
+    "language_group": "zh",
+    "noise": [],
+    "quality": "medium",
+    "room": "ordinary",
+    "temporal": [
+      "short_fragment"
+    ]
+  },
+  "assignment_confidence": "high",
+  "assignment_approximate": false,
+  "assignment_gate": {
+    "tag_gate_passed": true,
+    "tag_candidate_count": 6,
+    "tag_radius_passed": true,
+    "top2_margin": null
+  },
+  "needs_review": false,
+  "unknown_reason": [],
+  "error_driven": false,
+  "error_heterogeneous": true,
+  "tag_anchor": {
+    "status": "passed",
+    "top_features": [
+      "audio_quality.snr_db=17.2516",
+      "basic_acoustic.nonspeech_ratio=0.0",
+      "room_acoustic.rt60_sec=0.3718"
+    ]
+  },
+  "assignment_basis": "audio_tags_only",
+  "tag_assignment_basis": "audio_only",
+  "feature_provenance": {
+    "used": [
+      "basic_acoustic.duration_sec",
+      "basic_acoustic.nonspeech_ratio",
+      "basic_acoustic.silence_segment_count",
+      "basic_acoustic.silence_total_sec",
+      "audio_quality.*",
+      "room_acoustic.rt60_sec",
+      "room_acoustic.c50_db",
+      "sound_field_scene.speech_music_events",
+      "sound_field_scene.external_noise_type",
+      "sound_field_scene.noise_composition",
+      "speaker.speaker_count",
+      "speaker.speaker_overlap",
+      "speaker.overlap_ratio",
+      "speaker.speaker_change_count",
+      "deterministic_derived.speaker_change_rate_per_min"
+    ],
+    "excluded": [
+      "wer_cer.error_rate",
+      "reference_derived_text_except_metrics",
+      "target_asr_transcript",
+      "target_model_derived_tags",
+      "room_acoustic.far_field",
+      "language_content.*"
+    ]
+  },
+  "coverage": {
+    "cluster_evidence": "complete",
+    "unknown_tags": []
+  },
+  "evidence_tags": [
+    "sound_field_scene.speech_music_events",
+    "speaker.speaker_count",
+    "audio_quality.snr_db",
+    "room_acoustic.rt60_sec"
+  ],
+  "cluster_rules_version": "cluster_rules_v0.5",
+  "environment_hypothesis": "野外或网络视频口语，以泰语为主"
+}

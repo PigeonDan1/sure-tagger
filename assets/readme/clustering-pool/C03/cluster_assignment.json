@@ -1,0 +1,87 @@
+{
+  "sample_id": "multi_000513_CCFBDCI-001454_EN",
+  "global_index": 513,
+  "dataset": "ContextASR-Bench_Speech_en__v1.0.1",
+  "mode": "model_agnostic",
+  "partition_scope": "shared",
+  "cluster_id": "C03",
+  "cluster_name": "近场超净长时单人语音",
+  "cluster_name_status": "posthoc_reviewed",
+  "cluster_name_source": "human_review_from_profile_and_source_metadata",
+  "cluster_name_version": "cluster_names_v0.5",
+  "cluster_profile_ref": "cluster_summary.json#C03",
+  "secondary_tags": {
+    "content": [
+      "speech"
+    ],
+    "interaction": "single",
+    "language_group": "en",
+    "noise": [],
+    "quality": "high",
+    "room": "dry",
+    "temporal": [
+      "long_form"
+    ]
+  },
+  "assignment_confidence": "high",
+  "assignment_approximate": false,
+  "assignment_gate": {
+    "tag_gate_passed": true,
+    "tag_candidate_count": 6,
+    "tag_radius_passed": true,
+    "top2_margin": null
+  },
+  "needs_review": false,
+  "unknown_reason": [],
+  "error_driven": false,
+  "error_heterogeneous": false,
+  "tag_anchor": {
+    "status": "passed",
+    "top_features": [
+      "basic_acoustic.duration_sec=45.5619",
+      "audio_quality.snr_db=65.9881",
+      "room_acoustic.rt60_sec=0.1985"
+    ]
+  },
+  "assignment_basis": "audio_tags_only",
+  "tag_assignment_basis": "audio_only",
+  "feature_provenance": {
+    "used": [
+      "basic_acoustic.duration_sec",
+      "basic_acoustic.nonspeech_ratio",
+      "basic_acoustic.silence_segment_count",
+      "basic_acoustic.silence_total_sec",
+      "audio_quality.*",
+      "room_acoustic.rt60_sec",
+      "room_acoustic.c50_db",
+      "sound_field_scene.speech_music_events",
+      "sound_field_scene.external_noise_type",
+      "sound_field_scene.noise_composition",
+      "speaker.speaker_count",
+      "speaker.speaker_overlap",
+      "speaker.overlap_ratio",
+      "speaker.speaker_change_count",
+      "deterministic_derived.speaker_change_rate_per_min"
+    ],
+    "excluded": [
+      "wer_cer.error_rate",
+      "reference_derived_text_except_metrics",
+      "target_asr_transcript",
+      "target_model_derived_tags",
+      "room_acoustic.far_field",
+      "language_content.*"
+    ]
+  },
+  "coverage": {
+    "cluster_evidence": "complete",
+    "unknown_tags": []
+  },
+  "evidence_tags": [
+    "sound_field_scene.speech_music_events",
+    "speaker.speaker_count",
+    "audio_quality.snr_db",
+    "room_acoustic.rt60_sec"
+  ],
+  "cluster_rules_version": "cluster_rules_v0.5",
+  "environment_hypothesis": "录音室 / 近讲朗读或播报"
+}

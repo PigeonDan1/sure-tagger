@@ -1,0 +1,39 @@
+{
+  "cluster_id": "C00",
+  "cluster_name": "干声场中长单人语音",
+  "n": 341,
+  "share": 0.341,
+  "anchors": [
+    {
+      "feature": "overlap",
+      "value": null,
+      "lift": 1.5875465790576146,
+      "n": 72
+    },
+    {
+      "feature": "speaker_bin",
+      "value": null,
+      "lift": 1.5875465790576146,
+      "n": 72
+    }
+  ],
+  "secondary_tags": {
+    "interaction": "single",
+    "quality": "high",
+    "room": "dry",
+    "language_group": "en",
+    "content": [
+      "speech"
+    ],
+    "noise": [],
+    "temporal": []
+  },
+  "snr_db_median": 35.55589,
+  "rt60_sec_median": 0.266557,
+  "duration_sec_median": 6.62,
+  "nonspeech_ratio_median": 0.106109,
+  "error_driven": false,
+  "error_heterogeneous": false,
+  "cluster_name_status": "posthoc_reviewed",
+  "cluster_name_version": "cluster_names_v0.5"
+}

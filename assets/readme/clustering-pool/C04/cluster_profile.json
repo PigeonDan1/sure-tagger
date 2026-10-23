@@ -1,0 +1,60 @@
+{
+  "cluster_id": "C04",
+  "cluster_name": "极短稀疏非语音片段",
+  "n": 17,
+  "share": 0.017,
+  "anchors": [
+    {
+      "feature": "events",
+      "value": [],
+      "lift": 31.372549019607845,
+      "n": 16
+    },
+    {
+      "feature": "basic_acoustic.nonspeech_ratio",
+      "value": 1.0,
+      "lift": 6.925860012350273,
+      "n": 17,
+      "effect": 6.925860012350273,
+      "direction": "higher"
+    },
+    {
+      "feature": "room_acoustic.rt60_sec",
+      "value": 0.4824,
+      "lift": 1.1578366744520896,
+      "n": 17,
+      "effect": 1.1578366744520896,
+      "direction": "higher"
+    },
+    {
+      "feature": "basic_acoustic.duration_sec",
+      "value": 0.42,
+      "lift": 0.5286969330317218,
+      "n": 17,
+      "effect": -0.5286969330317218,
+      "direction": "lower"
+    }
+  ],
+  "secondary_tags": {
+    "interaction": "single",
+    "quality": "high",
+    "room": "ordinary",
+    "language_group": "en",
+    "content": [
+      "non_speech_candidate"
+    ],
+    "noise": [],
+    "temporal": [
+      "short_fragment",
+      "sparse_speech"
+    ]
+  },
+  "snr_db_median": 36.13554,
+  "rt60_sec_median": 0.482421,
+  "duration_sec_median": 0.42,
+  "nonspeech_ratio_median": 1.0,
+  "error_driven": false,
+  "error_heterogeneous": false,
+  "cluster_name_status": "posthoc_reviewed",
+  "cluster_name_version": "cluster_names_v0.5"
+}

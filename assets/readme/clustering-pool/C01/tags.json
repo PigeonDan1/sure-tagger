@@ -1,0 +1,82 @@
+{
+  "sample_id": "multi_000454_Elderly0014S0046W0055__s0_000055",
+  "dataset": "BAAI_SeniorTalk_sentence_test__v1.0.1",
+  "tags": {
+    "audio_quality": {
+      "dnsmos_bak": 2.802265,
+      "dnsmos_ovrl": 2.316908,
+      "dnsmos_p808": 2.851929,
+      "dnsmos_sig": 3.214763,
+      "snr_db": 17.890136
+    },
+    "basic_acoustic": {
+      "channels": 2,
+      "duration_sec": 2.206,
+      "nonspeech_ratio": 0.0,
+      "sample_rate_hz": 16000,
+      "silence_segments": []
+    },
+    "deterministic_derived": {
+      "filler_ratio": 0.0,
+      "speaker_change_rate_per_min": 0.0
+    },
+    "language_content": {
+      "filler": 0,
+      "language": "zh-mandarin",
+      "punctuation": {
+        "has_terminal_punctuation": true,
+        "punctuation_count": 4
+      },
+      "repetition": {
+        "has_repetition": true,
+        "repetition_count": 1
+      },
+      "word_count": 15
+    },
+    "room_acoustic": {
+      "c50_db": 23.806913,
+      "far_field": null,
+      "rt60_sec": 0.361322
+    },
+    "sound_field_scene": {
+      "external_noise_type": [],
+      "music_present": false,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [
+          "Silence"
+        ],
+        "mechanical": [],
+        "music": [],
+        "nature": []
+      },
+      "speech_music_events": [
+        "speech"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": "我这点儿，你还没没啥走，你没你也没啥走。",
+      "multi_speaker": false,
+      "overlap_ratio": 0.0,
+      "profiles": [
+        {
+          "gender": "male",
+          "pitch": "mid",
+          "speaker_id": "speaker_1",
+          "speaker_volume": "variable",
+          "speech_rate": {
+            "band": null,
+            "unit": null,
+            "value": null
+          }
+        }
+      ],
+      "speaker_change": false,
+      "speaker_change_count": 0,
+      "speaker_count": 1,
+      "speaker_overlap": false,
+      "speaker_present": true
+    }
+  }
+}

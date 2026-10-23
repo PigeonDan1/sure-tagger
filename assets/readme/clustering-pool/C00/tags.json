@@ -1,0 +1,93 @@
+{
+  "sample_id": "multi_000525_CCFBDCI-001982_EN",
+  "dataset": "ContextASR-Bench_Speech_en__v1.0.1",
+  "tags": {
+    "audio_quality": {
+      "dnsmos_bak": 4.167515,
+      "dnsmos_ovrl": 3.389849,
+      "dnsmos_p808": 3.677245,
+      "dnsmos_sig": 3.631795,
+      "snr_db": 56.429547
+    },
+    "basic_acoustic": {
+      "channels": 1,
+      "duration_sec": 33.567375,
+      "nonspeech_ratio": 0.008937,
+      "sample_rate_hz": 16000,
+      "silence_segments": [
+        {
+          "end_sec": 0.18,
+          "start_sec": 0.0
+        },
+        {
+          "end_sec": 13.54,
+          "start_sec": 13.43
+        },
+        {
+          "end_sec": 25.33,
+          "start_sec": 25.32
+        }
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": 0.010753,
+      "speaker_change_rate_per_min": 0.0
+    },
+    "language_content": {
+      "filler": 1,
+      "language": "en",
+      "punctuation": {
+        "has_terminal_punctuation": true,
+        "punctuation_count": 12
+      },
+      "repetition": {
+        "has_repetition": false,
+        "repetition_count": 0
+      },
+      "word_count": 93
+    },
+    "room_acoustic": {
+      "c50_db": 32.348821,
+      "far_field": null,
+      "rt60_sec": 0.134349
+    },
+    "sound_field_scene": {
+      "external_noise_type": [],
+      "music_present": false,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [],
+        "mechanical": [],
+        "music": [],
+        "nature": []
+      },
+      "speech_music_events": [
+        "speech"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": "Hey Tom, did you catch the Springfield weather update? They're predicting light snow with temps dipping to twenty three degrees Fahrenheit tonight. The National Weather Service just upgraded the Doppler radar system, something about tracking polar vortex movements. Oh, and the highway department started pre treating Route seventeen with calcium chloride over. My neighbor works at the meteorological bureau, she mentioned atmospheric pressure dropped to ten thirteen hectopascals this morning. Remember how the ice storm last year froze the Merrimack River completely? They're deploying thermal imaging drones this time to monitor bridge surfaces.",
+      "multi_speaker": false,
+      "overlap_ratio": 0.0,
+      "profiles": [
+        {
+          "gender": "male",
+          "pitch": "low",
+          "speaker_id": "speaker_1",
+          "speaker_volume": "variable",
+          "speech_rate": {
+            "band": "normal",
+            "unit": "word_per_min",
+            "value": 167.3
+          }
+        }
+      ],
+      "speaker_change": false,
+      "speaker_change_count": 0,
+      "speaker_count": 1,
+      "speaker_overlap": false,
+      "speaker_present": true
+    }
+  }
+}

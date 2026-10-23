@@ -1,0 +1,16 @@
+{
+  "sample_id": "multi_000803_AMI_EN2002a_H02_FEO072_0033513_0033555",
+  "dataset": "esb_ami__v1.0.1",
+  "source_key": "AMI_EN2002a_H02_FEO072_0033513_0033555",
+  "language": "en",
+  "split": null,
+  "selection_kind": "cluster_medoid_boundary",
+  "selection_note": "极短静音/非语音边界样本；适合作为边界案例",
+  "audio": {
+    "duration_sec": 0.42,
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "sha256": "89242a1c3367fdb65af69e6167b23db6e9ddf5116464dc7bc5f39d7fc6af08b2"
+  },
+  "source_audio_path_omitted": true
+}

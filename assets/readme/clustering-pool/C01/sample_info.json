@@ -1,0 +1,16 @@
+{
+  "sample_id": "multi_000454_Elderly0014S0046W0055__s0_000055",
+  "dataset": "BAAI_SeniorTalk_sentence_test__v1.0.1",
+  "source_key": "Elderly0014S0046W0055__s0_000055",
+  "language": "zh",
+  "split": "test",
+  "selection_kind": "cluster_medoid",
+  "selection_note": "该簇 medoid；短时单人中文语音，较低 SNR",
+  "audio": {
+    "duration_sec": 2.206,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "sha256": "5b570c7d80e590127e7110059f98e3a589128199e68405aea436d237d18eb8d7"
+  },
+  "source_audio_path_omitted": true
+}

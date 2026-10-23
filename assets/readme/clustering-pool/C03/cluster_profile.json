@@ -1,0 +1,53 @@
+{
+  "cluster_id": "C03",
+  "cluster_name": "近场超净长时单人语音",
+  "n": 196,
+  "share": 0.196,
+  "anchors": [
+    {
+      "feature": "basic_acoustic.duration_sec",
+      "value": 45.5619,
+      "lift": 4.22083623546741,
+      "n": 196,
+      "effect": 4.22083623546741,
+      "direction": "higher"
+    },
+    {
+      "feature": "audio_quality.snr_db",
+      "value": 65.9881,
+      "lift": 1.0639892187938664,
+      "n": 196,
+      "effect": 1.0639892187938664,
+      "direction": "higher"
+    },
+    {
+      "feature": "room_acoustic.rt60_sec",
+      "value": 0.1985,
+      "lift": 0.5493141914131894,
+      "n": 196,
+      "effect": -0.5493141914131894,
+      "direction": "lower"
+    }
+  ],
+  "secondary_tags": {
+    "interaction": "single",
+    "quality": "high",
+    "room": "dry",
+    "language_group": "zh",
+    "content": [
+      "speech"
+    ],
+    "noise": [],
+    "temporal": [
+      "long_form"
+    ]
+  },
+  "snr_db_median": 65.98805899999999,
+  "rt60_sec_median": 0.1984595,
+  "duration_sec_median": 45.561938,
+  "nonspeech_ratio_median": 0.063261,
+  "error_driven": false,
+  "error_heterogeneous": false,
+  "cluster_name_status": "posthoc_reviewed",
+  "cluster_name_version": "cluster_names_v0.5"
+}
