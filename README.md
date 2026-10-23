@@ -2,7 +2,7 @@
 
 <h1 align="center">SURE-Tagger</h1>
 
-<h2 align="center">A semi-structured representation of speech that lets agents truly understand and analyze sound</h2>
+<h2 align="center">Making speech interpretable to agents through rich, semi-structured representations.</h2>
 
 <p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
@@ -134,7 +134,7 @@ The repository's full evaluation launcher currently uses the existing-data subse
 
 <a id="paper-results"></a>
 
-## Paper results
+## System performance
 
 The radar plots compare attribute-level relative performance on existing and synthetic recordings. Each axis is normalized to its best method within that source; SURE-Tagger performs strongest across most speaker, temporal, and acoustic attributes.
 
