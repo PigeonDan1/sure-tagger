@@ -6,12 +6,19 @@
 
 <p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
-<table align="center" width="80%">
-<tr><td width="50%"><a href="#motivation"><img src="./assets/readme/nav/motivation.svg" width="22" height="22" align="middle" alt=""> Motivation</a></td><td width="50%"><a href="#sure-tagger"><img src="./assets/readme/nav/sure-tagger.svg" width="22" height="22" align="middle" alt=""> SURE-Tagger</a></td></tr>
-<tr><td><a href="#how-it-works"><img src="./assets/readme/nav/how-it-works.svg" width="22" height="22" align="middle" alt=""> How it works</a></td><td><a href="#usage"><img src="./assets/readme/nav/usage.svg" width="22" height="22" align="middle" alt=""> Usage</a></td></tr>
-<tr><td><a href="#tag-bench"><img src="./assets/readme/nav/tag-bench.svg" width="22" height="22" align="middle" alt=""> Tag-Bench</a></td><td><a href="#system-performance"><img src="./assets/readme/nav/system-performance.svg" width="22" height="22" align="middle" alt=""> System performance</a></td></tr>
-<tr><td><a href="#compositional-benchmark"><img src="./assets/readme/nav/compositional-benchmark.svg" width="22" height="22" align="middle" alt=""> Compositional benchmark</a></td><td><a href="#license"><img src="./assets/readme/nav/license.svg" width="22" height="22" align="middle" alt=""> License</a></td></tr>
-</table>
+<p align="center">
+<a href="#motivation"><img src="./assets/readme/nav/chips/motivation.svg" width="150" height="38" alt="Motivation"></a> &ensp;
+<a href="#sure-tagger"><img src="./assets/readme/nav/chips/sure-tagger.svg" width="195" height="38" alt="SURE-Tagger"></a> &ensp;
+<a href="#how-it-works"><img src="./assets/readme/nav/chips/how-it-works.svg" width="232" height="38" alt="How it works"></a> &ensp;
+<a href="#usage"><img src="./assets/readme/nav/chips/usage.svg" width="120" height="38" alt="Usage"></a>
+</p>
+
+<p align="center">
+<a href="#tag-bench"><img src="./assets/readme/nav/chips/tag-bench.svg" width="150" height="38" alt="Tag-Bench"></a> &ensp;
+<a href="#system-performance"><img src="./assets/readme/nav/chips/system-performance.svg" width="195" height="38" alt="System performance"></a> &ensp;
+<a href="#compositional-benchmark"><img src="./assets/readme/nav/chips/compositional-benchmark.svg" width="232" height="38" alt="Compositional benchmark"></a> &ensp;
+<a href="#license"><img src="./assets/readme/nav/chips/license.svg" width="120" height="38" alt="License"></a>
+</p>
 
 SURE-Tagger turns speech evidence into queryable tags and evidence-linked descriptions.
 

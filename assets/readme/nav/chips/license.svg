@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="38" viewBox="0 0 120 38" role="img" aria-label="License">
+  <title>License</title>
+  <rect x="0.75" y="0.75" width="118.5" height="36.5" rx="8" fill="#f6f7f2" stroke="#dbe2dc" stroke-width="1.5"/>
+  <g transform="translate(3 3)">
+    <rect x="1" y="1" width="30" height="30" rx="7" fill="#f6f7f2" stroke="#dbe2dc" stroke-width="1.5"/>
+      <path d="M9 6h10l4 4v16H9zM19 6v5h4" fill="none" stroke="#17201d" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M12 14h7m-7 4h4m-3 4 2 2 4-5" fill="none" stroke="#16796f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="42" y="24" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#17201d">License</text>
+</svg>

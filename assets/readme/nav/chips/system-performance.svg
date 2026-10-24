@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="195" height="38" viewBox="0 0 195 38" role="img" aria-label="System performance">
+  <title>System performance</title>
+  <rect x="0.75" y="0.75" width="193.5" height="36.5" rx="8" fill="#f6f7f2" stroke="#dbe2dc" stroke-width="1.5"/>
+  <g transform="translate(3 3)">
+    <rect x="1" y="1" width="30" height="30" rx="7" fill="#f6f7f2" stroke="#dbe2dc" stroke-width="1.5"/>
+      <path d="M6 25h20" stroke="#17201d" stroke-width="1.7" stroke-linecap="round"/>
+      <rect x="8" y="18" width="4" height="7" rx="1" fill="#16796f"/>
+      <rect x="14" y="13" width="4" height="12" rx="1" fill="#16796f"/>
+      <rect x="20" y="8" width="4" height="17" rx="1" fill="#16796f"/>
+  </g>
+  <text x="42" y="24" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#17201d">System performance</text>
+</svg>
