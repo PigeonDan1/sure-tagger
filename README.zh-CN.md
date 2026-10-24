@@ -32,7 +32,7 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 ## SURE-Tagger · 从音频到标签
 
-半结构化标签将可查询的显式字段与简短描述放在一起；无法从证据确认的属性保留为 `null`。先[试听这段 AMI 会议音频](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav)，再看它的标签：
+半结构化标签将可查询的显式字段与简短描述放在一起；无法从证据确认的属性保留为 `null`。先[试听这段 AMI 会议音频](https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&sample=ES2012d_utterance_00018#listen)，再看它的标签：
 
 <table width="100%">
 <thead><tr><th width="520">证据</th><th width="1080">结构化标签</th></tr></thead>
@@ -169,11 +169,11 @@ python scripts/reproduce.py --profile fixture --output runs/fixture
 <table width="100%">
 <thead><tr><th width="350">样本</th><th width="570">试听重点</th><th width="680">资源</th></tr></thead>
 <tbody>
-<tr><td>AMI · <code>ES2012d</code></td><td>四人对话与重叠语音</td><td><a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">完整预测</a></td></tr>
-<tr><td>AMI · <code>EN2001e</code></td><td>两人对话与短暂重叠</td><td><a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">完整预测</a></td></tr>
-<tr><td>FLEURS · 俄语</td><td>语种与语音内容</td><td><a href="assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">完整预测</a></td></tr>
-<tr><td>DESED</td><td>语音与机械事件</td><td><a href="assets/readme/tagbench/samples/t3_desed_0112/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">完整预测</a></td></tr>
-<tr><td>FSD50K</td><td>音乐事件被打标器漏检</td><td><a href="assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav">试听</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">完整预测</a></td></tr>
+<tr><td>AMI · <code>ES2012d</code></td><td>四人对话与重叠语音</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&amp;sample=ES2012d_utterance_00018#listen">试听</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">完整预测</a></td></tr>
+<tr><td>AMI · <code>EN2001e</code></td><td>两人对话与短暂重叠</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&amp;sample=EN2001e_utterance_00071#listen">试听</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">完整预测</a></td></tr>
+<tr><td>FLEURS · 俄语</td><td>语种与语音内容</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&amp;sample=fleurs_t2_0347#listen">试听</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">完整预测</a></td></tr>
+<tr><td>DESED</td><td>语音与机械事件</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&amp;sample=t3_desed_0112#listen">试听</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">完整预测</a></td></tr>
+<tr><td>FSD50K</td><td>音乐事件被打标器漏检</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&amp;sample=t3_fsd50k_0045#listen">试听</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">完整预测</a></td></tr>
 </tbody>
 </table>
 
