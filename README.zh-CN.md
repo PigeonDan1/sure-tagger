@@ -64,7 +64,7 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 </details>
 
-[完整字段与输入格式](sure-tagger-main/docs/tags-and-methods.md)见标签文档。[交互演示页面](sure-tagger-main/demo/index.html)已内置下方五条音频；可[在本地运行](sure-tagger-main/demo/README.md)，也可用 [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) 导入自己的音频与标签。
+[完整字段与输入格式](sure-tagger-main/docs/tags-and-methods.md)见标签文档。[交互演示页面](https://me-chuan.github.io/sure-tagger/)已内置下方五条音频；可[在本地运行](sure-tagger-main/demo/README.md)，也可用 [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) 导入自己的音频与标签。
 
 <a id="how-it-works"></a>
 
