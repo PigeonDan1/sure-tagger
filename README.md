@@ -2,7 +2,7 @@
 
 <h1 align="center">SURE-Tagger</h1>
 
-<h2 align="center">A semi-structured representation of speech that lets agents truly understand and analyze sound</h2>
+<h2 align="center">Making speech interpretable to agents through rich, semi-structured representations.</h2>
 
 <p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
