@@ -7,8 +7,11 @@
 <p align="center"><a href="README.md">English</a> · <strong>简体中文</strong></p>
 
 <p align="center">
-<a href="#motivation"><kbd>01</kbd> 项目动机</a> · <a href="#sure-tagger"><kbd>02</kbd> SURE-Tagger</a> · <a href="#how-it-works"><kbd>03</kbd> 工作原理</a> · <a href="#usage"><kbd>04</kbd> 使用方式</a><br>
-<a href="#tag-bench"><kbd>05</kbd> Tag-Bench</a> · <a href="#system-performance"><kbd>06</kbd> 系统表现</a> · <a href="#compositional-benchmark"><kbd>07</kbd> 组合式评测</a> · <a href="#license"><kbd>08</kbd> 协议</a>
+<a href="#motivation"><img src="./assets/readme/nav/motivation.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>项目动机</ins></a><img src="./assets/readme/nav/spacer.png" width="20" height="1" alt=""><a href="#sure-tagger"><img src="./assets/readme/nav/sure-tagger.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>SURE-Tagger</ins></a><img src="./assets/readme/nav/spacer.png" width="74" height="1" alt=""><a href="#how-it-works"><img src="./assets/readme/nav/how-it-works.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>工作原理</ins></a><img src="./assets/readme/nav/spacer.png" width="98" height="1" alt=""><a href="#usage"><img src="./assets/readme/nav/usage.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>使用方式</ins></a><img src="./assets/readme/nav/spacer.png" width="28" height="1" alt="">
+</p>
+
+<p align="center">
+<a href="#tag-bench"><img src="./assets/readme/nav/tag-bench.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Tag-Bench</ins></a><img src="./assets/readme/nav/spacer.png" width="12" height="1" alt=""><a href="#system-performance"><img src="./assets/readme/nav/system-performance.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>系统表现</ins></a><img src="./assets/readme/nav/spacer.png" width="12" height="1" alt=""><a href="#compositional-benchmark"><img src="./assets/readme/nav/compositional-benchmark.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>组合式评测</ins></a><img src="./assets/readme/nav/spacer.png" width="12" height="1" alt=""><a href="#references"><img src="./assets/readme/nav/references.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>参考文献</ins></a><img src="./assets/readme/nav/spacer.png" width="12" height="1" alt=""><a href="#license"><img src="./assets/readme/nav/license.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>协议</ins></a>
 </p>
 
 SURE-Tagger 将语音证据整理为可查询的标签与有证据支撑的描述。
@@ -306,6 +309,14 @@ python3 clustering/scripts/cluster_scenes.py \
 </details>
 
 当前仓库的完整评测入口使用现有数据集子集；[数据构成](compare/docs/benchmark-650-dataset-composition.md)与[评分规则](compare/docs/benchmark-v1-29-metrics.md)另见文档。
+
+<a id="references"></a>
+
+## 参考文献
+
+- **Interspeech 2026** · Jing Peng 等，[A Unified and Reproducible Experimentation Framework for Speech Understanding](https://www.isca-archive.org/interspeech_2026/peng26e_interspeech.pdf)。
+- **arXiv 2026** · Jing Peng 等，[SURE-EVAL: A Systematic and Unified Agentic Framework for Reproducible Evaluation](https://arxiv.org/abs/2609.39030)。
+- **网站** · [Open-Bench — Open Bench, Open Innovation](https://www.open-bench.net/home)。
 
 <a id="license"></a>
 
