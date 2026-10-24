@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="890" viewBox="0 0 760 890" role="img" aria-labelledby="title desc">
+  <title id="title">AMI 会议片段的结构化标签</title>
+  <desc id="desc">SURE-Tagger 对这段 AMI 音频的预测：时长 23.72 秒，语音无音乐标签，四位说话人有重叠，语言为英语，词数 45。</desc>
+  <rect x="1" y="1" width="758" height="888" rx="22" fill="#FFFFFF" stroke="#DCE7E4" stroke-width="2"/>
+
+  <rect x="40" y="32" width="680" height="120" rx="17" fill="#F0F7F5" stroke="#CBE0D8" stroke-width="2"/>
+  <path d="M67 94h10l5-19 8 37 7-52 9 66 8-47 7 27 5-12h12" fill="none" stroke="#0C806F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="164" y="84" fill="#18302A" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="31" font-weight="700">AMI · ES2012d 会议片段</text>
+  <text x="164" y="118" fill="#45615A" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="20">这段音频的 SURE-Tagger 标签</text>
+
+  <path d="M78 152v569" fill="none" stroke="#B8CEC7" stroke-width="3"/>
+  <path d="M78 233h34M78 373h34M78 513h34M78 653h34" fill="none" stroke="#B8CEC7" stroke-width="3"/>
+  <circle cx="78" cy="233" r="6" fill="#3A93C6"/>
+  <circle cx="78" cy="373" r="6" fill="#1A9F7D"/>
+  <circle cx="78" cy="513" r="6" fill="#8064C8"/>
+  <circle cx="78" cy="653" r="6" fill="#D28B44"/>
+
+  <rect x="112" y="173" width="608" height="120" rx="15" fill="#F4F9FC" stroke="#BFD8E7" stroke-width="2"/>
+  <rect x="112" y="173" width="8" height="120" rx="4" fill="#3A93C6"/>
+  <text x="139" y="211" fill="#173E56" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="24" font-weight="700">基础声学</text>
+  <text x="139" y="242" fill="#456477" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="19">WAV 时长与语音区间</text>
+  <text x="139" y="268" fill="#456477" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="19">约一半时长为非语音</text>
+  <path d="M421 232h24" stroke="#7A9CB0" stroke-width="3"/><path d="m445 232-9-7v14z" fill="#7A9CB0"/>
+  <text x="462" y="217" fill="#173E56" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="22" font-weight="700">basic_acoustic</text>
+  <text x="462" y="250" fill="#35576B" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18">duration_sec: 23.72</text>
+  <text x="462" y="275" fill="#35576B" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18">nonspeech_ratio: 0.500</text>
+
+  <rect x="112" y="313" width="608" height="120" rx="15" fill="#F2FAF6" stroke="#C3E5D4" stroke-width="2"/>
+  <rect x="112" y="313" width="8" height="120" rx="4" fill="#1A9F7D"/>
+  <text x="139" y="351" fill="#185A43" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="24" font-weight="700">声音事件</text>
+  <text x="139" y="382" fill="#4B7061" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="19">FireRed AED</text>
+  <text x="139" y="408" fill="#4B7061" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="19">检测到语音，未标注音乐</text>
+  <path d="M421 372h24" stroke="#7FAE96" stroke-width="3"/><path d="m445 372-9-7v14z" fill="#7FAE96"/>
+  <text x="462" y="357" fill="#185A43" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="22" font-weight="700">sound_field_scene</text>
+  <text x="462" y="390" fill="#426E57" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18">events: speech</text>
+  <text x="462" y="415" fill="#426E57" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18">music_present: false</text>
+
+  <rect x="112" y="453" width="608" height="120" rx="15" fill="#F7F5FC" stroke="#D9CCF1" stroke-width="2"/>
+  <rect x="112" y="453" width="8" height="120" rx="4" fill="#8064C8"/>
+  <text x="139" y="491" fill="#4E3C80" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="24" font-weight="700">说话人与转写</text>
+  <text x="139" y="522" fill="#6D5F91" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="19">MOSS / Nemotron + 路由 ASR</text>
+  <text x="139" y="548" fill="#6D5F91" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="19">四人对话，存在重叠语音</text>
+  <path d="M421 512h24" stroke="#A18EC9" stroke-width="3"/><path d="m445 512-9-7v14z" fill="#A18EC9"/>
+  <text x="462" y="497" fill="#4E3C80" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="22" font-weight="700">speaker</text>
+  <text x="462" y="530" fill="#675784" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18">speaker_count: 4</text>
+  <text x="462" y="555" fill="#675784" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18">speaker_overlap: true</text>
+
+  <rect x="112" y="593" width="608" height="120" rx="15" fill="#FCF8F2" stroke="#EBD7BE" stroke-width="2"/>
+  <rect x="112" y="593" width="8" height="120" rx="4" fill="#D28B44"/>
+  <text x="139" y="631" fill="#704717" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="24" font-weight="700">语言与文本</text>
+  <text x="139" y="662" fill="#8B6B44" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="19">FireRed LID + 文本规则</text>
+  <text x="139" y="688" fill="#8B6B44" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="19">英语转写与词数</text>
+  <path d="M421 652h24" stroke="#C8A575" stroke-width="3"/><path d="m445 652-9-7v14z" fill="#C8A575"/>
+  <text x="462" y="637" fill="#704717" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="22" font-weight="700">language_content</text>
+  <text x="462" y="670" fill="#836443" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18">language: en</text>
+  <text x="462" y="695" fill="#836443" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18">word_count: 45</text>
+
+  <rect x="40" y="758" width="680" height="94" rx="15" fill="#EDF4F1" stroke="#CBE0D8" stroke-width="2"/>
+  <text x="67" y="798" fill="#1C5D4E" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="25" font-weight="700">AMI 参考标注：4 人、重叠语音</text>
+  <text x="67" y="829" fill="#45615A" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,sans-serif" font-size="20">下方可查看同音频的完整预测对照</text>
+</svg>

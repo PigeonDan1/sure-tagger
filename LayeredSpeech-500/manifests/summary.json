@@ -1,0 +1,33 @@
+{
+  "dataset": "outputs_l1_l5_dots_v4_multilingual",
+  "scene_count": 500,
+  "duration_hours": 3.7784,
+  "sample_rate_counts": {
+    "24000": 413,
+    "16000": 72,
+    "8000": 15
+  },
+  "speaker_count_counts": {
+    "1": 59,
+    "2": 227,
+    "3": 214
+  },
+  "snr_counts": {
+    "5.0": 169,
+    "15.0": 168,
+    "27.0": 163
+  },
+  "music_counts": {
+    "false": 256,
+    "true": 244
+  },
+  "speed_proxy_counts": {
+    "slow": 692,
+    "normal": 1005,
+    "fast": 392
+  },
+  "speed_proxy_mismatch_count": 304,
+  "hard_failure_count": 0,
+  "warning_count": 324,
+  "qc_passed": true
+}

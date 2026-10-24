@@ -1,741 +1,483 @@
-const data = window.DEMO_DATA;
+(function () {
+  "use strict";
 
-const state = {
-  filter: "all",
-  activeId: data.samples[0]?.sampleId,
-  tagGroup: "overview",
-};
-
-const tagGroups = [
-  ["overview", "Overview"],
-  ["basic_acoustic", "Basic acoustic"],
-  ["audio_quality", "Audio quality"],
-  ["room_acoustic", "Room acoustic"],
-  ["sound_field_scene", "Sound field"],
-  ["language_content", "Language"],
-  ["speaker", "Speaker"],
-];
-
-const datasetColors = new Map();
-const palette = ["#16796f", "#2d62a3", "#c67828", "#6a5aa8", "#b14b4b", "#557a2f", "#8b5b2e", "#52616b"];
-const waveformCache = new Map();
-let audioContext;
-let waveformState = null;
-
-const els = {
-  metricGrid: document.querySelector("#metricGrid"),
-  filterRow: document.querySelector("#filterRow"),
-  sampleList: document.querySelector("#sampleList"),
-  visibleCount: document.querySelector("#visibleCount"),
-  activeDataset: document.querySelector("#activeDataset"),
-  activeTitle: document.querySelector("#activeTitle"),
-  activeNote: document.querySelector("#activeNote"),
-  activeSampleId: document.querySelector("#activeSampleId"),
-  audioPlayer: document.querySelector("#audioPlayer"),
-  waveform: document.querySelector("#waveform"),
-  transcriptText: document.querySelector("#transcriptText"),
-  tagToolbar: document.querySelector("#tagToolbar"),
-  tagGrid: document.querySelector("#tagGrid"),
-  inputJson: document.querySelector("#inputJson"),
-  rawJson: document.querySelector("#rawJson"),
-  datasetBars: document.querySelector("#datasetBars"),
-  coverageBars: document.querySelector("#coverageBars"),
-};
-
-function init() {
-  data.summary.datasets.forEach((dataset, index) => {
-    datasetColors.set(dataset.name, palette[index % palette.length]);
-  });
-  renderMetrics();
-  renderFilters();
-  renderSampleList();
-  renderTagToolbar();
-  renderBars();
-  renderActiveSample();
-  setupWaveformEvents();
-}
-
-function getActiveSample() {
-  return data.samples.find((sample) => sample.sampleId === state.activeId) || data.samples[0];
-}
-
-function formatNumber(value, digits = 2) {
-  if (value === null || value === undefined || Number.isNaN(value)) return "未生成";
-  if (typeof value !== "number") return String(value);
-  if (Math.abs(value) >= 100) return value.toFixed(0);
-  return value.toFixed(digits).replace(/\.00$/, "");
-}
-
-function formatPercent(value) {
-  if (value === null || value === undefined || Number.isNaN(value)) return "未生成";
-  return `${Math.round(value * 100)}%`;
-}
-
-function formatDuration(value) {
-  if (value === null || value === undefined) return "未知时长";
-  return `${formatNumber(value, 2)}s`;
-}
-
-function formatUnit(value, unit, digits = 2) {
-  if (value === null || value === undefined || Number.isNaN(value)) return "未生成";
-  return `${formatNumber(value, digits)} ${unit}`;
-}
-
-function compactDataset(name) {
-  return name.replace("TUT Urban Acoustic Scenes 2018", "TUT 2018").replace("WHAM! noise", "WHAM");
-}
-
-function hasTranscript(sample) {
-  return Boolean(sample.transcript && sample.transcript.trim());
-}
-
-function renderMetrics() {
-  const metrics = [
-    ["Phase2 samples", data.summary.sampleCount, `${data.summary.datasetCount} 个数据集，每个 5 条样本`],
-    ["Playable audio", data.summary.selectedCount, "phase2 全量音频，可播放和查看波形"],
-    ["Noise categories", `${data.summary.coverage.sound_field_scene}/${data.summary.sampleCount}`, "DASS 噪音类别（docs/DASS.md ②–⑦），具体标签见 composition"],
-    ["Speaker labels", `${data.summary.speakerCount}/${data.summary.sampleCount}`, `${data.summary.speakerMultiCount} 条 multi-speaker`],
-  ];
-
-  els.metricGrid.innerHTML = metrics
-    .map(
-      ([label, value, caption]) => `
-        <article class="metric-card">
-          <p class="metric-label">${label}</p>
-          <div class="metric-value">${value}</div>
-          <p class="metric-caption">${caption}</p>
-        </article>
-      `,
-    )
-    .join("");
-}
-
-function renderFilters() {
-  const filters = [["all", "全部"], ...data.summary.datasets.map((dataset) => [dataset.name, compactDataset(dataset.name)])];
-  els.filterRow.innerHTML = filters
-    .map(
-      ([value, label]) => `
-        <button type="button" data-filter="${escapeAttr(value)}" class="${state.filter === value ? "is-active" : ""}">
-          ${label}
-        </button>
-      `,
-    )
-    .join("");
-
-  els.filterRow.querySelectorAll("button").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.filter = button.dataset.filter;
-      const filtered = getFilteredSamples();
-      if (!filtered.some((sample) => sample.sampleId === state.activeId)) {
-        state.activeId = filtered[0]?.sampleId || data.samples[0]?.sampleId;
-      }
-      renderFilters();
-      renderSampleList();
-      renderActiveSample();
-    });
-  });
-}
-
-function getFilteredSamples() {
-  if (state.filter === "all") return data.samples;
-  return data.samples.filter((sample) => sample.dataset === state.filter);
-}
-
-function renderSampleList() {
-  const samples = getFilteredSamples();
-  els.visibleCount.textContent = `${samples.length} 条`;
-  els.sampleList.innerHTML = samples
-    .map((sample) => {
-      const active = sample.sampleId === state.activeId ? "is-active" : "";
-      const transcriptState = hasTranscript(sample) ? "transcript" : "no transcript";
-      const noise = sample.tags.sound_field_scene?.external_noise_type || [];
-      const noiseState = noise.length ? `noise: ${formatNoiseTypes(noise)}` : "noise: none";
-      const speaker = sample.tags.speaker;
-      const speakerState =
-        speaker && speaker.speaker_count !== null && speaker.speaker_count !== undefined
-          ? `speaker: ${speaker.speaker_count}`
-          : "speaker: none";
-      const color = datasetColors.get(sample.dataset) || "#16796f";
-      return `
-        <button type="button" class="sample-button ${active}" data-sample="${escapeAttr(sample.sampleId)}">
-          <div class="sample-title">
-            <span><span class="dataset-dot" style="background:${color}"></span> ${sample.title}</span>
-          </div>
-          <div class="sample-meta">
-            <span>${compactDataset(sample.dataset)}</span>
-            <span>${formatDuration(sample.durationSec)}</span>
-            <span>${transcriptState}</span>
-            <span>${noiseState}</span>
-            <span>${speakerState}</span>
-          </div>
-        </button>
-      `;
-    })
-    .join("");
-
-  els.sampleList.querySelectorAll(".sample-button").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.activeId = button.dataset.sample;
-      renderSampleList();
-      renderActiveSample();
-    });
-  });
-}
-
-function renderTagToolbar() {
-  els.tagToolbar.innerHTML = tagGroups
-    .map(
-      ([value, label]) => `
-        <button type="button" role="tab" data-group="${value}" class="${state.tagGroup === value ? "is-active" : ""}">
-          ${label}
-        </button>
-      `,
-    )
-    .join("");
-  els.tagToolbar.querySelectorAll("button").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.tagGroup = button.dataset.group;
-      renderTagToolbar();
-      renderTags(getActiveSample());
-    });
-  });
-}
-
-function renderActiveSample() {
-  const sample = getActiveSample();
-  if (!sample) return;
-
-  els.activeDataset.textContent = sample.dataset;
-  els.activeTitle.textContent = sample.title;
-  els.activeNote.textContent = sample.note;
-  els.activeSampleId.textContent = sample.sampleId;
-  els.audioPlayer.src = sample.audio;
-  els.audioPlayer.load();
-
-  if (hasTranscript(sample)) {
-    els.transcriptText.classList.remove("is-empty");
-    els.transcriptText.textContent = sample.transcript;
-  } else {
-    els.transcriptText.classList.add("is-empty");
-    els.transcriptText.textContent = "该样本没有 transcript，语言层只保留空结果，主要展示声学与声场标签。";
-  }
-
-  els.inputJson.textContent = JSON.stringify(buildInputRecord(sample), null, 2);
-  els.rawJson.textContent = JSON.stringify(sample.tags, null, 2);
-  renderTags(sample);
-  loadWaveform(sample);
-}
-
-function buildInputRecord(sample) {
-  return {
-    corpus: {
-      dataset_name: sample.dataset,
-      source_urls: {
-        article: [],
-        github: [],
-        huggingface: [],
-        dataset_card: [],
-      },
-      native_metadata: {},
+  const copy = {
+    en: {
+      heroEyebrow: "Interactive demo · curated audio",
+      heroTitle: "From speech evidence to useful tags.",
+      heroLead: "Listen to a real clip, inspect the structured fields and descriptions, then combine tags to find comparable recordings.",
+      heroPillOne: "5 audio clips",
+      heroPillTwo: "3 prediction sources",
+      heroPillThree: "Tag-driven queries",
+      listenEyebrow: "Listen",
+      listenTitle: "Choose a recording",
+      listenLead: "Listen to each clip and inspect its saved predictions.",
+      openAudio: "Open audio ↗",
+      openPredictions: "Full predictions ↗",
+      transcriptLabel: "ASR transcript",
+      tagsEyebrow: "Representation",
+      tagsTitle: "What the tags say",
+      tagsLead: "Typed fields make conditions queryable. A short description preserves context; unknown values stay unknown.",
+      tagDescription: "Evidence-linked description",
+      showJson: "View complete SURE-Tagger JSON",
+      queryEyebrow: "Compose conditions",
+      queryTitle: "Find a speech scene",
+      queryLead: "Combine tag values to make a small, comparable subset. This preview does not compute ASR error rates.",
+      speakerFilter: "Speakers",
+      overlapFilter: "Overlap",
+      languageFilter: "Language",
+      noiseFilter: "External noise tag",
+      clearFilters: "Clear filters",
+      compareEyebrow: "Same audio",
+      compareTitle: "Compare descriptions",
+      compareLead: "Read each system's output for the selected clip. Differences are visible without hiding the full records.",
+      footerCaveat: "These clips are examples, not a performance summary. Some labels are uncertain or disagree with the available references.",
+      sourceLink: "Samples and references ↗",
+      attributionLink: "Audio attribution ↗",
+      usageLink: "Run this demo ↗",
+      duration: "Duration",
+      speakerCount: "Speakers",
+      overlap: "Overlap",
+      language: "Language",
+      unknown: "Unknown",
+      noTranscript: "No speech transcript is available for this clip.",
+      noCaption: "No description is available in this record.",
+      speakersGroup: "Speaker interaction",
+      languageGroup: "Language and text",
+      acousticGroup: "Acoustic evidence",
+      soundGroup: "Sound field",
+      count: "Speaker count",
+      changes: "Speaker changes",
+      words: "Word count",
+      nonSpeech: "Non-speech",
+      snr: "SNR",
+      reverberation: "RT60",
+      soundEvents: "Detected events",
+      music: "Music present",
+      noise: "External noise categories",
+      all: "Any",
+      noSpeakers: "No speakers",
+      oneSpeaker: "One speaker",
+      multipleSpeakers: "Multiple speakers",
+      yes: "True",
+      no: "False",
+      tagPresent: "Tag present",
+      tagEmpty: "Empty array",
+      matches: "matching clips",
+      noMatches: "No clips match these conditions. Try removing a filter.",
+      selectClip: "Inspect clip",
+      notAvailable: "Not available in this data file.",
+      reportedSpeakers: "Reported speakers",
+      localMissing: "Local data.js was not found; showing the bundled examples.",
+      oneTagSource: "1 tag source",
+      localEyebrow: "Interactive demo · local data",
+      localCaveat: "Tags may be uncertain. Inspect the source audio and full JSON before drawing conclusions.",
     },
-    sample: {
-      sample_id: sample.sampleId,
-      audio: {
-        path: manifestAudioPath(sample),
-      },
-      text: {
-        transcript: sample.transcript || "",
-      },
-      native_metadata: sample.nativeMetadata || {},
+    zh: {
+      heroEyebrow: "交互演示 · 精选音频",
+      heroTitle: "从语音证据到可用的标签。",
+      heroLead: "试听真实片段，查看结构字段与描述，再组合标签寻找可比较的录音。",
+      heroPillOne: "5 条音频",
+      heroPillTwo: "3 个预测来源",
+      heroPillThree: "标签组合查询",
+      listenEyebrow: "试听",
+      listenTitle: "选择一段录音",
+      listenLead: "试听每条音频，并查看保存的预测标签。",
+      openAudio: "打开音频 ↗",
+      openPredictions: "完整预测 ↗",
+      transcriptLabel: "ASR 转写",
+      tagsEyebrow: "半结构化表征",
+      tagsTitle: "标签记录了什么",
+      tagsLead: "有类型的字段可用于查询，简短描述保留语境；无法确认的值仍保留为未知。",
+      tagDescription: "有证据支撑的描述",
+      showJson: "查看完整 SURE-Tagger JSON",
+      queryEyebrow: "组合条件",
+      queryTitle: "寻找语音场景",
+      queryLead: "组合标签值，选出可比较的小样本子集。此预览不计算 ASR 错误率。",
+      speakerFilter: "说话人数",
+      overlapFilter: "重叠语音",
+      languageFilter: "语言",
+      noiseFilter: "外部噪声标签",
+      clearFilters: "清除筛选",
+      compareEyebrow: "同一音频",
+      compareTitle: "对比三种描述",
+      compareLead: "阅读当前音频的三种系统输出；完整记录可在上方链接中查看。",
+      footerCaveat: "这些片段仅用于演示，不代表整体性能。部分标签存在不确定性，或与可用参考信息不一致。",
+      sourceLink: "样本与参考信息 ↗",
+      attributionLink: "音频来源 ↗",
+      usageLink: "运行演示页 ↗",
+      duration: "时长",
+      speakerCount: "说话人数",
+      overlap: "重叠语音",
+      language: "语言",
+      unknown: "未知",
+      noTranscript: "这段音频没有可用的语音转写。",
+      noCaption: "这份记录没有可用的描述。",
+      speakersGroup: "说话人交互",
+      languageGroup: "语言与文本",
+      acousticGroup: "声学证据",
+      soundGroup: "声场与事件",
+      count: "说话人数",
+      changes: "说话人切换",
+      words: "词数",
+      nonSpeech: "非语音占比",
+      snr: "信噪比",
+      reverberation: "RT60 混响",
+      soundEvents: "检出事件",
+      music: "存在音乐",
+      noise: "外部噪声类别",
+      all: "不限",
+      noSpeakers: "无人声",
+      oneSpeaker: "单人",
+      multipleSpeakers: "多人",
+      yes: "true",
+      no: "false",
+      tagPresent: "有类别",
+      tagEmpty: "空数组",
+      matches: "条匹配音频",
+      noMatches: "没有音频满足这些条件，请减少筛选条件。",
+      selectClip: "查看音频",
+      notAvailable: "这份数据没有提供此输出。",
+      reportedSpeakers: "报告的说话人数",
+      localMissing: "未找到本地 data.js，已显示仓库自带样本。",
+      oneTagSource: "1 个标签来源",
+      localEyebrow: "交互演示 · 本地数据",
+      localCaveat: "标签可能存在不确定性。得出结论前，请核对原始音频与完整 JSON。",
     },
   };
-}
 
-function manifestAudioPath(sample) {
-  const path = sample.audio || "";
-  if (path.startsWith("assets/")) return path.slice("assets/".length);
-  return path;
-}
+  const params = new URLSearchParams(window.location.search);
+  let language = params.get("lang") === "zh" ? "zh" : "en";
+  let samples = [];
+  let bundledSource = true;
+  let activeId = params.get("sample");
+  const filters = { speakers: "all", overlap: "all", language: "all", noise: "all" };
+  const byId = (id) => document.getElementById(id);
+  const tr = (key) => copy[language][key] || key;
 
-function renderTags(sample) {
-  const cards = getCardsForGroup(sample, state.tagGroup);
-  els.tagGrid.innerHTML = cards
-    .map(
-      (card) => `
-        <article class="tag-card ${card.isNull ? "is-null" : ""}">
-          <p class="tag-label">${card.label}</p>
-          <div class="tag-value">${card.value}</div>
-          <p class="tag-subtext">${card.subtext || ""}</p>
-        </article>
-      `,
-    )
-    .join("");
-}
-
-function getCardsForGroup(sample, group) {
-  const tags = sample.tags;
-  const basic = tags.basic_acoustic || {};
-  const quality = tags.audio_quality || {};
-  const room = tags.room_acoustic || {};
-  const scene = tags.sound_field_scene || {};
-  const lang = tags.language_content || {};
-  const speaker = tags.speaker || {};
-
-  if (group === "overview") {
-    return [
-      card("Duration", formatDuration(basic.duration_sec), `${formatNumber(basic.sample_rate_hz, 0)} Hz / ${basic.channels ?? "?"} channel`),
-      card("SNR", formatUnit(quality.snr_db, "dB", 2), "更高通常表示背景噪声更少", quality.snr_db == null),
-      card("Non-speech ratio", formatPercent(basic.nonspeech_ratio), `${(basic.silence_segments || []).length} non-speech segment(s)`),
-      card("DNSMOS OVRL", formatNumber(quality.dnsmos_ovrl, 2), "模型估计的整体语音质量", quality.dnsmos_ovrl == null),
-      card("Language", lang.language || "未生成", hasTranscript(sample) ? `${lang.word_count ?? 0} words/chars` : "缺少 transcript", !lang.language),
-      card("External noise", formatNoiseTypes(scene.external_noise_type || []), "DASS 噪音类别（docs/DASS.md ②–⑦）", !(scene.external_noise_type || []).length),
-      card("RT60", formatUnit(room.rt60_sec, "s", 3), "Rec-RIR reverberation estimate", room.rt60_sec == null),
-      card("Speaker count", speaker.speaker_count ?? "未生成", speakerStatus(speaker), speaker.speaker_count == null),
-    ];
+  function element(tag, className, text) {
+    const result = document.createElement(tag);
+    if (className) result.className = className;
+    if (text !== undefined && text !== null) result.textContent = String(text);
+    return result;
   }
 
-  if (group === "basic_acoustic") {
-    return [
-      card("duration_sec", formatNumber(basic.duration_sec, 3), "音频时长"),
-      card("sample_rate_hz", formatNumber(basic.sample_rate_hz, 0), "采样率"),
-      card("channels", basic.channels ?? "未生成", "声道数"),
-      card("nonspeech_ratio", formatPercent(basic.nonspeech_ratio), "metadata 优先；缺失时退回 FireRed VAD"),
-      card("silence_segments", listSegments(basic.silence_segments), "未检测到人类语音的片段，波形中以琥珀色显示", !basic.silence_segments?.length),
-    ];
+  function localized(value) {
+    if (typeof value === "string") return value;
+    if (value && typeof value === "object") return value[language] || value.en || value.zh || "";
+    return "";
   }
 
-  if (group === "audio_quality") {
-    return [
-      card("snr_db", formatUnit(quality.snr_db, "dB", 3), "Brouhaha 逐帧 SNR 均值", quality.snr_db == null),
-      card("dnsmos_sig", formatNumber(quality.dnsmos_sig, 3), "speech quality", quality.dnsmos_sig == null),
-      card("dnsmos_bak", formatNumber(quality.dnsmos_bak, 3), "background quality", quality.dnsmos_bak == null),
-      card("dnsmos_ovrl", formatNumber(quality.dnsmos_ovrl, 3), "overall quality", quality.dnsmos_ovrl == null),
-      card("dnsmos_p808", formatNumber(quality.dnsmos_p808, 3), "P.808 MOS estimate", quality.dnsmos_p808 == null),
-    ];
+  function currentSample() {
+    return samples.find((sample) => sample.sampleId === activeId) || samples[0];
   }
 
-  if (group === "room_acoustic") {
-    return [
-      card("rt60_sec", formatUnit(room.rt60_sec, "s", 4), "Rec-RIR 混响衰减时间（T20 拟合外推 -60 dB）", room.rt60_sec == null),
-      card("c50_db", formatNumber(room.c50_db, 4), "基于估计 RIR 的清晰度（直达声后 50ms 早/晚能量比）", room.c50_db == null),
-      card("far_field", room.far_field ?? "未生成", "预留字段", room.far_field == null),
-    ];
+  function tagsOf(sample) {
+    return sample.tags || sample.predictions?.sure_tagger || {};
   }
 
-  if (group === "sound_field_scene") {
-    return [
-      card("speech_music_events", listValue(scene.speech_music_events), "FireRed AED 检出类别（speech/singing/music 固定顺序）", !scene.speech_music_events?.length),
-      card("music_present", scene.music_present ?? "未生成", "AED 是否检出音乐；同时门控 noise_composition 的音乐桶", scene.music_present == null),
-      card("external_noise_type", formatNoiseTypes(scene.external_noise_type || []), "DASS 噪音类别键（docs/DASS.md ②–⑦；未被排除且 ≥0.25 的标签所归类别，人类/未归类不公开）", !scene.external_noise_type?.length),
-      card("noise_composition", formatComposition(scene.noise_composition), "展开 external_noise_type 各类别的具体标签；每类 top-3 ≥ 0.25（与类别阈值对齐），音乐以 FireRed AED 门控", scene.noise_composition == null),
-    ];
+  function displayValue(value) {
+    if (value === null || value === undefined) return tr("unknown");
+    if (Array.isArray(value)) return value.length ? value.join(", ") : "[]";
+    if (typeof value === "boolean") return String(value);
+    if (typeof value === "number") return Number.isInteger(value) ? String(value) : value.toFixed(2);
+    return String(value);
   }
 
-  if (group === "language_content") {
-    return [
-      card("language", lang.language || "未生成", hasTranscript(sample) ? "FireRed LID 音频语言识别" : "缺少 transcript", !lang.language),
-      card("word_count", lang.word_count ?? "未生成", "英文按 token，中文按字符/分词结果"),
-      card("filler", lang.filler ?? "未生成", "um/uh/okay 等填充表达"),
-      card("punctuation", punctuationValue(lang.punctuation), "标点统计", !lang.punctuation),
-      card("repetition", repetitionValue(lang.repetition), "重复词统计", !lang.repetition),
-    ];
-  }
-
-  const speakerReady = speakerHasValues(speaker);
-  return [
-    card("speaker_count", speaker.speaker_count ?? "未生成", "解析出的说话人数（quality-shadow：Sortformer 主判）", !speakerReady),
-    card("speaker_present", speaker.speaker_present ?? "未生成", "由 speaker_count 确定性派生", speaker.speaker_present == null),
-    card("multi_speaker", speaker.multi_speaker ?? "未生成", "是否包含两个或更多说话人", !speakerReady),
-    card("speaker_change_count", speaker.speaker_change_count ?? "未生成", "说话人切换次数", !speakerReady),
-    card("speaker_change", speaker.speaker_change ?? "未生成", "是否发生说话人切换", !speakerReady),
-    card("overlap_ratio", formatPercent(speaker.overlap_ratio), "重叠发言时长 / 有效语音时长", speaker.overlap_ratio == null),
-    card("speaker_overlap", speaker.speaker_overlap ?? "未生成", "是否多人同时发言（Pyannote 主判）", !speakerReady),
-    card("profiles", speaker.profiles ? JSON.stringify(speaker.profiles) : "未生成", "确定性说话人语速、相对音高和相对音量", speaker.profiles == null),
-    card("asr_transcript", speaker.asr_transcript ?? "未生成", "MOSS 全音频时间线文本，按时间顺序拼接", !speaker.asr_transcript),
-  ];
-}
-
-function card(label, value, subtext, isNull = false) {
-  return { label, value: String(value), subtext, isNull };
-}
-
-function listValue(value, limit) {
-  if (!Array.isArray(value) || value.length === 0) return "[]";
-  const shown = limit ? value.slice(0, limit) : value;
-  const suffix = limit && value.length > limit ? ` +${value.length - limit}` : "";
-  return shown.join(", ") + suffix;
-}
-
-function listSegments(segments) {
-  if (!Array.isArray(segments) || segments.length === 0) return "[]";
-  return segments.map((segment) => `${formatNumber(segment.start_sec, 2)}-${formatNumber(segment.end_sec, 2)}s`).join(", ");
-}
-
-const NOISE_CATEGORY_LABELS = {
-  music: "音乐",
-  animal: "动物",
-  mechanical: "机械",
-  nature: "自然",
-  formless: "无明确声源",
-  channel_environment: "声道/环境",
-};
-
-function formatNoiseTypes(keys) {
-  if (!Array.isArray(keys) || !keys.length) return "空（无检出类别）";
-  return keys.map((key) => NOISE_CATEGORY_LABELS[key] || key).join(", ");
-}
-
-function formatComposition(value) {
-  if (!value || typeof value !== "object") return "未生成";
-  const parts = Object.entries(value)
-    .filter(([, labels]) => Array.isArray(labels) && labels.length > 0)
-    .map(([key, labels]) => `${key}: ${labels.join(", ")}`);
-  return parts.length ? parts.join(" · ") : "空（无检出类别）";
-}
-
-function punctuationValue(value) {
-  if (!value) return "未生成";
-  return `${value.punctuation_count ?? 0} punctuation / terminal ${value.has_terminal_punctuation ? "yes" : "no"}`;
-}
-
-function repetitionValue(value) {
-  if (!value) return "未生成";
-  return `${value.repetition_count ?? 0} repetition / ${value.has_repetition ? "detected" : "none"}`;
-}
-
-function speakerStatus(value) {
-  if (!value) return "未生成";
-  return speakerHasValues(value) ? "已生成" : "未生成";
-}
-
-function speakerHasValues(value) {
-  if (!value) return false;
-  return Object.values(value).some((item) => item !== null && item !== undefined);
-}
-
-function renderBars() {
-  const maxDataset = Math.max(...data.summary.datasets.map((dataset) => dataset.count));
-  els.datasetBars.innerHTML = data.summary.datasets
-    .map((dataset) => renderBar(dataset.name, dataset.count, maxDataset, `${dataset.count} samples`))
-    .join("");
-
-  const groupLabels = {
-    basic_acoustic: "Basic acoustic",
-    audio_quality: "Audio quality",
-    room_acoustic: "Room acoustic",
-    sound_field_scene: "Sound field scene",
-    language_content: "Language content",
-    speaker: "Speaker diarization",
-  };
-  els.coverageBars.innerHTML = Object.entries(data.summary.coverage)
-    .map(([group, count]) => renderBar(groupLabels[group] || group, count, data.summary.sampleCount, `${count}/${data.summary.sampleCount}`))
-    .join("");
-}
-
-function renderBar(label, value, max, text) {
-  const width = max > 0 ? Math.max(2, Math.round((value / max) * 100)) : 0;
-  return `
-    <div class="bar-row">
-      <div class="bar-label">${label}</div>
-      <div class="bar-track"><div class="bar-fill" style="width:${width}%"></div></div>
-      <div class="bar-value">${text}</div>
-    </div>
-  `;
-}
-
-function setupWaveformEvents() {
-  window.addEventListener("resize", () => {
-    if (waveformState) drawWaveform(waveformState);
-  });
-
-  els.audioPlayer.addEventListener("timeupdate", () => {
-    if (waveformState) drawWaveform(waveformState);
-  });
-
-  els.waveform.addEventListener("click", (event) => {
-    if (!waveformState || !els.audioPlayer.duration) return;
-    const rect = els.waveform.getBoundingClientRect();
-    const ratio = Math.min(1, Math.max(0, (event.clientX - rect.left) / rect.width));
-    els.audioPlayer.currentTime = ratio * els.audioPlayer.duration;
-    drawWaveform(waveformState);
-  });
-}
-
-async function loadWaveform(sample) {
-  waveformState = null;
-  drawLoadingWaveform("正在解码音频波形...");
-
-  try {
-    if (!waveformCache.has(sample.sampleId)) {
-      if (!audioContext) {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      const response = await fetch(sample.audio);
-      const arrayBuffer = await response.arrayBuffer();
-      const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-      waveformCache.set(sample.sampleId, buildWaveformPeaks(audioBuffer));
-    }
-    waveformState = {
-      peaks: waveformCache.get(sample.sampleId),
-      duration: sample.tags.basic_acoustic?.duration_sec || els.audioPlayer.duration || sample.durationSec,
-      silenceSegments: sample.tags.basic_acoustic?.silence_segments || [],
+  function displayLanguage(code) {
+    if (!code) return tr("unknown");
+    const names = {
+      en: { en: "English", zh: "英语" },
+      ru: { en: "Russian", zh: "俄语" },
+      pt: { en: "Portuguese", zh: "葡萄牙语" },
+      zh: { en: "Chinese", zh: "中文" },
     };
-    drawWaveform(waveformState);
-  } catch (error) {
-    drawLoadingWaveform("无法读取波形；请通过本地 HTTP 服务访问 demo。");
+    return names[code]?.[language] || code;
   }
-}
 
-function buildWaveformPeaks(audioBuffer) {
-  const channel = audioBuffer.getChannelData(0);
-  const bucketCount = 900;
-  const bucketSize = Math.max(1, Math.floor(channel.length / bucketCount));
-  const peaks = [];
-  for (let i = 0; i < bucketCount; i += 1) {
-    let min = 1;
-    let max = -1;
-    const start = i * bucketSize;
-    const end = Math.min(channel.length, start + bucketSize);
-    for (let j = start; j < end; j += 1) {
-      const value = channel[j];
-      if (value < min) min = value;
-      if (value > max) max = value;
-    }
-    peaks.push(Math.max(Math.abs(min), Math.abs(max)));
-  }
-  return peaks;
-}
-
-function resizeCanvas() {
-  const canvas = els.waveform;
-  const rect = canvas.getBoundingClientRect();
-  const dpr = window.devicePixelRatio || 1;
-  canvas.width = Math.max(320, Math.floor(rect.width * dpr));
-  canvas.height = Math.floor(160 * dpr);
-  return { canvas, width: canvas.width, height: canvas.height, dpr };
-}
-
-function drawLoadingWaveform(message) {
-  const { canvas, width, height, dpr } = resizeCanvas();
-  const ctx = canvas.getContext("2d");
-  ctx.clearRect(0, 0, width, height);
-  ctx.fillStyle = "#101716";
-  ctx.fillRect(0, 0, width, height);
-  ctx.fillStyle = "#dfe8e4";
-  ctx.font = `${14 * dpr}px system-ui, sans-serif`;
-  ctx.fillText(message, 18 * dpr, 84 * dpr);
-}
-
-function drawWaveform(current) {
-  const { canvas, width, height, dpr } = resizeCanvas();
-  const ctx = canvas.getContext("2d");
-  const centerY = height / 2;
-  const barWidth = Math.max(1, Math.floor(width / current.peaks.length));
-
-  ctx.clearRect(0, 0, width, height);
-  ctx.fillStyle = "#101716";
-  ctx.fillRect(0, 0, width, height);
-
-  if (current.duration) {
-    ctx.fillStyle = "rgba(198, 120, 40, 0.34)";
-    for (const segment of current.silenceSegments) {
-      const start = (segment.start_sec / current.duration) * width;
-      const end = (segment.end_sec / current.duration) * width;
-      ctx.fillRect(start, 0, Math.max(1, end - start), height);
+  function writeUrl() {
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", language);
+      if (activeId) url.searchParams.set("sample", activeId);
+      window.history.replaceState(null, "", url);
+    } catch (_error) {
+      // A file preview may not permit history changes.
     }
   }
 
-  ctx.strokeStyle = "rgba(255, 255, 255, 0.16)";
-  ctx.beginPath();
-  ctx.moveTo(0, centerY);
-  ctx.lineTo(width, centerY);
-  ctx.stroke();
-
-  ctx.fillStyle = "#8fd0c6";
-  current.peaks.forEach((peak, index) => {
-    const x = index * barWidth;
-    const barHeight = Math.max(2 * dpr, peak * height * 0.78);
-    ctx.fillRect(x, centerY - barHeight / 2, Math.max(1, barWidth - 1), barHeight);
-  });
-
-  const duration = els.audioPlayer.duration || current.duration;
-  if (duration && els.audioPlayer.currentTime) {
-    const x = (els.audioPlayer.currentTime / duration) * width;
-    ctx.fillStyle = "#f2d39a";
-    ctx.fillRect(x, 0, 2 * dpr, height);
+  function renderStaticText() {
+    document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+    document.title = language === "zh" ? "SURE-Tagger · 交互演示" : "SURE-Tagger · Interactive demo";
+    document.querySelectorAll("[data-i18n]").forEach((node) => {
+      node.textContent = tr(node.dataset.i18n);
+    });
+    document.querySelectorAll("[data-language]").forEach((button) => {
+      button.setAttribute("aria-pressed", String(button.dataset.language === language));
+    });
+    document.querySelector('[data-i18n="heroPillOne"]').textContent =
+      samples.length + (language === "zh" ? " 条音频" : samples.length === 1 ? " audio clip" : " audio clips");
+    if (!bundledSource) {
+      document.querySelector('[data-i18n="heroEyebrow"]').textContent = tr("localEyebrow");
+      document.querySelector('[data-i18n="heroPillTwo"]').textContent = tr("oneTagSource");
+      document.querySelector('[data-i18n="footerCaveat"]').textContent = tr("localCaveat");
+    }
+    byId("readmeLink").href =
+      "https://github.com/PigeonDan1/sure-tagger/blob/docs/bilingual-readme/" +
+      (language === "zh" ? "README.zh-CN.md" : "README.md");
   }
 
-  canvas.title = "点击波形跳转播放";
-}
-
-function escapeAttr(value) {
-  return String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
-}
-
-function escapeHtml(value) {
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
-
-/* ------------------------------------------------------------------ */
-/* Captioner comparison (caption_pairs_3000, first 20 clips)          */
-/* ------------------------------------------------------------------ */
-
-const captionData = window.CAPTION_COMPARE;
-const captionState = { activeId: null };
-
-function initCaptionCompare() {
-  if (!captionData || !captionData.samples?.length) return;
-  captionState.activeId = captionData.samples[0].sampleId;
-  renderCaptionMetrics();
-  renderCaptionList();
-  renderCaptionSample();
-}
-
-function renderCaptionMetrics() {
-  const s = captionData.summary;
-  const noise = (ours) =>
-    `${s.bothNoise} 两侧均有 / ${s.onlyCaptioner} 仅 captioner / ${s.onlyOurs} 仅 sure-tagger`;
-  const metrics = [
-    ["对比样本", s.sampleCount, "caption_pairs_3000 前 20 条，纯音频仅跑 sound_field 标签"],
-    ["音乐判定一致", `${s.musicAgree}/${s.sampleCount}`, `冲突 ${s.musicConflict} 条，captioner 未提及 ${s.musicUnmentioned} 条`],
-    ["噪音检出对比", `${s.bothNoise + s.onlyOurs}/${s.sampleCount}`, noise()],
-    ["captioner 噪音标签", `${s.onlyCaptioner + s.bothNoise}/${s.sampleCount}`, "qwen-omni 结构化提取的 external_noise_info.type"],
-  ];
-  const grid = document.querySelector("#captionMetrics");
-  if (!grid) return;
-  grid.innerHTML = metrics
-    .map(
-      ([label, value, caption]) => `
-        <article class="metric-card">
-          <p class="metric-label">${label}</p>
-          <div class="metric-value">${value}</div>
-          <p class="metric-caption">${caption}</p>
-        </article>
-      `,
-    )
-    .join("");
-}
-
-function renderCaptionList() {
-  const list = document.querySelector("#captionList");
-  const count = document.querySelector("#captionCount");
-  if (!list) return;
-  count.textContent = captionData.samples.length;
-  list.innerHTML = captionData.samples
-    .map(
-      (sample) => `
-        <button type="button" data-sample-id="${escapeAttr(sample.sampleId)}"
-          class="${sample.sampleId === captionState.activeId ? "is-active" : ""}">
-          <span class="sample-id">${escapeHtml(sample.sampleId)}</span>
-        </button>
-      `,
-    )
-    .join("");
-  list.querySelectorAll("button").forEach((button) => {
-    button.addEventListener("click", () => {
-      captionState.activeId = button.dataset.sampleId;
-      renderCaptionList();
-      renderCaptionSample();
-    });
-  });
-}
-
-function getCaptionSample() {
-  return (
-    captionData.samples.find((sample) => sample.sampleId === captionState.activeId) ||
-    captionData.samples[0]
-  );
-}
-
-function renderCaptionSample() {
-  const sample = getCaptionSample();
-  const elsCaption = {
-    title: document.querySelector("#captionSampleTitle"),
-    note: document.querySelector("#captionSampleNote"),
-    id: document.querySelector("#captionSampleId"),
-    audio: document.querySelector("#captionAudio"),
-    grid: document.querySelector("#captionCompareGrid"),
-    text: document.querySelector("#captionText"),
-  };
-  if (!elsCaption.grid) return;
-
-  elsCaption.title.textContent = sample.sampleId;
-  elsCaption.id.textContent = `#${captionData.samples.indexOf(sample) + 1} / ${captionData.samples.length}`;
-  elsCaption.audio.src = sample.audio;
-
-  const ours = sample.ours;
-  const capt = sample.captioner;
-
-  const categoryLabels = sample.ours.categoryLabels || {};
-  const ourNoise = [];
-  for (const category of ours.categories || []) {
-    const labels = (ours.composition && ours.composition[category]) || [];
-    ourNoise.push({
-      key: category,
-      name: categoryLabels[category] || category,
-      labels,
+  function renderSampleList() {
+    const list = byId("sampleList");
+    list.replaceChildren();
+    samples.forEach((sample, index) => {
+      const button = element("button", "sample-button");
+      button.type = "button";
+      button.setAttribute("aria-pressed", String(sample.sampleId === activeId));
+      button.append(
+        element("span", "sample-index", String(index + 1).padStart(2, "0")),
+        element("span", "sample-name", localized(sample.title) || sample.dataset),
+        element("span", "sample-dataset", sample.dataset || ""),
+      );
+      button.addEventListener("click", () => selectSample(sample.sampleId));
+      list.append(button);
     });
   }
 
-  const musicNote = [];
-  musicNote.push(
-    ours.music == null ? "sure-tagger: AED 未运行" : `sure-tagger: AED 判 ${ours.music ? "有音乐" : "无音乐"}`,
-  );
-  musicNote.push(
-    capt.musicState == null ? "captioner: 未提及" : `captioner: ${capt.musicState}`,
-  );
-  elsCaption.note.textContent = musicNote.join(" · ");
+  function addFact(container, label, value) {
+    const card = element("div", "fact");
+    card.append(element("span", "fact-label", label), element("strong", "fact-value", value));
+    container.append(card);
+  }
 
-  const renderTag = (value) =>
-    value == null || value === ""
-      ? `<span class="caption-tag is-missing">未标注</span>`
-      : `<span class="caption-tag">${escapeHtml(value)}</span>`;
+  function renderPlayer(sample) {
+    const tags = tagsOf(sample);
+    const player = byId("audioPlayer");
+    byId("activeDataset").textContent = sample.dataset || "";
+    byId("activeTitle").textContent = localized(sample.title) || sample.sampleId;
+    byId("activeFocus").textContent = localized(sample.focus) || sample.note || "";
+    byId("activeTrack").textContent = sample.track || "";
+    byId("activeTrack").hidden = !sample.track;
+    if (player.getAttribute("src") !== sample.audio) {
+      player.pause();
+      player.src = sample.audio || "";
+      player.load();
+    }
+    byId("audioLink").href = sample.audio || "#";
+    byId("predictionsLink").href = sample.predictionsUrl || "#";
+    byId("predictionsLink").hidden = !sample.predictionsUrl;
+    const facts = byId("quickFacts");
+    facts.replaceChildren();
+    const duration = tags.basic_acoustic?.duration_sec ?? sample.durationSec;
+    addFact(facts, tr("duration"), duration == null ? tr("unknown") : displayValue(duration) + " s");
+    addFact(facts, tr("speakerCount"), displayValue(tags.speaker?.speaker_count));
+    addFact(facts, tr("overlap"), displayValue(tags.speaker?.speaker_overlap));
+    addFact(facts, tr("language"), displayLanguage(tags.language_content?.language));
+    byId("transcriptText").textContent = sample.transcript || tags.speaker?.asr_transcript || tr("noTranscript");
+  }
 
-  const listValue = (values) =>
-    !values?.length ? `<span class="caption-tag is-missing">未检出</span>` : values.map((v) => `<span class="caption-tag">${escapeHtml(v)}</span>`).join(" ");
+  function addTagCard(container, titleKey, color, fields) {
+    const card = element("article", "tag-card " + color);
+    card.append(element("h3", "", tr(titleKey)));
+    const list = element("dl", "field-list");
+    fields.forEach(([labelKey, path, value]) => {
+      const row = element("div", "field-row");
+      const term = element("dt", "", tr(labelKey));
+      term.append(element("code", "field-path", path));
+      row.append(term, element("dd", "", value));
+      list.append(row);
+    });
+    card.append(list);
+    container.append(card);
+  }
 
-  elsCaption.grid.innerHTML = `
-    <div class="caption-source">
-      <h3>sure-tagger（FireRed AED + DASS）</h3>
-      <dl>
-        <dt>speech / singing / music 事件</dt>
-        <dd>${listValue(ours.events)}</dd>
-        <dt>music_present</dt>
-        <dd>${ours.music == null ? `<span class="caption-tag is-missing">未生成</span>` : `<span class="caption-tag">${ours.music ? "true" : "false"}</span>`}</dd>
-        <dt>external_noise_type</dt>
-        <dd>${listValue(ours.categories)}</dd>
-        <dt>noise_composition</dt>
-        <dd>${
-          ourNoise.length
-            ? ourNoise
-                .map(
-                  (item) =>
-                    `<span class="caption-tag is-category">${escapeHtml(item.name)}</span> ${listValue(item.labels)}`,
-                )
-                .join("<br>")
-            : `<span class="caption-tag is-missing">全部类别为空</span>`
-        }</dd>
-      </dl>
-    </div>
-    <div class="caption-source">
-      <h3>qwen-omni captioner</h3>
-      <dl>
-        <dt>sound_event</dt>
-        <dd>${renderTag(capt.soundEvent)}</dd>
-        <dt>music_state</dt>
-        <dd>${renderTag(capt.musicState)}</dd>
-        <dt>external_noise_info.type</dt>
-        <dd>${listValue(capt.noiseLabels)}</dd>
-      </dl>
-    </div>
-  `;
+  function renderTags(sample) {
+    const tags = tagsOf(sample);
+    const grid = byId("tagGrid");
+    grid.replaceChildren();
+    const speaker = tags.speaker || {};
+    const lang = tags.language_content || {};
+    const basic = tags.basic_acoustic || {};
+    const quality = tags.audio_quality || {};
+    const room = tags.room_acoustic || {};
+    const sound = tags.sound_field_scene || {};
+    addTagCard(grid, "speakersGroup", "teal", [
+      ["count", "speaker.speaker_count", displayValue(speaker.speaker_count)],
+      ["overlap", "speaker.speaker_overlap", displayValue(speaker.speaker_overlap)],
+      ["changes", "speaker.speaker_change_count", displayValue(speaker.speaker_change_count)],
+    ]);
+    addTagCard(grid, "languageGroup", "blue", [
+      ["language", "language_content.language", displayLanguage(lang.language)],
+      ["words", "language_content.word_count", displayValue(lang.word_count)],
+    ]);
+    addTagCard(grid, "acousticGroup", "orange", [
+      ["duration", "basic_acoustic.duration_sec", basic.duration_sec == null ? tr("unknown") : displayValue(basic.duration_sec) + " s"],
+      ["nonSpeech", "basic_acoustic.nonspeech_ratio", basic.nonspeech_ratio == null ? tr("unknown") : Math.round(basic.nonspeech_ratio * 100) + "%"],
+      ["snr", "audio_quality.snr_db", quality.snr_db == null ? tr("unknown") : displayValue(quality.snr_db) + " dB"],
+      ["reverberation", "room_acoustic.rt60_sec", room.rt60_sec == null ? tr("unknown") : displayValue(room.rt60_sec) + " s"],
+    ]);
+    addTagCard(grid, "soundGroup", "violet", [
+      ["soundEvents", "sound_field_scene.speech_music_events", displayValue(sound.speech_music_events)],
+      ["music", "sound_field_scene.music_present", displayValue(sound.music_present)],
+      ["noise", "sound_field_scene.external_noise_type", displayValue(sound.external_noise_type)],
+    ]);
+    byId("tagCaption").textContent = tags.descriptive?.caption || tr("noCaption");
+    byId("rawJson").textContent = JSON.stringify(tags, null, 2);
+  }
 
-  elsCaption.text.textContent = capt.caption;
-}
+  function renderComparison(sample) {
+    const grid = byId("comparisonGrid");
+    grid.replaceChildren();
+    const tags = tagsOf(sample);
+    const records = [
+      ["SURE-Tagger", tags.descriptive?.caption, tags.speaker?.speaker_count],
+      ["Captioner", sample.comparisons?.captioner?.caption, sample.comparisons?.captioner?.speakerCount],
+      ["Qwen3-Omni", sample.comparisons?.qwen3_omni?.caption, sample.comparisons?.qwen3_omni?.speakerCount],
+    ];
+    records.forEach(([name, caption, count], index) => {
+      const card = element("article", "comparison-card" + (index === 0 ? " is-primary" : ""));
+      card.append(element("h3", "", name), element("p", "comparison-caption", caption || tr("notAvailable")));
+      if (count !== null && count !== undefined) {
+        card.append(element("p", "comparison-meta", tr("reportedSpeakers") + ": " + count));
+      }
+      grid.append(card);
+    });
+  }
 
-init();
-initCaptionCompare();
+  function selectSample(id) {
+    activeId = id;
+    renderSampleList();
+    const sample = currentSample();
+    renderPlayer(sample);
+    renderTags(sample);
+    renderComparison(sample);
+    writeUrl();
+  }
+
+  function queryOptions() {
+    const languageCodes = [...new Set(samples.map((sample) => tagsOf(sample).language_content?.language).filter(Boolean))].sort();
+    return {
+      speakers: [["all", tr("all")], ["none", tr("noSpeakers")], ["one", tr("oneSpeaker")], ["multi", tr("multipleSpeakers")]],
+      overlap: [["all", tr("all")], ["true", tr("yes")], ["false", tr("no")]],
+      language: [["all", tr("all")], ...languageCodes.map((code) => [code, displayLanguage(code)])],
+      noise: [["all", tr("all")], ["present", tr("tagPresent")], ["empty", tr("tagEmpty")]],
+    };
+  }
+
+  function renderFilterOptions() {
+    const options = queryOptions();
+    for (const [name, values] of Object.entries(options)) {
+      const select = byId(name === "speakers" ? "speakerFilter" : name + "Filter");
+      select.replaceChildren();
+      values.forEach(([value, label]) => {
+        const option = element("option", "", label);
+        option.value = value;
+        select.append(option);
+      });
+      select.value = filters[name];
+    }
+  }
+
+  function matches(sample) {
+    const tags = tagsOf(sample);
+    const speakerCount = tags.speaker?.speaker_count;
+    if (filters.speakers === "none" && speakerCount !== 0) return false;
+    if (filters.speakers === "one" && speakerCount !== 1) return false;
+    if (filters.speakers === "multi" && !(speakerCount >= 2)) return false;
+    if (filters.overlap !== "all" && tags.speaker?.speaker_overlap !== (filters.overlap === "true")) return false;
+    if (filters.language !== "all" && tags.language_content?.language !== filters.language) return false;
+    const noise = tags.sound_field_scene?.external_noise_type;
+    if (filters.noise === "present" && (!Array.isArray(noise) || noise.length === 0)) return false;
+    if (filters.noise === "empty" && (!Array.isArray(noise) || noise.length !== 0)) return false;
+    return true;
+  }
+
+  function renderQueryResults() {
+    const results = samples.filter(matches);
+    byId("matchCount").textContent = results.length + " / " + samples.length + " " + tr("matches");
+    const container = byId("queryResults");
+    container.replaceChildren();
+    if (!results.length) {
+      container.append(element("p", "empty-message", tr("noMatches")));
+      return;
+    }
+    results.forEach((sample) => {
+      const button = element("button", "query-result");
+      button.type = "button";
+      button.append(
+        element("span", "result-name", localized(sample.title) || sample.sampleId),
+        element("span", "result-meta", sample.dataset + " · " + tr("selectClip") + " ↗"),
+      );
+      button.addEventListener("click", () => {
+        selectSample(sample.sampleId);
+        byId("listen").scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      container.append(button);
+    });
+  }
+
+  function setLanguage(next) {
+    language = next;
+    renderStaticText();
+    renderSampleList();
+    renderPlayer(currentSample());
+    renderTags(currentSample());
+    renderComparison(currentSample());
+    renderFilterOptions();
+    renderQueryResults();
+    writeUrl();
+  }
+
+  function init(payload) {
+    samples = Array.isArray(payload?.samples) ? payload.samples : [];
+    bundledSource = payload?.source === "curated Tag-Bench README fixtures";
+    if (!bundledSource) {
+      document.querySelector('.footer-links a[href$="tagbench/README.md"]').hidden = true;
+      document.querySelector('.footer-links a[href$="tagbench/ATTRIBUTION.md"]').hidden = true;
+    }
+    byId("compare").hidden = !samples.some((sample) =>
+      sample.comparisons?.captioner?.caption || sample.comparisons?.qwen3_omni?.caption,
+    );
+    if (!samples.length) {
+      byId("sampleList").append(element("p", "empty-message", "No demo samples were found."));
+      return;
+    }
+    if (!samples.some((sample) => sample.sampleId === activeId)) activeId = samples[0].sampleId;
+    document.querySelectorAll("[data-language]").forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.language));
+    });
+    for (const [name, id] of Object.entries({
+      speakers: "speakerFilter",
+      overlap: "overlapFilter",
+      language: "languageFilter",
+      noise: "noiseFilter",
+    })) {
+      byId(id).addEventListener("change", (event) => {
+        filters[name] = event.target.value;
+        renderQueryResults();
+      });
+    }
+    byId("clearFilters").addEventListener("click", () => {
+      Object.keys(filters).forEach((key) => { filters[key] = "all"; });
+      renderFilterOptions();
+      renderQueryResults();
+    });
+    setLanguage(language);
+  }
+
+  const bundled = window.DEMO_DATA;
+  if (params.get("data") === "local") {
+    const script = document.createElement("script");
+    script.src = "data.js";
+    script.onload = () => init(window.DEMO_DATA);
+    script.onerror = () => {
+      window.DEMO_DATA = bundled;
+      init(bundled);
+      const message = element("p", "load-notice", tr("localMissing"));
+      document.querySelector(".hero-copy").append(message);
+    };
+    document.body.append(script);
+  } else {
+    init(bundled);
+  }
+})();

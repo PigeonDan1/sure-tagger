@@ -26,6 +26,7 @@
 /compare/dataset/benchmark/*
 !/compare/dataset/benchmark/*.md
 /sure-tagger-main/demo/data.js
+/.pages-dist/
 *.wav
 *.mp3
 *.flac

@@ -1,0 +1,10 @@
+# v4 语言变化统计
+
+- total_records：500
+- language_variant：{'zh': 256, 'en': 212, 'ar': 2, 'es': 2, 'fr': 2, 'hi': 2, 'ja': 2, 'ko': 2, 'ru': 2, 'sw': 2, 'None': 16}
+- language_mode：{'monolingual': 460, 'code_switch': 24, 'multilingual': 16}
+- languages_present：{'zh': 264, 'en': 222, 'ar': 4, 'es': 4, 'fr': 5, 'hi': 4, 'ja': 4, 'ko': 4, 'ru': 4, 'sw': 3}
+- repetition_and_filler：48
+- zh_code_switch：24
+- extra_language_single：16
+- multilingual：16

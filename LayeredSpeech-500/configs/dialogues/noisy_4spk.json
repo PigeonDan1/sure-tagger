@@ -1,0 +1,28 @@
+{
+  "scene_id": "noisy_4spk",
+  "topic": "reviewing a field recording setup",
+  "language": "English",
+  "speakers": [
+    {"speaker_index": 0, "role": "producer"},
+    {"speaker_index": 1, "role": "recordist"},
+    {"speaker_index": 2, "role": "researcher"},
+    {"speaker_index": 3, "role": "technician"}
+  ],
+  "utterances": [
+    {"utterance_id": "u000", "speaker_index": 0, "text": "We have one hour before the room is occupied, so let us confirm the setup."},
+    {"utterance_id": "u001", "speaker_index": 1, "text": "The main microphone is ready, but the ventilation noise is stronger today."},
+    {"utterance_id": "u002", "speaker_index": 2, "text": "That is useful for the test, as long as we measure the speech level first."},
+    {"utterance_id": "u003", "speaker_index": 3, "text": "I can record thirty seconds of room tone before anyone moves."},
+    {"utterance_id": "u004", "speaker_index": 0, "text": "Please do, and note the microphone position."},
+    {"utterance_id": "u005", "speaker_index": 1, "text": "Should I leave the side microphone running too?", "overlap_hint": "interrupt"},
+    {"utterance_id": "u006", "speaker_index": 2, "text": "Yes, it gives us a useful comparison."},
+    {"utterance_id": "u007", "speaker_index": 3, "text": "I am hearing a short click on that channel."},
+    {"utterance_id": "u008", "speaker_index": 1, "text": "I heard it too. The cable was loose, but it is stable now.", "overlap_hint": "backchannel"},
+    {"utterance_id": "u009", "speaker_index": 0, "text": "Let us repeat the level check before recording speech."},
+    {"utterance_id": "u010", "speaker_index": 2, "text": "After that, we should capture a few natural interruptions instead of reading isolated lines."},
+    {"utterance_id": "u011", "speaker_index": 3, "text": "Fine by me. I will mark the start time and keep the room quiet."},
+    {"utterance_id": "u012", "speaker_index": 1, "text": "Levels are steady now."},
+    {"utterance_id": "u013", "speaker_index": 0, "text": "Great. Start the session and save the raw channels."}
+  ]
+}
+

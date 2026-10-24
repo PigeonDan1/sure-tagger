@@ -1,8 +1,8 @@
 """Build demo/data.js from a manifest and a tags-only output.
 
-The demo site (``demo/``) reads ``window.DEMO_DATA`` from ``data.js``. This
-script regenerates that file from the current full-pipeline run so the site
-always shows the freshest tags. Usage:
+The demo defaults to its committed Tag-Bench fixtures. Open it with
+``?data=local`` to load ``window.DEMO_DATA`` from ``data.js`` instead. This
+script builds that local file from a manifest and a tags-only run. Usage:
 
     PYTHONPATH=. python3 scripts/build_demo_data.py \
       --manifest phase2_asr_sample/manifest.jsonl \

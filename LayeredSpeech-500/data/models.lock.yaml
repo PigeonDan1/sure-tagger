@@ -1,0 +1,14 @@
+version: 1
+runtime:
+  repository: https://github.com/studio-dots-ai/dots.tts.git
+  commit: 32407a55228630475c48ecdb2c4e2c0f9c09e030
+  license: Apache-2.0
+models:
+  - id: dots_tts_base
+    repository: rednote-hilab/dots.tts-base
+    revision: 12d736cb55672abe34f2e42c568647cca42c1e15
+    license: Apache-2.0
+  - id: dots_tts_edit
+    repository: dots-studio/dots.tts.edit
+    revision: e2aea9cab95a802a63f1a491702a1cc8bf796b30
+    license: other
