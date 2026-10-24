@@ -167,21 +167,11 @@ python scripts/reproduce.py --profile fixture --output runs/fixture
 
 The fixture makes non-linguistic test audio; paper WAVs are not bundled. Full reproduction also needs CUDA, FFmpeg, separately licensed reference audio, RIRs, music, and pinned Dots models. Run `python scripts/reproduce.py --profile full --check`, then `python scripts/reproduce.py --profile full --gpus 0 --output runs/v4_multilingual`. See the [full reproduction guide](LayeredSpeech-500/docs/REPRODUCE.md) for setup and expected QC results.
 
-Explore five Tag-Bench clips with complete same-audio predictions from SURE-Tagger, Captioner, and Qwen3-Omni:
+Hear five Tag-Bench clips and compare SURE-Tagger, Captioner, and Qwen3-Omni predictions on the same audio.
 
-<table width="100%">
-<thead><tr><th width="350">Clip</th><th width="570">Listen for</th><th width="680">Files</th></tr></thead>
-<tbody>
-<tr><td>AMI · <code>ES2012d</code></td><td>Four speakers and overlap</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&amp;sample=ES2012d_utterance_00018#listen">Listen</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>AMI · <code>EN2001e</code></td><td>Two speakers and brief overlap</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&amp;sample=EN2001e_utterance_00071#listen">Listen</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>FLEURS · Russian</td><td>Language and speech content</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&amp;sample=fleurs_t2_0347#listen">Listen</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>DESED</td><td>Speech with a mechanical event</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&amp;sample=t3_desed_0112#listen">Listen</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>FSD50K</td><td>Music event missed by the tagger</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&amp;sample=t3_fsd50k_0045#listen">Listen</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">Full predictions</a></td></tr>
-</tbody>
-</table>
+<h3 align="center"><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en#listen">▶ Listen here! ↗</a></h3>
 
-[All five samples and references](assets/readme/tagbench/README.md) · [Same-audio comparison](assets/readme/tagbench/COMPARISON.md) · [Audio attribution](assets/readme/tagbench/ATTRIBUTION.md)
-
+<p align="center"><sub><a href="assets/readme/tagbench/COMPARISON.md">Same-audio comparison</a> · <a href="assets/readme/tagbench/ATTRIBUTION.md">Audio attribution</a></sub></p>
 
 <a id="system-performance"></a>
 <a id="paper-results"></a>

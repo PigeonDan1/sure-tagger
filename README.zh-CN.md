@@ -167,21 +167,11 @@ python scripts/reproduce.py --profile fixture --output runs/fixture
 
 `fixture` 只生成不含语言内容的测试音频；仓库不附带论文 WAV。完整复现还需要 CUDA、FFmpeg、另行授权的参考音频、RIR、音乐及固定版本的 Dots 模型。依次运行 `python scripts/reproduce.py --profile full --check` 和 `python scripts/reproduce.py --profile full --gpus 0 --output runs/v4_multilingual`；素材目录和预期质检结果见[完整复现指南](LayeredSpeech-500/docs/REPRODUCE.md)。
 
-五段 Tag-Bench 音频均提供 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的完整预测：
+在交互演示中试听五段 Tag-Bench 音频，对照 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的预测。
 
-<table width="100%">
-<thead><tr><th width="350">样本</th><th width="570">试听重点</th><th width="680">资源</th></tr></thead>
-<tbody>
-<tr><td>AMI · <code>ES2012d</code></td><td>四人对话与重叠语音</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&amp;sample=ES2012d_utterance_00018#listen">试听</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">完整预测</a></td></tr>
-<tr><td>AMI · <code>EN2001e</code></td><td>两人对话与短暂重叠</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&amp;sample=EN2001e_utterance_00071#listen">试听</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">完整预测</a></td></tr>
-<tr><td>FLEURS · 俄语</td><td>语种与语音内容</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&amp;sample=fleurs_t2_0347#listen">试听</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">完整预测</a></td></tr>
-<tr><td>DESED</td><td>语音与机械事件</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&amp;sample=t3_desed_0112#listen">试听</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">完整预测</a></td></tr>
-<tr><td>FSD50K</td><td>音乐事件被打标器漏检</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&amp;sample=t3_fsd50k_0045#listen">试听</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">完整预测</a></td></tr>
-</tbody>
-</table>
+<h3 align="center"><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh#listen">▶ 立即试听！↗</a></h3>
 
-[五条样本与参考信息](assets/readme/tagbench/README.md) · [同音频输出对照](assets/readme/tagbench/COMPARISON.md) · [音频来源与归属](assets/readme/tagbench/ATTRIBUTION.md)
-
+<p align="center"><sub><a href="assets/readme/tagbench/COMPARISON.md">同音频输出对照</a> · <a href="assets/readme/tagbench/ATTRIBUTION.md">音频来源与归属</a></sub></p>
 
 <a id="system-performance"></a>
 <a id="paper-results"></a>
