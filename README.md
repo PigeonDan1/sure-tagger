@@ -31,7 +31,7 @@ A free-form caption can summarize a recording, but it cannot tell whether an omi
 
 ## Demo · Audio to tags
 
-Semi-structured tags pair explicit, queryable fields with short descriptions; `null` marks what the evidence cannot establish. Hear this [AMI meeting clip](assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav) and inspect its tags:
+Semi-structured tags pair explicit, queryable fields with short descriptions; `null` marks what the evidence cannot establish. Hear this [AMI meeting clip](https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&sample=ES2012d_utterance_00018#listen) and inspect its tags:
 
 <table width="100%">
 <thead><tr><th width="520">Evidence</th><th width="1080">Structured tags</th></tr></thead>
@@ -120,11 +120,11 @@ Explore five Tag-Bench clips with complete same-audio predictions from SURE-Tagg
 <table width="100%">
 <thead><tr><th width="350">Clip</th><th width="570">Listen for</th><th width="680">Files</th></tr></thead>
 <tbody>
-<tr><td>AMI · <code>ES2012d</code></td><td>Four speakers and overlap</td><td><a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>AMI · <code>EN2001e</code></td><td>Two speakers and brief overlap</td><td><a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>FLEURS · Russian</td><td>Language and speech content</td><td><a href="assets/readme/tagbench/samples/fleurs_t2_0347/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>DESED</td><td>Speech with a mechanical event</td><td><a href="assets/readme/tagbench/samples/t3_desed_0112/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>FSD50K</td><td>Music event missed by the tagger</td><td><a href="assets/readme/tagbench/samples/t3_fsd50k_0045/audio.wav">Listen</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">Full predictions</a></td></tr>
+<tr><td>AMI · <code>ES2012d</code></td><td>Four speakers and overlap</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&amp;sample=ES2012d_utterance_00018#listen">Listen</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">Full predictions</a></td></tr>
+<tr><td>AMI · <code>EN2001e</code></td><td>Two speakers and brief overlap</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&amp;sample=EN2001e_utterance_00071#listen">Listen</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">Full predictions</a></td></tr>
+<tr><td>FLEURS · Russian</td><td>Language and speech content</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&amp;sample=fleurs_t2_0347#listen">Listen</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">Full predictions</a></td></tr>
+<tr><td>DESED</td><td>Speech with a mechanical event</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&amp;sample=t3_desed_0112#listen">Listen</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">Full predictions</a></td></tr>
+<tr><td>FSD50K</td><td>Music event missed by the tagger</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&amp;sample=t3_fsd50k_0045#listen">Listen</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">Full predictions</a></td></tr>
 </tbody>
 </table>
 
