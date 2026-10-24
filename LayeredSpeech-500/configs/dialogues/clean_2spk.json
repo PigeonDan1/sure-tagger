@@ -1,0 +1,22 @@
+{
+  "scene_id": "clean_2spk",
+  "topic": "planning a small team demonstration",
+  "language": "English",
+  "speakers": [
+    {"speaker_index": 0, "role": "project lead"},
+    {"speaker_index": 1, "role": "audio engineer"}
+  ],
+  "utterances": [
+    {"utterance_id": "u000", "speaker_index": 0, "text": "Before we start, can we agree on what this demonstration must prove?"},
+    {"utterance_id": "u001", "speaker_index": 1, "text": "Yes. We need clear speaker identities, reliable timing, and a mixture we can reproduce."},
+    {"utterance_id": "u002", "speaker_index": 0, "text": "I also want every intermediate file kept, so a bad result can be traced."},
+    {"utterance_id": "u003", "speaker_index": 1, "text": "That makes sense. I will keep the clean utterances and the per-speaker tracks."},
+    {"utterance_id": "u004", "speaker_index": 0, "text": "How long should the first recording be?"},
+    {"utterance_id": "u005", "speaker_index": 1, "text": "Around forty seconds is enough for a clean baseline."},
+    {"utterance_id": "u006", "speaker_index": 0, "text": "Good. No overlap and no noise in this one."},
+    {"utterance_id": "u007", "speaker_index": 1, "text": "Then we can compare it with the crowded versions without changing the transcript."},
+    {"utterance_id": "u008", "speaker_index": 0, "text": "Exactly. Let us run the checks before we call it complete."},
+    {"utterance_id": "u009", "speaker_index": 1, "text": "Agreed. I will verify duration, clipping, labels, and the exported manifest."}
+  ]
+}
+

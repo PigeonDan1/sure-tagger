@@ -22,4 +22,4 @@ To refresh the bundled examples after changing the committed Tag-Bench sample JS
 
 `node sure-tagger-main/demo/build-pages.mjs` creates an isolated `.pages-dist/` preview with the demo, its icon, five bundled samples, and their source/attribution notes. The workflow in `.github/workflows/deploy-demo-pages.yml` runs only when manually dispatched after a repository administrator enables **Settings → Pages → GitHub Actions**. The resulting project site would be `https://pigeondan1.github.io/sure-tagger/`.
 
-The repository is currently private. GitHub Pages for a private repository requires an eligible paid plan, and the published site is publicly accessible. Do not enable Pages or run the deployment workflow until public access to the included demo audio and tags is approved.
+The demo is currently mirrored at <https://me-chuan.github.io/sure-tagger/>. Its five bundled audio clips and tags are public there. This repository's own Pages workflow remains manual.

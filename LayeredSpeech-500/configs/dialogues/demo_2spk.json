@@ -1,0 +1,15 @@
+{
+  "scene_id": "demo_2spk",
+  "topic": "verifying the dots.tts speech backend",
+  "language": "English",
+  "speakers": [
+    {"speaker_index": 0, "role": "engineer"},
+    {"speaker_index": 1, "role": "reviewer"}
+  ],
+  "utterances": [
+    {"utterance_id": "u000", "speaker_index": 0, "text": "This is a short smoke test for the text to speech backend."},
+    {"utterance_id": "u001", "speaker_index": 1, "text": "I can confirm that the mixture is generated from real speech."},
+    {"utterance_id": "u002", "speaker_index": 0, "text": "Good, then the wiring from the dialogue to the renderer works."},
+    {"utterance_id": "u003", "speaker_index": 1, "text": "Let us check the dry stems and the exported manifest next."}
+  ]
+}

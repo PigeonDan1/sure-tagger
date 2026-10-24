@@ -1,0 +1,8 @@
+LayeredSpeech-500
+
+This release contains project-owned orchestration code under Apache-2.0.
+The release does not include model weights or upstream audio. External model
+and data licenses are listed in docs/MODEL_LICENSES.md and docs/DATA_LICENSES.md.
+
+The saasr-sim-mini package was originally released under Apache-2.0. Its
+copyright and license text are preserved in licenses/SAASR_SIM_APACHE-2.0.txt.

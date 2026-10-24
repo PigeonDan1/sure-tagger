@@ -1,0 +1,93 @@
+{
+  "dataset": "outputs_l1_l5_dots_v4_multilingual",
+  "schema": "./tag-schema(2).md",
+  "policy": "strict_no_inference_v5_brouhaha_detailed_snr",
+  "sample_count": 500,
+  "audio_hours": 3.7784,
+  "counts": {
+    "language": {
+      "zh": 232,
+      "None": 40,
+      "en": 212,
+      "ar": 2,
+      "es": 2,
+      "fr": 2,
+      "hi": 2,
+      "ja": 2,
+      "ko": 2,
+      "ru": 2,
+      "sw": 2
+    },
+    "language_mode": {
+      "monolingual": 460,
+      "code_switch": 24,
+      "multilingual": 16
+    },
+    "speaker_count": {
+      "1": 59,
+      "2": 227,
+      "3": 214
+    },
+    "music_present": {
+      "false": 256,
+      "true": 244
+    }
+  },
+  "populated_sources": {
+    "rendered_wav_header": [
+      "basic_acoustic.duration_sec",
+      "basic_acoustic.sample_rate_hz",
+      "basic_acoustic.channels"
+    ],
+    "session_manifest": [
+      "audio_quality.snr_db",
+      "speaker.speaker_count",
+      "speaker.overlap_ratio"
+    ],
+    "scene_script_explicit_labels": [
+      "sound_field_scene.*",
+      "speaker.asr_transcript",
+      "language_content.*"
+    ],
+    "rir_measurement_file": [
+      "room_acoustic.rt60_sec",
+      "room_acoustic.c50_db"
+    ],
+    "deterministic_formulas": [
+      "speaker boolean/count projections",
+      "speaker change fields",
+      "deterministic_derived.*"
+    ],
+    "rendered_stems": [
+      "frame_snr_ground_truth.mean_db"
+    ]
+  },
+  "null_field_counts": {
+    "basic_acoustic.nonspeech_ratio": 0,
+    "basic_acoustic.silence_segments": 0,
+    "audio_quality.dnsmos_sig": 500,
+    "audio_quality.dnsmos_bak": 500,
+    "audio_quality.dnsmos_ovrl": 500,
+    "audio_quality.dnsmos_p808": 500,
+    "room_acoustic.far_field": 500,
+    "speaker.profiles": 500,
+    "descriptive.*": 500,
+    "language_content.language": 40
+  },
+  "models_run": [],
+  "frame_snr_ground_truth": {
+    "version": "known_stems_brouhaha_detailed_snr.v2",
+    "sample_count": 500,
+    "frame_duration_sec": 2.0,
+    "frame_hop_sec": 0.01,
+    "active_sample_threshold": 1e-06,
+    "normalization_epsilon": 1e-08,
+    "noise_power_epsilon": 0.001,
+    "signal_to_noise_floor": 1e-10,
+    "aggregation": "arithmetic_mean_of_all_detailed_snr_windows_db",
+    "valid_frame_policy": "all complete 2 s windows; no frame-level VAD filter",
+    "dataset_mean_db": 11.109062,
+    "minimum_mean_db": -13.564664,
+    "maximum_mean_db": 26.974604
+  }
+}

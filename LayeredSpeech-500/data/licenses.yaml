@@ -1,0 +1,12 @@
+project_code: Apache-2.0
+generated_audio: not-distributed
+external_assets:
+  - ami_headset
+  - alimeeting_headset
+  - aishell3
+  - fleurs
+  - measured_rir
+  - real_music
+external_models:
+  - dots_tts_base
+  - dots_tts_edit

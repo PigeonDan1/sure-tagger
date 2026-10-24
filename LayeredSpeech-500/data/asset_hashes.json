@@ -1,0 +1,1896 @@
+{
+  "version": 1,
+  "description": "Exact external assets used by the published 500-scene run. Paths are relative to external_assets/.",
+  "files": [
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_ar_00.wav",
+      "sha256": "c695f3df05d302b14b5ae4fa8adaf0f6b4a6f3179723c0138c89df7d2e09de84",
+      "bytes": 224044,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_ar_01.wav",
+      "sha256": "435193f0f1869c14d21449a2e098899cab94c1895addd1311054f23a266bf7c4",
+      "bytes": 224684,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_es_00.wav",
+      "sha256": "142f0bea63fa46e274c207fd5fe745a92dc2a59dc5df9540f6213ed215756304",
+      "bytes": 222764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_es_01.wav",
+      "sha256": "1f8b9108c0a9f3b97b06dfe8b46c3ea647567bba6d859b28df309f08c48fdf29",
+      "bytes": 228524,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_fr_00.wav",
+      "sha256": "83223b6ba0deaba934d6227b88d692f8b71b383088fe0e7ad4c3c73a40410a10",
+      "bytes": 228524,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_fr_01.wav",
+      "sha256": "46fa19b65963fca3519cf159ee9bf892e27e839a2477bf5cfdea4e133b77821c",
+      "bytes": 220844,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_hi_00.wav",
+      "sha256": "dc4f89839a33e504d51bec79ca8dc555d693879d0d0433229715bc992f95cb77",
+      "bytes": 222764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_hi_01.wav",
+      "sha256": "49569e8dabf6a22b5c621b15fb4f7e561a130a1ada9fb48e7b8903f46d161cf6",
+      "bytes": 222764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_ja_00.wav",
+      "sha256": "ba6686cdb92f969f90701f949aea7b98f8dfa7382bf788e3794ed1b752de625f",
+      "bytes": 217004,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_ja_01.wav",
+      "sha256": "117cfbfb9ba82b1d2b2318222a4308186fc64ff55974306464a72c6c46db71d7",
+      "bytes": 234284,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_ko_00.wav",
+      "sha256": "fbe9e1b0dd8342d0fca73b62a67bf29bd5d14b434cd482102eea5a72c8b2db5c",
+      "bytes": 230444,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_ko_01.wav",
+      "sha256": "fedffc2d67212edf63f0febd8af940f0719c00284937692053ed577d46dad91e",
+      "bytes": 222764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_ru_00.wav",
+      "sha256": "edc14afc5283e9cba762048edb43db03e255868a3d086c9f30af9bc98cb9ca09",
+      "bytes": 222764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_ru_01.wav",
+      "sha256": "1400da776c1d733f14d3a3532bb30a780fb4db846bd70a743145c648a44a679f",
+      "bytes": 222764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_sw_00.wav",
+      "sha256": "2f34614ca1be94a78eb1ded6591192885509fef8b49790d324f00e3a0f74a200",
+      "bytes": 222764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/audio_enhanced_deepfilternet/fleurs_sw_01.wav",
+      "sha256": "f2eded14c72a2079613948191abf5014f47eaaaca5e39449e11085be5681b621",
+      "bytes": 228524,
+      "group": "reference_voice"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_ar_00.txt",
+      "sha256": "f54d699181060bb8e377c608c421d21a3bed83329daba29731cb4b8ffd692c03",
+      "bytes": 123,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_ar_01.txt",
+      "sha256": "448afbb92dfdb858950892d69aca52871776182911824fb8315917b1c5d02b7f",
+      "bytes": 142,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_es_00.txt",
+      "sha256": "724e1a4c1ad9b1b8ce2393e9539710adb76f48e2d487a7c3a471617cd954354b",
+      "bytes": 94,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_es_01.txt",
+      "sha256": "c3ee399137262017d52efeb343529ac4d4f75574be8d9277e9ece6a4f3e0d165",
+      "bytes": 79,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_fr_00.txt",
+      "sha256": "795120bedf6291ebf6f97dde824b584e3949ebea23fef749f2ac47cda9e84706",
+      "bytes": 96,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_fr_01.txt",
+      "sha256": "7ac16671bd975ac30f8f9203a80dc493f9b10afb64e1d41e0cece775a3ba37bd",
+      "bytes": 99,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_hi_00.txt",
+      "sha256": "1167201984608002401f655b476a25b4ddac8819af92a1644c90948cc0b0a81e",
+      "bytes": 201,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_hi_01.txt",
+      "sha256": "077ad10b1d25ad401ad259e495a4bec2e213ffb10da24aa02aede034981fc9ad",
+      "bytes": 188,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_ja_00.txt",
+      "sha256": "62416ba64df18e7da3d3dfd11905c826b86df8acd9e4e8a60417cd9c42992702",
+      "bytes": 60,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_ja_01.txt",
+      "sha256": "5a1dfab0dfd06eb055fe66fd395c11c7ef5d0ea716c9fcaeb0329846f6cb3319",
+      "bytes": 85,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_ko_00.txt",
+      "sha256": "ec2b02e576e5ef42dec7485a5d8c8b1dcd3b241b27bb791f1fc3acb803dea5c7",
+      "bytes": 113,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_ko_01.txt",
+      "sha256": "284cba0b4e92be9043cc1892d726c56dace370898656c6bbf576f7b690878a29",
+      "bytes": 70,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_ru_00.txt",
+      "sha256": "2b1fc8c6f14697121aea427e239db97746c71acb65a3b6c671155f24397d234c",
+      "bytes": 164,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_ru_01.txt",
+      "sha256": "e352fa233decc2b59c4cf3e068fde6935c20f234999fb2f859b1fafb8d42d38d",
+      "bytes": 166,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_sw_00.txt",
+      "sha256": "85d337de319b0889b35a51baa481f700d681f0540c7006fcfb1867a39578382a",
+      "bytes": 47,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "fleurs/transcripts/fleurs_sw_01.txt",
+      "sha256": "df043165fbe46ec3751828e99f0e67b4df0dd056e0f36b94cd59cb843df4df02",
+      "bytes": 66,
+      "group": "reference_transcript"
+    },
+    {
+      "path": "music/ikoliks_aj-background-music-320427.mp3",
+      "sha256": "1263ab5f1badfd507eeb5b4ad430fad7f4835f1896e21dacad90cd7968a644f2",
+      "bytes": 4590027,
+      "group": "music"
+    },
+    {
+      "path": "music/mickeyscat-moment-of-peace-mickeyscat-554494.mp3",
+      "sha256": "dd712bb896f787f8f79b81717bf0aa8c00c9b490589fdb78e96e5b36233c78cf",
+      "bytes": 4870060,
+      "group": "music"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_000.wav",
+      "sha256": "ab72c98d02d3a358894265526b7046aa02da79a7918e4d6958d08672b790c2ab",
+      "bytes": 214030,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_001.wav",
+      "sha256": "1285a9318a5bd61fd7ed51411b3e6526f1ea7706c24afd9603c68ea494e78fde",
+      "bytes": 170528,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_002.wav",
+      "sha256": "1d27414745c728b287619ba10d95ba1e1a6bb048c54366fc81cd72a4410b8346",
+      "bytes": 176014,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_003.wav",
+      "sha256": "af8f32f6571219ceea9d49bdcae0d0463eb92b5e90c2cb6deabd64b7573b6517",
+      "bytes": 219084,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_004.wav",
+      "sha256": "6ed12c0476d478f9c387b5d7ff307b524a3e3e772c3f9d8af83f691cd211a57e",
+      "bytes": 220524,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_005.wav",
+      "sha256": "09c0e231912f806d717f3e2a7440349fd551d81de1ebdef4de8cb0236e92b9cb",
+      "bytes": 209582,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_006.wav",
+      "sha256": "4bd59eb017b77fa7f160e270c433f732c15e3671c1d9c08dabd0a77a0dce9964",
+      "bytes": 186874,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_007.wav",
+      "sha256": "598bbd3017e339889dc18ca2bef327bef9a11f90594c84eb83bea2cf185a98b3",
+      "bytes": 188268,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_008.wav",
+      "sha256": "b6f07a1042b537c7c2e269ebf04fb5bc1096e2e29c95b1477b61350520afa464",
+      "bytes": 175318,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_009.wav",
+      "sha256": "e408b4f27aaf283ba9f29389e745bc4f3ca6a0f8871bab74cc54ded5359beaca",
+      "bytes": 234920,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_010.wav",
+      "sha256": "cd6a1cbce896a4176c31a379b41752594cec22bf0c8b042d706d65acbbf3e34e",
+      "bytes": 190382,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_011.wav",
+      "sha256": "345a4ff41b57ed169bc3e54427ab378f4c494ee74f7be8bad7e8df064b2ffda6",
+      "bytes": 209536,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_012.wav",
+      "sha256": "a5b2cf4def507cf1249373e2f037c28f3998965300c84a389235de59aab178eb",
+      "bytes": 169458,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_013.wav",
+      "sha256": "dffb92d21c4d05fd5eb1518cf67d6915a30784b7083d941062e9a69c4e77e9d6",
+      "bytes": 155912,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_014.wav",
+      "sha256": "703cb957949351a050439ed6651a7056aab3a44840d4a8d2ea92dbb0de84f554",
+      "bytes": 202734,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_015.wav",
+      "sha256": "ae84c86d8603bfdf3ced69ec8f9b9ca2da35c3505b4f9e3a168f582953f51b16",
+      "bytes": 149842,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_016.wav",
+      "sha256": "49e45da456acdbaf04dfcb49dff95bd1e5e561e703e9fb9fd2278387b627a5f9",
+      "bytes": 269838,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_017.wav",
+      "sha256": "a925adf1b741be71d6600e12ff03cbcc2e6dc4a3cfff7aa5a85f85881aec2415",
+      "bytes": 226474,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_018.wav",
+      "sha256": "1b740d630f8546e514b4cc082d8caf1b1528da6762601f677b3c3b6b0bf42a62",
+      "bytes": 234846,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_019.wav",
+      "sha256": "23cdd22f061b7c58f478bd9fba1ad853df5cf5f22ce9ea2ef5dff4d19ea94be0",
+      "bytes": 200204,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_020.wav",
+      "sha256": "9875509fcd6320e474a54b6bc9efac218b8c78095cf7485d421eaefe9098625b",
+      "bytes": 189422,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_021.wav",
+      "sha256": "dc0cad19a0dafe9032d4dee899b88a6144591bbd23a717d27944f8fb3709abf1",
+      "bytes": 192458,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_022.wav",
+      "sha256": "40decd1f81f2ffe3717a20382e732ec106fcb723fb55094e2216994842e03770",
+      "bytes": 183662,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_023.wav",
+      "sha256": "9c50b3987822fc2ed0c50e9b360201772f975466e135b7bb649b2150c4a7d9fa",
+      "bytes": 200364,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_024.wav",
+      "sha256": "2b094154f2376ea458cbf68d41d1025597a4810fea28ed3a4c493c77a5084786",
+      "bytes": 159936,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_025.wav",
+      "sha256": "b9fbcc18eaeb2953e80dc0bd64f376279761525fcd69f41bc5895dfe31c2472a",
+      "bytes": 212588,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_026.wav",
+      "sha256": "e2f474d3ccd053137e430dbc8cba477ec66c49cd55688f3a598a44b4eb3dd5d7",
+      "bytes": 168798,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_027.wav",
+      "sha256": "fed11ef40dce5887a2bd5f5d8587cbdbc57853a758c469074b58ec8dd320cf90",
+      "bytes": 233326,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_028.wav",
+      "sha256": "e643c834c3dd111277dc312eec56ba43a0afcdd368fabfacc84d0799d3b1cb8c",
+      "bytes": 195884,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_029.wav",
+      "sha256": "5573dfcc952e11c0732899513ef4188f9eb7052806d9579848197176d48ea9b3",
+      "bytes": 202292,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_030.wav",
+      "sha256": "530d4efcd9fa3e394f87724104b35832c73bfa3320909d194c037ebcf6e56fb5",
+      "bytes": 218960,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_031.wav",
+      "sha256": "c8753d56862eaa20902c2bda4dd1a99436c3165516d347964cb5544f7c08a9ee",
+      "bytes": 241232,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_032.wav",
+      "sha256": "36dcfb575259eaae63cc34a56f3484fccf79e700c55a60db56c12cdafadbf7cb",
+      "bytes": 144686,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_033.wav",
+      "sha256": "38e43033997aaf585f6e20cb6ce6db24528fadea9380fcca270bc6848cf6cd3e",
+      "bytes": 220592,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_034.wav",
+      "sha256": "9b1e2676562ba7066d5c5c05fe097814e7f38bff2eea61ec2b950c6f1658b731",
+      "bytes": 200366,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_035.wav",
+      "sha256": "e5d86fd68ebe7a0cfa4ef820f65d70fb232b3646c212419ef4a0c85cb96a58d8",
+      "bytes": 158776,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_036.wav",
+      "sha256": "ba1149771f165fabd50265d7217ede2c5fc6ce0e5032be31d8d56611b12897e9",
+      "bytes": 179244,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_037.wav",
+      "sha256": "92f8f1425f20f91b083e5ea30faca1688a73813cfdab3b17e3e480535cf8f5d3",
+      "bytes": 216460,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_038.wav",
+      "sha256": "e4651038958b0c44ad4b4cf7796bf8b353bbdb002b5b51d1fcf6b30b99464714",
+      "bytes": 207304,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_039.wav",
+      "sha256": "efd86c0956512ad27c4c1a5357ada6a5ec26136dedf0c4799b4308e5466235a5",
+      "bytes": 185804,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_040.wav",
+      "sha256": "b7ec4cbf18f2ba5800f5cbb81f85f7fd92acd56d4c9e17e392188c37fe101bfa",
+      "bytes": 181678,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_041.wav",
+      "sha256": "3fce99472ad9a5a77598b247ea7750777c2a91103c08d8f01a16a29f14de8578",
+      "bytes": 217006,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_042.wav",
+      "sha256": "333d5480384bf10ec51f30e87b5662bcfd35ad2fd9f7ead8294bd82b11ae5694",
+      "bytes": 208044,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_043.wav",
+      "sha256": "e779c6294504bcfac9cfbd6f43a4504fee4b35cccbbd9de6b6140d3ecc516882",
+      "bytes": 216216,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_044.wav",
+      "sha256": "5c14fdf46daf312bf7c7060a87e3339b0e273049024e0cdeb7e1974f1e39e00a",
+      "bytes": 246830,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_045.wav",
+      "sha256": "9b7ba6478bb144958a08bf0d62223a29e599c719b1df2f6e573fdb44a33c3ba6",
+      "bytes": 191362,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_046.wav",
+      "sha256": "e94f5f043ee78af129c8207dd572aa1d10d4889428c368f0a19c97baf25868d1",
+      "bytes": 217570,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_047.wav",
+      "sha256": "45da56c522d3e1f8a7dd65be642c40bf18305949a4d30c3fa2bc39cb912f160c",
+      "bytes": 200748,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_048.wav",
+      "sha256": "1e8dcaaf0e2e1362446011732b2d81385751940ff07551bfae88bc0e88edda71",
+      "bytes": 154198,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_049.wav",
+      "sha256": "76d8830bfd4933f0b3155183ba7c297581c157d43146637a0e6da4b4732ddf17",
+      "bytes": 194380,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_050.wav",
+      "sha256": "b5b8e9ddf5d31e91545626572306574792024021426fc4017b435356183f14a7",
+      "bytes": 212366,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_051.wav",
+      "sha256": "6adbd2d738ab52f362b434cf9650504031ff4cfd239ad9fa5b65631c6bf7c028",
+      "bytes": 181834,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_052.wav",
+      "sha256": "e714fe5dfb583068a7809baac780cf1ddbabe97b144f735100029d4726e7a58e",
+      "bytes": 190262,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_053.wav",
+      "sha256": "76357ef7fe6dd6fe95fa15302d1c530ed5c17f71f88bbffbce38ea8e7b4e7c2b",
+      "bytes": 192686,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_054.wav",
+      "sha256": "7940910abae301f74ccbd451dac03033c2d53e337316d10733e219858b7710e2",
+      "bytes": 214766,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_055.wav",
+      "sha256": "26f466441c72d5c85a4ddfcd26d6d45395a53220f793b2d6c892097f07e6b5f8",
+      "bytes": 248782,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_056.wav",
+      "sha256": "b5606b7ad105b5cbbb28f441a99db9c565bbd3509151582af70dc99cad95c751",
+      "bytes": 215854,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_057.wav",
+      "sha256": "cf052f04a63ea4e95275be882e127b8c88705660c66fcc96deae0dc6ff35ed19",
+      "bytes": 219564,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_058.wav",
+      "sha256": "b285c72709709866199e992c7331fa0da0c4a08e57877f706b5d7b202eb010ef",
+      "bytes": 234288,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_059.wav",
+      "sha256": "0f68eafe54bcfb43078cde5b7b5f1349455944ca385ac2627342a33e5428bc7b",
+      "bytes": 210924,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_060.wav",
+      "sha256": "4ffa11813300052408244cfadaab560e4cd022032359b947fad85596e77ba1d6",
+      "bytes": 224142,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_061.wav",
+      "sha256": "16e5ba4cce4543ce2b286bb22f5a673a0f4df710530ccc9c9d34e99749809b85",
+      "bytes": 143938,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_062.wav",
+      "sha256": "64eb4a95a97def4771ac810e6834d6088db8b8c38f9b5359524606764364ccac",
+      "bytes": 195920,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_063.wav",
+      "sha256": "6eec70f20fbe2b4044403f4fc88f2a84265c0ed9f0e998a2d800c910869c8343",
+      "bytes": 194256,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_064.wav",
+      "sha256": "b0f763fd1f7e615150aa8f108ebd1aa81b11098ebb2e54e8fce071caa4805442",
+      "bytes": 207354,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_065.wav",
+      "sha256": "1961e074750495909dd142ae1f5f2243cf39743733d09be9b3f2266770a1e33a",
+      "bytes": 206122,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_066.wav",
+      "sha256": "ce7dc9ab506298dffff9f21ad48cfdb89536a881f0e741bca46c9df5d7175026",
+      "bytes": 200330,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_067.wav",
+      "sha256": "ff5745d8835cecde4fa7e10e0ba2e870f6be81e7a9333a3f7874e0d7ee504f67",
+      "bytes": 230732,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_068.wav",
+      "sha256": "dca0f5872978c2263d5de69ae0f498840408d64be0165bea9e73e40dd239ed22",
+      "bytes": 233006,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_069.wav",
+      "sha256": "dee3a0e3e1fe3933bb8e7979a9196459592628b5ae814519eca2cb0d019fdd63",
+      "bytes": 221484,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_070.wav",
+      "sha256": "e933966b2e7e09009a2df809551817f74a0cf3f9e3e0d093f4b9721784bbf7a2",
+      "bytes": 219884,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_071.wav",
+      "sha256": "1564c321a1e9a078eaebae2c504448adae30bc01902e1edf9109cbb619888867",
+      "bytes": 171620,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_072.wav",
+      "sha256": "dcafc6a062cfa34d8134a4018d95114db974acb55d4540b06eee83a5605d2f8a",
+      "bytes": 214640,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_073.wav",
+      "sha256": "e7d2d02c5094f5b8daedc2cbb60a86f542264f882dfbee8f99a7dd7699e89812",
+      "bytes": 195022,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_074.wav",
+      "sha256": "82ec7bd325bbcec4a9c569ccd7affeb879fb9a81363dd3ec96cec7d52153e856",
+      "bytes": 185804,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_075.wav",
+      "sha256": "3be3b97e10824c17c4cf56559299ec03730d683b9aa85d3e1fed92cdb70470bf",
+      "bytes": 228366,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_076.wav",
+      "sha256": "0836b68ad3ed69915791033b1fc877a8ac7f7878aea19345dc2d98b694ec62fc",
+      "bytes": 212202,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_077.wav",
+      "sha256": "cde59e9f775b3063159974be08ba77702b9d7b5a21d6079b7fd5d55852cd0262",
+      "bytes": 223792,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_078.wav",
+      "sha256": "9ef595cc546ce54985d55d138c167c2e71931abbd78734a73fbe8681ea864386",
+      "bytes": 243298,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_079.wav",
+      "sha256": "c056eaa87faf3ecadcce2d2d7340fce2c0af670deb3f2a63a6d7421d2b11bf5e",
+      "bytes": 174162,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_080.wav",
+      "sha256": "28548a83c65327fa99445bc355605661f7ae5840b8f15e403d1e1ebc8a2309c6",
+      "bytes": 236428,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_081.wav",
+      "sha256": "cc33ef1afefcaf78a94fa51612f3717f05a61a0dcb0afe8bb754796a612588dd",
+      "bytes": 126432,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_082.wav",
+      "sha256": "363d29ddcdb9402d2a4c2d59b106e1ffedf0203f416b2906de5976eb8ba741e0",
+      "bytes": 178732,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_083.wav",
+      "sha256": "5145c4c055b54b7ac080ee02780d3acde80304f61226298937b1805857d395ae",
+      "bytes": 187084,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_084.wav",
+      "sha256": "f27a01699d36139b676913d5d8ca0da81db4fdd2efa6529e9027eb2faf964519",
+      "bytes": 167972,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_085.wav",
+      "sha256": "06ed0532b73ead6c0e62c15fbd13fd520bae363362e6c55905317f25492bc9db",
+      "bytes": 235952,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_086.wav",
+      "sha256": "3a18c19a627e3f965a374dbfb1d74150593225d5e8ed091db255aebec87ab782",
+      "bytes": 210926,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_087.wav",
+      "sha256": "bcad82bf6fb649c0ef0f7e22a5b9852d76d6f77b71009722ff5d1e7161203d4b",
+      "bytes": 156084,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_088.wav",
+      "sha256": "648113613c258be011e9cf5818ffd873abc4909ec30e98f5cd3ec0bb96c011b9",
+      "bytes": 252678,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_089.wav",
+      "sha256": "7583a29e78d20c9ea361a8f3b1add79cb3480ca3a5b1716755e6fc513a2e24f8",
+      "bytes": 213388,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_090.wav",
+      "sha256": "0c2b67ca8f3a07707330bda93b394f152163ad8e28f2e020a9ae3c5b8eb60ed7",
+      "bytes": 174444,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_091.wav",
+      "sha256": "bf801882cd08c2cf798e1dfbe46d897dd629bb590cb6cb22d04cfaea0126f57f",
+      "bytes": 197694,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_092.wav",
+      "sha256": "7b94e7a9a8874390bd1dda75433ea9f1cd31af6a7e86960420078bdfec7b3b62",
+      "bytes": 216686,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_093.wav",
+      "sha256": "58bb74126788412dc3e067866af7e704a87db16015e093c5fb2586ae30b4721e",
+      "bytes": 169174,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_094.wav",
+      "sha256": "8f855060ecdda549db36d00c03f7f4a6f658ca04b611b0e7814d01b16e5b17f3",
+      "bytes": 209646,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_095.wav",
+      "sha256": "7e2acb46025ad9fd9f99c93df0c2d8d08a63051be81efb044240c87fe08af9e4",
+      "bytes": 206126,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_096.wav",
+      "sha256": "2f3e2d1ac03b364c64a68688f3b6b8b16021e5519356fe7c01e0a6cabaa24cf6",
+      "bytes": 235600,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_097.wav",
+      "sha256": "feb4f0a10acce73c197b46cdae59b988d8d185e4f597da4e073a6a2f04509852",
+      "bytes": 252556,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_098.wav",
+      "sha256": "4858e72cb580f30c1b14ca8d9a48586cfdf94fa39009f0aca9fa6875804ccc61",
+      "bytes": 158124,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_099.wav",
+      "sha256": "f01a176de7717d85c1a2880b143db607f830f1ef6ae378e62ccf11dcb38ec775",
+      "bytes": 227246,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_100.wav",
+      "sha256": "a746ccf765f9bc20d346dc3002b2ed9f4e37ae234052af1f98627738b4aa0f0e",
+      "bytes": 186098,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_101.wav",
+      "sha256": "e36dfbeae15e7201dcbbb394bd9276e20a994f187c50cafe168e111c0a1eacf8",
+      "bytes": 202956,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_102.wav",
+      "sha256": "59d40072609c99c0a82de24655d3621e86e79ac0faae5e84e7a296ea30039048",
+      "bytes": 172524,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_103.wav",
+      "sha256": "ea12a6dbe014a91e03439710d0e76dbd7e00baa2bbd7aaae1d85d32a0cce1420",
+      "bytes": 208846,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_104.wav",
+      "sha256": "f3b598d8e1cd5cf0c92d23516e0baa2bfdec76003c5127c8ba6fa9da78dade1b",
+      "bytes": 234924,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_105.wav",
+      "sha256": "2cb86d7bd819e9d5a05e1461e1460a474f7d2e9442ddbaddeb46b0088db64c9b",
+      "bytes": 99494,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/aishell3_speaker_pool/audio_enhanced/zh_aishell3_106.wav",
+      "sha256": "08904ca24b630399203e334ef8fe81d95312bec280281c1aec52723fbab8441c",
+      "bytes": 51564,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_000.wav",
+      "sha256": "99a98202508cc2674fc665ee0174b15615ec428c3f3e260bb8793eb7fc1622cd",
+      "bytes": 208364,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_001.wav",
+      "sha256": "854b06bc4cfe21a1863c7d5d5e6de763812a949b30360030646a1b9e06b99645",
+      "bytes": 144364,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_002.wav",
+      "sha256": "59852eac8f79f778a5926f037f35d9855abd090561d487e265bff66f6f8e2dc9",
+      "bytes": 245804,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_003.wav",
+      "sha256": "07a36193b744334c21bbad87a546de5ef51d9978bc1f8786125e8c4255e87c71",
+      "bytes": 166444,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_004.wav",
+      "sha256": "5fbfa2aa692cd7e97ea82556981bb3d9b912c70acf0bf5bd3cf856af9c9f2d29",
+      "bytes": 151404,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_005.wav",
+      "sha256": "c2c50d5b5f1a6c4fd00a1130c41eb64cfa5544f7aabfc454c1890f7bb07cbf9c",
+      "bytes": 146604,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_006.wav",
+      "sha256": "f763fd0cc9f8a31ca6c64c9a6a0bdfbbf4f24047c1ff40ad4a43f399cc965409",
+      "bytes": 205164,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_007.wav",
+      "sha256": "518ae9586d4d80a02696518b79d02339676304a42c8327675e9ba2e3e7adab75",
+      "bytes": 189484,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_008.wav",
+      "sha256": "fb78d49d74e5c8d91da97532d9ca369ca1216a588db447414fd204d9b07a1529",
+      "bytes": 212844,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_009.wav",
+      "sha256": "fda1c0ff91f29c897d6084117932c3d5bf7dac27075a7cf07914b8b9b267025c",
+      "bytes": 165484,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_010.wav",
+      "sha256": "4f18878701f2aeeb6467581bdc6254c7fff96a4469498dbc1974cc2192f82f0c",
+      "bytes": 172524,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_011.wav",
+      "sha256": "833817d4af77edd12f403e99e9a613fd0c4d2cd30575b0d4701ad7541c0f4499",
+      "bytes": 181164,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_012.wav",
+      "sha256": "12cda542d474da8a208e22bc593aed25431902696cc96e10814d4ac179106efa",
+      "bytes": 252524,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_013.wav",
+      "sha256": "52b54146439b16ecc2fcf7c0e941da5fc0b09046645c85f532117a2e68c625cd",
+      "bytes": 148204,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_014.wav",
+      "sha256": "fb0a3b0304fd9970e6c33d97e03c5b80f9bbc6297335336a3d8bbbe68c2de955",
+      "bytes": 172844,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_015.wav",
+      "sha256": "0b3bd1605f13029c5549e843bdf5776cd35c16bb1619012f4631f8fdaf67143a",
+      "bytes": 160044,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_016.wav",
+      "sha256": "94383da5cec97f7f4bcb85cc0f9e2029feb013495fb5ecbdf7f90d885b842e19",
+      "bytes": 225324,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_017.wav",
+      "sha256": "3b169a6a2c02cadc980771fc67ee051a1a7a1d92b652a6cbfd34bbb9697d1184",
+      "bytes": 149804,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_018.wav",
+      "sha256": "8f2043fbaf66064d1402a734dd80779eebb0981ada16013e513a305959f626d8",
+      "bytes": 170924,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_019.wav",
+      "sha256": "7117b90a2ae741c9e8cab93938056fe8b8b0140e215ea8fa675c2259b5a25e71",
+      "bytes": 170604,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_020.wav",
+      "sha256": "263b680bd8d85b95f08620cece6a778faa98f3e0a5ad594a791d5fd819cc19de",
+      "bytes": 233964,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_021.wav",
+      "sha256": "0f17513b627ad331e55459244e1f90ccf0b48f707ef03d002b406c2b6649059c",
+      "bytes": 264044,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_022.wav",
+      "sha256": "59c8985eb5672299b70beee9db501488cfafe302fd906885c33fb13ca90e6602",
+      "bytes": 209324,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_023.wav",
+      "sha256": "87b16c2bdc61c5c143f9d6581fa91045467952c8bf648606068469c777417731",
+      "bytes": 145644,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_024.wav",
+      "sha256": "044dc1f5c402165f8d21505777337132358a597bc741afc573346f545fc39c79",
+      "bytes": 153324,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_025.wav",
+      "sha256": "ddfed980778bab88746b99b135bc88967fc864885c0323c07669c6b2fa5f07d6",
+      "bytes": 255724,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_026.wav",
+      "sha256": "694fe1106db91b8d25cdbe9fc25f291ca3c29775d738f6fdd40508aa9a3f2a2a",
+      "bytes": 219564,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_027.wav",
+      "sha256": "43b1188ca36fbacb93cdea0b07631f84472fd4f6d443e8678936d32ec5bf45c0",
+      "bytes": 176044,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_028.wav",
+      "sha256": "ae4c9a1e63e48ecc4b10d673ea68e211f7ece373e49d0df11ce2a0a3893ed4c9",
+      "bytes": 153644,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_029.wav",
+      "sha256": "4b14e474d532aed858fdd4c746533f75b47a2360c26845e8fae206492223e1ff",
+      "bytes": 235564,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_030.wav",
+      "sha256": "7ba3dd6f39af08043e57aaba53288dbb3bc393880f92c5131bb7e88b6a599c69",
+      "bytes": 225324,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_031.wav",
+      "sha256": "71ea3621690ae5bfe60b8b2f24dd991788eb474bab78e2cc2aa4522be59bbb16",
+      "bytes": 148844,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_032.wav",
+      "sha256": "ea36bcd398177998c0c04caaf0dd41096aaf99ed82091d6f7fcf60ecbd65c80d",
+      "bytes": 214764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_033.wav",
+      "sha256": "2d82e0d933115bd1287d55dd8355f398a130b407683ea2f00307eb3a94e1fa31",
+      "bytes": 227564,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_034.wav",
+      "sha256": "02e471b62375885a3a09e1bef61e8d9d0c12d00d55938f45e981a74a72f89fce",
+      "bytes": 228204,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_035.wav",
+      "sha256": "5cadd47fd6fe9ca0daed0ceb843fa4e9816794bd9451de7f5b625090bcf216bc",
+      "bytes": 205804,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_036.wav",
+      "sha256": "8159a5ec45557b026abd0c2749a3a26c324a7b637054ab8f4a279f9f996cd019",
+      "bytes": 222124,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_037.wav",
+      "sha256": "eac75ec14c454787936c4f77fa0c6b56817efdca99d899b4ced8e2d2a911b445",
+      "bytes": 226604,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_038.wav",
+      "sha256": "8e10bfa93c262e81a410055396a805f94d5a2be4ef15919803e57534c8336159",
+      "bytes": 214764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_039.wav",
+      "sha256": "06fa01f82e321046595309cb65d175e16e87247da2d5468f7de6dd392bf0435f",
+      "bytes": 230444,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_040.wav",
+      "sha256": "fe396e6abf363e3092ecd8ab4d285622d0a0605eb0d173d8e4ae1e3ba028f62b",
+      "bytes": 207724,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_041.wav",
+      "sha256": "31d0717d4b135338831da22a81b56ac38f75056a8c2a8fa16a7b2103652ebf5b",
+      "bytes": 220844,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_042.wav",
+      "sha256": "2c6fd7b2f12610028bd11529377585762309ade4ab4fef63d70c5f210e9b274e",
+      "bytes": 219884,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_043.wav",
+      "sha256": "0c89ea35683869db491a28a6ff9671801b524772449d1a6884ff3b8d85c0fe0f",
+      "bytes": 217324,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_044.wav",
+      "sha256": "e6447973b5b696fd4922f383de29d3e49584bd3760f38fda5824e73c56b9c6ee",
+      "bytes": 205164,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_045.wav",
+      "sha256": "c9412dc86b8c627ac123c0345575e6d087e2207e1524e8224ec58fdebfe859f1",
+      "bytes": 224364,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_046.wav",
+      "sha256": "93f16d21450511ec1dba0e4949ec0b8c43d8992b1b108f8754a69c8193a32e5f",
+      "bytes": 225324,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_047.wav",
+      "sha256": "c5ec77b2402669ab9bc38678d4734d783e2b5ad3b0f74804a282758c8d71c58f",
+      "bytes": 194604,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_048.wav",
+      "sha256": "557351ac5be3f6a2c11ccabc090485836072ba35f1010b0324e7f0872ba94b41",
+      "bytes": 200044,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_049.wav",
+      "sha256": "75ae93d31b6ea6c877d511172b3de448d07af8bd45df871e47bcd61a156df1aa",
+      "bytes": 203884,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_050.wav",
+      "sha256": "bd5a0f3626eca26da7db0bba0143b27ee7d24821fca459ae3b865f7acf6c7e8f",
+      "bytes": 222444,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_051.wav",
+      "sha256": "1d8ee3002d7fc88844358793c8887325c0023eba1b998731c9a10e26845700ab",
+      "bytes": 183084,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_052.wav",
+      "sha256": "d48fd3f5446c6eb05b6a9aa37e30f13f37c22aff13fca096676aa6b6d315d947",
+      "bytes": 209644,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_053.wav",
+      "sha256": "fba9abc241ec22701e8fe9b3b3cc90ccdc5a643c89f09f1e88b9b1086e8eba24",
+      "bytes": 211564,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_054.wav",
+      "sha256": "0afa2aa6b3d45256b3e9222d98c078ae34f310a94f04cbe6ef50cc87aec3f56a",
+      "bytes": 214764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_055.wav",
+      "sha256": "933525aa2730b1e413f8a5f12535e9a51dc7ff2fce7c30262ee54aa143637767",
+      "bytes": 199084,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_056.wav",
+      "sha256": "b2cecc2aae30038c5f5608fa5319745c210f01bf0341f44a3d81a6b956311283",
+      "bytes": 213804,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_057.wav",
+      "sha256": "949e5fcb4df784516f48351c886895a83fda43093c20662dfbd3e17b4d161466",
+      "bytes": 206124,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_058.wav",
+      "sha256": "504c27e0915c65616403a55d5768cab1eb94893be2d6e66bff019bdd54b253a0",
+      "bytes": 215724,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/alimeeting_headset_100/audio_enhanced/zh_alimeeting_059.wav",
+      "sha256": "09bb8f58737dd82e71527c67045cdadc996160200d64615d064cf66f2c251568",
+      "bytes": 217964,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_000.wav",
+      "sha256": "9578c53497b72212e5d80cb22f1062e1ab32b8cbba62a6e28f351d7d0171eb2f",
+      "bytes": 224044,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_001.wav",
+      "sha256": "0bc537ac6957d976f07feae2741f80a0bf8d3558337fa65549ac90dc6a13224d",
+      "bytes": 222764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_002.wav",
+      "sha256": "bc0e61e04dd471547b3ee40630b2735e456059aaf0b78d898a95086e730c1764",
+      "bytes": 222124,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_003.wav",
+      "sha256": "922d46a935fc7a08fafb9c2cc21ad2de3122947ad077fc3efe479fa29cd00759",
+      "bytes": 214444,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_004.wav",
+      "sha256": "034d70f262bdac687845f8ca3d0f758f40e7bcde7d9a54598f49036d7a074219",
+      "bytes": 219244,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_005.wav",
+      "sha256": "8f7a00e5b7ed3b000b4cea815765f0ed52d329c4b5d4fa816063f9bcc3eeaf24",
+      "bytes": 223724,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_006.wav",
+      "sha256": "c950411dcd02aaf630f2b16da6eada6102bc03ffc6c1c90cc41738391788c3b2",
+      "bytes": 221164,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_007.wav",
+      "sha256": "70191ed82fa3a4a3da0d7076b1686ad6a7736912713d6bc99ed7f878358543ba",
+      "bytes": 225004,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_008.wav",
+      "sha256": "8627eef88635d338f2a1c3925cc3c023c59a28ef984aab7c3229f7bd6b75c8fe",
+      "bytes": 219884,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_009.wav",
+      "sha256": "0862bbdece96b17bd668deba85ecefec4c520842d14cea4f79b199ddcfce107f",
+      "bytes": 225324,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_010.wav",
+      "sha256": "a4317e2b6818f5e0269452f93b8dda8c75115dbd4067a1530308ef974976f871",
+      "bytes": 225644,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_011.wav",
+      "sha256": "620cd7dcbefb333e958c1a048d81cb75f334965ba9b27f5dd1a1a4425a2a3cae",
+      "bytes": 217964,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_012.wav",
+      "sha256": "36d466a3e6a3278dc84ddb57018e203b3a7236f6e7d32af83ec13bc588da64a9",
+      "bytes": 222444,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_013.wav",
+      "sha256": "f3aa2f79e2636bfb0ddf3be3925a5ab7eabe70d9497a92a02c82ddc983b92b23",
+      "bytes": 220524,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_014.wav",
+      "sha256": "f40875d2eefdc05bba3d7f5179860480fbb8578a2fbc3c247f800bddc4bb9e7d",
+      "bytes": 224364,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_015.wav",
+      "sha256": "14a3b754cef4a9ec4042d5c930e0aa1c7807ff01be066c355dcb53a337f4b1e5",
+      "bytes": 222444,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_016.wav",
+      "sha256": "36bb97d054483a9ab7681af13e68a2363f5655d5c7cbf9fb64c51c96179d0eca",
+      "bytes": 219884,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_017.wav",
+      "sha256": "a3e4fc8a948c494e996ceec9ca0ddebc71aee434c7af306d0c873a3028cff4f0",
+      "bytes": 224364,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_018.wav",
+      "sha256": "3f509da0d296516471fef0e5e591f91279436fd77424ee1d47f58d465ee44826",
+      "bytes": 213484,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_019.wav",
+      "sha256": "915ada05abbd852dc0d0744144a47ae8649a1e71f605569de3353ec778c1f902",
+      "bytes": 223084,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_020.wav",
+      "sha256": "099f01ebba517ec204a0eb658ec06df0f911cd40a98745c556275b509afceda7",
+      "bytes": 224684,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_021.wav",
+      "sha256": "e64f9f70a7d82edb85c3c8990dfa606bf645ede23f1dd8334d029fa1cec8fbf2",
+      "bytes": 222764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_022.wav",
+      "sha256": "bc81b0a204a19fe4642f17de0faa5e9473644e9d23e4d5a5207a5307c892b9ef",
+      "bytes": 224044,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_023.wav",
+      "sha256": "73141fffe0efe62761c6352ce033ce7648156da40ddcde6962a7d9d41c2bc004",
+      "bytes": 223724,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_024.wav",
+      "sha256": "92ae037e0819161f626c431a2edbd29e0f030bf326b8fb78667c1126919185df",
+      "bytes": 217004,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_025.wav",
+      "sha256": "874629fb39e874e3668d59262bd4c6d6d862c6707a573f7acc626d6e89c479de",
+      "bytes": 224044,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_026.wav",
+      "sha256": "0f6aa84d500fb2025b17d271ca59c5a538e9d56e52f9a355df36efa6f9c8a632",
+      "bytes": 223724,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_027.wav",
+      "sha256": "ce79eca31be668b3a41e738a60b0d5c26f501b72e73b0ac76b2702ecb96b82be",
+      "bytes": 219884,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_028.wav",
+      "sha256": "8063f40b6e3f78783503069e745b2c15c910e70b0d17d60b5ca323c3204c7231",
+      "bytes": 221804,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_029.wav",
+      "sha256": "035d35b484f6fb802a651b9ca156de42f64252b702533aac9c0e6d07779675c7",
+      "bytes": 225964,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_030.wav",
+      "sha256": "fa8a73570a0d09f6b32a90107beb77a011c3e5fbfdf5ea64b80ca10810bcb921",
+      "bytes": 223404,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_031.wav",
+      "sha256": "97680d95e44886128c3abe502dade706ab85495b9e458e0da3f6a8c03fca8391",
+      "bytes": 222764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_032.wav",
+      "sha256": "b71dec1ca3244bb03f9a57c7e34fcf87673aa735481065fab658988c6b83cbca",
+      "bytes": 220524,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_033.wav",
+      "sha256": "9c307516433ae69da7703bc217de20280e5586acfe8907357b39967a03d7175a",
+      "bytes": 223724,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_034.wav",
+      "sha256": "350d8a9d21eabc10dd5e67b5b0a408b924e4644c4b7581ed6bad063dfae7eebd",
+      "bytes": 225324,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_035.wav",
+      "sha256": "29ea9a8e38ec5c7808fd9bab88bfac6d9cda78aae216f85978d1ebf013c2265b",
+      "bytes": 221164,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_036.wav",
+      "sha256": "31c541feb916cb463b1b03c7a3060f5d2ed03a6c4741c50cc09fc651376a1052",
+      "bytes": 226604,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_037.wav",
+      "sha256": "c68bc23009a1c5770369c75c50ee3fa9066703d22fdad7c0c70bba075eabbb99",
+      "bytes": 224044,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_038.wav",
+      "sha256": "bbff59a0814878b21e21c052ff4934ecbad3bd053066db1d7e970493b82be47b",
+      "bytes": 226604,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_039.wav",
+      "sha256": "252fbd33e8d5f3d8f52834059323297dacfd329df9f75d0e4885b8ca20c0ccbc",
+      "bytes": 223404,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_040.wav",
+      "sha256": "571b2d1cd2fea4ef21287a208b7300cd3876894d069d87a89c1cbb57512a8b23",
+      "bytes": 223084,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_041.wav",
+      "sha256": "ce550c0fab7ff08c2dfabe0818017f01278b8b8360f7b5c770843fd011f9499f",
+      "bytes": 224044,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_042.wav",
+      "sha256": "3a37cdb51ff7ed3df6d993438371475aaf0669aa76754df4ba01af14be1a19c1",
+      "bytes": 227564,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_043.wav",
+      "sha256": "e40b8322b24fa0869439d2d477c2883cea752af497e8b108e8ce6f193b8866bf",
+      "bytes": 223404,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_044.wav",
+      "sha256": "2077a1601ff3a9a263bb1f3389d8023cbe36572617a2096bcdae2304f5ad9299",
+      "bytes": 225324,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_045.wav",
+      "sha256": "d23528cba6b65184c90eaf8e5f7b14ac96a662267b08d2f150de483523162b08",
+      "bytes": 225644,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_046.wav",
+      "sha256": "2f12befcc7e2186aa10b8dbd4d9bb610257c465921f6fd21c8d6c184415b2d91",
+      "bytes": 223724,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_047.wav",
+      "sha256": "4fa43a67107c31a89459644edeac8fce7044b67f49a34e2fec0ec48b9c88c3e4",
+      "bytes": 225324,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_048.wav",
+      "sha256": "85d36ee91b429f419ba3a915fb35a591d5d535ff881b635415fa525fa8add93a",
+      "bytes": 182444,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_049.wav",
+      "sha256": "945b46459824321963dfd82da4493c93e6475b61392c3d3f87b4b99ffd37c0c1",
+      "bytes": 222764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_050.wav",
+      "sha256": "5a82c49e9f823b99446c7d63cc4103ce7e92651bf7122a4465f554098e08a47e",
+      "bytes": 224684,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_051.wav",
+      "sha256": "37e914f6d2149b9be603d1df952860ef6babd229024d5401464d9eb8040d363e",
+      "bytes": 227564,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_052.wav",
+      "sha256": "54240102dd494246422dcaf511d933b541b4b1e1e318409f97ebcdffca4e0a4a",
+      "bytes": 229484,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_053.wav",
+      "sha256": "29b37e9c6645dd42973540341b943dc8ac96b1e8d6544243d3b953106078dd1d",
+      "bytes": 221164,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_054.wav",
+      "sha256": "b888ea13e3dafcbc2ed009904fbe8dee19226d7089f96475acc31d8be47f0385",
+      "bytes": 221804,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_055.wav",
+      "sha256": "b60065fed14c454c15532ec1a41cb28917d728dc0f4d134c58637c94b33d7d20",
+      "bytes": 225324,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_056.wav",
+      "sha256": "00d65c561c09727bc8056302a6e9cf5a2630c13287a0ea00673e592b3377446b",
+      "bytes": 221484,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_057.wav",
+      "sha256": "aa6aa3e95bd61b04c68645917e5ddcd72687e8aa377f5d85c0ad47b191f9d197",
+      "bytes": 221484,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_058.wav",
+      "sha256": "2b49ba6af42121a11317395c6e51118996101ae6fc6e4b58683e4b1216d98935",
+      "bytes": 222764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_059.wav",
+      "sha256": "1f069977d790d8d7952c822af3345c6c9041e7a0d81e7932a331dccbbeff6f59",
+      "bytes": 223404,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_060.wav",
+      "sha256": "91e3701872d4629811b63bcce59d5832c994bf26da26fc79b005383594debde5",
+      "bytes": 220844,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_061.wav",
+      "sha256": "c95ef653084cb82712583f722b42b42ed733ad1530e50240c29013e415764d72",
+      "bytes": 225324,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_062.wav",
+      "sha256": "67b6df931944b6363e6befac34d5a3b0956ac3070c8c1d2a7688b62135e65874",
+      "bytes": 223404,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_063.wav",
+      "sha256": "5c95837ca3a3d0d71ef398686418035266b2cbaab9eb82ffd9576bed05043677",
+      "bytes": 222124,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_064.wav",
+      "sha256": "cd9aa1c0c87a75b0b0f4532844d7eec95589c3a42ad002311063775ae751c247",
+      "bytes": 223084,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_065.wav",
+      "sha256": "573638ebaae5a68f4da6180617a6b44c88977b805c93b9cc94a6d8a53b1a0570",
+      "bytes": 226924,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_066.wav",
+      "sha256": "5812961edc6417ee92358e1585aa86a8e39ed822c63ffb15062995799107864a",
+      "bytes": 224364,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_067.wav",
+      "sha256": "331242284f05f9e49405c85247f68c8bfe9053889b22ff21f2828751922ea698",
+      "bytes": 231084,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_068.wav",
+      "sha256": "1709d085bb259b6814955f7748d280063a837d39f4bc9d32afcad9f0be8d88e6",
+      "bytes": 221804,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_069.wav",
+      "sha256": "370c189574b7edd178b54390216009e3e3f945f244ce489bd65425a74eec9eba",
+      "bytes": 225644,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_070.wav",
+      "sha256": "a4d15b51bdc0e68b771f70e411b5355a6d1dd4adbc970c2f046569af6f59a4f3",
+      "bytes": 222764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_071.wav",
+      "sha256": "aab61f285c076b10bee21e915f5dae7baa48cffd092f09c4f34d7e532ca77479",
+      "bytes": 220524,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_072.wav",
+      "sha256": "992933766d35f7f3ebc519b772b986c18046db1ec383ea0dcc4f77be027b9f3b",
+      "bytes": 228524,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_073.wav",
+      "sha256": "b1de8d1854d7163ded2abec646a49dd48efc229f0b1a99a3162ace2668e98c7b",
+      "bytes": 224044,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_074.wav",
+      "sha256": "4ba41eb4402c3b810662e8060e2d931b4fb3537ba6cccc669016c30baf58e96a",
+      "bytes": 220524,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_075.wav",
+      "sha256": "84d99d9778ac10d3f096d999a740006f976a8ca57d51ac6c1791b4f77c83b464",
+      "bytes": 219884,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_076.wav",
+      "sha256": "079c20750389d17f7a01f18ce77757ed23b76ac057c17b56e01dd45ced654db3",
+      "bytes": 227564,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_077.wav",
+      "sha256": "729f0f8e3ef6e2c149e77e035c065b85f0cd223eb0194aaf0d98dfe8f3a3745c",
+      "bytes": 221484,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_078.wav",
+      "sha256": "bfdd3e9700e31403aea24e037f9b18e1b2152e6d1d0e3102c2a375e644eecf00",
+      "bytes": 224044,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_079.wav",
+      "sha256": "0676c31ad078f1ec5477afccc86dc8ec560cad089fe3094766db5e1a66606496",
+      "bytes": 223724,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_080.wav",
+      "sha256": "2b46f69e113d2da0fcba7fb86e8c73d0edaa2d7b706608cd450f0a5a7221dcf4",
+      "bytes": 225324,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_081.wav",
+      "sha256": "b96faa02f88b8f48fd1b8d6856f4c9edaf35e5475374ab814eae01bbddf40321",
+      "bytes": 223724,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_082.wav",
+      "sha256": "6d036e40a7741a452b9ae873adfd7e8f8beb6d8d9707b2a6a6c625a65402933a",
+      "bytes": 222764,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_083.wav",
+      "sha256": "d64959c44931eb83af35c98ffbeb4cbbbb7e783c342b9cb76b349d6445779ba8",
+      "bytes": 225004,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_084.wav",
+      "sha256": "98b2c67d084f6edae69c5acbf022ed8dc03ddfafddb1e1778aa5dd6841057b25",
+      "bytes": 222444,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_085.wav",
+      "sha256": "7f6488d8ecd925cdc0a19617dd77db75ac7eef9316c0135c82fe226319669cb7",
+      "bytes": 222124,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_086.wav",
+      "sha256": "51c69a4a8270664b7c1ebc32ddd337acc5af780a6e594a06137b9403cebf4044",
+      "bytes": 246444,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_087.wav",
+      "sha256": "dd603408509d06d53e0b5bddf2bf6f09ba9105eb08f06e3c5c0526edd033c180",
+      "bytes": 225644,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_088.wav",
+      "sha256": "174fe5a3b50def086e7f7d83c605955b805289ef0cc719904ea2cac82ca2ebca",
+      "bytes": 223404,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_089.wav",
+      "sha256": "116a604f5aef0ed4882e6193ce79b1f61d823d869159ffa2444c6693f81a5fb9",
+      "bytes": 227244,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_090.wav",
+      "sha256": "c3e20ff5ced289eb83f175ade1821cbd0354f6b4ce8d93b1822f5cf94baadde7",
+      "bytes": 220844,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_091.wav",
+      "sha256": "9d564c1a824bbb1730f882be7869ff42c527e4409cf57471bca1b9065fd3e735",
+      "bytes": 223724,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_092.wav",
+      "sha256": "31ec6be64ea38167692af07c8b745aeff41179d16ef6b16e6da3d3f967885f6b",
+      "bytes": 220844,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_093.wav",
+      "sha256": "7538845b01dbccd28ac8c60451798dbd59906ae90a6b3c7f21b208bbc85d35bf",
+      "bytes": 222124,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_094.wav",
+      "sha256": "5dbbfa7a63764a636accc35d52486eac668deb7dd5dd56c712f5f6800d5ea38e",
+      "bytes": 224044,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_095.wav",
+      "sha256": "63d921291931b1f6797c67cd825f8b08ee2dd6241726732b455af60db53460b5",
+      "bytes": 224364,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_096.wav",
+      "sha256": "8462dd92966df129f41cf5ef1f1dd5dc266624f4d35086a5453216a03acde311",
+      "bytes": 219564,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_097.wav",
+      "sha256": "affa95afed919f563cefe525bca3f663f650701a649d7bd8abdbf00888bacab6",
+      "bytes": 219564,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_098.wav",
+      "sha256": "054cf2fa40cb2c15f5559f198f645ad8847d7524d139cc0a2e49fbabce8c1d5a",
+      "bytes": 218284,
+      "group": "reference_voice"
+    },
+    {
+      "path": "refs/ami_headset_100/audio_enhanced/en_ami_099.wav",
+      "sha256": "e5d94ca509c9314500b13c927924834de0c015011d6ca05d59fc41173b8eae44",
+      "bytes": 217644,
+      "group": "reference_voice"
+    },
+    {
+      "path": "rir/Audio/h013_Hospital_ExaminationRoom_19txts.wav",
+      "sha256": "901285a5fa2ef75279a9729a5b039c1c84d036925c0df028b6749c42b180e940",
+      "bytes": 59210,
+      "group": "measured_rir"
+    },
+    {
+      "path": "rir/Audio/h015_Bedroom_174txts.wav",
+      "sha256": "cff0f9b4ac5f3a6788d8dc19378ed2c2171e2a47b83669bb368b7270f2a47ff6",
+      "bytes": 58538,
+      "group": "measured_rir"
+    },
+    {
+      "path": "rir/Audio/h034_Classroom_6txts.wav",
+      "sha256": "88b19fc0145287aaa6dd9884c952a65771b29d03ffaa4c02316172ed17e684b8",
+      "bytes": 126329,
+      "group": "measured_rir"
+    },
+    {
+      "path": "rir/Audio/h049_MallFoodCourt_BurlingtonMall_3txts.wav",
+      "sha256": "71fffa4074ae27a92ca98b14c8f3c27b8e49909094c83324ec6a8d882a0f4b88",
+      "bytes": 191300,
+      "group": "measured_rir"
+    },
+    {
+      "path": "rir/Audio/h081_Shower_2txts.wav",
+      "sha256": "9d6d4f40384f47fe09ac1ef2379a459b4fc7e9fd2699c3172e8b04c971a3ce25",
+      "bytes": 190802,
+      "group": "measured_rir"
+    },
+    {
+      "path": "rir/Audio/h111_Kitchen_1txts.wav",
+      "sha256": "267aeda9b5e6ed7543d728ae940528d07f83d1efa827b900a2b1caa6fdf14678",
+      "bytes": 55208,
+      "group": "measured_rir"
+    },
+    {
+      "path": "rir/Audio/h112_Bookstore_1txts.wav",
+      "sha256": "c7779b7b2e294da472fed0fda30bd2d260c53fd9492c0edf932a92a3affb36d4",
+      "bytes": 70505,
+      "group": "measured_rir"
+    },
+    {
+      "path": "rir/Audio/h151_Train_BostonTOrangeLine_1txts.wav",
+      "sha256": "56ae847160fce67a546a6fe40900f03e871436264c63683109b751cd08d09d91",
+      "bytes": 113720,
+      "group": "measured_rir"
+    },
+    {
+      "path": "rir/Audio/h152_OfficeBathroom_1txts.wav",
+      "sha256": "78e14af2c38f0a5f8256f5b932f5479a01182c798f0ddcdebb85479de3250376",
+      "bytes": 59984,
+      "group": "measured_rir"
+    },
+    {
+      "path": "rir/Audio/h157_ArtGallery_1txts.wav",
+      "sha256": "71073ff7516d5715dacd3a7bdcc74c2d348bb34843dc998c684c172b0ec19770",
+      "bytes": 62519,
+      "group": "measured_rir"
+    },
+    {
+      "path": "rir/Audio/h190_Train_BostonTGreenline_1txts.wav",
+      "sha256": "509132cc9666e7ce8e3cc55c4f88397a7bc527a04f2ad1e80073f63ed4509466",
+      "bytes": 114533,
+      "group": "measured_rir"
+    },
+    {
+      "path": "rir/Audio/h191_Kitchen_1txts.wav",
+      "sha256": "5a0b0c2305c2f54bfcc127f8a0b61ec7ed3ecbfbbb0696b6617f15e55ddcb72a",
+      "bytes": 56246,
+      "group": "measured_rir"
+    },
+    {
+      "path": "rir/Audio/h199_Outside_DoorstepOfHouseInCambridge_1txts.wav",
+      "sha256": "d5167c4713d620e06517ca28dbe4a8bbd98427cff7e2381facdc86830463aab2",
+      "bytes": 51545,
+      "group": "measured_rir"
+    },
+    {
+      "path": "rir/Audio/h203_Outside_StreetsOfSomerville_1txts.wav",
+      "sha256": "4c75d4f00a8c3952ee1ca1e850e4caebac5bcac96d9f53621b4c90496fb5ffaf",
+      "bytes": 82826,
+      "group": "measured_rir"
+    }
+  ]
+}
