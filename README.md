@@ -2,7 +2,7 @@
 
 <h1 align="center">SURE-Tagger</h1>
 
-<h2 align="center">Making speech interpretable to agents through rich, semi-structured representations.</h2>
+<h2 align="center">Making speech interpretable and computable<br><small>through rich, semi-structured representations</small></h2>
 
 <p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
