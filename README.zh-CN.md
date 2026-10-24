@@ -2,7 +2,7 @@
 
 <h1 align="center">SURE-Tagger</h1>
 
-<h2 align="center">让语音可理解、可计算<br><small>通过丰富的半结构化表征</small></h2>
+<h2 align="center">让语音对智能体可理解、可计算<br><small><small>—— 通过丰富的半结构化表征</small></small></h2>
 
 <p align="center"><a href="README.md">English</a> · <strong>简体中文</strong></p>
 
