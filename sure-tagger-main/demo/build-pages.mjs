@@ -13,6 +13,7 @@ const files = [
   "assets/readme/three-layer-audio-metadata-tag.png",
   "assets/readme/tagbench/README.md",
   "assets/readme/tagbench/ATTRIBUTION.md",
+  "assets/readme/synthetic-samples/README.md",
 ];
 const samples = [
   "ES2012d_utterance_00018",
@@ -21,10 +22,17 @@ const samples = [
   "t3_desed_0112",
   "t3_fsd50k_0045",
 ];
+const syntheticSamples = ["SCN-0006", "SCN-0198", "SCN-0360", "SCN-0367", "SCN-0469"];
 
 for (const sample of samples) {
   for (const file of ["audio.wav", "full_predictions.json", "reference.json", "demo_questions.json"]) {
     files.push(`assets/readme/tagbench/samples/${sample}/${file}`);
+  }
+}
+
+for (const sample of syntheticSamples) {
+  for (const file of ["audio.wav", "ground_truth.json", "review.json"]) {
+    files.push(`assets/readme/synthetic-samples/${sample}/${file}`);
   }
 }
 

@@ -29,9 +29,9 @@
           <div class="hero-copy">
             <p class="eyebrow" data-i18n="heroEyebrow">Interactive demo · curated audio</p>
             <h1 id="heroTitle" data-i18n="heroTitle">From speech evidence to useful tags.</h1>
-            <p class="hero-lead" data-i18n="heroLead">Listen to a real clip, inspect the structured fields and descriptions, then combine tags to find comparable recordings.</p>
+            <p class="hero-lead" data-i18n="heroLead">Listen to recorded and synthetic clips, inspect the structured fields and descriptions, then combine tags to find comparable scenes.</p>
             <div class="hero-pills" aria-label="Demo scope">
-              <span data-i18n="heroPillOne">5 audio clips</span>
+              <span data-i18n="heroPillOne">10 audio clips</span>
               <span data-i18n="heroPillTwo">3 prediction sources</span>
               <span data-i18n="heroPillThree">Tag-driven queries</span>
             </div>
@@ -49,7 +49,7 @@
             <div>
               <p class="eyebrow" data-i18n="listenEyebrow">Listen</p>
               <h2 id="listenTitle" data-i18n="listenTitle">Choose a recording</h2>
-              <p data-i18n="listenLead">Listen to each clip and inspect its saved predictions.</p>
+              <p data-i18n="listenLead">Explore five recorded clips and five controlled synthetic scenes.</p>
             </div>
           </div>
           <div class="explorer">
@@ -67,7 +67,9 @@
               <div class="player-links">
                 <a id="audioLink" target="_blank" rel="noopener" data-i18n="openAudio">Open audio ↗</a>
                 <a id="predictionsLink" target="_blank" rel="noopener" data-i18n="openPredictions">Full predictions ↗</a>
+                <a id="groundTruthLink" target="_blank" rel="noopener" hidden data-i18n="openGroundTruth">Ground truth ↗</a>
               </div>
+              <p class="fact-source" id="factSource">SURE-Tagger prediction</p>
               <div class="fact-grid" id="quickFacts"></div>
               <div class="transcript-panel">
                 <p class="eyebrow" data-i18n="transcriptLabel">ASR transcript</p>
@@ -95,7 +97,7 @@
             <p id="tagCaption"></p>
           </div>
           <details class="data-details">
-            <summary data-i18n="showJson">View complete SURE-Tagger JSON</summary>
+            <summary id="tagJsonSummary" data-i18n="showJson">View complete SURE-Tagger JSON</summary>
             <pre id="rawJson"></pre>
           </details>
         </section>
@@ -138,10 +140,11 @@
       </main>
 
       <footer class="site-footer">
-        <p data-i18n="footerCaveat">These clips are examples, not a performance summary. Some labels are uncertain or disagree with the available references.</p>
+        <p data-i18n="footerCaveat">These clips are examples, not a performance summary. Synthetic ground truth comes from render controls; predictions may disagree with it.</p>
         <div class="footer-links">
-          <a href="https://github.com/me-chuan/sure-tagger/blob/main/assets/readme/tagbench/README.md" data-i18n="sourceLink">Samples and references ↗</a>
-          <a href="https://github.com/me-chuan/sure-tagger/blob/main/assets/readme/tagbench/ATTRIBUTION.md" data-i18n="attributionLink">Audio attribution ↗</a>
+          <a href="https://github.com/me-chuan/sure-tagger/blob/main/assets/readme/tagbench/README.md" data-demo-source data-i18n="sourceLink">Recorded samples and references ↗</a>
+          <a href="https://github.com/me-chuan/sure-tagger/blob/main/assets/readme/synthetic-samples/README.md" data-demo-source data-i18n="syntheticSourceLink">Synthetic samples and provenance ↗</a>
+          <a href="https://github.com/me-chuan/sure-tagger/blob/main/assets/readme/tagbench/ATTRIBUTION.md" data-demo-source data-i18n="attributionLink">Audio attribution ↗</a>
           <a href="https://github.com/me-chuan/sure-tagger/blob/main/sure-tagger-main/demo/README.md" data-i18n="usageLink">Run this demo ↗</a>
         </div>
       </footer>

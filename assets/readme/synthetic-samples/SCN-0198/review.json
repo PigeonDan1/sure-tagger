@@ -1,0 +1,1943 @@
+{
+  "sample_id": "SCN-0198",
+  "audio": "audio.wav",
+  "selection_stratum": "zh 单语 · 2 人",
+  "basic": {
+    "duration_seconds": 18.870042,
+    "sample_rate": 24000,
+    "speaker_count": 2,
+    "snr_db": 27.0,
+    "rt60_seconds": 0.28,
+    "overlap_ratio": 0.120556,
+    "music_present_target": true,
+    "acoustic_scene_id": "AC-167",
+    "acoustic_environment": "meeting_room",
+    "primary_language": "zh",
+    "language_mode": "monolingual",
+    "languages_present": [
+      "zh"
+    ],
+    "scene_languages": [
+      "zh"
+    ],
+    "frame_snr_mean_db": 16.568905,
+    "logical_snr_db": 27.0,
+    "topic_target": "服务柜台对话：设备保修登记",
+    "text_variant": "filler",
+    "rir_asset": "h157_ArtGallery_1txts.wav",
+    "noise_asset": "bg_d03accfcc75a7a37.wav",
+    "divergence": 0.54
+  },
+  "turns": [
+    {
+      "turn_id": "t01",
+      "speaker_id": "speaker_1",
+      "start_sec": 0.51,
+      "end_sec": 7.835208,
+      "text": "嗯，你好，我想办理设备保修登记，这是相关材料。",
+      "language": "zh",
+      "language_spans": [
+        {
+          "end": 23,
+          "language": "zh",
+          "start": 0
+        }
+      ],
+      "edit_instruction": null
+    },
+    {
+      "turn_id": "t02",
+      "speaker_id": "speaker_2",
+      "start_sec": 6.190083,
+      "end_sec": 12.309083,
+      "text": "那个，好的，我先核对订单编号，请稍等一下。",
+      "language": "zh",
+      "language_spans": [
+        {
+          "end": 21,
+          "language": "zh",
+          "start": 0
+        }
+      ],
+      "edit_instruction": null
+    },
+    {
+      "turn_id": "t03",
+      "speaker_id": "speaker_1",
+      "start_sec": 11.81925,
+      "end_sec": 18.21925,
+      "text": "其中两项信息已经更新，剩下的还需要现场确认吗？",
+      "language": "zh",
+      "language_spans": [
+        {
+          "end": 23,
+          "language": "zh",
+          "start": 0
+        }
+      ],
+      "edit_instruction": null
+    }
+  ],
+  "temporal_ground_truth": {
+    "nonspeech_intervals": [
+      {
+        "end_sec": 0.51,
+        "start_sec": 0.0
+      },
+      {
+        "end_sec": 18.870042,
+        "start_sec": 18.21925
+      }
+    ],
+    "speech_placement_intervals": [
+      {
+        "end_sec": 18.21925,
+        "start_sec": 0.51
+      }
+    ],
+    "timebase": "seconds",
+    "timestamp_source": "rendered_session_manifest",
+    "turns": [
+      {
+        "end_sec": 7.835208,
+        "language": "zh",
+        "language_spans": [
+          {
+            "end": 23,
+            "language": "zh",
+            "start": 0
+          }
+        ],
+        "overlap_with_previous": false,
+        "speaker_id": "speaker_1",
+        "start_sec": 0.51,
+        "text": "嗯，你好，我想办理设备保修登记，这是相关材料。",
+        "turn_id": "t01",
+        "utterance_id": "u000"
+      },
+      {
+        "end_sec": 12.309083,
+        "language": "zh",
+        "language_spans": [
+          {
+            "end": 21,
+            "language": "zh",
+            "start": 0
+          }
+        ],
+        "overlap_with_previous": true,
+        "speaker_id": "speaker_2",
+        "start_sec": 6.190083,
+        "text": "那个，好的，我先核对订单编号，请稍等一下。",
+        "turn_id": "t02",
+        "utterance_id": "u001"
+      },
+      {
+        "end_sec": 18.21925,
+        "language": "zh",
+        "language_spans": [
+          {
+            "end": 23,
+            "language": "zh",
+            "start": 0
+          }
+        ],
+        "overlap_with_previous": true,
+        "speaker_id": "speaker_1",
+        "start_sec": 11.81925,
+        "text": "其中两项信息已经更新，剩下的还需要现场确认吗？",
+        "turn_id": "t03",
+        "utterance_id": "u002"
+      }
+    ]
+  },
+  "comparison": [
+    {
+      "id": "contract",
+      "label": "契约字段 Contract",
+      "note": "应与渲染 WAV 头完全一致的硬性字段",
+      "fields": [
+        {
+          "field": "basic_acoustic.duration_sec",
+          "label": "时长 (s)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 18.870042,
+          "gt_state": "exact_measured",
+          "systems": {
+            "sure_tagger": {
+              "value": 18.870042,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 10.5,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "basic_acoustic.sample_rate_hz",
+          "label": "采样率 (Hz)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 24000,
+          "gt_state": "exact_measured",
+          "systems": {
+            "sure_tagger": {
+              "value": 24000,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 44100,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "basic_acoustic.channels",
+          "label": "声道数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 1,
+          "gt_state": "exact_measured",
+          "systems": {
+            "sure_tagger": {
+              "value": 1,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 1,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_1",
+      "label": "L1 词汇内容 Lexical Content",
+      "note": "转写、语言、词数、重复、填充词",
+      "fields": [
+        {
+          "field": "speaker.asr_transcript",
+          "label": "ASR 转写",
+          "scored": true,
+          "gt_only": false,
+          "gt": "嗯，你好，我想办理设备保修登记，这是相关材料。那个，好的，我先核对订单编号，请稍等一下。其中两项信息已经更新，剩下的还需要现场确认吗？",
+          "gt_state": "exact_reference_text",
+          "systems": {
+            "sure_tagger": {
+              "value": "你好，我想办理设备保修登记，这是相关材料。 嗯，好的，我先核对订单编号，请稍等一下。 其中两项信息已经更新，剩下的还需要现场确认吗？",
+              "score": 0.947368,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": "你好，我想办理设备保修登记，这是相关材料。那好的，我先核对订单编号，请稍等一下。其中两项信息已经更新，剩下的还需要现场确认吗？",
+              "score": 0.964912,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "language_content.language",
+          "label": "语言",
+          "scored": true,
+          "gt_only": false,
+          "gt": "zh",
+          "gt_state": "exact_script_label",
+          "systems": {
+            "sure_tagger": {
+              "value": "zh",
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": "zh",
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": "zh",
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "language_content.word_count",
+          "label": "词数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 57,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": 57,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 32,
+              "score": 0.561404,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "language_content.repetition.has_repetition",
+          "label": "有重复",
+          "scored": true,
+          "gt_only": false,
+          "gt": false,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": false,
+              "score": null,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": false,
+              "score": null,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "language_content.repetition.repetition_count",
+          "label": "重复次数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": 0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "deterministic_derived.filler_ratio",
+          "label": "填充词比例",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.0,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 0.0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "language_content.filler",
+          "label": "填充词数",
+          "scored": false,
+          "gt_only": false,
+          "gt": 0,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": 0,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": 0,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "language_content.punctuation.punctuation_count",
+          "label": "标点数",
+          "scored": false,
+          "gt_only": false,
+          "gt": 10,
+          "gt_state": null,
+          "systems": {
+            "sure_tagger": {
+              "value": 10,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": 4,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "language_content.punctuation.has_terminal_punctuation",
+          "label": "有句末标点",
+          "scored": false,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": null,
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": true,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_2",
+      "label": "L2 说话人 Speaker",
+      "note": "人数、是否多人、重叠、性别",
+      "fields": [
+        {
+          "field": "speaker.speaker_count",
+          "label": "说话人数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 2,
+          "gt_state": "exact_render_manifest",
+          "systems": {
+            "sure_tagger": {
+              "value": 2,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": 3,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": 2,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.speaker_present",
+          "label": "有人声",
+          "scored": true,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.multi_speaker",
+          "label": "多说话人",
+          "scored": true,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.speaker_overlap",
+          "label": "有重叠",
+          "scored": true,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": false,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": false,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.gender",
+          "label": "性别序列",
+          "scored": true,
+          "gt_only": false,
+          "gt": [
+            "female",
+            "male"
+          ],
+          "gt_state": "exact_assisted_descriptive",
+          "systems": {
+            "sure_tagger": {
+              "value": null,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "speaker.profiles",
+          "label": "说话人画像 (音高/语速/音量)",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": [
+                {
+                  "gender": "female",
+                  "pitch": "mid",
+                  "speaker_id": "speaker_1",
+                  "speaker_volume": "variable",
+                  "speech_rate": {
+                    "band": "fast",
+                    "unit": "zh_char_per_sec",
+                    "value": 7.32
+                  }
+                },
+                {
+                  "gender": "male",
+                  "pitch": "mid",
+                  "speaker_id": "speaker_2",
+                  "speaker_volume": "variable",
+                  "speech_rate": {
+                    "band": "normal",
+                    "unit": "zh_char_per_sec",
+                    "value": 4.29
+                  }
+                }
+              ],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": [
+                {
+                  "pitch": null,
+                  "speaker_id": "speaker_1",
+                  "speaker_volume": null,
+                  "speech_rate": {
+                    "band": null,
+                    "unit": null,
+                    "value": null
+                  }
+                },
+                {
+                  "pitch": null,
+                  "speaker_id": "speaker_2",
+                  "speaker_volume": null,
+                  "speech_rate": {
+                    "band": null,
+                    "unit": null,
+                    "value": null
+                  }
+                },
+                {
+                  "pitch": null,
+                  "speaker_id": "speaker_3",
+                  "speaker_volume": null,
+                  "speech_rate": {
+                    "band": null,
+                    "unit": null,
+                    "value": null
+                  }
+                }
+              ],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": [
+                {
+                  "pitch": "mid",
+                  "speaker_id": "speaker_1",
+                  "speaker_volume": "normal",
+                  "speech_rate": {
+                    "band": "normal",
+                    "unit": null,
+                    "value": null
+                  }
+                },
+                {
+                  "pitch": "mid",
+                  "speaker_id": "speaker_2",
+                  "speaker_volume": "normal",
+                  "speech_rate": {
+                    "band": "normal",
+                    "unit": null,
+                    "value": null
+                  }
+                }
+              ],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_3",
+      "label": "L3 时序 Temporal",
+      "note": "说话人切换与重叠比",
+      "fields": [
+        {
+          "field": "speaker.speaker_change_count",
+          "label": "切换次数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 2,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": 2,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 1,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.speaker_change",
+          "label": "有切换",
+          "scored": true,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.overlap_ratio",
+          "label": "重叠比",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.120556,
+          "gt_state": "exact_render_manifest",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.0,
+              "score": 0.879444,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 0.0,
+              "score": 0.879444,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "deterministic_derived.speaker_change_rate_per_min",
+          "label": "每分钟切换率",
+          "scored": true,
+          "gt_only": false,
+          "gt": 6.359286,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": 6.359286,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 5.714286,
+              "score": 0.898574,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "basic_acoustic.silence_segments",
+          "label": "静音段 (渲染补集)",
+          "scored": false,
+          "gt_only": false,
+          "gt": [
+            {
+              "end_sec": 0.51,
+              "start_sec": 0.0
+            },
+            {
+              "end_sec": 18.870042,
+              "start_sec": 18.21925
+            }
+          ],
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": [
+                {
+                  "end_sec": 3.58,
+                  "start_sec": 0.0
+                },
+                {
+                  "end_sec": 7.92,
+                  "start_sec": 7.87
+                },
+                {
+                  "end_sec": 12.88,
+                  "start_sec": 12.37
+                },
+                {
+                  "end_sec": 15.72,
+                  "start_sec": 15.4
+                },
+                {
+                  "end_sec": 18.870042,
+                  "start_sec": 18.23
+                }
+              ],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": [],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_5",
+      "label": "L5 声学场景与事件 Acoustic Scene & Events",
+      "note": "噪声、混响、音乐、事件；SNR 同时给出渲染目标档位与 Brouhaha 逐帧均值",
+      "fields": [
+        {
+          "field": "basic_acoustic.nonspeech_ratio",
+          "label": "非语音比",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.061515,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.270272,
+              "score": 0.791243,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 0.0,
+              "score": 0.938485,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "audio_quality.snr_db",
+          "label": "SNR (dB)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 27.0,
+          "gt_state": "exact_render_manifest",
+          "systems": {
+            "sure_tagger": {
+              "value": 12.200618,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "frame_snr_ground_truth.mean_db",
+          "label": "SNR 均值 (dB)",
+          "scored": false,
+          "gt_only": true,
+          "gt": 16.568905,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "room_acoustic.rt60_sec",
+          "label": "RT60 (s)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.3714,
+          "gt_state": "exact_post_render_measurement",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.547325,
+              "score": 0.64815,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "room_acoustic.c50_db",
+          "label": "C50 (dB)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 12.5187,
+          "gt_state": "exact_post_render_measurement",
+          "systems": {
+            "sure_tagger": {
+              "value": 12.226657,
+              "score": 0.902652,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.speech_music_events",
+          "label": "语音/音乐事件",
+          "scored": true,
+          "gt_only": false,
+          "gt": [
+            "speech",
+            "music"
+          ],
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": [
+                "speech",
+                "music"
+              ],
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": [
+                "speech",
+                "music"
+              ],
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": [
+                "speech"
+              ],
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.music_present",
+          "label": "有音乐",
+          "scored": true,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": false,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.external_noise_type",
+          "label": "外部噪声类型",
+          "scored": true,
+          "gt_only": false,
+          "gt": [
+            "music"
+          ],
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": [
+                "music"
+              ],
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": [
+                "music"
+              ],
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": [],
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.noise_composition",
+          "label": "噪声构成明细",
+          "scored": false,
+          "gt_only": false,
+          "gt": {
+            "animal": [],
+            "channel_environment": [],
+            "formless": [],
+            "mechanical": [],
+            "music": [
+              "Background music"
+            ],
+            "nature": []
+          },
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": {
+                "animal": [],
+                "channel_environment": [],
+                "formless": [],
+                "mechanical": [],
+                "music": [
+                  "Music"
+                ],
+                "nature": []
+              },
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": {
+                "animal": [],
+                "channel_environment": [],
+                "formless": [],
+                "mechanical": [],
+                "music": [],
+                "nature": []
+              },
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_ovrl",
+          "label": "DNSMOS OVRL",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 2.112868,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_sig",
+          "label": "DNSMOS SIG",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 2.939639,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_bak",
+          "label": "DNSMOS BAK",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 2.371617,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_p808",
+          "label": "DNSMOS P808",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 2.894733,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "room_acoustic.far_field",
+          "label": "远场",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "descriptive": {
+    "gt": {
+      "fields": {
+        "caption": "Two speakers converse in Mandarin about equipment warranty registration and order verification against a backdrop of quiet background music. The recording is clear with minimal ambient noise, featuring brief moments of speech overlap.",
+        "topic": "Equipment warranty registration inquiry",
+        "dominant_content_impression": "Dialogue between two speakers with faint background music",
+        "background_condition": "Quiet indoor environment with low-level background music",
+        "background_sound_summary": "Soft instrumental background music present throughout; no other distinct environmental or mechanical sounds",
+        "clarity_intelligibility_impression": "Speech is clear and intelligible despite slight overlap; background music does not mask dialogue",
+        "descriptive_phrases": [
+          "Mandarin conversation",
+          "Customer service interaction",
+          "Background music",
+          "Brief speech overlap",
+          "Clear audio quality",
+          "Indoor acoustic setting"
+        ],
+        "facets": [
+          {
+            "confidence": 0.95,
+            "description": "Dialogue-dominated scene with continuous soft background music",
+            "evidence_tags": [
+              "sound_field_scene.music_present",
+              "sound_field_scene.noise_composition.music",
+              "sound_field_scene.speech_music_events"
+            ],
+            "name": "soundscape"
+          },
+          {
+            "confidence": 0.9,
+            "description": "High signal-to-noise ratio with clean capture and minimal reverberation",
+            "evidence_tags": [
+              "audio_quality.snr_db",
+              "room_acoustic.c50_db",
+              "room_acoustic.rt60_sec"
+            ],
+            "name": "recording_impression"
+          },
+          {
+            "confidence": 0.85,
+            "description": "Turn-taking dialogue with one instance of brief overlap between speakers",
+            "evidence_tags": [
+              "speaker.multi_speaker",
+              "speaker.speaker_overlap",
+              "speaker.overlap_ratio",
+              "speaker.speaker_change"
+            ],
+            "name": "interaction_pattern"
+          },
+          {
+            "confidence": 0.8,
+            "description": "Polite, procedural exchange typical of administrative or service contexts",
+            "evidence_tags": [
+              "language_content.language",
+              "speaker.asr_transcript"
+            ],
+            "name": "delivery_style"
+          },
+          {
+            "confidence": 0.85,
+            "description": "Focus on verifying documentation and updating information for warranty processing",
+            "evidence_tags": [
+              "speaker.asr_transcript",
+              "language_content.word_count"
+            ],
+            "name": "content_impression"
+          },
+          {
+            "confidence": 0.75,
+            "description": "Moderately damped indoor space with short reverberation time",
+            "evidence_tags": [
+              "room_acoustic.rt60_sec",
+              "room_acoustic.c50_db"
+            ],
+            "name": "room_acoustics"
+          }
+        ],
+        "scene_hypotheses": [
+          {
+            "confidence": 0.7,
+            "description": "A customer service interaction occurring in a retail or technical support office with ambient music playing",
+            "evidence_tags": [
+              "sound_field_scene.music_present",
+              "speaker.asr_transcript",
+              "room_acoustic.rt60_sec"
+            ]
+          },
+          {
+            "confidence": 0.6,
+            "description": "A recorded role-play or scripted dialogue simulating a warranty registration process",
+            "evidence_tags": [
+              "speaker.asr_transcript",
+              "deterministic_derived.filler_ratio",
+              "language_content.repetition.has_repetition"
+            ]
+          },
+          {
+            "confidence": 0.65,
+            "description": "An over-the-counter service desk conversation captured via a close microphone in a controlled environment",
+            "evidence_tags": [
+              "audio_quality.snr_db",
+              "basic_acoustic.channels",
+              "speaker.speaker_change"
+            ]
+          }
+        ],
+        "speaker_descriptions": [
+          {
+            "confidence": 0.8,
+            "description": "Initiates the conversation with a polite request regarding warranty registration; steady mid-range pitch and moderate pace",
+            "descriptive_phrases": [
+              "Clear articulation",
+              "Moderate speech rate",
+              "Polite tone"
+            ],
+            "evidence_tags": [
+              "speaker.asr_transcript",
+              "speaker.speaker_count"
+            ],
+            "gender": "female",
+            "speaker_id": "speaker_1"
+          },
+          {
+            "confidence": 0.8,
+            "description": "Responds promptly with confirmation and procedural steps; slightly lower pitch and calm delivery",
+            "descriptive_phrases": [
+              "Calm tone",
+              "Slightly slower pace",
+              "Responsive turn-taking"
+            ],
+            "evidence_tags": [
+              "speaker.asr_transcript",
+              "speaker.speaker_count"
+            ],
+            "gender": "male",
+            "speaker_id": "speaker_2"
+          }
+        ],
+        "uncertainties": [
+          "Exact nature of the background music source (live vs. playback) cannot be determined",
+          "Speaker identities and specific organizational context remain unspecified",
+          "Minor uncertainty in gender assignment due to limited vocal cues beyond pitch range"
+        ],
+        "usability_notes": [
+          "Suitable for ASR training due to high clarity and standard Mandarin usage",
+          "Overlap segment may require diarization refinement for precise speaker attribution",
+          "Background music is non-intrusive but should be accounted for in music-speech separation tasks"
+        ]
+      }
+    },
+    "sure_tagger": {
+      "fields": {
+        "caption": "A ~18.9-second Mandarin conversation between two speakers about device warranty registration, with background music present. The recording is mono at 24 kHz and includes multiple silence segments.",
+        "topic": "设备保修登记办理",
+        "dominant_content_impression": "Speech between two speakers is the main identifiable content, supported by the ASR transcript; music is also present as a co-occurring event. No precise speech/music proportions are provided.",
+        "background_condition": "Mono 24 kHz recording with non-speech ratio 0.27 and multiple silence segments; background music is tagged as external noise. Known quantitative quality indicators include SNR 12.2 dB and DNSMOS overall 2.11, while RT60 is about 0.55 s and C50 is about 12.2 dB. Far-field status is unknown.",
+        "background_sound_summary": "The only external noise type is music; noise_composition lists only Music under the music category, with all other categories empty.",
+        "clarity_intelligibility_impression": "A transcript and punctuation are available, which indicates ASR output was produced, but this does not by itself establish high intelligibility. Audio quality metrics such as DNSMOS overall 2.11 and SNR 12.2 dB may suggest limitations; far-field status and direct intelligibility are not measured.",
+        "descriptive_phrases": [
+          "two Mandarin speakers",
+          "device warranty registration conversation",
+          "background music present",
+          "mono 24 kHz recording",
+          "no speaker overlap detected",
+          "fast and normal speech rates",
+          "non-speech ratio 0.27"
+        ],
+        "facets": [
+          {
+            "confidence": 0.9,
+            "description": "The transcript contains a two-speaker Mandarin exchange about device warranty registration, with terminal punctuation and 57 words.",
+            "evidence_tags": [
+              "speaker.asr_transcript",
+              "speaker.speaker_count",
+              "speaker.multi_speaker",
+              "language_content.language",
+              "language_content.word_count",
+              "language_content.punctuation.punctuation_count",
+              "language_content.punctuation.has_terminal_punctuation"
+            ],
+            "name": "mandarin_service_dialogue"
+          },
+          {
+            "confidence": 0.9,
+            "description": "Two speakers alternate with two speaker changes and zero overlap; the derived change rate is about 6.36 changes per minute.",
+            "evidence_tags": [
+              "speaker.speaker_count",
+              "speaker.multi_speaker",
+              "speaker.speaker_change",
+              "speaker.speaker_change_count",
+              "speaker.speaker_overlap",
+              "speaker.overlap_ratio",
+              "deterministic_derived.speaker_change_rate_per_min"
+            ],
+            "name": "turn_taking_no_overlap"
+          },
+          {
+            "confidence": 0.9,
+            "description": "Music is present and is the only tagged external noise type, with 'Music' listed under the music composition category.",
+            "evidence_tags": [
+              "sound_field_scene.music_present",
+              "sound_field_scene.external_noise_type",
+              "sound_field_scene.noise_composition",
+              "sound_field_scene.speech_music_events"
+            ],
+            "name": "background_music"
+          },
+          {
+            "confidence": 0.8,
+            "description": "Recording is mono at 24 kHz; known quality metrics include SNR 12.2 dB and DNSMOS overall 2.11, with RT60 about 0.55 s and C50 about 12.2 dB. Far-field status is unknown.",
+            "evidence_tags": [
+              "basic_acoustic.channels",
+              "basic_acoustic.sample_rate_hz",
+              "audio_quality.snr_db",
+              "audio_quality.dnsmos_ovrl",
+              "room_acoustic.rt60_sec",
+              "room_acoustic.c50_db"
+            ],
+            "name": "quality_and_acoustic_metrics"
+          },
+          {
+            "confidence": 0.85,
+            "description": "Non-speech ratio is 0.27, and five silence segments are marked in the 18.9-second recording.",
+            "evidence_tags": [
+              "basic_acoustic.duration_sec",
+              "basic_acoustic.nonspeech_ratio",
+              "basic_acoustic.silence_segments"
+            ],
+            "name": "nonspeech_and_silence"
+          }
+        ],
+        "scene_hypotheses": [
+          {
+            "confidence": 0.5,
+            "description": "The interaction may be a service desk or counter exchange between a customer and staff member, based on the warranty registration dialogue and two-speaker turn-taking.",
+            "evidence_tags": [
+              "speaker.asr_transcript",
+              "speaker.speaker_count",
+              "speaker.multi_speaker"
+            ]
+          }
+        ],
+        "speaker_descriptions": [
+          {
+            "confidence": 0.9,
+            "description": "Speaker 1 has mid pitch, a fast speech rate (7.32 zh characters per second), and variable volume.",
+            "descriptive_phrases": [
+              "mid pitch",
+              "fast speech rate",
+              "variable volume"
+            ],
+            "evidence_tags": [
+              "speaker.profiles"
+            ],
+            "gender": null,
+            "speaker_id": "speaker_1"
+          },
+          {
+            "confidence": 0.9,
+            "description": "Speaker 2 has mid pitch, a normal speech rate (4.29 zh characters per second), and variable volume.",
+            "descriptive_phrases": [
+              "mid pitch",
+              "normal speech rate",
+              "variable volume"
+            ],
+            "evidence_tags": [
+              "speaker.profiles"
+            ],
+            "gender": null,
+            "speaker_id": "speaker_2"
+          }
+        ],
+        "uncertainties": [
+          "room_acoustic.far_field is null, so far-field status cannot be assessed.",
+          "Exact speech/music duration proportions are not provided.",
+          "No direct intelligibility measure is available; ASR transcript presence is not a substitute.",
+          "Speaker roles, gender, age, and other identity-like attributes are not provided.",
+          "Per-speaker aligned transcription is not available."
+        ],
+        "usability_notes": [
+          "ASR output is available, but low DNSMOS overall and music may require enhancement before further ASR. With only two speakers and no overlap, diarization is likely straightforward. Far-field status is unknown; room acoustics and mono channel should be considered for downstream processing."
+        ]
+      },
+      "raw_caption": null,
+      "scores": {
+        "scores": {
+          "background_condition": 1.15,
+          "background_sound_summary": 1.6,
+          "caption": 1.72,
+          "clarity_intelligibility_impression": 1.08,
+          "descriptive_phrases": 1.12,
+          "dominant_content_impression": 1.85,
+          "facets": 1.35,
+          "scene_hypotheses": 1.5,
+          "speaker_descriptions": 1.1,
+          "topic": 1.95
+        },
+        "score_mean": 1.442,
+        "normalized_percent": 72.1,
+        "status": "success"
+      }
+    },
+    "captioner": {
+      "fields": {
+        "caption": "A brief, polite, and efficient exchange among a female customer, a male service agent, and a synthesized female automated system voice in Standard Mandarin Chinese, accompanied by a continuous ambient background music loop. The setting is described as a quiet, sound-dampened room, likely a call center or service desk, with no distortion or competing environmental sounds. The interaction concerns equipment warranty registration and IVR-style system prompts.",
+        "topic": "Equipment warranty registration process in a customer service or call center setting.",
+        "dominant_content_impression": "Clean, intelligible speech interaction over unobtrusive synthesized ambient background music, with automated system prompts and no other sounds.",
+        "background_condition": "Quiet, controlled environment with a continuous soft synthesized ambient music loop and no distortion, static, or competing environmental noises.",
+        "background_sound_summary": "Soft, clean, digital ambient music loop with a sustained pad, low bass drone, and high shimmering arpeggiated melody; steady volume and unobtrusive throughout.",
+        "clarity_intelligibility_impression": "Voices are well-mic'd and intelligible; overall audio quality is high with no distortion or static.",
+        "descriptive_phrases": [
+          "modern, ambient music loop",
+          "soft, sustained pad",
+          "low bass drone",
+          "high, shimmering arpeggiated melody",
+          "clean, digital, and unobtrusive background music",
+          "Standard Mandarin Chinese",
+          "neutral, polite tone",
+          "measured, formal delivery",
+          "no regional accent",
+          "slightly more distant in the mix",
+          "efficient and procedural",
+          "monotone, robotic automated system prompt",
+          "flat, emotionless cadence",
+          "small-to-medium, sound-dampened room",
+          "no distortion, static, or competing noises",
+          "well-mic'd and intelligible"
+        ],
+        "facets": [
+          {
+            "confidence": null,
+            "description": "Quiet, sound-dampened room, likely a service desk or call center.",
+            "evidence_tags": [],
+            "name": "recording_environment"
+          },
+          {
+            "confidence": null,
+            "description": "Continuous synthesized ambient background music throughout the clip.",
+            "evidence_tags": [
+              "sound_field_scene.external_noise_type",
+              "sound_field_scene.music_present"
+            ],
+            "name": "music_content"
+          },
+          {
+            "confidence": null,
+            "description": "Speech is in Standard Mandarin Chinese.",
+            "evidence_tags": [
+              "language_content.language"
+            ],
+            "name": "speech_language"
+          },
+          {
+            "confidence": null,
+            "description": "Three distinct voices are described: a female live speaker, a male live speaker, and a synthesized female system voice.",
+            "evidence_tags": [
+              "speaker.profiles",
+              "speaker.speaker_count"
+            ],
+            "name": "speaker_composition"
+          }
+        ],
+        "scene_hypotheses": [
+          {
+            "confidence": 0.7,
+            "description": "The environment is likely a customer service or call center setting.",
+            "evidence_tags": []
+          },
+          {
+            "confidence": 0.5,
+            "description": "The first female speaker may be seated farther from the microphone, perhaps at a service counter.",
+            "evidence_tags": []
+          }
+        ],
+        "speaker_descriptions": [
+          {
+            "confidence": null,
+            "description": "The caption describes a controlled, polite delivery and slightly distant microphone placement.",
+            "descriptive_phrases": [
+              "neutral, polite tone",
+              "measured, formal delivery",
+              "slightly more distant in the mix"
+            ],
+            "evidence_tags": [],
+            "gender": "female",
+            "speaker_id": "speaker_1"
+          },
+          {
+            "confidence": null,
+            "description": "The caption describes an efficient, procedural delivery while the music continues unobtrusively.",
+            "descriptive_phrases": [
+              "efficient and procedural",
+              "music continues unobtrusively beneath the speech"
+            ],
+            "evidence_tags": [],
+            "gender": "male",
+            "speaker_id": "speaker_2"
+          },
+          {
+            "confidence": null,
+            "description": "The caption identifies an automated system voice with a monotone, robotic, and flat delivery.",
+            "descriptive_phrases": [
+              "monotone, robotic",
+              "flat, emotionless cadence",
+              "typical of IVR or call center systems"
+            ],
+            "evidence_tags": [],
+            "gender": "female",
+            "speaker_id": "speaker_3"
+          }
+        ],
+        "uncertainties": [
+          "Total clip duration and timing beyond the approximate 00:03 entry are not specified.",
+          "No exact acoustic metrics such as SNR, RT60, C50, DNSMOS, or overlap ratios are provided.",
+          "No complete verbatim transcript is presented; only quoted utterances are included, so lexical statistics cannot be reliably computed."
+        ],
+        "usability_notes": [
+          "Audio quality is described as high and intelligible with no distortion or static, suitable for downstream ASR.",
+          "Background music is unobtrusive but continuous; music separation or filtering may be considered if full-duplex or low-resource ASR is used."
+        ]
+      },
+      "raw_caption": "The audio clip opens with the gentle, synthesized sounds of a modern, ambient music loop, characterized by a soft, sustained pad, a low bass drone, and a high, shimmering arpeggiated melody. This background music is clean, digital, and unobtrusive, establishing a calm, professional environment typical of a customer service or call center.\n\nAt approximately 00:03, a female voice enters, speaking in clear, Standard Mandarin Chinese with a neutral, polite tone. She says: “你好，我想办理设备保修登记，这是相关材料。” (“Hello, I’d like to register the equipment for warranty. Here are the relevant materials.”) Her delivery is measured, formal, and devoid of regional accent, indicating a professional setting. Her speech is slightly more distant in the mix, suggesting she is seated farther from the microphone, perhaps at a service counter.\n\nImmediately following, a male voice responds in the same standard Mandarin, stating: “那，好的，我先核对订单编号，请稍等一下。” (“Okay, I’ll check the order number first. Please wait a moment.”) His tone is efficient and procedural, reinforcing the impression of a structured, formal process. The music continues unobtrusively beneath his words.\n\nAfter a brief pause, a synthesized female voice, clearly an automated system prompt, announces: “其中两项信息已经更新。” (“Two items of information have been updated.”) The voice is monotone, robotic, and distinctly different from the live speakers, confirming it is not a human. This is followed by another automated prompt: “剩下的还需要现场确认吗？” (“Do the remaining items still require on-site confirmation?”) These system messages are delivered with a flat, emotionless cadence, typical of IVR or call center systems.\n\nThroughout, the music maintains a steady volume, and the overall audio quality is high, with no distortion, static, or competing noises. The environment is quiet, and the acoustics suggest a small-to-medium, sound-dampened room, likely a service desk or call center. The voices are well-mic’d and intelligible, with only the female speaker slightly further from the microphone.\n\nThere are no other environmental sounds—no footsteps, papers, or keyboard clicks—indicating a controlled, professional setting. The interaction is entirely focused on processing a warranty registration, with all elements (speech, music, and system prompts) supporting a modern, efficient, and customer-facing technological service environment.\n\nIn summary, the audio depicts a brief, polite, and efficient exchange between a customer and a service agent, set in a contemporary Chinese call center or service desk, with synthesized music providing a calm backdrop and automated system prompts guiding the process. The interaction is entirely procedural, professional, and technologically mediated, with no distractions or extraneous sounds, reflecting a modern, customer-oriented service scenario.",
+      "scores": {
+        "scores": {
+          "background_condition": 1.9,
+          "background_sound_summary": 1.8,
+          "caption": 1.3,
+          "clarity_intelligibility_impression": 1.7,
+          "descriptive_phrases": 1.55,
+          "dominant_content_impression": 1.45,
+          "facets": 1.2,
+          "scene_hypotheses": 1.45,
+          "speaker_descriptions": 1.1,
+          "topic": 1.85
+        },
+        "score_mean": 1.53,
+        "normalized_percent": 76.5,
+        "status": "success"
+      }
+    },
+    "qwen3_omni": {
+      "fields": {
+        "caption": "两名说话者进行对话，内容涉及设备保修登记和订单信息核对，语速正常，背景安静，无明显噪音或音乐。",
+        "topic": "设备保修登记与订单信息核对",
+        "dominant_content_impression": "speech",
+        "background_condition": "安静，无明显背景噪音或干扰",
+        "background_sound_summary": "无背景音",
+        "clarity_intelligibility_impression": "清晰，可完全听懂",
+        "descriptive_phrases": [
+          "两名说话者交替发言",
+          "语速正常",
+          "背景安静"
+        ],
+        "facets": [
+          {
+            "confidence": 0.95,
+            "description": "对话式交流，两名说话者交替发言，无重叠",
+            "evidence_tags": [],
+            "name": "interaction_pattern"
+          },
+          {
+            "confidence": 0.9,
+            "description": "语速正常，语气平稳，无明显情绪波动",
+            "evidence_tags": [],
+            "name": "delivery_style"
+          },
+          {
+            "confidence": 0.98,
+            "description": "安静环境，无背景音乐或噪音",
+            "evidence_tags": [],
+            "name": "soundscape"
+          },
+          {
+            "confidence": 0.95,
+            "description": "围绕设备保修登记和订单信息核对展开，内容明确",
+            "evidence_tags": [],
+            "name": "content_impression"
+          },
+          {
+            "confidence": 0.97,
+            "description": "录音清晰，无明显失真或干扰",
+            "evidence_tags": [],
+            "name": "recording_impression"
+          }
+        ],
+        "scene_hypotheses": [
+          {
+            "confidence": 0.75,
+            "description": "可能为客服或售后人员与客户之间的电话或在线沟通场景。",
+            "evidence_tags": []
+          },
+          {
+            "confidence": 0.7,
+            "description": "可能为办公环境中的设备登记流程，涉及现场确认。",
+            "evidence_tags": []
+          }
+        ],
+        "speaker_descriptions": [
+          {
+            "confidence": 0.9,
+            "description": "第一位说话者语气礼貌，提出设备保修登记需求，语速正常。",
+            "descriptive_phrases": [
+              "礼貌提问",
+              "语速正常"
+            ],
+            "evidence_tags": [],
+            "gender": null,
+            "speaker_id": "speaker_1"
+          },
+          {
+            "confidence": 0.9,
+            "description": "第二位说话者回应并表示将核对订单编号，语速平稳，语气专业。",
+            "descriptive_phrases": [
+              "专业回应",
+              "语速平稳"
+            ],
+            "evidence_tags": [],
+            "gender": null,
+            "speaker_id": "speaker_2"
+          }
+        ],
+        "uncertainties": [
+          "无法确定说话者性别。",
+          "无法确定具体场景地点或设备类型。"
+        ],
+        "usability_notes": [
+          "录音可用于设备保修登记流程的记录与回溯。"
+        ]
+      },
+      "raw_caption": "两名说话者进行对话，内容涉及设备保修登记和订单信息核对，语速正常，背景安静，无明显噪音或音乐。",
+      "scores": {
+        "scores": {
+          "background_condition": 1.2,
+          "background_sound_summary": 0.2,
+          "caption": 1.35,
+          "clarity_intelligibility_impression": 1.8,
+          "descriptive_phrases": 0.95,
+          "dominant_content_impression": 1.25,
+          "facets": 1.15,
+          "scene_hypotheses": 1.3,
+          "speaker_descriptions": 1.7,
+          "topic": 1.9
+        },
+        "score_mean": 1.28,
+        "normalized_percent": 64.0,
+        "status": "success"
+      }
+    }
+  },
+  "structural_overall": {
+    "sure_tagger": {
+      "score_rate": 0.8651836666666666,
+      "known_fields": 25,
+      "eligible_fields": 25
+    },
+    "captioner": {
+      "score_rate": 0.6136363636363636,
+      "known_fields": 9,
+      "eligible_fields": 25
+    },
+    "qwen3_omni": {
+      "score_rate": 0.6782294761904761,
+      "known_fields": 21,
+      "eligible_fields": 25
+    }
+  }
+}

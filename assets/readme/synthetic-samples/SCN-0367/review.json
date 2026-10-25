@@ -1,0 +1,1973 @@
+{
+  "sample_id": "SCN-0367",
+  "audio": "audio.wav",
+  "selection_stratum": "语码转换 · zh+en",
+  "basic": {
+    "duration_seconds": 25.839208,
+    "sample_rate": 24000,
+    "speaker_count": 3,
+    "snr_db": 27.0,
+    "rt60_seconds": 1.1,
+    "overlap_ratio": 0.078795,
+    "music_present_target": false,
+    "acoustic_scene_id": "AC-310",
+    "acoustic_environment": "meeting_room",
+    "primary_language": "zh",
+    "language_mode": "code_switch",
+    "languages_present": [
+      "zh"
+    ],
+    "scene_languages": [
+      "en",
+      "zh"
+    ],
+    "frame_snr_mean_db": 20.838214,
+    "logical_snr_db": 27.0,
+    "topic_target": "教室主讲授课：概率基础",
+    "text_variant": "mixed",
+    "rir_asset": "h034_Classroom_6txts.wav",
+    "noise_asset": "bg_b1142890d572b90d.wav",
+    "divergence": 0.6
+  },
+  "turns": [
+    {
+      "turn_id": "t01",
+      "speaker_id": "speaker_1",
+      "start_sec": 0.51,
+      "end_sec": 15.071333,
+      "text": "嗯，嗯，um，今天学习概率基础，请先看屏幕上的例子。我先把已经确认的部分和还需要核对的细节一次说完。，please check the streaming delay",
+      "language": "zh",
+      "language_spans": [
+        {
+          "end": 4,
+          "language": "zh",
+          "start": 0
+        },
+        {
+          "end": 7,
+          "language": "en",
+          "start": 4
+        },
+        {
+          "end": 51,
+          "language": "zh",
+          "start": 7
+        },
+        {
+          "end": 83,
+          "language": "en",
+          "start": 51
+        }
+      ],
+      "edit_instruction": null
+    },
+    {
+      "turn_id": "t02",
+      "speaker_id": "speaker_2",
+      "start_sec": 14.110542,
+      "end_sec": 19.858208,
+      "text": "观察材料中的时间线，你们能发现哪一项发生了变化？",
+      "language": "zh",
+      "language_spans": [
+        {
+          "end": 24,
+          "language": "zh",
+          "start": 0
+        }
+      ],
+      "edit_instruction": null
+    },
+    {
+      "turn_id": "t03",
+      "speaker_id": "speaker_3",
+      "start_sec": 18.926833,
+      "end_sec": 24.523708,
+      "text": "我认为第二项变化最明显，但还不确定原因。",
+      "language": "zh",
+      "language_spans": [
+        {
+          "end": 20,
+          "language": "zh",
+          "start": 0
+        }
+      ],
+      "edit_instruction": null
+    }
+  ],
+  "temporal_ground_truth": {
+    "nonspeech_intervals": [
+      {
+        "end_sec": 0.51,
+        "start_sec": 0.0
+      },
+      {
+        "end_sec": 25.839208,
+        "start_sec": 24.523708
+      }
+    ],
+    "speech_placement_intervals": [
+      {
+        "end_sec": 24.523708,
+        "start_sec": 0.51
+      }
+    ],
+    "timebase": "seconds",
+    "timestamp_source": "rendered_session_manifest",
+    "turns": [
+      {
+        "end_sec": 15.071333,
+        "language": "zh",
+        "language_spans": [
+          {
+            "end": 4,
+            "language": "zh",
+            "start": 0
+          },
+          {
+            "end": 7,
+            "language": "en",
+            "start": 4
+          },
+          {
+            "end": 51,
+            "language": "zh",
+            "start": 7
+          },
+          {
+            "end": 83,
+            "language": "en",
+            "start": 51
+          }
+        ],
+        "overlap_with_previous": false,
+        "speaker_id": "speaker_1",
+        "start_sec": 0.51,
+        "text": "嗯，嗯，um，今天学习概率基础，请先看屏幕上的例子。我先把已经确认的部分和还需要核对的细节一次说完。，please check the streaming delay",
+        "turn_id": "t01",
+        "utterance_id": "u000"
+      },
+      {
+        "end_sec": 19.858208,
+        "language": "zh",
+        "language_spans": [
+          {
+            "end": 24,
+            "language": "zh",
+            "start": 0
+          }
+        ],
+        "overlap_with_previous": true,
+        "speaker_id": "speaker_2",
+        "start_sec": 14.110542,
+        "text": "观察材料中的时间线，你们能发现哪一项发生了变化？",
+        "turn_id": "t02",
+        "utterance_id": "u001"
+      },
+      {
+        "end_sec": 24.523708,
+        "language": "zh",
+        "language_spans": [
+          {
+            "end": 20,
+            "language": "zh",
+            "start": 0
+          }
+        ],
+        "overlap_with_previous": true,
+        "speaker_id": "speaker_3",
+        "start_sec": 18.926833,
+        "text": "我认为第二项变化最明显，但还不确定原因。",
+        "turn_id": "t03",
+        "utterance_id": "u002"
+      }
+    ]
+  },
+  "comparison": [
+    {
+      "id": "contract",
+      "label": "契约字段 Contract",
+      "note": "应与渲染 WAV 头完全一致的硬性字段",
+      "fields": [
+        {
+          "field": "basic_acoustic.duration_sec",
+          "label": "时长 (s)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 25.839208,
+          "gt_state": "exact_measured",
+          "systems": {
+            "sure_tagger": {
+              "value": 25.839208,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "basic_acoustic.sample_rate_hz",
+          "label": "采样率 (Hz)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 24000,
+          "gt_state": "exact_measured",
+          "systems": {
+            "sure_tagger": {
+              "value": 24000,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "basic_acoustic.channels",
+          "label": "声道数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 1,
+          "gt_state": "exact_measured",
+          "systems": {
+            "sure_tagger": {
+              "value": 1,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_1",
+      "label": "L1 词汇内容 Lexical Content",
+      "note": "转写、语言、词数、重复、填充词",
+      "fields": [
+        {
+          "field": "speaker.asr_transcript",
+          "label": "ASR 转写",
+          "scored": true,
+          "gt_only": false,
+          "gt": "嗯，嗯，um，今天学习概率基础，请先看屏幕上的例子。我先把已经确认的部分和还需要核对的细节一次说完。，please check the streaming delay观察材料中的时间线，你们能发现哪一项发生了变化？我认为第二项变化最明显，但还不确定原因。",
+          "gt_state": "exact_reference_text",
+          "systems": {
+            "sure_tagger": {
+              "value": "嗯嗯，啊，今天学习概率基础，请先看屏幕上的例子，我先把已经确认的部分和还需要核对的细节依次说完。 Please check the streaming delay. 观察材料中的时间线，你们能发现哪一项发生了变化？ 我认为第二项变化最明显，但还不确定原因。",
+              "score": 0.973214,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": "嗯嗯啊啊，今天学习概率基础，请先看屏幕上的例子。我先把已经确认的部分和还需要核对的细节依次说完。Please check the streaming delay. 材料中的时间线，你们能发现哪一项发生了变化？我认为第二项变化最明显，但还不确定原因。",
+              "score": 0.955357,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "language_content.language",
+          "label": "语言",
+          "scored": true,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": "zh",
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": "zh",
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "language_content.word_count",
+          "label": "词数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 88,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": 88,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 42,
+              "score": 0.477273,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "language_content.repetition.has_repetition",
+          "label": "有重复",
+          "scored": true,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "language_content.repetition.repetition_count",
+          "label": "重复次数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 1,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": 1,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 3,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "deterministic_derived.filler_ratio",
+          "label": "填充词比例",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.011364,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.011364,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 0.095238,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "language_content.filler",
+          "label": "填充词数",
+          "scored": false,
+          "gt_only": false,
+          "gt": 1,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": 1,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": 4,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "language_content.punctuation.punctuation_count",
+          "label": "标点数",
+          "scored": false,
+          "gt_only": false,
+          "gt": 11,
+          "gt_state": null,
+          "systems": {
+            "sure_tagger": {
+              "value": 11,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": 9,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "language_content.punctuation.has_terminal_punctuation",
+          "label": "有句末标点",
+          "scored": false,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": null,
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": true,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_2",
+      "label": "L2 说话人 Speaker",
+      "note": "人数、是否多人、重叠、性别",
+      "fields": [
+        {
+          "field": "speaker.speaker_count",
+          "label": "说话人数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 3,
+          "gt_state": "exact_render_manifest",
+          "systems": {
+            "sure_tagger": {
+              "value": 3,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 1,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.speaker_present",
+          "label": "有人声",
+          "scored": true,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.multi_speaker",
+          "label": "多说话人",
+          "scored": true,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": false,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.speaker_overlap",
+          "label": "有重叠",
+          "scored": true,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": false,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.gender",
+          "label": "性别序列",
+          "scored": true,
+          "gt_only": false,
+          "gt": [
+            "male",
+            "female",
+            "female"
+          ],
+          "gt_state": "exact_assisted_descriptive",
+          "systems": {
+            "sure_tagger": {
+              "value": null,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.666667,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "speaker.profiles",
+          "label": "说话人画像 (音高/语速/音量)",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": [
+                {
+                  "gender": "male",
+                  "pitch": "mid",
+                  "speaker_id": "speaker_1",
+                  "speaker_volume": "variable",
+                  "speech_rate": {
+                    "band": "normal",
+                    "unit": "zh_char_per_sec",
+                    "value": 4.74
+                  }
+                },
+                {
+                  "gender": "female",
+                  "pitch": null,
+                  "speaker_id": "speaker_2",
+                  "speaker_volume": null,
+                  "speech_rate": {
+                    "band": null,
+                    "unit": null,
+                    "value": null
+                  }
+                },
+                {
+                  "gender": "female",
+                  "pitch": "high",
+                  "speaker_id": "speaker_3",
+                  "speaker_volume": "variable",
+                  "speech_rate": {
+                    "band": "normal",
+                    "unit": "zh_char_per_sec",
+                    "value": 4.2
+                  }
+                }
+              ],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": [
+                {
+                  "pitch": null,
+                  "speaker_id": "speaker_1",
+                  "speaker_volume": null,
+                  "speech_rate": {
+                    "band": null,
+                    "unit": null,
+                    "value": null
+                  }
+                },
+                {
+                  "pitch": null,
+                  "speaker_id": "speaker_2",
+                  "speaker_volume": null,
+                  "speech_rate": {
+                    "band": null,
+                    "unit": null,
+                    "value": null
+                  }
+                },
+                {
+                  "pitch": null,
+                  "speaker_id": "speaker_3",
+                  "speaker_volume": null,
+                  "speech_rate": {
+                    "band": null,
+                    "unit": null,
+                    "value": null
+                  }
+                }
+              ],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": [
+                {
+                  "pitch": "mid",
+                  "speaker_id": "speaker_1",
+                  "speaker_volume": "normal",
+                  "speech_rate": {
+                    "band": "normal",
+                    "unit": null,
+                    "value": null
+                  }
+                }
+              ],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_3",
+      "label": "L3 时序 Temporal",
+      "note": "说话人切换与重叠比",
+      "fields": [
+        {
+          "field": "speaker.speaker_change_count",
+          "label": "切换次数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 2,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": 2,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": 3,
+              "score": 0.666667,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": 0,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.speaker_change",
+          "label": "有切换",
+          "scored": true,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": false,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.overlap_ratio",
+          "label": "重叠比",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.078795,
+          "gt_state": "exact_render_manifest",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.029183,
+              "score": 0.950388,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 0,
+              "score": 0.921205,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "deterministic_derived.speaker_change_rate_per_min",
+          "label": "每分钟切换率",
+          "scored": true,
+          "gt_only": false,
+          "gt": 4.644105,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": 4.644105,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "basic_acoustic.silence_segments",
+          "label": "静音段 (渲染补集)",
+          "scored": false,
+          "gt_only": false,
+          "gt": [
+            {
+              "end_sec": 0.51,
+              "start_sec": 0.0
+            },
+            {
+              "end_sec": 25.839208,
+              "start_sec": 24.523708
+            }
+          ],
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": [
+                {
+                  "end_sec": 3.38,
+                  "start_sec": 0.0
+                },
+                {
+                  "end_sec": 8.97,
+                  "start_sec": 8.86
+                },
+                {
+                  "end_sec": 12.98,
+                  "start_sec": 12.97
+                },
+                {
+                  "end_sec": 16.93,
+                  "start_sec": 16.65
+                },
+                {
+                  "end_sec": 22.6,
+                  "start_sec": 22.52
+                },
+                {
+                  "end_sec": 25.839208,
+                  "start_sec": 24.69
+                }
+              ],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_5",
+      "label": "L5 声学场景与事件 Acoustic Scene & Events",
+      "note": "噪声、混响、音乐、事件；SNR 同时给出渲染目标档位与 Brouhaha 逐帧均值",
+      "fields": [
+        {
+          "field": "basic_acoustic.nonspeech_ratio",
+          "label": "非语音比",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.070648,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.193861,
+              "score": 0.876787,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "audio_quality.snr_db",
+          "label": "SNR (dB)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 27.0,
+          "gt_state": "exact_render_manifest",
+          "systems": {
+            "sure_tagger": {
+              "value": 19.140902,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "frame_snr_ground_truth.mean_db",
+          "label": "SNR 均值 (dB)",
+          "scored": false,
+          "gt_only": true,
+          "gt": 20.838214,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "room_acoustic.rt60_sec",
+          "label": "RT60 (s)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.8948,
+          "gt_state": "exact_post_render_measurement",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.798531,
+              "score": 0.807462,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "room_acoustic.c50_db",
+          "label": "C50 (dB)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 5.9073,
+          "gt_state": "exact_post_render_measurement",
+          "systems": {
+            "sure_tagger": {
+              "value": 7.460529,
+              "score": 0.482257,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.speech_music_events",
+          "label": "语音/音乐事件",
+          "scored": true,
+          "gt_only": false,
+          "gt": [
+            "speech"
+          ],
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": [
+                "speech"
+              ],
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": [
+                "speech"
+              ],
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": [
+                "speech"
+              ],
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.music_present",
+          "label": "有音乐",
+          "scored": true,
+          "gt_only": false,
+          "gt": false,
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.external_noise_type",
+          "label": "外部噪声类型",
+          "scored": true,
+          "gt_only": false,
+          "gt": [],
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": [],
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": [
+                "mechanical"
+              ],
+              "score": 0.8333333333333334,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.noise_composition",
+          "label": "噪声构成明细",
+          "scored": false,
+          "gt_only": false,
+          "gt": {
+            "animal": [],
+            "channel_environment": [],
+            "formless": [],
+            "mechanical": [],
+            "music": [],
+            "nature": []
+          },
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": {
+                "animal": [],
+                "channel_environment": [],
+                "formless": [],
+                "mechanical": [],
+                "music": [],
+                "nature": []
+              },
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": {
+                "animal": [],
+                "channel_environment": [],
+                "formless": [],
+                "mechanical": [],
+                "music": [],
+                "nature": []
+              },
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_ovrl",
+          "label": "DNSMOS OVRL",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 1.438437,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_sig",
+          "label": "DNSMOS SIG",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 1.823015,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_bak",
+          "label": "DNSMOS BAK",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 1.744628,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_p808",
+          "label": "DNSMOS P808",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 2.823642,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "room_acoustic.far_field",
+          "label": "远场",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "descriptive": {
+    "gt": {
+      "fields": {
+        "caption": "A multi-speaker recording featuring three distinct voices engaging in a discussion about probability basics and material analysis. The clip includes code-switching between Mandarin and English, with noticeable room reverberation and brief periods of silence at the beginning and end.",
+        "topic": "Educational discussion on probability and data analysis",
+        "dominant_content_impression": "Multi-speaker conversation",
+        "background_condition": "Moderate room reverberation with a quiet noise floor",
+        "background_sound_summary": "Room tone with slight reverberation; no distinct external noises or music",
+        "clarity_intelligibility_impression": "High intelligibility despite room echo",
+        "descriptive_phrases": [
+          "multi-speaker dialogue",
+          "code-switching speech",
+          "reverberant room acoustics",
+          "educational context",
+          "overlapping speech segments",
+          "clear vocal articulation"
+        ],
+        "facets": [
+          {
+            "confidence": 0.95,
+            "description": "Indoor acoustic environment characterized by moderate reverberation and absence of external noise.",
+            "evidence_tags": [
+              "room_acoustic.c50_db",
+              "room_acoustic.rt60_sec",
+              "sound_field_scene.external_noise_type"
+            ],
+            "name": "soundscape"
+          },
+          {
+            "confidence": 0.98,
+            "description": "Sequential turn-taking with instances of overlapping speech among three participants.",
+            "evidence_tags": [
+              "speaker.multi_speaker",
+              "speaker.speaker_overlap",
+              "speaker.overlap_ratio",
+              "speaker.speaker_change_count"
+            ],
+            "name": "interaction_pattern"
+          },
+          {
+            "confidence": 0.92,
+            "description": "Instructional discourse mixing Mandarin and English, focusing on academic concepts like probability and timeline observation.",
+            "evidence_tags": [
+              "speaker.asr_transcript",
+              "language_content.word_count"
+            ],
+            "name": "content_impression"
+          },
+          {
+            "confidence": 0.96,
+            "description": "Single-channel recording with high signal-to-noise ratio and clear speech presence.",
+            "evidence_tags": [
+              "audio_quality.snr_db",
+              "basic_acoustic.channels",
+              "sound_field_scene.speech_music_events"
+            ],
+            "name": "recording_impression"
+          }
+        ],
+        "scene_hypotheses": [
+          {
+            "confidence": 0.75,
+            "description": "The speakers are likely participating in a remote meeting or classroom session given the mix of languages and reference to 'screen examples'.",
+            "evidence_tags": [
+              "speaker.asr_transcript"
+            ]
+          },
+          {
+            "confidence": 0.7,
+            "description": "The acoustic signature suggests a medium-sized untreated room or a standard office environment.",
+            "evidence_tags": [
+              "room_acoustic.rt60_sec",
+              "room_acoustic.c50_db"
+            ]
+          },
+          {
+            "confidence": 0.85,
+            "description": "The overlap indicates an active, possibly collaborative discussion rather than a formal monologue.",
+            "evidence_tags": [
+              "speaker.speaker_overlap",
+              "speaker.overlap_ratio"
+            ]
+          }
+        ],
+        "speaker_descriptions": [
+          {
+            "confidence": 0.85,
+            "description": "Initiates the conversation with a steady pace, using fillers and code-switching to introduce the topic.",
+            "descriptive_phrases": [
+              "steady delivery",
+              "uses fillers",
+              "code-switches to English"
+            ],
+            "evidence_tags": [
+              "speaker.asr_transcript",
+              "deterministic_derived.filler_ratio"
+            ],
+            "gender": "male",
+            "speaker_id": "speaker_1"
+          },
+          {
+            "confidence": 0.8,
+            "description": "Speaks clearly with an instructional tone, asking a question regarding observed changes in materials.",
+            "descriptive_phrases": [
+              "questioning tone",
+              "clear articulation"
+            ],
+            "evidence_tags": [
+              "speaker.asr_transcript"
+            ],
+            "gender": "female",
+            "speaker_id": "speaker_2"
+          },
+          {
+            "confidence": 0.8,
+            "description": "Responds with an analytical observation, expressing uncertainty about the cause of changes.",
+            "descriptive_phrases": [
+              "analytical tone",
+              "expresses uncertainty"
+            ],
+            "evidence_tags": [
+              "speaker.asr_transcript"
+            ],
+            "gender": "female",
+            "speaker_id": "speaker_3"
+          }
+        ],
+        "uncertainties": [
+          "Exact speaker identities and roles cannot be determined from audio alone.",
+          "Specific location or institution is unknown despite contextual clues.",
+          "Emotional states are inferred from tone but not definitively confirmed."
+        ],
+        "usability_notes": [
+          "ASR systems should be configured for code-switching between Mandarin and English.",
+          "Diarization algorithms need to handle short overlapping segments effectively.",
+          "Room reverberation may require dereverberation preprocessing for optimal clarity."
+        ]
+      }
+    },
+    "sure_tagger": {
+      "fields": {
+        "caption": "录音约25.8秒，单声道、24 kHz；内容为普通话概率基础教学与时间线变化核对，并夹有一句英文“Please check the streaming delay”。识别到3个说话人、2次说话人切换和少量重叠；声音事件仅标注 speech，无 music。背景方面，非语音占比约0.194，RT60约0.80 s、C50约7.46 dB、SNR约19.14 dB，外部噪声类型和噪声组成均为空。",
+        "topic": "概率基础教学；时间线变化核对；流式延迟检查",
+        "dominant_content_impression": "以语音为主导，sound_field_scene.speech_music_events仅标注speech；music_present=false，外部噪声类型和噪声组成均为空。识别到3个说话人，存在2次切换与少量重叠；非语音占比约0.194，主要由静音/非语音片段构成，但未指明具体背景声源。",
+        "background_condition": "已知非语音占比约0.194，并存在若干短静音段（包括开头0–3.38秒及结尾附近等）；外部噪声类型和噪声组成均为空数组，未列明具体背景声或噪声来源。房间声学方面，RT60约0.80秒，C50约7.46 dB；信号质量方面，SNR约19.14 dB，DNSMOS OVRL 1.44。录音为单声道、24 kHz，far_field未知。",
+        "background_sound_summary": "external_noise_type为空数组；noise_composition中的animal、channel_environment、formless、mechanical、music、nature均为空；music_present=false。未报告具体背景声类别或来源。",
+        "clarity_intelligibility_impression": "语言识别为普通话，转写文本连续可读并含标点，word_count=88，filler=1，repetition_count=1；这为内容理解提供了基础。SNR约19.14 dB，DNSMOS指标为OVRL 1.44、SIG 1.82、BAK 1.74、P808 2.82，可作为质量参考，但不能单独证明实际清晰度。",
+        "descriptive_phrases": [
+          "单声道、24 kHz、约25.8秒录音",
+          "识别为普通话",
+          "3个说话人、2次说话人切换、存在短时重叠",
+          "声音事件仅 speech，无 music",
+          "外部噪声类型和噪声组成均为空",
+          "非语音占比约0.194",
+          "SNR约19.14 dB，RT60约0.80 s，C50约7.46 dB",
+          "DNSMOS OVRL 1.44"
+        ],
+        "facets": [
+          {
+            "confidence": 0.95,
+            "description": "单声道、24 kHz、约25.8秒录音；这些可直接从basic_acoustic字段得到。",
+            "evidence_tags": [
+              "basic_acoustic.duration_sec",
+              "basic_acoustic.sample_rate_hz",
+              "basic_acoustic.channels"
+            ],
+            "name": "recording_format"
+          },
+          {
+            "confidence": 0.92,
+            "description": "识别到3个说话人，speaker_change=true，speaker_change_count=2，change rate约4.64次/分钟；overlap_ratio约0.029，speaker_overlap=true。",
+            "evidence_tags": [
+              "speaker.speaker_present",
+              "speaker.speaker_count",
+              "speaker.multi_speaker",
+              "speaker.speaker_change",
+              "speaker.speaker_change_count",
+              "speaker.overlap_ratio",
+              "speaker.speaker_overlap",
+              "deterministic_derived.speaker_change_rate_per_min"
+            ],
+            "name": "speaker_interaction"
+          },
+          {
+            "confidence": 0.87,
+            "description": "转写为普通话，内容涉及概率基础教学、屏幕示例、时间线变化核对，并包含一句英文'Please check the streaming delay'。",
+            "evidence_tags": [
+              "speaker.asr_transcript",
+              "language_content.language"
+            ],
+            "name": "content_topic"
+          },
+          {
+            "confidence": 0.82,
+            "description": "music_present=false，external_noise_type、noise_composition中各具体类别均为空；非语音占比约0.194，存在若干silence_segments。",
+            "evidence_tags": [
+              "sound_field_scene.speech_music_events",
+              "sound_field_scene.music_present",
+              "sound_field_scene.external_noise_type",
+              "sound_field_scene.noise_composition",
+              "basic_acoustic.nonspeech_ratio",
+              "basic_acoustic.silence_segments"
+            ],
+            "name": "background_noise"
+          },
+          {
+            "confidence": 0.78,
+            "description": "SNR约19.14 dB；DNSMOS: OVRL 1.44、SIG 1.82、BAK 1.74、P808 2.82；RT60约0.80 s，C50约7.46 dB。",
+            "evidence_tags": [
+              "audio_quality.snr_db",
+              "audio_quality.dnsmos_sig",
+              "audio_quality.dnsmos_bak",
+              "audio_quality.dnsmos_ovrl",
+              "audio_quality.dnsmos_p808",
+              "room_acoustic.rt60_sec",
+              "room_acoustic.c50_db"
+            ],
+            "name": "acoustic_quality"
+          }
+        ],
+        "scene_hypotheses": [
+          {
+            "confidence": 0.6,
+            "description": "可能是教学或演示场景：一人主导说明概率基础并引导看屏幕，另一人参与核对时间线变化；英文句子'Please check the streaming delay'可能指向远程或流式交互，但具体角色和位置无法确认。",
+            "evidence_tags": [
+              "speaker.asr_transcript",
+              "speaker.speaker_count",
+              "speaker.multi_speaker",
+              "speaker.speaker_change_count",
+              "speaker.speaker_change",
+              "sound_field_scene.speech_music_events",
+              "language_content.language"
+            ]
+          },
+          {
+            "confidence": 0.55,
+            "description": "说话人切换次数较少但存在少量重叠（overlap_ratio约0.029），可能是问答或短时插话，而不是多人同时持续说话。",
+            "evidence_tags": [
+              "speaker.overlap_ratio",
+              "speaker.speaker_overlap",
+              "speaker.speaker_change_count",
+              "speaker.speaker_change"
+            ]
+          }
+        ],
+        "speaker_descriptions": [
+          {
+            "confidence": 0.9,
+            "description": "pitch标注为mid；speaker_volume标注为variable；speech_rate标注为normal，4.74 zh_char_per_sec。",
+            "descriptive_phrases": [
+              "mid pitch",
+              "variable volume",
+              "normal speech rate: 4.74 zh_char_per_sec"
+            ],
+            "evidence_tags": [
+              "speaker.profiles"
+            ],
+            "gender": null,
+            "speaker_id": "speaker_1"
+          },
+          {
+            "confidence": 0.75,
+            "description": "pitch、speaker_volume和speech_rate均未提供，无法给出语音风格描述。",
+            "descriptive_phrases": null,
+            "evidence_tags": [
+              "speaker.profiles"
+            ],
+            "gender": null,
+            "speaker_id": "speaker_2"
+          },
+          {
+            "confidence": 0.9,
+            "description": "pitch标注为high；speaker_volume标注为variable；speech_rate标注为normal，4.2 zh_char_per_sec。",
+            "descriptive_phrases": [
+              "high pitch",
+              "variable volume",
+              "normal speech rate: 4.2 zh_char_per_sec"
+            ],
+            "evidence_tags": [
+              "speaker.profiles"
+            ],
+            "gender": null,
+            "speaker_id": "speaker_3"
+          }
+        ],
+        "uncertainties": [
+          "room_acoustic.far_field为null，无法判断远场/近场。",
+          "speaker.profiles中的speaker_2的pitch、speaker_volume和speech_rate均为null，且现有pitch/volume不足以推断性别、年龄、情绪或口音。",
+          "external_noise_type和noise_composition均为空数组，无法区分是确实无背景噪声还是未检测/未输出。",
+          "DNSMOS、SNR、RT60、C50等连续指标缺少阈值或统一解释，不能单独判断录音质量等级或具体声学场景。",
+          "sound_field_scene仅标注speech，没有事件时间边界或逐说话人占比，无法确定各说话人的实际时间分布。"
+        ],
+        "usability_notes": [
+          "已有可读转写和语言标注，可用于初步内容筛选；但存在3个说话人、2次切换和少量重叠，diarization需谨慎处理。单声道且far_field未知，DNSMOS整体值（如OVRL 1.44）和RT60/C50仅供参考，不应单独用于质量决策。silence_segments显示了多处短静音，适合辅助边界检查。"
+        ]
+      },
+      "raw_caption": null,
+      "scores": {
+        "scores": {
+          "background_condition": 1.75,
+          "background_sound_summary": 1.45,
+          "caption": 1.8,
+          "clarity_intelligibility_impression": 1.5,
+          "descriptive_phrases": 1.3,
+          "dominant_content_impression": 1.9,
+          "facets": 1.75,
+          "scene_hypotheses": 1.6,
+          "speaker_descriptions": 1.15,
+          "topic": 1.65
+        },
+        "score_mean": 1.585,
+        "normalized_percent": 79.25,
+        "status": "success"
+      }
+    },
+    "captioner": {
+      "fields": {
+        "caption": "A Mandarin-language probability lesson recorded in a large, empty room. A male instructor speaks clearly, an automated male voice interrupts with an English technical notification, and a female speaker responds. The audio is high quality with minimal background noise and ends abruptly.",
+        "topic": "Probability basics lesson in a remote or hybrid educational setting",
+        "dominant_content_impression": "Clear instructional speech by male and female speakers, interrupted by a synthesized two-tone notification chime and an automated English voice; no music.",
+        "background_condition": "Low-level electronic hum and faint reverberation at the start suggest a large, empty room; otherwise minimal background noise, no audience noise or movement, and no distortion or compression artifacts.",
+        "background_sound_summary": "Low-level electronic hum and faint reverberation at beginning; distinct synthesized two-tone electronic chime, likely a computer system or messaging notification; no audience noise or movement.",
+        "clarity_intelligibility_impression": "High audio quality with clear, intelligible speech; minimal background noise, no distortion or compression artifacts.",
+        "descriptive_phrases": [
+          "low-level electronic hum",
+          "faint reverberation",
+          "large, empty room",
+          "clear, calm, instructional speech",
+          "neutral tone",
+          "no detectable regional accent",
+          "likely a professional teacher or instructor",
+          "distinct electronic chime",
+          "synthesized two-tone notification",
+          "computer system alert or messaging notification",
+          "automated male voice",
+          "monotone, synthetic cadence",
+          "lacking emotional inflection",
+          "standard North American accent",
+          "live streaming or video conferencing software",
+          "synchronization issue between audio and video streams",
+          "male instructor resumes",
+          "female speaker calm, measured tone",
+          "clear and precise",
+          "thoughtful and open-ended",
+          "audio ends abruptly",
+          "technical error or intentional truncation",
+          "high audio quality",
+          "minimal background noise",
+          "no distortion or compression artifacts",
+          "no audience present",
+          "professional, neutral demeanor",
+          "remote or hybrid educational setting",
+          "live-streamed lecture or online class"
+        ],
+        "facets": null,
+        "scene_hypotheses": [
+          {
+            "confidence": 0.7,
+            "description": "The recording likely comes from a remote or hybrid educational setting, possibly a live-streamed lecture or online class.",
+            "evidence_tags": []
+          },
+          {
+            "confidence": 0.6,
+            "description": "The acoustic environment is likely a large, empty room such as a lecture hall or classroom.",
+            "evidence_tags": []
+          }
+        ],
+        "speaker_descriptions": [
+          {
+            "confidence": 0.8,
+            "description": "Calm, instructional tone with no detectable regional accent; likely professional teacher or instructor.",
+            "descriptive_phrases": [
+              "clear, calm, instructional speech",
+              "neutral tone",
+              "no detectable regional accent",
+              "likely a professional teacher or instructor"
+            ],
+            "evidence_tags": [],
+            "gender": "male",
+            "speaker_id": "speaker_1"
+          },
+          {
+            "confidence": 0.8,
+            "description": "Monotone, synthetic cadence lacking emotional inflection; standard North American accent.",
+            "descriptive_phrases": [
+              "monotone, synthetic cadence",
+              "lacking emotional inflection",
+              "standard North American accent"
+            ],
+            "evidence_tags": [],
+            "gender": "male",
+            "speaker_id": "speaker_2"
+          },
+          {
+            "confidence": 0.8,
+            "description": "Calm, measured, clear and precise tone with no regional accent; thoughtful and open-ended reply.",
+            "descriptive_phrases": [
+              "calm, measured tone",
+              "clear and precise",
+              "no regional accent",
+              "thoughtful and open-ended"
+            ],
+            "evidence_tags": [],
+            "gender": "female",
+            "speaker_id": "speaker_3"
+          }
+        ],
+        "uncertainties": [
+          "Exact speaker count is not explicitly stated; it is inferred from the narrative sequence.",
+          "Speaker change count is derived from ordered utterances, not explicitly given as a number.",
+          "No precise duration, sample rate, channel count, SNR, or DNSMOS values are provided.",
+          "Interruption by the automated voice may or may not involve simultaneous speech; no explicit overlap evidence.",
+          "Mandarin filler words are noted but cannot be scored without a language-specific filler list."
+        ],
+        "usability_notes": [
+          "Quoted speech is illustrative narrative rather than a verbatim full ASR transcript; do not use for word-level lexical statistics.",
+          "Mixed Mandarin and English may require code-switch handling for downstream ASR."
+        ]
+      },
+      "raw_caption": "The audio begins with a low-level electronic hum and faint reverberation, suggesting a large, empty room such as a lecture hall or classroom. A male speaker, using Standard Mandarin, enters and says, “嗯, 嗯, 啊, 啊, 今天学习概率基础, 请先看屏幕上的例子。” (“Mm, mm, ah, ah, today we’re learning the basics of probability. Please look at the example on the screen first.”) His speech is clear, calm, and instructional, with a neutral tone and no detectable regional accent, indicating he is likely a professional teacher or instructor.\n\nAs he continues, a distinct electronic chime—a synthesized two-tone notification—sounds, typical of a computer system alert or messaging notification. The male speaker proceeds, “我先把已经确认的部分和还需要核对的细节一次说完。” (“I will first say all the confirmed parts and the details that still need to be verified in one go.”) The room’s acoustics remain consistent, with no audience noise or movement.\n\nSuddenly, an automated male voice, characterized by a monotone, synthetic cadence and lacking emotional inflection, interrupts with the phrase, “Please check the streaming delay.” This English phrase, delivered in a standard North American accent, is a technical notification commonly found in live streaming or video conferencing software, signaling a synchronization issue between audio and video streams. The chime recurs at this moment, further supporting the presence of a digital platform.\n\nThe male instructor resumes, stating, “材料中的时间线, 你们能发现哪一项发生了变化?” (“In the material’s timeline, can you identify which item has changed?”) His delivery remains instructional and engaging, inviting audience participation.\n\nA female speaker, also using Standard Mandarin and a calm, measured tone, responds, “我认为第二项变化最明显, 但还不确定原因。” (“I think the second item changed most obviously, but I’m not sure of the reason.”) Her voice is clear and precise, with no regional accent, and her reply is thoughtful and open-ended, encouraging further discussion. The room’s acoustics remain unchanged, and there are no additional sounds or audience reactions.\n\nThe audio ends abruptly, cutting off the female speaker mid-sentence, suggesting a technical error or intentional truncation. Throughout, the audio quality is high, with minimal background noise, clear speech, and no distortion or compression artifacts. The spatial cues confirm a large, empty room with no audience present, and all speakers maintain a professional, neutral demeanor. The interaction is structured, following a typical pedagogical sequence: introduction, instruction, technical interruption, guided inquiry, and student response. The use of both Mandarin and English, as well as the digital notification, strongly indicate a remote or hybrid educational setting, possibly a live-streamed lecture or online class.\n\nIn summary, the recording documents a brief segment of a Mandarin-language probability lesson in a large, empty classroom, delivered via a digital platform with live streaming features. The instructor guides the session, a technical alert interrupts, and a student responds thoughtfully. The absence of audience noise, the presence of digital notifications, and the abrupt ending all point to a remote or hybrid educational context, with clear, high-quality audio and a structured, professional atmosphere.",
+      "scores": {
+        "scores": {
+          "background_condition": 1.55,
+          "background_sound_summary": 1.1,
+          "caption": 1.3,
+          "clarity_intelligibility_impression": 1.85,
+          "descriptive_phrases": 1.15,
+          "dominant_content_impression": 1.4,
+          "facets": 1.0,
+          "scene_hypotheses": 1.45,
+          "speaker_descriptions": 0.85,
+          "topic": 1.7
+        },
+        "score_mean": 1.335,
+        "normalized_percent": 66.75,
+        "status": "success"
+      }
+    },
+    "qwen3_omni": {
+      "fields": {
+        "caption": "一名说话者用中文讲解概率基础，期间夹杂英文短语 'Please check the streaming delay'，语速正常，背景安静。",
+        "topic": "学习概率基础",
+        "dominant_content_impression": "语音",
+        "background_condition": "安静，无明显背景噪声",
+        "background_sound_summary": "无背景音",
+        "clarity_intelligibility_impression": "清晰，可完全理解",
+        "descriptive_phrases": [
+          "单人讲解",
+          "中英文混合",
+          "语速正常",
+          "背景安静"
+        ],
+        "facets": [
+          {
+            "confidence": 0.95,
+            "description": "单人讲解，无对话或互动",
+            "evidence_tags": [
+              "speaker.speaker_count",
+              "speaker.multi_speaker"
+            ],
+            "name": "interaction_pattern"
+          },
+          {
+            "confidence": 0.85,
+            "description": "语速正常，有少量填充词，内容结构清晰",
+            "evidence_tags": [
+              "language_content.filler",
+              "language_content.punctuation.punctuation_count",
+              "language_content.punctuation.has_terminal_punctuation"
+            ],
+            "name": "delivery_style"
+          },
+          {
+            "confidence": 0.98,
+            "description": "安静环境，无背景音乐或噪音",
+            "evidence_tags": [
+              "sound_field_scene.music_present",
+              "sound_field_scene.noise_composition"
+            ],
+            "name": "soundscape"
+          },
+          {
+            "confidence": 0.92,
+            "description": "教学内容聚焦概率基础，包含示例和问题引导",
+            "evidence_tags": [
+              "speaker.asr_transcript"
+            ],
+            "name": "content_impression"
+          },
+          {
+            "confidence": 0.5,
+            "description": "录音清晰，无明显失真或干扰",
+            "evidence_tags": [],
+            "name": "recording_impression"
+          }
+        ],
+        "scene_hypotheses": [
+          {
+            "confidence": 0.8,
+            "description": "可能为在线教学或录播课程的讲解片段",
+            "evidence_tags": []
+          },
+          {
+            "confidence": 0.75,
+            "description": "可能为教学演示或学习材料的语音说明",
+            "evidence_tags": []
+          }
+        ],
+        "speaker_descriptions": [
+          {
+            "confidence": 0.95,
+            "description": "一名说话者以正常语速讲解概率基础内容，夹杂英文短语。",
+            "descriptive_phrases": [
+              "语速正常",
+              "中英文混合"
+            ],
+            "evidence_tags": [
+              "speaker.speaker_count",
+              "speaker.asr_transcript",
+              "language_content.language"
+            ],
+            "gender": null,
+            "speaker_id": "speaker_1"
+          }
+        ],
+        "uncertainties": [
+          "说话者性别无法判断",
+          "无法确认背景环境的具体场景"
+        ],
+        "usability_notes": [
+          "适合用于教学材料或学习辅助音频"
+        ]
+      },
+      "raw_caption": "一名 speaker 用中文讲解概率基础，期间夹杂英文短语 'Please check the streaming delay'，语速正常，语气平稳，背景安静，无明显干扰。",
+      "scores": {
+        "scores": {
+          "background_condition": 1.3,
+          "background_sound_summary": 1.05,
+          "caption": 0.85,
+          "clarity_intelligibility_impression": 1.7,
+          "descriptive_phrases": 0.8,
+          "dominant_content_impression": 1.35,
+          "facets": 1.0,
+          "scene_hypotheses": 1.15,
+          "speaker_descriptions": 0.6,
+          "topic": 1.35
+        },
+        "score_mean": 1.115,
+        "normalized_percent": 55.75,
+        "status": "success"
+      }
+    }
+  },
+  "structural_overall": {
+    "sure_tagger": {
+      "score_rate": 0.9090527619047619,
+      "known_fields": 24,
+      "eligible_fields": 24
+    },
+    "captioner": {
+      "score_rate": 0.6507936825396825,
+      "known_fields": 8,
+      "eligible_fields": 24
+    },
+    "qwen3_omni": {
+      "score_rate": 0.4454207142857143,
+      "known_fields": 14,
+      "eligible_fields": 24
+    }
+  }
+}

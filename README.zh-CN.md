@@ -67,7 +67,7 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 </details>
 
-[完整字段与输入格式](sure-tagger-main/docs/tags-and-methods.md)见标签文档。[交互演示页面](https://me-chuan.github.io/sure-tagger/)已内置下方五条音频；可[在本地运行](sure-tagger-main/demo/README.md)，也可用 [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) 导入自己的音频与标签。
+[完整字段与输入格式](sure-tagger-main/docs/tags-and-methods.md)见标签文档。[交互演示页面](https://me-chuan.github.io/sure-tagger/)已内置五条真实录音和五条合成音频；可[在本地运行](sure-tagger-main/demo/README.md)，也可用 [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) 导入自己的音频与标签。
 
 <a id="how-it-works"></a>
 
@@ -165,9 +165,9 @@ python scripts/verify_release.py
 python scripts/reproduce.py --profile fixture --output runs/fixture
 ```
 
-`fixture` 只生成不含语言内容的测试音频；仓库不附带论文 WAV。完整复现还需要 CUDA、FFmpeg、另行授权的参考音频、RIR、音乐及固定版本的 Dots 模型。依次运行 `python scripts/reproduce.py --profile full --check` 和 `python scripts/reproduce.py --profile full --gpus 0 --output runs/v4_multilingual`；素材目录和预期质检结果见[完整复现指南](LayeredSpeech-500/docs/REPRODUCE.md)。
+`fixture` 只生成不含语言内容的测试音频；仓库仅附带五段合成展示音频，不包含论文使用的完整音频集。完整复现还需要 CUDA、FFmpeg、另行授权的参考音频、RIR、音乐及固定版本的 Dots 模型。依次运行 `python scripts/reproduce.py --profile full --check` 和 `python scripts/reproduce.py --profile full --gpus 0 --output runs/v4_multilingual`；素材目录和预期质检结果见[完整复现指南](LayeredSpeech-500/docs/REPRODUCE.md)。
 
-在交互演示中试听五段 Tag-Bench 音频，对照 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的预测。
+在交互演示中试听十段 Tag-Bench 音频，其中包括五段[合成场景](assets/readme/synthetic-samples/README.md)，对照 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的预测。
 
 <h3 align="center"><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh#listen">▶ 立即试听！↗</a></h3>
 

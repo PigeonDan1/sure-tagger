@@ -1,0 +1,1671 @@
+{
+  "sample_id": "SCN-0469",
+  "audio": "audio.wav",
+  "selection_stratum": "其他语种 · ar",
+  "basic": {
+    "duration_seconds": 9.940833,
+    "sample_rate": 24000,
+    "speaker_count": 1,
+    "snr_db": 5.0,
+    "rt60_seconds": 0.28,
+    "overlap_ratio": 0.0,
+    "music_present_target": false,
+    "acoustic_scene_id": "AC-V4-000",
+    "acoustic_environment": "open_space",
+    "primary_language": "ar",
+    "language_mode": "monolingual",
+    "languages_present": [
+      "ar"
+    ],
+    "scene_languages": [
+      "ar"
+    ],
+    "frame_snr_mean_db": -13.564664,
+    "logical_snr_db": 5.0,
+    "topic_target": "multilingual language sample: ar service review",
+    "text_variant": "original",
+    "rir_asset": "h199_Outside_DoorstepOfHouseInCambridge_1txts.wav",
+    "noise_asset": "bg_13915ccddd205232.wav",
+    "divergence": 0.54
+  },
+  "turns": [
+    {
+      "turn_id": "t01",
+      "speaker_id": "speaker_1",
+      "start_sec": 0.51,
+      "end_sec": 9.404333,
+      "text": "نؤكد جدول إطلاق خدمة الصوت ونطاق القبول هذا الأسبوع.",
+      "language": "ar",
+      "language_spans": [
+        {
+          "end": 52,
+          "language": "ar",
+          "start": 0
+        }
+      ],
+      "edit_instruction": null
+    }
+  ],
+  "temporal_ground_truth": {
+    "nonspeech_intervals": [
+      {
+        "end_sec": 0.51,
+        "start_sec": 0.0
+      },
+      {
+        "end_sec": 9.940833,
+        "start_sec": 9.404333
+      }
+    ],
+    "speech_placement_intervals": [
+      {
+        "end_sec": 9.404333,
+        "start_sec": 0.51
+      }
+    ],
+    "timebase": "seconds",
+    "timestamp_source": "rendered_session_manifest",
+    "turns": [
+      {
+        "end_sec": 9.404333,
+        "language": "ar",
+        "language_spans": [
+          {
+            "end": 52,
+            "language": "ar",
+            "start": 0
+          }
+        ],
+        "overlap_with_previous": false,
+        "speaker_id": "speaker_1",
+        "start_sec": 0.51,
+        "text": "نؤكد جدول إطلاق خدمة الصوت ونطاق القبول هذا الأسبوع.",
+        "turn_id": "t01",
+        "utterance_id": "u000"
+      }
+    ]
+  },
+  "comparison": [
+    {
+      "id": "contract",
+      "label": "契约字段 Contract",
+      "note": "应与渲染 WAV 头完全一致的硬性字段",
+      "fields": [
+        {
+          "field": "basic_acoustic.duration_sec",
+          "label": "时长 (s)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 9.940833,
+          "gt_state": "exact_measured",
+          "systems": {
+            "sure_tagger": {
+              "value": 9.940833,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": 9.5,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "basic_acoustic.sample_rate_hz",
+          "label": "采样率 (Hz)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 24000,
+          "gt_state": "exact_measured",
+          "systems": {
+            "sure_tagger": {
+              "value": 24000,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "basic_acoustic.channels",
+          "label": "声道数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 1,
+          "gt_state": "exact_measured",
+          "systems": {
+            "sure_tagger": {
+              "value": 1,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": 2,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_1",
+      "label": "L1 词汇内容 Lexical Content",
+      "note": "转写、语言、词数、重复、填充词",
+      "fields": [
+        {
+          "field": "speaker.asr_transcript",
+          "label": "ASR 转写",
+          "scored": true,
+          "gt_only": false,
+          "gt": "نؤكد جدول إطلاق خدمة الصوت ونطاق القبول هذا الأسبوع.",
+          "gt_state": "exact_reference_text",
+          "systems": {
+            "sure_tagger": {
+              "value": "Le champion d'Europe de la football est Azamatov.",
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "language_content.language",
+          "label": "语言",
+          "scored": true,
+          "gt_only": false,
+          "gt": "ar",
+          "gt_state": "exact_script_label",
+          "systems": {
+            "sure_tagger": {
+              "value": "ln",
+              "score": 0.0,
+              "score_derived": false,
+              "state": "schema_invalid"
+            },
+            "captioner": {
+              "value": "fr",
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "language_content.word_count",
+          "label": "词数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 9,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": 0,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "language_content.repetition.has_repetition",
+          "label": "有重复",
+          "scored": true,
+          "gt_only": false,
+          "gt": false,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": false,
+              "score": null,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "language_content.repetition.repetition_count",
+          "label": "重复次数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": 0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "deterministic_derived.filler_ratio",
+          "label": "填充词比例",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.0,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "language_content.filler",
+          "label": "填充词数",
+          "scored": false,
+          "gt_only": false,
+          "gt": 0,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": 0,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "language_content.punctuation.punctuation_count",
+          "label": "标点数",
+          "scored": false,
+          "gt_only": false,
+          "gt": 1,
+          "gt_state": null,
+          "systems": {
+            "sure_tagger": {
+              "value": 1,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "language_content.punctuation.has_terminal_punctuation",
+          "label": "有句末标点",
+          "scored": false,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": null,
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_2",
+      "label": "L2 说话人 Speaker",
+      "note": "人数、是否多人、重叠、性别",
+      "fields": [
+        {
+          "field": "speaker.speaker_count",
+          "label": "说话人数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 1,
+          "gt_state": "exact_render_manifest",
+          "systems": {
+            "sure_tagger": {
+              "value": 1,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": 1,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "speaker.speaker_present",
+          "label": "有人声",
+          "scored": true,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "speaker.multi_speaker",
+          "label": "多说话人",
+          "scored": true,
+          "gt_only": false,
+          "gt": false,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "speaker.speaker_overlap",
+          "label": "有重叠",
+          "scored": true,
+          "gt_only": false,
+          "gt": false,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "speaker.gender",
+          "label": "性别序列",
+          "scored": true,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "assisted_gender_partial_or_invalid",
+          "systems": {
+            "sure_tagger": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "speaker.profiles",
+          "label": "说话人画像 (音高/语速/音量)",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": [
+                {
+                  "gender": "female",
+                  "pitch": "low",
+                  "speaker_id": "speaker_1",
+                  "speaker_volume": "variable",
+                  "speech_rate": {
+                    "band": null,
+                    "unit": null,
+                    "value": null
+                  }
+                }
+              ],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": [
+                {
+                  "pitch": null,
+                  "speaker_id": "speaker_1",
+                  "speaker_volume": "low",
+                  "speech_rate": {
+                    "band": null,
+                    "unit": null,
+                    "value": null
+                  }
+                }
+              ],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_3",
+      "label": "L3 时序 Temporal",
+      "note": "说话人切换与重叠比",
+      "fields": [
+        {
+          "field": "speaker.speaker_change_count",
+          "label": "切换次数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": 0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "speaker.speaker_change",
+          "label": "有切换",
+          "scored": true,
+          "gt_only": false,
+          "gt": false,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "speaker.overlap_ratio",
+          "label": "重叠比",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.0,
+          "gt_state": "exact_render_manifest",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "deterministic_derived.speaker_change_rate_per_min",
+          "label": "每分钟切换率",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.0,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "basic_acoustic.silence_segments",
+          "label": "静音段 (渲染补集)",
+          "scored": false,
+          "gt_only": false,
+          "gt": [
+            {
+              "end_sec": 0.51,
+              "start_sec": 0.0
+            },
+            {
+              "end_sec": 9.940833,
+              "start_sec": 9.404333
+            }
+          ],
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": [
+                {
+                  "end_sec": 4.42,
+                  "start_sec": 0.0
+                },
+                {
+                  "end_sec": 7.92,
+                  "start_sec": 7.38
+                },
+                {
+                  "end_sec": 9.940833,
+                  "start_sec": 9.2
+                }
+              ],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_5",
+      "label": "L5 声学场景与事件 Acoustic Scene & Events",
+      "note": "噪声、混响、音乐、事件；SNR 同时给出渲染目标档位与 Brouhaha 逐帧均值",
+      "fields": [
+        {
+          "field": "basic_acoustic.nonspeech_ratio",
+          "label": "非语音比",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.105273,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.573476,
+              "score": 0.531797,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "audio_quality.snr_db",
+          "label": "SNR (dB)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 5.0,
+          "gt_state": "exact_render_manifest",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.703193,
+              "score": 0.140639,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "frame_snr_ground_truth.mean_db",
+          "label": "SNR 均值 (dB)",
+          "scored": false,
+          "gt_only": true,
+          "gt": -13.564664,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "room_acoustic.rt60_sec",
+          "label": "RT60 (s)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.2418,
+          "gt_state": "exact_post_render_measurement",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.169918,
+              "score": 0.856236,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "room_acoustic.c50_db",
+          "label": "C50 (dB)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 18.3999,
+          "gt_state": "exact_post_render_measurement",
+          "systems": {
+            "sure_tagger": {
+              "value": 25.669428,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.speech_music_events",
+          "label": "语音/音乐事件",
+          "scored": true,
+          "gt_only": false,
+          "gt": [
+            "speech"
+          ],
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": [
+                "speech"
+              ],
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": [
+                "speech"
+              ],
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.music_present",
+          "label": "有音乐",
+          "scored": true,
+          "gt_only": false,
+          "gt": false,
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.external_noise_type",
+          "label": "外部噪声类型",
+          "scored": true,
+          "gt_only": false,
+          "gt": [
+            "formless"
+          ],
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": [
+                "channel_environment"
+              ],
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": [
+                "nature",
+                "channel_environment"
+              ],
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.noise_composition",
+          "label": "噪声构成明细",
+          "scored": false,
+          "gt_only": false,
+          "gt": {
+            "animal": [],
+            "channel_environment": [],
+            "formless": [
+              "Background noise",
+              "Whistle"
+            ],
+            "mechanical": [],
+            "music": [],
+            "nature": []
+          },
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": {
+                "animal": [],
+                "channel_environment": [
+                  "Pink noise"
+                ],
+                "formless": [],
+                "mechanical": [],
+                "music": [],
+                "nature": []
+              },
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_ovrl",
+          "label": "DNSMOS OVRL",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 1.092234,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_sig",
+          "label": "DNSMOS SIG",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 1.200502,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_bak",
+          "label": "DNSMOS BAK",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 1.17098,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_p808",
+          "label": "DNSMOS P808",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 2.425342,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "room_acoustic.far_field",
+          "label": "远场",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "descriptive": {
+    "gt": {
+      "fields": {
+        "caption": "A single Arabic-speaking voice delivers a short, clear statement amidst a constant background hiss and a brief whistle. The speech is intelligible despite the noise floor, with no other voices or music present.",
+        "topic": "Service launch schedule announcement",
+        "dominant_content_impression": "Speech over background noise",
+        "background_condition": "Noisy with steady broadband hiss",
+        "background_sound_summary": "Continuous high-frequency hiss and a short whistle sound",
+        "clarity_intelligibility_impression": "Moderately intelligible; speech is audible but masked by consistent hiss",
+        "descriptive_phrases": [
+          "Single speaker",
+          "Arabic speech",
+          "Background hiss",
+          "Brief whistle",
+          "Low signal-to-noise ratio",
+          "Short utterance"
+        ],
+        "facets": [
+          {
+            "confidence": 0.95,
+            "description": "Dominated by a continuous hiss with a transient whistle and a single spoken phrase.",
+            "evidence_tags": [
+              "sound_field_scene.external_noise_type",
+              "sound_field_scene.noise_composition.formless",
+              "language_content.language",
+              "speaker.speaker_count"
+            ],
+            "name": "soundscape"
+          },
+          {
+            "confidence": 0.9,
+            "description": "Low fidelity recording with noticeable noise floor reducing overall clarity.",
+            "evidence_tags": [
+              "audio_quality.snr_db",
+              "basic_acoustic.sample_rate_hz"
+            ],
+            "name": "recording_impression"
+          },
+          {
+            "confidence": 0.85,
+            "description": "A concise, formal-sounding announcement regarding a service schedule.",
+            "evidence_tags": [
+              "speaker.asr_transcript",
+              "language_content.word_count"
+            ],
+            "name": "content_impression"
+          }
+        ],
+        "scene_hypotheses": [
+          {
+            "confidence": 0.6,
+            "description": "The recording may have been made in an environment with active electronic equipment causing the hiss.",
+            "evidence_tags": [
+              "sound_field_scene.noise_composition.formless"
+            ]
+          },
+          {
+            "confidence": 0.5,
+            "description": "The whistle could be an incidental human sound or an environmental artifact occurring before the speech.",
+            "evidence_tags": [
+              "sound_field_scene.noise_composition.formless"
+            ]
+          },
+          {
+            "confidence": 0.4,
+            "description": "The speech content suggests an internal communication or automated announcement context.",
+            "evidence_tags": [
+              "speaker.asr_transcript"
+            ]
+          }
+        ],
+        "speaker_descriptions": [
+          {
+            "confidence": 0.8,
+            "description": "Delivers a short, steady sentence in Arabic with neutral prosody.",
+            "descriptive_phrases": [
+              "Neutral tone",
+              "Steady pace",
+              "Clear articulation"
+            ],
+            "evidence_tags": [
+              "speaker.asr_transcript",
+              "speaker.multi_speaker",
+              "deterministic_derived.filler_ratio"
+            ],
+            "gender": null,
+            "speaker_id": "speaker_1"
+          }
+        ],
+        "uncertainties": [
+          "Speaker gender cannot be confidently determined from the audio alone.",
+          "The specific source of the background hiss and whistle is unknown.",
+          "The exact acoustic environment (room type) cannot be identified."
+        ],
+        "usability_notes": [
+          "ASR performance may be degraded by the background hiss; noise reduction preprocessing recommended.",
+          "Speaker diarization is trivial as only one voice is present.",
+          "Event detection should account for the non-speech whistle at the beginning."
+        ]
+      }
+    },
+    "sure_tagger": {
+      "fields": {
+        "caption": "A single speaker is present with speech and an ASR transcript about a European football champion named Azamatov. The recording has high nonspeech ratio and low SNR/DNSMOS, with pink noise in the channel environment. Acoustic metadata includes mono 24 kHz, C50 25.67 dB, and RT60 0.17 s, while far_field is unknown.",
+        "topic": "Statement identifying Azamatov as European football champion",
+        "dominant_content_impression": "Speech is the only detected event type; music is absent. One speaker produced a short ASR transcript, but nonspeech_ratio is 0.573 with three silence segments, indicating substantial non-speech intervals.",
+        "background_condition": "Mono 24 kHz recording with 57.3% nonspeech and three silence segments. SNR is 0.70 dB, overall DNSMOS is 1.09, and channel_environment noise is labeled Pink noise.",
+        "background_sound_summary": "Reported external noise is channel_environment type, specifically Pink noise. No animal, formless, mechanical, music, or nature noise categories were reported.",
+        "clarity_intelligibility_impression": "An ASR transcript with terminal punctuation exists, but reported word_count is 0 and language 'ln' conflicts with the transcript. Low SNR/DNSMOS and high nonspeech ratio suggest limited acoustic quality, so intelligibility should be treated cautiously.",
+        "descriptive_phrases": [
+          "Single speaker present",
+          "Speech event detected",
+          "Music absent",
+          "High nonspeech ratio (0.573)",
+          "Three silence segments",
+          "Low SNR (0.70 dB)",
+          "Low DNSMOS overall (1.09)",
+          "Pink noise in channel environment",
+          "Mono 24 kHz recording",
+          "C50 25.67 dB and RT60 0.17 s",
+          "Transcript mentions European football champion Azamatov",
+          "Word count reported as 0 despite non-empty transcript",
+          "Speaker pitch low, volume variable"
+        ],
+        "facets": [
+          {
+            "confidence": 0.95,
+            "description": "One speaker is present with no speaker changes, no overlap, and speaker_change_rate_per_min 0.0; speech is the sole detected event.",
+            "evidence_tags": [
+              "speaker.speaker_count",
+              "speaker.speaker_present",
+              "speaker.multi_speaker",
+              "speaker.speaker_change_count",
+              "speaker.speaker_change",
+              "speaker.speaker_overlap",
+              "speaker.overlap_ratio",
+              "deterministic_derived.speaker_change_rate_per_min",
+              "sound_field_scene.speech_music_events"
+            ],
+            "name": "speaker_activity"
+          },
+          {
+            "confidence": 0.9,
+            "description": "Channel environment noise is labeled Pink noise with SNR 0.70 dB and low DNSMOS scores. Nonspeech ratio 0.573 and silence segments indicate sparse speech.",
+            "evidence_tags": [
+              "sound_field_scene.external_noise_type",
+              "sound_field_scene.noise_composition",
+              "audio_quality.snr_db",
+              "audio_quality.dnsmos_bak",
+              "audio_quality.dnsmos_ovrl",
+              "audio_quality.dnsmos_sig",
+              "audio_quality.dnsmos_p808",
+              "basic_acoustic.nonspeech_ratio",
+              "basic_acoustic.silence_segments"
+            ],
+            "name": "channel_noise_condition"
+          },
+          {
+            "confidence": 0.7,
+            "description": "Mono 24 kHz recording with C50 25.67 dB and RT60 0.17 s reported.",
+            "evidence_tags": [
+              "basic_acoustic.channels",
+              "basic_acoustic.sample_rate_hz",
+              "room_acoustic.c50_db",
+              "room_acoustic.rt60_sec"
+            ],
+            "name": "recording_conditions"
+          },
+          {
+            "confidence": 0.8,
+            "description": "ASR transcript contains a sentence with punctuation, but language_content reports word_count 0 and language 'ln', creating an inconsistency.",
+            "evidence_tags": [
+              "speaker.asr_transcript",
+              "language_content.language",
+              "language_content.word_count",
+              "language_content.punctuation.punctuation_count",
+              "language_content.punctuation.has_terminal_punctuation"
+            ],
+            "name": "content_metadata_conflict"
+          }
+        ],
+        "scene_hypotheses": [
+          {
+            "confidence": 0.7,
+            "description": "The recording likely consists of a single monologic speech segment surrounded by silence, with no evidence of turn-taking or multiple speakers.",
+            "evidence_tags": [
+              "speaker.speaker_count",
+              "speaker.multi_speaker",
+              "speaker.speaker_change",
+              "speaker.speaker_change_count",
+              "speaker.speaker_overlap",
+              "basic_acoustic.silence_segments",
+              "sound_field_scene.speech_music_events"
+            ]
+          }
+        ],
+        "speaker_descriptions": [
+          {
+            "confidence": 0.85,
+            "description": "Reported low pitch and variable volume; speech rate band, unit, and value are not provided.",
+            "descriptive_phrases": [
+              "low pitch",
+              "variable volume",
+              "speech rate not reported"
+            ],
+            "evidence_tags": [
+              "speaker.profiles"
+            ],
+            "gender": null,
+            "speaker_id": "speaker_1"
+          }
+        ],
+        "uncertainties": [
+          "room_acoustic.far_field is null; far-field condition unknown.",
+          "speaker.profiles speech_rate band/value/unit are null.",
+          "language_content.word_count is 0 while speaker.asr_transcript is non-empty.",
+          "language_content.language is 'ln', which does not obviously match the French-like transcript.",
+          "deterministic_derived.filler_ratio is null."
+        ],
+        "usability_notes": [
+          "Low SNR and DNSMOS values plus 57% nonspeech suggest caution for ASR; the existing transcript has a word_count mismatch (word_count 0), so it may need validation. With one speaker and no changes, diarization is straightforward, but mono 24 kHz and unknown far_field limit spatial/separation analyses."
+        ]
+      },
+      "raw_caption": null,
+      "scores": {
+        "scores": {
+          "background_condition": 1.35,
+          "background_sound_summary": 0.85,
+          "caption": 1.3,
+          "clarity_intelligibility_impression": 1.4,
+          "descriptive_phrases": 1.1,
+          "dominant_content_impression": 1.65,
+          "facets": 1.05,
+          "scene_hypotheses": 0.6,
+          "speaker_descriptions": 0.7,
+          "topic": 0.25
+        },
+        "score_mean": 1.025,
+        "normalized_percent": 51.25,
+        "status": "success"
+      }
+    },
+    "captioner": {
+      "fields": {
+        "caption": "A short 9.5-second outdoor field recording captures a steady, immersive water sound with a persistent background hiss and moderate fidelity. A young child, estimated 5-8 years old, speaks softly in French about not knowing where the Blue Grotto is, with clear and intelligible voice. No other voices or animal sounds are present; the child's speech appears left-of-center and closer than the wide stereo water backdrop.",
+        "topic": "A child speaking French about the Blue Grotto against an outdoor water soundscape",
+        "dominant_content_impression": "Steady, immersive outdoor water sound dominates, with a clear child's French speech superimposed; no other voices, animal noises, or signs of human activity",
+        "background_condition": "Persistent background hiss, limited frequency range, slightly muffled midrange-focused character; moderate fidelity consumer-grade recording",
+        "background_sound_summary": "A wide stereo rush of water (likely stream, river, or waterfall) with no discernible peaks or lulls; persistent background hiss; no animal noises or other voices",
+        "clarity_intelligibility_impression": "Child's voice is clear and intelligible; overall recording has limited frequency range and background hiss",
+        "descriptive_phrases": [
+          "9.5-second field recording",
+          "natural outdoor setting",
+          "steady immersive rush of water",
+          "likely stream, river, or waterfall",
+          "moderate fidelity",
+          "persistent background hiss",
+          "limited frequency range",
+          "slightly muffled midrange-focused character",
+          "consumer-grade non-professional equipment",
+          "young child estimated 5-8 years old",
+          "speaks softly and thoughtfully in French",
+          "voice clear and intelligible",
+          "gentle, questioning tone",
+          "curiosity and mild confusion",
+          "speech positioned slightly left-of-center",
+          "much closer to microphone than ambient water",
+          "no other voices, animal noises, or signs of human activity",
+          "reference to the Blue Grotto"
+        ],
+        "facets": [
+          {
+            "confidence": 1.0,
+            "description": "The clip is a short 9.5-second field recording.",
+            "evidence_tags": [
+              "basic_acoustic.duration_sec"
+            ],
+            "name": "recording_duration"
+          },
+          {
+            "confidence": 1.0,
+            "description": "The audio is stereo, with ambient water spread across both channels and child speech positioned slightly left-of-center.",
+            "evidence_tags": [
+              "basic_acoustic.channels"
+            ],
+            "name": "channel_configuration"
+          },
+          {
+            "confidence": 0.95,
+            "description": "One young child speaks softly in French; no other voices are present.",
+            "evidence_tags": [
+              "speaker.speaker_count",
+              "speaker.speaker_present",
+              "speaker.multi_speaker",
+              "sound_field_scene.speech_music_events",
+              "language_content.language"
+            ],
+            "name": "speech_activity"
+          },
+          {
+            "confidence": 0.9,
+            "description": "Steady outdoor water sound and persistent background hiss are present.",
+            "evidence_tags": [
+              "sound_field_scene.external_noise_type"
+            ],
+            "name": "background_noise"
+          }
+        ],
+        "scene_hypotheses": [
+          {
+            "confidence": 0.7,
+            "description": "The water sound is likely a stream, river, or waterfall.",
+            "evidence_tags": [
+              "sound_field_scene.external_noise_type"
+            ]
+          },
+          {
+            "confidence": 0.6,
+            "description": "The recording was likely made outdoors in a natural setting.",
+            "evidence_tags": [
+              "sound_field_scene.external_noise_type"
+            ]
+          },
+          {
+            "confidence": 0.4,
+            "description": "The context may involve a tourist, educational, or family visit to a natural or historical site, possibly in a French-speaking country.",
+            "evidence_tags": [
+              "language_content.language"
+            ]
+          }
+        ],
+        "speaker_descriptions": [
+          {
+            "confidence": 0.9,
+            "description": "A single young child speaking softly in French; no additional speaker attributes are specified.",
+            "descriptive_phrases": [
+              "speaks softly"
+            ],
+            "evidence_tags": [
+              "speaker.profiles",
+              "speaker.speaker_count",
+              "speaker.speaker_present",
+              "language_content.language"
+            ],
+            "gender": null,
+            "speaker_id": "speaker_1"
+          }
+        ],
+        "uncertainties": [
+          "Exact identity, gender, and age of the child are not specified beyond an estimated 5-8 years.",
+          "The recording location and sociocultural context are speculative and not directly confirmed.",
+          "The complete verbatim transcript is not available; the quoted utterance ends with an ellipsis.",
+          "No precise SNR, DNSMOS, RT60, or C50 metrics are provided.",
+          "The source and class of the background hiss are inferred from consumer-grade equipment characteristics.",
+          "Speech rate and pitch are not directly measured."
+        ],
+        "usability_notes": [
+          "Voice is clear and intelligible despite moderate fidelity, limited frequency range, and background hiss; consider high-pass filtering or noise reduction before ASR.",
+          "There is only one speaker; speaker diarization is likely unnecessary, but child speech may require age-appropriate acoustic modeling.",
+          "Duration is short at 9.5 seconds; downstream tasks should not assume single-channel processing given stereo capture."
+        ]
+      },
+      "raw_caption": "The audio clip is a short (9.5-second) field recording capturing a quiet, reflective moment in a natural, outdoor setting. The dominant sound is a steady, immersive rush of water—likely a stream, river, or waterfall—creating a wide, enveloping stereo backdrop with no discernible peaks or lulls. This environmental sound is captured with moderate fidelity; the overall frequency range is limited, with a persistent background hiss and a slightly muffled, midrange-focused character typical of consumer-grade, non-professional equipment.\n\nSuperimposed on this natural soundscape, a young child—estimated to be between 5 and 8 years old—speaks softly and thoughtfully in French. The child’s voice is clear and intelligible, though it carries the characteristic pitch, rhythm, and articulation of early childhood. The words spoken are: \"Je sais plus où est-ce que la grotte bleue est. Parce que là, c'est pas...\" (\"I don't know where the blue grotto is anymore. Because here, it's not...\"), delivered in a gentle, questioning tone that conveys a sense of curiosity and mild confusion rather than distress or excitement.\n\nThe child’s speech is positioned slightly left-of-center in the stereo field and is much closer to the microphone than the ambient water, which is spread across both channels. There are no other voices, animal noises, or signs of human activity, suggesting the child is alone or at least the only person present and audible.\n\nCulturally, the use of French, the child’s accent, and the reference to the Blue Grotto—a famous sea cave in Capri, Italy—strongly suggest that the recording was made in a French-speaking country, possibly with a tourist family or as part of an educational visit to a natural or historical site. The child’s reference to the Blue Grotto, even if the actual location is not a cave, indicates a context where such landmarks are known or discussed.\n\nIn summary, the audio presents a tranquil, slightly wistful moment: a young child, surrounded by the sounds of flowing water, muses aloud about the location of the Blue Grotto, blending the tranquility of nature with the gentle, inquisitive voice of childhood. The technical and environmental details support a field recording made in a natural, open setting, likely outdoors, with all available clues pointing toward a tourist, educational, or family context.",
+      "scores": {
+        "scores": {
+          "background_condition": 1.4,
+          "background_sound_summary": 0.6,
+          "caption": 0.2,
+          "clarity_intelligibility_impression": 1.0,
+          "descriptive_phrases": 0.4,
+          "dominant_content_impression": 0.68,
+          "facets": 0.5,
+          "scene_hypotheses": 0.15,
+          "speaker_descriptions": 0.2,
+          "topic": 0.02
+        },
+        "score_mean": 0.515,
+        "normalized_percent": 25.75,
+        "status": "success"
+      }
+    },
+    "qwen3_omni": {
+      "fields": {
+        "caption": null,
+        "topic": null,
+        "dominant_content_impression": null,
+        "background_condition": null,
+        "background_sound_summary": null,
+        "clarity_intelligibility_impression": null,
+        "descriptive_phrases": [],
+        "facets": [],
+        "scene_hypotheses": [],
+        "speaker_descriptions": [],
+        "uncertainties": [],
+        "usability_notes": []
+      },
+      "raw_caption": null,
+      "scores": {
+        "scores": {
+          "background_condition": 1.0,
+          "background_sound_summary": 1.0,
+          "caption": 1.0,
+          "clarity_intelligibility_impression": 1.0,
+          "descriptive_phrases": 0.1,
+          "dominant_content_impression": 1.0,
+          "facets": 0.1,
+          "scene_hypotheses": 0.1,
+          "speaker_descriptions": 0.1,
+          "topic": 1.0
+        },
+        "score_mean": 0.64,
+        "normalized_percent": 32.0,
+        "status": "success"
+      }
+    }
+  },
+  "structural_overall": {
+    "sure_tagger": {
+      "score_rate": 0.6514336000000001,
+      "known_fields": 22,
+      "eligible_fields": 24
+    },
+    "captioner": {
+      "score_rate": 0.5952380952380952,
+      "known_fields": 11,
+      "eligible_fields": 24
+    },
+    "qwen3_omni": {
+      "score_rate": 0.38095238095238093,
+      "known_fields": 0,
+      "eligible_fields": 24
+    }
+  }
+}
