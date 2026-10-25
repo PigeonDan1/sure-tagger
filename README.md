@@ -2,20 +2,23 @@
 
 <h1 align="center">SURE-Tagger</h1>
 
-<h2 align="center">Making speech interpretable to agents through rich, semi-structured representations.</h2>
+<h2 align="center">Making speech interpretable and computable to agents<br><sub>— through rich, semi-structured representations</sub></h2>
 
 <p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
-<p align="center">
-<a href="#motivation"><kbd>01</kbd> Motivation</a> · <a href="#sure-tagger"><kbd>02</kbd> SURE-Tagger</a> · <a href="#how-it-works"><kbd>03</kbd> How it works</a> · <a href="#usage"><kbd>04</kbd> Usage</a><br>
-<a href="#tag-bench"><kbd>05</kbd> Tag-Bench</a> · <a href="#system-performance"><kbd>06</kbd> System performance</a> · <a href="#compositional-benchmark"><kbd>07</kbd> Compositional benchmark</a> · <a href="#license"><kbd>08</kbd> License</a>
-</p>
+<table width="100%" role="presentation">
+<tbody>
+<tr><td width="33%" align="left"><a href="#motivation"><img src="./assets/readme/nav/motivation.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Motivation</ins></a></td><td width="34%" align="left"><a href="#sure-tagger"><img src="./assets/readme/nav/sure-tagger.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>SURE-Tagger</ins></a></td><td width="33%" align="left"><a href="#how-it-works"><img src="./assets/readme/nav/how-it-works.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>How&nbsp;it&nbsp;works</ins></a></td></tr>
+<tr><td width="33%" align="left"><a href="#usage"><img src="./assets/readme/nav/usage.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Usage</ins></a></td><td width="34%" align="left"><a href="#tag-bench"><img src="./assets/readme/nav/tag-bench.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Tag-Bench</ins></a></td><td width="33%" align="left"><a href="#system-performance"><img src="./assets/readme/nav/system-performance.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>System&nbsp;performance</ins></a></td></tr>
+<tr><td width="33%" align="left"><a href="#compositional-benchmark"><img src="./assets/readme/nav/compositional-benchmark.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Compositional&nbsp;benchmark</ins></a></td><td width="34%" align="left"><a href="#links"><img src="./assets/readme/nav/references.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Links</ins></a></td><td width="33%" align="left"><a href="#license"><img src="./assets/readme/nav/license.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>License</ins></a></td></tr>
+</tbody>
+</table>
 
 SURE-Tagger turns speech evidence into queryable tags and evidence-linked descriptions.
 
-https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
+https://github.com/user-attachments/assets/da8797a9-47d8-4c20-9781-eb336b8e4ba8
 
-<p align="center"><sub>Introduction video · Chinese narration</sub></p>
+<p align="center"><sub>Introduction video · English narration</sub></p>
 
 <a id="motivation"></a>
 
@@ -164,21 +167,11 @@ python scripts/reproduce.py --profile fixture --output runs/fixture
 
 The fixture makes non-linguistic test audio; paper WAVs are not bundled. Full reproduction also needs CUDA, FFmpeg, separately licensed reference audio, RIRs, music, and pinned Dots models. Run `python scripts/reproduce.py --profile full --check`, then `python scripts/reproduce.py --profile full --gpus 0 --output runs/v4_multilingual`. See the [full reproduction guide](LayeredSpeech-500/docs/REPRODUCE.md) for setup and expected QC results.
 
-Explore five Tag-Bench clips with complete same-audio predictions from SURE-Tagger, Captioner, and Qwen3-Omni:
+Hear five Tag-Bench clips and compare SURE-Tagger, Captioner, and Qwen3-Omni predictions on the same audio.
 
-<table width="100%">
-<thead><tr><th width="350">Clip</th><th width="570">Listen for</th><th width="680">Files</th></tr></thead>
-<tbody>
-<tr><td>AMI · <code>ES2012d</code></td><td>Four speakers and overlap</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&amp;sample=ES2012d_utterance_00018#listen">Listen</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>AMI · <code>EN2001e</code></td><td>Two speakers and brief overlap</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&amp;sample=EN2001e_utterance_00071#listen">Listen</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>FLEURS · Russian</td><td>Language and speech content</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&amp;sample=fleurs_t2_0347#listen">Listen</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>DESED</td><td>Speech with a mechanical event</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&amp;sample=t3_desed_0112#listen">Listen</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">Full predictions</a></td></tr>
-<tr><td>FSD50K</td><td>Music event missed by the tagger</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en&amp;sample=t3_fsd50k_0045#listen">Listen</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">Full predictions</a></td></tr>
-</tbody>
-</table>
+<h3 align="center"><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en#listen">▶ Listen here! ↗</a></h3>
 
-[All five samples and references](assets/readme/tagbench/README.md) · [Same-audio comparison](assets/readme/tagbench/COMPARISON.md) · [Audio attribution](assets/readme/tagbench/ATTRIBUTION.md)
-
+<p align="center"><sub><a href="assets/readme/tagbench/COMPARISON.md">Same-audio comparison</a> · <a href="assets/readme/tagbench/ATTRIBUTION.md">Audio attribution</a></sub></p>
 
 <a id="system-performance"></a>
 <a id="paper-results"></a>
@@ -306,6 +299,15 @@ Condition-level errors guide candidate selection for about one hour of Qwen3-ASR
 </details>
 
 The repository's full evaluation launcher currently uses the existing-data subset; see its [composition](compare/docs/benchmark-650-dataset-composition.md) and [scoring rules](compare/docs/benchmark-v1-29-metrics.md).
+
+<a id="references"></a>
+<a id="links"></a>
+
+## Links
+
+- 📄 [A Unified and Reproducible Experimentation Framework for Speech Understanding](https://www.isca-archive.org/interspeech_2026/peng26e_interspeech.pdf) — Jing Peng et al. · Interspeech 2026
+- 📑 [SURE-EVAL: A Systematic and Unified Agentic Framework for Reproducible Evaluation](https://arxiv.org/abs/2609.39030) — Jing Peng et al. · arXiv 2026
+- 🌐 [Open-Bench](https://www.open-bench.net/home) — Open benchmarking platform
 
 <a id="license"></a>
 

@@ -2,14 +2,17 @@
 
 <h1 align="center">SURE-Tagger</h1>
 
-<h2 align="center">通过丰富的半结构化表征，让智能体读懂语音。</h2>
+<h2 align="center">让智能体听懂语音，并让声音信息可计算<br><sub>—— 通过丰富的半结构化表征</sub></h2>
 
 <p align="center"><a href="README.md">English</a> · <strong>简体中文</strong></p>
 
-<p align="center">
-<a href="#motivation"><kbd>01</kbd> 项目动机</a> · <a href="#sure-tagger"><kbd>02</kbd> SURE-Tagger</a> · <a href="#how-it-works"><kbd>03</kbd> 工作原理</a> · <a href="#usage"><kbd>04</kbd> 使用方式</a><br>
-<a href="#tag-bench"><kbd>05</kbd> Tag-Bench</a> · <a href="#system-performance"><kbd>06</kbd> 系统表现</a> · <a href="#compositional-benchmark"><kbd>07</kbd> 组合式评测</a> · <a href="#license"><kbd>08</kbd> 协议</a>
-</p>
+<table width="100%" role="presentation">
+<tbody>
+<tr><td width="33%" align="left"><a href="#motivation"><img src="./assets/readme/nav/motivation.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>项目动机</ins></a></td><td width="34%" align="left"><a href="#sure-tagger"><img src="./assets/readme/nav/sure-tagger.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>SURE-Tagger</ins></a></td><td width="33%" align="left"><a href="#how-it-works"><img src="./assets/readme/nav/how-it-works.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>工作原理</ins></a></td></tr>
+<tr><td width="33%" align="left"><a href="#usage"><img src="./assets/readme/nav/usage.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>使用方式</ins></a></td><td width="34%" align="left"><a href="#tag-bench"><img src="./assets/readme/nav/tag-bench.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Tag-Bench</ins></a></td><td width="33%" align="left"><a href="#system-performance"><img src="./assets/readme/nav/system-performance.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>系统表现</ins></a></td></tr>
+<tr><td width="33%" align="left"><a href="#compositional-benchmark"><img src="./assets/readme/nav/compositional-benchmark.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>组合式评测</ins></a></td><td width="34%" align="left"><a href="#links"><img src="./assets/readme/nav/references.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>链接</ins></a></td><td width="33%" align="left"><a href="#license"><img src="./assets/readme/nav/license.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>协议</ins></a></td></tr>
+</tbody>
+</table>
 
 SURE-Tagger 将语音证据整理为可查询的标签与有证据支撑的描述。
 
@@ -164,21 +167,11 @@ python scripts/reproduce.py --profile fixture --output runs/fixture
 
 `fixture` 只生成不含语言内容的测试音频；仓库不附带论文 WAV。完整复现还需要 CUDA、FFmpeg、另行授权的参考音频、RIR、音乐及固定版本的 Dots 模型。依次运行 `python scripts/reproduce.py --profile full --check` 和 `python scripts/reproduce.py --profile full --gpus 0 --output runs/v4_multilingual`；素材目录和预期质检结果见[完整复现指南](LayeredSpeech-500/docs/REPRODUCE.md)。
 
-五段 Tag-Bench 音频均提供 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的完整预测：
+在交互演示中试听五段 Tag-Bench 音频，对照 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的预测。
 
-<table width="100%">
-<thead><tr><th width="350">样本</th><th width="570">试听重点</th><th width="680">资源</th></tr></thead>
-<tbody>
-<tr><td>AMI · <code>ES2012d</code></td><td>四人对话与重叠语音</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&amp;sample=ES2012d_utterance_00018#listen">试听</a> · <a href="assets/readme/tagbench/samples/ES2012d_utterance_00018/full_predictions.json">完整预测</a></td></tr>
-<tr><td>AMI · <code>EN2001e</code></td><td>两人对话与短暂重叠</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&amp;sample=EN2001e_utterance_00071#listen">试听</a> · <a href="assets/readme/tagbench/samples/EN2001e_utterance_00071/full_predictions.json">完整预测</a></td></tr>
-<tr><td>FLEURS · 俄语</td><td>语种与语音内容</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&amp;sample=fleurs_t2_0347#listen">试听</a> · <a href="assets/readme/tagbench/samples/fleurs_t2_0347/full_predictions.json">完整预测</a></td></tr>
-<tr><td>DESED</td><td>语音与机械事件</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&amp;sample=t3_desed_0112#listen">试听</a> · <a href="assets/readme/tagbench/samples/t3_desed_0112/full_predictions.json">完整预测</a></td></tr>
-<tr><td>FSD50K</td><td>音乐事件被打标器漏检</td><td><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh&amp;sample=t3_fsd50k_0045#listen">试听</a> · <a href="assets/readme/tagbench/samples/t3_fsd50k_0045/full_predictions.json">完整预测</a></td></tr>
-</tbody>
-</table>
+<h3 align="center"><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh#listen">▶ 立即试听！↗</a></h3>
 
-[五条样本与参考信息](assets/readme/tagbench/README.md) · [同音频输出对照](assets/readme/tagbench/COMPARISON.md) · [音频来源与归属](assets/readme/tagbench/ATTRIBUTION.md)
-
+<p align="center"><sub><a href="assets/readme/tagbench/COMPARISON.md">同音频输出对照</a> · <a href="assets/readme/tagbench/ATTRIBUTION.md">音频来源与归属</a></sub></p>
 
 <a id="system-performance"></a>
 <a id="paper-results"></a>
@@ -306,6 +299,15 @@ python3 clustering/scripts/cluster_scenes.py \
 </details>
 
 当前仓库的完整评测入口使用现有数据集子集；[数据构成](compare/docs/benchmark-650-dataset-composition.md)与[评分规则](compare/docs/benchmark-v1-29-metrics.md)另见文档。
+
+<a id="references"></a>
+<a id="links"></a>
+
+## 链接
+
+- 📄 [A Unified and Reproducible Experimentation Framework for Speech Understanding](https://www.isca-archive.org/interspeech_2026/peng26e_interspeech.pdf) — Jing Peng 等 · Interspeech 2026
+- 📑 [SURE-EVAL: A Systematic and Unified Agentic Framework for Reproducible Evaluation](https://arxiv.org/abs/2609.39030) — Jing Peng 等 · arXiv 2026
+- 🌐 [Open-Bench](https://www.open-bench.net/home) — 开放评测平台与项目主页
 
 <a id="license"></a>
 

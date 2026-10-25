@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-labelledby="title desc">
+  <title id="title">Motivation</title>
+  <desc id="desc">A speech bubble with a question mark for missing speech evidence.</desc>
+  <rect x="1" y="1" width="30" height="30" rx="7" fill="#f6f7f2" stroke="#dbe2dc" stroke-width="1.5"/>
+  <path d="M9 9.5h14v11H16l-4.5 3v-3H9z" fill="none" stroke="#16796f" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M13.7 13.4a2.4 2.4 0 0 1 4.6 1c0 1.7-2.3 1.9-2.3 3.4" fill="none" stroke="#17201d" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="16" cy="20" r="1" fill="#17201d"/>
+</svg>

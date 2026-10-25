@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-labelledby="title desc">
+  <title id="title">SURE-Tagger</title>
+  <desc id="desc">A waveform feeds three structured tag rows.</desc>
+  <rect x="1" y="1" width="30" height="30" rx="7" fill="#f6f7f2" stroke="#dbe2dc" stroke-width="1.5"/>
+  <path d="M4.5 16h2l1.5-4 2.5 8 2.5-11 2.5 14 2-7H19" fill="none" stroke="#16796f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20 8v16" stroke="#dbe2dc" stroke-width="1.4"/>
+  <path d="M23 11h5M23 16h4M23 21h5" stroke="#17201d" stroke-width="2" stroke-linecap="round"/>
+</svg>
