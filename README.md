@@ -7,11 +7,9 @@
 <p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
 <p align="center">
-<a href="#motivation"><img src="./assets/readme/nav/motivation.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Motivation</ins></a><img src="./assets/readme/nav/spacer.png" width="20" height="1" alt=""><a href="#sure-tagger"><img src="./assets/readme/nav/sure-tagger.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>SURE-Tagger</ins></a><img src="./assets/readme/nav/spacer.png" width="74" height="1" alt=""><a href="#how-it-works"><img src="./assets/readme/nav/how-it-works.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>How&nbsp;it&nbsp;works</ins></a><img src="./assets/readme/nav/spacer.png" width="98" height="1" alt=""><a href="#usage"><img src="./assets/readme/nav/usage.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Usage</ins></a><img src="./assets/readme/nav/spacer.png" width="28" height="1" alt="">
-</p>
-
-<p align="center">
-<a href="#tag-bench"><img src="./assets/readme/nav/tag-bench.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Tag-Bench</ins></a><img src="./assets/readme/nav/spacer.png" width="12" height="1" alt=""><a href="#system-performance"><img src="./assets/readme/nav/system-performance.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>System&nbsp;performance</ins></a><img src="./assets/readme/nav/spacer.png" width="12" height="1" alt=""><a href="#compositional-benchmark"><img src="./assets/readme/nav/compositional-benchmark.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Compositional&nbsp;benchmark</ins></a><img src="./assets/readme/nav/spacer.png" width="12" height="1" alt=""><a href="#references"><img src="./assets/readme/nav/references.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>References</ins></a><img src="./assets/readme/nav/spacer.png" width="12" height="1" alt=""><a href="#license"><img src="./assets/readme/nav/license.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>License</ins></a>
+<a href="#motivation"><img src="./assets/readme/nav/motivation.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Motivation</ins></a><img src="./assets/readme/nav/spacer.png" width="28" height="1" alt=""><a href="#sure-tagger"><img src="./assets/readme/nav/sure-tagger.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>SURE-Tagger</ins></a><img src="./assets/readme/nav/spacer.png" width="28" height="1" alt=""><a href="#how-it-works"><img src="./assets/readme/nav/how-it-works.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>How&nbsp;it&nbsp;works</ins></a><br>
+<a href="#usage"><img src="./assets/readme/nav/usage.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Usage</ins></a><img src="./assets/readme/nav/spacer.png" width="28" height="1" alt=""><a href="#tag-bench"><img src="./assets/readme/nav/tag-bench.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Tag-Bench</ins></a><img src="./assets/readme/nav/spacer.png" width="28" height="1" alt=""><a href="#system-performance"><img src="./assets/readme/nav/system-performance.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>System&nbsp;performance</ins></a><br>
+<a href="#compositional-benchmark"><img src="./assets/readme/nav/compositional-benchmark.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Compositional&nbsp;benchmark</ins></a><img src="./assets/readme/nav/spacer.png" width="28" height="1" alt=""><a href="#links"><img src="./assets/readme/nav/references.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Links</ins></a><img src="./assets/readme/nav/spacer.png" width="28" height="1" alt=""><a href="#license"><img src="./assets/readme/nav/license.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>License</ins></a>
 </p>
 
 SURE-Tagger turns speech evidence into queryable tags and evidence-linked descriptions.
@@ -301,12 +299,13 @@ Condition-level errors guide candidate selection for about one hour of Qwen3-ASR
 The repository's full evaluation launcher currently uses the existing-data subset; see its [composition](compare/docs/benchmark-650-dataset-composition.md) and [scoring rules](compare/docs/benchmark-v1-29-metrics.md).
 
 <a id="references"></a>
+<a id="links"></a>
 
-## References
+## Links
 
-- **Interspeech 2026** · Jing Peng et al., [A Unified and Reproducible Experimentation Framework for Speech Understanding](https://www.isca-archive.org/interspeech_2026/peng26e_interspeech.pdf).
-- **arXiv 2026** · Jing Peng et al., [SURE-EVAL: A Systematic and Unified Agentic Framework for Reproducible Evaluation](https://arxiv.org/abs/2609.39030).
-- **Website** · [Open-Bench — Open Bench, Open Innovation](https://www.open-bench.net/home).
+- 📄 [A Unified and Reproducible Experimentation Framework for Speech Understanding](https://www.isca-archive.org/interspeech_2026/peng26e_interspeech.pdf) — Jing Peng et al. · Interspeech 2026
+- 📑 [SURE-EVAL: A Systematic and Unified Agentic Framework for Reproducible Evaluation](https://arxiv.org/abs/2609.39030) — Jing Peng et al. · arXiv 2026
+- 🌐 [Open-Bench](https://www.open-bench.net/home) — Open benchmarking platform
 
 <a id="license"></a>
 

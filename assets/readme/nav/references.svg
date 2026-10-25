@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-labelledby="title desc">
-  <title id="title">References</title>
-  <desc id="desc">Two referenced documents.</desc>
+  <title id="title">Links</title>
+  <desc id="desc">Linked papers and website.</desc>
   <rect x="1" y="1" width="30" height="30" rx="7" fill="#f6f7f2" stroke="#dbe2dc" stroke-width="1.5"/>
   <path d="M9 8h11l3 3v14H9zM20 8v3h3" fill="none" stroke="#17201d" stroke-width="1.8" stroke-linejoin="round"/>
   <path d="M12 15h8m-8 4h8m-8 4h5" fill="none" stroke="#16796f" stroke-width="1.8" stroke-linecap="round"/>
