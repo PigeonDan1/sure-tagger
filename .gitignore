@@ -35,6 +35,7 @@
 !/assets/readme/video/*.mp4
 !/assets/readme/tagbench/samples/*/audio.wav
 !/assets/readme/clustering-pool/*/audio.wav
+!/assets/readme/synthetic-samples/*/audio.wav
 
 # Clustering input snapshots and generated artifacts.
 /clustering/data/

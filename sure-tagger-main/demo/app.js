@@ -5,21 +5,26 @@
     en: {
       heroEyebrow: "Interactive demo · curated audio",
       heroTitle: "From speech evidence to useful tags.",
-      heroLead: "Listen to a real clip, inspect the structured fields and descriptions, then combine tags to find comparable recordings.",
-      heroPillOne: "5 audio clips",
+      heroLead: "Listen to recorded and synthetic clips, inspect the structured fields and descriptions, then combine tags to find comparable scenes.",
+      heroPillOne: "10 audio clips",
       heroPillTwo: "3 prediction sources",
       heroPillThree: "Tag-driven queries",
       listenEyebrow: "Listen",
       listenTitle: "Choose a recording",
-      listenLead: "Listen to each clip and inspect its saved predictions.",
+      listenLead: "Explore five recorded clips and five controlled synthetic scenes.",
       openAudio: "Open audio ↗",
       openPredictions: "Full predictions ↗",
+      openReview: "Field comparison ↗",
+      openGroundTruth: "Ground truth ↗",
+      targetPrefix: "Generated target: ",
+      factSource: "SURE-Tagger prediction",
       transcriptLabel: "ASR transcript",
       tagsEyebrow: "Representation",
       tagsTitle: "What the tags say",
       tagsLead: "Typed fields make conditions queryable. A short description preserves context; unknown values stay unknown.",
       tagDescription: "Evidence-linked description",
       showJson: "View complete SURE-Tagger JSON",
+      showReviewedJson: "View reviewed SURE-Tagger fields",
       queryEyebrow: "Compose conditions",
       queryTitle: "Find a speech scene",
       queryLead: "Combine tag values to make a small, comparable subset. This preview does not compute ASR error rates.",
@@ -31,8 +36,9 @@
       compareEyebrow: "Same audio",
       compareTitle: "Compare descriptions",
       compareLead: "Read each system's output for the selected clip. Differences are visible without hiding the full records.",
-      footerCaveat: "These clips are examples, not a performance summary. Some labels are uncertain or disagree with the available references.",
-      sourceLink: "Samples and references ↗",
+      footerCaveat: "These clips are examples, not a performance summary. Synthetic ground truth comes from render controls; predictions may disagree with it.",
+      sourceLink: "Recorded samples and references ↗",
+      syntheticSourceLink: "Synthetic samples and provenance ↗",
       attributionLink: "Audio attribution ↗",
       usageLink: "Run this demo ↗",
       duration: "Duration",
@@ -42,6 +48,8 @@
       unknown: "Unknown",
       noTranscript: "No speech transcript is available for this clip.",
       noCaption: "No description is available in this record.",
+      recordedGroup: "Recorded examples",
+      syntheticGroup: "Synthetic scenes",
       speakersGroup: "Speaker interaction",
       languageGroup: "Language and text",
       acousticGroup: "Acoustic evidence",
@@ -76,21 +84,26 @@
     zh: {
       heroEyebrow: "交互演示 · 精选音频",
       heroTitle: "从语音证据到可用的标签。",
-      heroLead: "试听真实片段，查看结构字段与描述，再组合标签寻找可比较的录音。",
-      heroPillOne: "5 条音频",
+      heroLead: "试听真实与合成片段，查看结构字段与描述，再组合标签寻找可比较的语音场景。",
+      heroPillOne: "10 条音频",
       heroPillTwo: "3 个预测来源",
       heroPillThree: "标签组合查询",
       listenEyebrow: "试听",
       listenTitle: "选择一段录音",
-      listenLead: "试听每条音频，并查看保存的预测标签。",
+      listenLead: "试听五条真实录音和五条受控合成场景。",
       openAudio: "打开音频 ↗",
       openPredictions: "完整预测 ↗",
+      openReview: "逐字段对照 ↗",
+      openGroundTruth: "生成真值 ↗",
+      targetPrefix: "生成条件：",
+      factSource: "SURE-Tagger 预测",
       transcriptLabel: "ASR 转写",
       tagsEyebrow: "半结构化表征",
       tagsTitle: "标签记录了什么",
       tagsLead: "有类型的字段可用于查询，简短描述保留语境；无法确认的值仍保留为未知。",
       tagDescription: "有证据支撑的描述",
       showJson: "查看完整 SURE-Tagger JSON",
+      showReviewedJson: "查看 SURE-Tagger 的审核字段",
       queryEyebrow: "组合条件",
       queryTitle: "寻找语音场景",
       queryLead: "组合标签值，选出可比较的小样本子集。此预览不计算 ASR 错误率。",
@@ -102,8 +115,9 @@
       compareEyebrow: "同一音频",
       compareTitle: "对比三种描述",
       compareLead: "阅读当前音频的三种系统输出；完整记录可在上方链接中查看。",
-      footerCaveat: "这些片段仅用于演示，不代表整体性能。部分标签存在不确定性，或与可用参考信息不一致。",
-      sourceLink: "样本与参考信息 ↗",
+      footerCaveat: "这些片段仅用于演示，不代表整体性能。合成样本的真值来自渲染控制，模型预测可能与之不同。",
+      sourceLink: "真实样本与参考信息 ↗",
+      syntheticSourceLink: "合成样本与来源说明 ↗",
       attributionLink: "音频来源 ↗",
       usageLink: "运行演示页 ↗",
       duration: "时长",
@@ -113,6 +127,8 @@
       unknown: "未知",
       noTranscript: "这段音频没有可用的语音转写。",
       noCaption: "这份记录没有可用的描述。",
+      recordedGroup: "真实录音示例",
+      syntheticGroup: "合成语音场景",
       speakersGroup: "说话人交互",
       languageGroup: "语言与文本",
       acousticGroup: "声学证据",
@@ -191,6 +207,8 @@
       ru: { en: "Russian", zh: "俄语" },
       pt: { en: "Portuguese", zh: "葡萄牙语" },
       zh: { en: "Chinese", zh: "中文" },
+      ar: { en: "Arabic", zh: "阿拉伯语" },
+      other: { en: "Other / uncertain", zh: "其他／未确定" },
     };
     return names[code]?.[language] || code;
   }
@@ -231,6 +249,9 @@
     const list = byId("sampleList");
     list.replaceChildren();
     samples.forEach((sample, index) => {
+      if (bundledSource && (index === 0 || sample.sourceType !== samples[index - 1].sourceType)) {
+        list.append(element("p", "sample-group-label", tr(sample.sourceType === "synthetic" ? "syntheticGroup" : "recordedGroup")));
+      }
       const button = element("button", "sample-button");
       button.type = "button";
       button.setAttribute("aria-pressed", String(sample.sampleId === activeId));
@@ -255,7 +276,8 @@
     const player = byId("audioPlayer");
     byId("activeDataset").textContent = sample.dataset || "";
     byId("activeTitle").textContent = localized(sample.title) || sample.sampleId;
-    byId("activeFocus").textContent = localized(sample.focus) || sample.note || "";
+    const focus = localized(sample.focus) || sample.note || "";
+    byId("activeFocus").textContent = sample.sourceType === "synthetic" ? tr("targetPrefix") + focus : focus;
     byId("activeTrack").textContent = sample.track || "";
     byId("activeTrack").hidden = !sample.track;
     if (player.getAttribute("src") !== sample.audio) {
@@ -266,6 +288,10 @@
     byId("audioLink").href = sample.audio || "#";
     byId("predictionsLink").href = sample.predictionsUrl || "#";
     byId("predictionsLink").hidden = !sample.predictionsUrl;
+    byId("predictionsLink").textContent = tr(sample.sourceType === "synthetic" ? "openReview" : "openPredictions");
+    byId("groundTruthLink").href = sample.groundTruthUrl || "#";
+    byId("groundTruthLink").hidden = !sample.groundTruthUrl;
+    byId("factSource").textContent = tr("factSource");
     const facts = byId("quickFacts");
     facts.replaceChildren();
     const duration = tags.basic_acoustic?.duration_sec ?? sample.durationSec;
@@ -322,6 +348,7 @@
       ["noise", "sound_field_scene.external_noise_type", displayValue(sound.external_noise_type)],
     ]);
     byId("tagCaption").textContent = tags.descriptive?.caption || tr("noCaption");
+    byId("tagJsonSummary").textContent = tr(sample.sourceType === "synthetic" ? "showReviewedJson" : "showJson");
     byId("rawJson").textContent = JSON.stringify(tags, null, 2);
   }
 
@@ -430,10 +457,9 @@
 
   function init(payload) {
     samples = Array.isArray(payload?.samples) ? payload.samples : [];
-    bundledSource = payload?.source === "curated Tag-Bench README fixtures";
+    bundledSource = typeof payload?.source === "string" && payload.source.startsWith("curated Tag-Bench");
     if (!bundledSource) {
-      document.querySelector('.footer-links a[href$="tagbench/README.md"]').hidden = true;
-      document.querySelector('.footer-links a[href$="tagbench/ATTRIBUTION.md"]').hidden = true;
+      document.querySelectorAll(".footer-links a[data-demo-source]").forEach((link) => { link.hidden = true; });
     }
     byId("compare").hidden = !samples.some((sample) =>
       sample.comparisons?.captioner?.caption || sample.comparisons?.qwen3_omni?.caption,

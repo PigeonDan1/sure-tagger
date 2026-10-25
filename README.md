@@ -67,7 +67,7 @@ Values from the [complete SURE-Tagger prediction](assets/readme/tagbench/samples
 
 </details>
 
-For the complete fields and input format, see the [tag guide](sure-tagger-main/docs/tags-and-methods.md). The [interactive demo](https://me-chuan.github.io/sure-tagger/) includes the five clips below; [run it locally](sure-tagger-main/demo/README.md), or use [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) with your own audio and tags.
+For the complete fields and input format, see the [tag guide](sure-tagger-main/docs/tags-and-methods.md). The [interactive demo](https://me-chuan.github.io/sure-tagger/) includes five recorded and five synthetic clips; [run it locally](sure-tagger-main/demo/README.md), or use [`build_demo_data.py`](sure-tagger-main/scripts/build_demo_data.py) with your own audio and tags.
 
 <a id="how-it-works"></a>
 
@@ -165,9 +165,9 @@ python scripts/verify_release.py
 python scripts/reproduce.py --profile fixture --output runs/fixture
 ```
 
-The fixture makes non-linguistic test audio; paper WAVs are not bundled. Full reproduction also needs CUDA, FFmpeg, separately licensed reference audio, RIRs, music, and pinned Dots models. Run `python scripts/reproduce.py --profile full --check`, then `python scripts/reproduce.py --profile full --gpus 0 --output runs/v4_multilingual`. See the [full reproduction guide](LayeredSpeech-500/docs/REPRODUCE.md) for setup and expected QC results.
+The fixture makes non-linguistic test audio; only five synthetic showcase WAVs are bundled, not the full paper corpus. Full reproduction also needs CUDA, FFmpeg, separately licensed reference audio, RIRs, music, and pinned Dots models. Run `python scripts/reproduce.py --profile full --check`, then `python scripts/reproduce.py --profile full --gpus 0 --output runs/v4_multilingual`. See the [full reproduction guide](LayeredSpeech-500/docs/REPRODUCE.md) for setup and expected QC results.
 
-Hear five Tag-Bench clips and compare SURE-Tagger, Captioner, and Qwen3-Omni predictions on the same audio.
+Hear ten Tag-Bench clips, including five [synthetic scenes](assets/readme/synthetic-samples/README.md), and compare SURE-Tagger, Captioner, and Qwen3-Omni on the same audio.
 
 <h3 align="center"><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en#listen">▶ Listen here! ↗</a></h3>
 
