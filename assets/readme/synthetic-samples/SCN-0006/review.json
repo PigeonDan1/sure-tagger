@@ -1,0 +1,1752 @@
+{
+  "sample_id": "SCN-0006",
+  "audio": "audio.wav",
+  "selection_stratum": "zh 单语 · 1 人",
+  "basic": {
+    "duration_seconds": 28.258292,
+    "sample_rate": 24000,
+    "speaker_count": 1,
+    "snr_db": 15.0,
+    "rt60_seconds": 0.28,
+    "overlap_ratio": 0.0,
+    "music_present_target": false,
+    "acoustic_scene_id": "AC-005",
+    "acoustic_environment": "public_transit",
+    "primary_language": "zh",
+    "language_mode": "monolingual",
+    "languages_present": [
+      "zh"
+    ],
+    "scene_languages": [
+      "zh"
+    ],
+    "frame_snr_mean_db": 13.932628,
+    "logical_snr_db": 15.0,
+    "topic_target": "公共播报与现场导览：车站换乘通知",
+    "text_variant": "lexical",
+    "rir_asset": "h151_Train_BostonTOrangeLine_1txts.wav",
+    "noise_asset": "bg_a1904244a86fbaa5.wav",
+    "divergence": 0.62
+  },
+  "turns": [
+    {
+      "turn_id": "t01",
+      "speaker_id": "speaker_1",
+      "start_sec": 0.51,
+      "end_sec": 27.074167,
+      "text": "下面，请各位注意，现在播报车站换乘通知。请按照指示前往新的站台位置，并保管好随身物品。携带大件行李的人员请使用右侧通道。预计步行时间约十分钟，请不要在通道中停留。",
+      "language": "zh",
+      "language_spans": [
+        {
+          "end": 81,
+          "language": "zh",
+          "start": 0
+        }
+      ],
+      "edit_instruction": null
+    }
+  ],
+  "temporal_ground_truth": {
+    "nonspeech_intervals": [
+      {
+        "end_sec": 0.51,
+        "start_sec": 0.0
+      },
+      {
+        "end_sec": 28.258292,
+        "start_sec": 27.074167
+      }
+    ],
+    "speech_placement_intervals": [
+      {
+        "end_sec": 27.074167,
+        "start_sec": 0.51
+      }
+    ],
+    "timebase": "seconds",
+    "timestamp_source": "rendered_session_manifest",
+    "turns": [
+      {
+        "end_sec": 27.074167,
+        "language": "zh",
+        "language_spans": [
+          {
+            "end": 81,
+            "language": "zh",
+            "start": 0
+          }
+        ],
+        "overlap_with_previous": false,
+        "speaker_id": "speaker_1",
+        "start_sec": 0.51,
+        "text": "下面，请各位注意，现在播报车站换乘通知。请按照指示前往新的站台位置，并保管好随身物品。携带大件行李的人员请使用右侧通道。预计步行时间约十分钟，请不要在通道中停留。",
+        "turn_id": "t01",
+        "utterance_id": "u000"
+      }
+    ]
+  },
+  "comparison": [
+    {
+      "id": "contract",
+      "label": "契约字段 Contract",
+      "note": "应与渲染 WAV 头完全一致的硬性字段",
+      "fields": [
+        {
+          "field": "basic_acoustic.duration_sec",
+          "label": "时长 (s)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 28.258292,
+          "gt_state": "exact_measured",
+          "systems": {
+            "sure_tagger": {
+              "value": 28.258292,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": 27,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": 18.92,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "basic_acoustic.sample_rate_hz",
+          "label": "采样率 (Hz)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 24000,
+          "gt_state": "exact_measured",
+          "systems": {
+            "sure_tagger": {
+              "value": 24000,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 16000,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "basic_acoustic.channels",
+          "label": "声道数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 1,
+          "gt_state": "exact_measured",
+          "systems": {
+            "sure_tagger": {
+              "value": 1,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": 1,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": 1,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_1",
+      "label": "L1 词汇内容 Lexical Content",
+      "note": "转写、语言、词数、重复、填充词",
+      "fields": [
+        {
+          "field": "speaker.asr_transcript",
+          "label": "ASR 转写",
+          "scored": true,
+          "gt_only": false,
+          "gt": "下面，请各位注意，现在播报车站换乘通知。请按照指示前往新的站台位置，并保管好随身物品。携带大件行李的人员请使用右侧通道。预计步行时间约十分钟，请不要在通道中停留。",
+          "gt_state": "exact_reference_text",
+          "systems": {
+            "sure_tagger": {
+              "value": "下面，请各位注意：现在播报车站换乘通知，请按照指示前往新的站台位置，并保管好随身物品。携带大件行李的人员，请使用右侧通道。预计步行时间约十分钟，请不要在通道中停留。",
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": "下面请各位注意，现在播报车站换乘通知，请按照指示前往新的站台位置，并保管好随身物品。携带大件行李的人员请使用右侧通道，预计步行时间约十分钟，请不要在通道中停留。",
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "language_content.language",
+          "label": "语言",
+          "scored": true,
+          "gt_only": false,
+          "gt": "zh",
+          "gt_state": "exact_script_label",
+          "systems": {
+            "sure_tagger": {
+              "value": "other",
+              "score": 0.0,
+              "score_derived": false,
+              "state": "schema_invalid"
+            },
+            "captioner": {
+              "value": "cmn",
+              "score": 0.0,
+              "score_derived": false,
+              "state": "schema_invalid"
+            },
+            "qwen3_omni": {
+              "value": "zh",
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "language_content.word_count",
+          "label": "词数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 73,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": 73,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 67,
+              "score": 0.917808,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "language_content.repetition.has_repetition",
+          "label": "有重复",
+          "scored": true,
+          "gt_only": false,
+          "gt": false,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": false,
+              "score": null,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": false,
+              "score": null,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "language_content.repetition.repetition_count",
+          "label": "重复次数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": 0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "deterministic_derived.filler_ratio",
+          "label": "填充词比例",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.0,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "language_content.filler",
+          "label": "填充词数",
+          "scored": false,
+          "gt_only": false,
+          "gt": 0,
+          "gt_state": "exact_reference_text_rule",
+          "systems": {
+            "sure_tagger": {
+              "value": 0,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": 0,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "language_content.punctuation.punctuation_count",
+          "label": "标点数",
+          "scored": false,
+          "gt_only": false,
+          "gt": 8,
+          "gt_state": null,
+          "systems": {
+            "sure_tagger": {
+              "value": 8,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": 6,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "language_content.punctuation.has_terminal_punctuation",
+          "label": "有句末标点",
+          "scored": false,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": null,
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": true,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_2",
+      "label": "L2 说话人 Speaker",
+      "note": "人数、是否多人、重叠、性别",
+      "fields": [
+        {
+          "field": "speaker.speaker_count",
+          "label": "说话人数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 1,
+          "gt_state": "exact_render_manifest",
+          "systems": {
+            "sure_tagger": {
+              "value": 2,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": 1,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": 1,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.speaker_present",
+          "label": "有人声",
+          "scored": true,
+          "gt_only": false,
+          "gt": true,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": true,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.multi_speaker",
+          "label": "多说话人",
+          "scored": true,
+          "gt_only": false,
+          "gt": false,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": 0.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.speaker_overlap",
+          "label": "有重叠",
+          "scored": true,
+          "gt_only": false,
+          "gt": false,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.gender",
+          "label": "性别序列",
+          "scored": true,
+          "gt_only": false,
+          "gt": [
+            "male"
+          ],
+          "gt_state": "exact_assisted_descriptive",
+          "systems": {
+            "sure_tagger": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "captioner": {
+              "value": null,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "speaker.profiles",
+          "label": "说话人画像 (音高/语速/音量)",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": [
+                {
+                  "gender": "female",
+                  "pitch": "low",
+                  "speaker_id": "speaker_1",
+                  "speaker_volume": "variable",
+                  "speech_rate": {
+                    "band": "normal",
+                    "unit": "zh_char_per_sec",
+                    "value": 3.42
+                  }
+                },
+                {
+                  "gender": null,
+                  "pitch": null,
+                  "speaker_id": "speaker_2",
+                  "speaker_volume": null,
+                  "speech_rate": {
+                    "band": null,
+                    "unit": null,
+                    "value": null
+                  }
+                }
+              ],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": [
+                {
+                  "pitch": "low",
+                  "speaker_id": "speaker_1",
+                  "speaker_volume": null,
+                  "speech_rate": {
+                    "band": null,
+                    "unit": null,
+                    "value": null
+                  }
+                }
+              ],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": [
+                {
+                  "pitch": "mid",
+                  "speaker_id": "speaker_1",
+                  "speaker_volume": "normal",
+                  "speech_rate": {
+                    "band": "normal",
+                    "unit": null,
+                    "value": null
+                  }
+                }
+              ],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_3",
+      "label": "L3 时序 Temporal",
+      "note": "说话人切换与重叠比",
+      "fields": [
+        {
+          "field": "speaker.speaker_change_count",
+          "label": "切换次数",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": 2,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.speaker_change",
+          "label": "有切换",
+          "scored": true,
+          "gt_only": false,
+          "gt": false,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": true,
+              "score": 0.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "speaker.overlap_ratio",
+          "label": "重叠比",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.0,
+          "gt_state": "exact_render_manifest",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "deterministic_derived.speaker_change_rate_per_min",
+          "label": "每分钟切换率",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.0,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": 4.246541,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": 0,
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "basic_acoustic.silence_segments",
+          "label": "静音段 (渲染补集)",
+          "scored": false,
+          "gt_only": false,
+          "gt": [
+            {
+              "end_sec": 0.51,
+              "start_sec": 0.0
+            },
+            {
+              "end_sec": 28.258292,
+              "start_sec": 27.074167
+            }
+          ],
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": [
+                {
+                  "end_sec": 0.74,
+                  "start_sec": 0.0
+                },
+                {
+                  "end_sec": 3.91,
+                  "start_sec": 3.37
+                },
+                {
+                  "end_sec": 7.8,
+                  "start_sec": 7.43
+                },
+                {
+                  "end_sec": 8.88,
+                  "start_sec": 8.81
+                },
+                {
+                  "end_sec": 12.13,
+                  "start_sec": 11.79
+                },
+                {
+                  "end_sec": 15.49,
+                  "start_sec": 14.75
+                },
+                {
+                  "end_sec": 20.53,
+                  "start_sec": 20.12
+                },
+                {
+                  "end_sec": 24.31,
+                  "start_sec": 24.0
+                },
+                {
+                  "end_sec": 28.258292,
+                  "start_sec": 26.98
+                }
+              ],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": [],
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "layer_5",
+      "label": "L5 声学场景与事件 Acoustic Scene & Events",
+      "note": "噪声、混响、音乐、事件；SNR 同时给出渲染目标档位与 Brouhaha 逐帧均值",
+      "fields": [
+        {
+          "field": "basic_acoustic.nonspeech_ratio",
+          "label": "非语音比",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.059951,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.169801,
+              "score": 0.89015,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "audio_quality.snr_db",
+          "label": "SNR (dB)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 15.0,
+          "gt_state": "exact_render_manifest",
+          "systems": {
+            "sure_tagger": {
+              "value": 13.949261,
+              "score": 0.789852,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "frame_snr_ground_truth.mean_db",
+          "label": "SNR 均值 (dB)",
+          "scored": false,
+          "gt_only": true,
+          "gt": 13.932628,
+          "gt_state": "exact_derived",
+          "systems": {
+            "sure_tagger": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "room_acoustic.rt60_sec",
+          "label": "RT60 (s)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 0.4099,
+          "gt_state": "exact_post_render_measurement",
+          "systems": {
+            "sure_tagger": {
+              "value": 0.340269,
+              "score": 0.860738,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "room_acoustic.c50_db",
+          "label": "C50 (dB)",
+          "scored": true,
+          "gt_only": false,
+          "gt": 11.8535,
+          "gt_state": "exact_post_render_measurement",
+          "systems": {
+            "sure_tagger": {
+              "value": 14.516675,
+              "score": 0.112275,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.speech_music_events",
+          "label": "语音/音乐事件",
+          "scored": true,
+          "gt_only": false,
+          "gt": [
+            "speech"
+          ],
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": [
+                "speech"
+              ],
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.5,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": [
+                "speech"
+              ],
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.music_present",
+          "label": "有音乐",
+          "scored": true,
+          "gt_only": false,
+          "gt": false,
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": null,
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_null"
+            },
+            "qwen3_omni": {
+              "value": false,
+              "score": 1.0,
+              "score_derived": true,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.external_noise_type",
+          "label": "外部噪声类型",
+          "scored": true,
+          "gt_only": false,
+          "gt": [
+            "channel_environment"
+          ],
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": [
+                "channel_environment"
+              ],
+              "score": 1.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "captioner": {
+              "value": [
+                "mechanical",
+                "formless"
+              ],
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            },
+            "qwen3_omni": {
+              "value": [
+                "formless"
+              ],
+              "score": 0.0,
+              "score_derived": false,
+              "state": "result_known"
+            }
+          }
+        },
+        {
+          "field": "sound_field_scene.noise_composition",
+          "label": "噪声构成明细",
+          "scored": false,
+          "gt_only": false,
+          "gt": {
+            "animal": [],
+            "channel_environment": [
+              "Public address system"
+            ],
+            "formless": [],
+            "mechanical": [],
+            "music": [],
+            "nature": []
+          },
+          "gt_state": "exact_render_control",
+          "systems": {
+            "sure_tagger": {
+              "value": {
+                "animal": [],
+                "channel_environment": [
+                  "Pink noise"
+                ],
+                "formless": [],
+                "mechanical": [],
+                "music": [],
+                "nature": []
+              },
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": {
+                "animal": [],
+                "channel_environment": [],
+                "formless": [
+                  "background_hum"
+                ],
+                "mechanical": [],
+                "music": [],
+                "nature": []
+              },
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_ovrl",
+          "label": "DNSMOS OVRL",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 1.515097,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_sig",
+          "label": "DNSMOS SIG",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 2.204252,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_bak",
+          "label": "DNSMOS BAK",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 1.573035,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "audio_quality.dnsmos_p808",
+          "label": "DNSMOS P808",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": 2.503812,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        },
+        {
+          "field": "room_acoustic.far_field",
+          "label": "远场",
+          "scored": false,
+          "gt_only": false,
+          "gt": null,
+          "gt_state": "unavailable",
+          "systems": {
+            "sure_tagger": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "captioner": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            },
+            "qwen3_omni": {
+              "value": null,
+              "score": null,
+              "score_derived": false,
+              "state": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "descriptive": {
+    "gt": {
+      "fields": {
+        "caption": "A single voice delivers a formal public announcement in Mandarin regarding station transfer instructions, advising passengers on platform changes, luggage handling, and walking times. The speech is clear with moderate reverberation and minimal background noise, characteristic of a public address system in a large indoor space.",
+        "topic": "Station transfer announcement",
+        "dominant_content_impression": "Speech",
+        "background_condition": "Low-level ambient hum with slight reverberation",
+        "background_sound_summary": "Faint continuous ambient noise consistent with a large public venue; no distinct mechanical or crowd sounds are prominent.",
+        "clarity_intelligibility_impression": "High intelligibility with clear articulation",
+        "descriptive_phrases": [
+          "Mandarin public announcement",
+          "Single speaker",
+          "Formal instructional tone",
+          "Station transfer guidance",
+          "Moderate room reverberation",
+          "Clear audio quality"
+        ],
+        "facets": [
+          {
+            "confidence": 0.95,
+            "description": "Dominated by a single amplified voice with faint environmental ambience typical of a transit hub.",
+            "evidence_tags": [
+              "sound_field_scene.external_noise_type",
+              "sound_field_scene.noise_composition.channel_environment",
+              "basic_acoustic.silence_segments"
+            ],
+            "name": "soundscape"
+          },
+          {
+            "confidence": 0.9,
+            "description": "Clean recording with good signal-to-noise ratio and slight natural echo, suggesting a PA system capture.",
+            "evidence_tags": [
+              "audio_quality.snr_db",
+              "room_acoustic.c50_db",
+              "room_acoustic.rt60_sec"
+            ],
+            "name": "recording_impression"
+          },
+          {
+            "confidence": 0.98,
+            "description": "Steady, formal, and informative delivery without emotional inflection or fillers.",
+            "evidence_tags": [
+              "deterministic_derived.filler_ratio",
+              "speaker.asr_transcript"
+            ],
+            "name": "delivery_style"
+          },
+          {
+            "confidence": 0.99,
+            "description": "Instructional content focused on passenger logistics including platform movement and luggage advice.",
+            "evidence_tags": [
+              "speaker.asr_transcript",
+              "language_content.word_count"
+            ],
+            "name": "content_impression"
+          }
+        ],
+        "scene_hypotheses": [
+          {
+            "confidence": 0.9,
+            "description": "The audio was recorded from a public address system within a railway or subway station during a service update.",
+            "evidence_tags": [
+              "sound_field_scene.noise_composition.channel_environment",
+              "speaker.asr_transcript"
+            ]
+          },
+          {
+            "confidence": 0.85,
+            "description": "The acoustic properties suggest a large, semi-enclosed hall with hard surfaces causing the observed reverberation.",
+            "evidence_tags": [
+              "room_acoustic.rt60_sec",
+              "room_acoustic.c50_db"
+            ]
+          }
+        ],
+        "speaker_descriptions": [
+          {
+            "confidence": 0.95,
+            "description": "Adult voice speaking standard Mandarin with a steady pace, neutral pitch, and formal articulation suitable for public broadcasting.",
+            "descriptive_phrases": [
+              "Steady pace",
+              "Neutral pitch",
+              "Formal articulation"
+            ],
+            "evidence_tags": [
+              "speaker.multi_speaker",
+              "speaker.speaker_change",
+              "speaker.asr_transcript"
+            ],
+            "gender": "male",
+            "speaker_id": "speaker_1"
+          }
+        ],
+        "uncertainties": [
+          "Specific station identity cannot be determined from the audio content alone.",
+          "Exact time of day or passenger density is not inferable from the faint background noise."
+        ],
+        "usability_notes": [
+          "Excellent candidate for ASR training due to high clarity and lack of overlapping speech.",
+          "Suitable for event detection tasks related to public transport announcements.",
+          "Reverberation characteristics may be useful for room acoustic modeling."
+        ]
+      }
+    },
+    "sure_tagger": {
+      "fields": {
+        "caption": "录音为单通道、约28.3秒，主要内容是转录文本中的车站换乘通知。检测到两名说话人、两次说话人切换且无重叠；背景存在 channel_environment 类型的 Pink noise，非语音占比约0.17，音乐未检出。",
+        "topic": "车站换乘通知",
+        "dominant_content_impression": "主导内容为语音播报，speech_music_events 仅包含 speech；背景为非语音占比约0.17的 Pink noise 信道噪声，无音乐事件。存在两名说话人和两次切换，但无重叠。",
+        "background_condition": "已知非语音占比约0.17，静音段共9个；外部噪声类型为 channel_environment，具体为 Pink noise。录音为单通道、24000 Hz；信噪比约13.95 dB，DNSMOS OVR/SIG/BAK/P808 分别约1.52/2.20/1.57/2.50，RT60约0.34 s，C50约14.52 dB。",
+        "background_sound_summary": "检测到的外部噪声类型为 channel_environment，具体噪声成分为 Pink noise；其余已枚举类别（animal、formless、mechanical、music、nature）均为空，未检出音乐。",
+        "clarity_intelligibility_impression": "转录文本可读且含标点、无重复、无填充词；但 language 标记为 other，SNR 和 DNSMOS 指标显示信号质量有限，因此可懂度不能仅凭转录存在判断。",
+        "descriptive_phrases": [
+          "车站换乘通知",
+          "语音播报",
+          "两个说话人",
+          "无说话人重叠",
+          "存在说话人切换",
+          "背景Pink noise",
+          "单通道录音",
+          "音乐未检出",
+          "非语音占比约0.17"
+        ],
+        "facets": [
+          {
+            "confidence": 0.95,
+            "description": "检测到两名说话人、2次切换且无重叠；语音事件为 speech，转录内容为车站换乘通知。",
+            "evidence_tags": [
+              "speaker.speaker_count",
+              "speaker.speaker_present",
+              "speaker.multi_speaker",
+              "speaker.speaker_change",
+              "speaker.speaker_change_count",
+              "speaker.speaker_overlap",
+              "speaker.overlap_ratio",
+              "sound_field_scene.speech_music_events",
+              "speaker.asr_transcript"
+            ],
+            "name": "speech_interaction"
+          },
+          {
+            "confidence": 0.95,
+            "description": "噪声类型为 channel_environment，具体为 Pink noise；非语音占比约0.17，music_present 为 false。",
+            "evidence_tags": [
+              "sound_field_scene.external_noise_type",
+              "sound_field_scene.noise_composition",
+              "basic_acoustic.nonspeech_ratio",
+              "sound_field_scene.music_present"
+            ],
+            "name": "background_noise"
+          },
+          {
+            "confidence": 0.95,
+            "description": "信噪比约13.95 dB；DNSMOS OVR/SIG/BAK/P808 分别约1.52/2.20/1.57/2.50；RT60约0.34 s，C50约14.52 dB。",
+            "evidence_tags": [
+              "audio_quality.snr_db",
+              "audio_quality.dnsmos_ovrl",
+              "audio_quality.dnsmos_sig",
+              "audio_quality.dnsmos_bak",
+              "audio_quality.dnsmos_p808",
+              "room_acoustic.rt60_sec",
+              "room_acoustic.c50_db"
+            ],
+            "name": "signal_and_room_metrics"
+          }
+        ],
+        "scene_hypotheses": [
+          {
+            "confidence": 0.45,
+            "description": "该录音可能来自公共交通车站或换乘通道广播场景。",
+            "evidence_tags": [
+              "speaker.asr_transcript",
+              "sound_field_scene.external_noise_type"
+            ]
+          }
+        ],
+        "speaker_descriptions": [
+          {
+            "confidence": 0.9,
+            "description": "该说话人音高为低，音量可变，语速正常（约3.42字/秒）。",
+            "descriptive_phrases": [
+              "低音高",
+              "音量可变",
+              "语速正常"
+            ],
+            "evidence_tags": [
+              "speaker.profiles"
+            ],
+            "gender": null,
+            "speaker_id": "speaker_1"
+          },
+          {
+            "confidence": 0.7,
+            "description": "该说话人已检测但未提供音高、音量或语速信息。",
+            "descriptive_phrases": null,
+            "evidence_tags": [
+              "speaker.profiles"
+            ],
+            "gender": null,
+            "speaker_id": "speaker_2"
+          }
+        ],
+        "uncertainties": [
+          "room_acoustic.far_field 为 null，无法判断远场/近场",
+          "speaker_2 的 pitch、volume、speech_rate 均为 null，无法描述其语音特征",
+          "language_content.language 为 other，与转录文本内容之间的对应存在不确定性",
+          "audio_quality 指标缺乏明确阈值映射，质量等级判断存在不确定性",
+          "录音场景（车站广播）仅为假设，未经验证"
+        ],
+        "usability_notes": [
+          "下游ASR可参考已有转录、标点与重复信息；说话人分离可关注两名说话人、2次切换且无重叠，但 speaker_2 缺少声学特征。外部 Pink noise 及当前 SNR/DNSMOS 数值可能影响质量筛选，可结合前端去噪或质量门控。"
+        ]
+      },
+      "raw_caption": null,
+      "scores": {
+        "scores": {
+          "background_condition": 1.6,
+          "background_sound_summary": 1.65,
+          "caption": 1.15,
+          "clarity_intelligibility_impression": 1.1,
+          "descriptive_phrases": 1.05,
+          "dominant_content_impression": 1.6,
+          "facets": 1.25,
+          "scene_hypotheses": 1.3,
+          "speaker_descriptions": 0.75,
+          "topic": 2.0
+        },
+        "score_mean": 1.345,
+        "normalized_percent": 67.25,
+        "status": "success"
+      }
+    },
+    "captioner": {
+      "fields": {
+        "caption": "A 27-second monophonic recording of a formal Mandarin public address announcement, delivered by a single male voice through a PA system in what is almost certainly a large, reverberant railway or subway environment. The background is dominated by a continuous low-frequency mechanical hum and a faint high-frequency hiss, with muffled low-fidelity quality and no audible signs of human activity beyond the announcement.",
+        "topic": "Public transportation station transfer announcement and passenger guidance",
+        "dominant_content_impression": "Speech (single male formal public address announcement) dominates; background is dominated by continuous low-frequency mechanical hum and faint high-frequency hiss, with no audible footsteps, conversation, or train noise.",
+        "background_condition": "Large, reverberant indoor environment with continuous low-frequency mechanical hum, faint high-frequency hiss, and low-fidelity muffled recording.",
+        "background_sound_summary": "Continuous low-frequency mechanical hum and faint high-frequency hiss with pronounced reverberation; no audible human activity other than the PA system.",
+        "clarity_intelligibility_impression": "Low-fidelity, muffled, limited frequency range; speaker voice somewhat distant and blended with ambient noise, though the speech itself is clear, calm, and carefully enunciated.",
+        "descriptive_phrases": [
+          "27-second, monophonic recording",
+          "formal public address announcement",
+          "standard Mandarin Chinese",
+          "single male voice",
+          "clear, calm, and authoritative tone",
+          "measured and formal cadence",
+          "slightly lower pitch",
+          "careful enunciation",
+          "large, reverberant indoor environment",
+          "continuous, low-frequency mechanical hum",
+          "faint, high-frequency hiss",
+          "pronounced reverberation",
+          "low-fidelity, muffled recording",
+          "limited frequency range",
+          "somewhat distant and blended with ambient noise",
+          "no audible footsteps, conversation, or train noise",
+          "public address system",
+          "likely a railway station or subway platform"
+        ],
+        "facets": null,
+        "scene_hypotheses": [
+          {
+            "confidence": 0.8,
+            "description": "The recording was likely made in a large, reverberant railway station or subway platform environment, with the announcement delivered through a public address system.",
+            "evidence_tags": []
+          },
+          {
+            "confidence": 0.6,
+            "description": "The recording may have been made during a quiet period when the station was closed or off-peak, given the absence of audible footsteps, conversation, or train noise.",
+            "evidence_tags": []
+          }
+        ],
+        "speaker_descriptions": [
+          {
+            "confidence": 0.9,
+            "description": "Measured, formal cadence with careful enunciation and a slightly lower pitch.",
+            "descriptive_phrases": [
+              "measured and formal cadence",
+              "careful enunciation",
+              "slightly lower pitch"
+            ],
+            "evidence_tags": [
+              "speaker.profiles"
+            ],
+            "gender": "male",
+            "speaker_id": "speaker_1"
+          }
+        ],
+        "uncertainties": [
+          "Exact recording location (railway station or subway platform) is not confirmed.",
+          "Whether the station was closed or off-peak is not confirmed.",
+          "Whether music or other background categories are absent is not explicitly stated.",
+          "No verbatim transcript is provided; word and filler counts are unknown.",
+          "Exact acoustic parameters (SNR, RT60, etc.) are not provided."
+        ],
+        "usability_notes": [
+          "Low-fidelity, reverberant recording with continuous mechanical hum and hiss may require dereverberation and noise reduction before ASR.",
+          "Single-speaker formal Mandarin announcement with measured speech may benefit from speaker-specific adaptation."
+        ]
+      },
+      "raw_caption": "The audio clip is a 27-second, monophonic recording of a formal public address announcement, made in standard Mandarin Chinese, in what is almost certainly a large, reverberant indoor environment typical of a railway station or subway platform. The announcement is delivered by a single male voice with a clear, calm, and authoritative tone, using the standard Putonghua accent without regional inflection. The speaker’s cadence is measured and formal, with a slightly lower pitch and careful enunciation, consistent with the style of official transportation staff.\n\nThe content of the message is a structured, multi-part public notice: it informs passengers of a station transfer, instructs them to move to a new platform, reminds them to keep their belongings, and provides additional guidance for those with large luggage to use a specific (right-side) passage. The message also states that the walk will take approximately ten minutes and warns against lingering in the passage. The language used is neutral, inclusive, and strictly functional, with no personalization, humor, or informal elements.\n\nThe acoustic environment is dominated by a continuous, low-frequency mechanical hum and a faint, high-frequency hiss. These background noises, along with the pronounced reverberation, indicate the use of a public address system in a large, echo-prone space—likely a platform or concourse area. The overall sound quality is low-fidelity: the recording is muffled, with a limited frequency range, and the speaker’s voice is somewhat distant and blended with the ambient noise, suggesting a fixed, non-professional recording device positioned some distance from the announcement point.\n\nThere are no audible signs of human activity—such as footsteps, conversation, or train noise—other than the PA system itself. This, along with the content of the message, suggests the recording was made during a quiet period, possibly when the station was temporarily closed to passengers, or during an off-peak interval.\n\nCulturally, the style, language, and structure of the announcement are characteristic of modern, urban Chinese public transportation, specifically railway or subway systems. The use of formal Mandarin, standardized phrasing, and clear procedural guidance reflect the institutional norms of such environments. The absence of regional dialect, personalization, or extraneous detail further underscores the official, impersonal nature of the communication.\n\nIn summary, the audio is a low-fidelity, reverberant recording of an official Mandarin-language station transfer announcement, most likely from a modern Chinese railway or subway platform, delivered through a public address system to a quiet or empty environment.",
+      "scores": {
+        "scores": {
+          "background_condition": 1.35,
+          "background_sound_summary": 0.7,
+          "caption": 1.4,
+          "clarity_intelligibility_impression": 1.15,
+          "descriptive_phrases": 1.3,
+          "dominant_content_impression": 1.45,
+          "facets": 1.0,
+          "scene_hypotheses": 1.6,
+          "speaker_descriptions": 1.65,
+          "topic": 1.9
+        },
+        "score_mean": 1.35,
+        "normalized_percent": 67.5,
+        "status": "success"
+      }
+    },
+    "qwen3_omni": {
+      "fields": {
+        "caption": "一段车站换乘通知广播，内容为提醒乘客前往新站台、保管物品、使用右侧通道及步行时间提示，背景有轻微环境嗡鸣声。",
+        "topic": "车站换乘指引",
+        "dominant_content_impression": "speech",
+        "background_condition": "背景有轻微持续嗡鸣声，无其他明显干扰。",
+        "background_sound_summary": "持续低频背景嗡鸣声，无其他明显环境音。",
+        "clarity_intelligibility_impression": "清晰可懂",
+        "descriptive_phrases": [
+          "单人播报",
+          "清晰广播",
+          "背景轻微嗡鸣"
+        ],
+        "facets": [
+          {
+            "confidence": 0.9,
+            "description": "单向广播通知，无对话或互动。",
+            "evidence_tags": [
+              "speaker.speaker_count",
+              "speaker.multi_speaker",
+              "speaker.speaker_change_count"
+            ],
+            "name": "interaction_pattern"
+          },
+          {
+            "confidence": 0.6,
+            "description": "语速正常，语调平稳，无明显情绪或强调。",
+            "evidence_tags": [
+              "speaker.profiles"
+            ],
+            "name": "delivery_style"
+          },
+          {
+            "confidence": 0.85,
+            "description": "以人声广播为主，背景为持续低频环境噪音。",
+            "evidence_tags": [
+              "sound_field_scene.speech_music_events",
+              "sound_field_scene.noise_composition",
+              "sound_field_scene.music_present"
+            ],
+            "name": "soundscape"
+          },
+          {
+            "confidence": 0.9,
+            "description": "车站换乘指引信息，内容实用、结构清晰。",
+            "evidence_tags": [
+              "speaker.asr_transcript"
+            ],
+            "name": "content_impression"
+          },
+          {
+            "confidence": 0.4,
+            "description": "语音清晰，背景噪音轻微，无失真或干扰。",
+            "evidence_tags": [],
+            "name": "recording_impression"
+          }
+        ],
+        "scene_hypotheses": [
+          {
+            "confidence": 0.7,
+            "description": "可能为地铁或火车站内广播系统播放的换乘指引。",
+            "evidence_tags": [
+              "speaker.asr_transcript"
+            ]
+          },
+          {
+            "confidence": 0.4,
+            "description": "可能为公共空间内循环播放的标准化通知。",
+            "evidence_tags": []
+          }
+        ],
+        "speaker_descriptions": [
+          {
+            "confidence": 0.95,
+            "description": "单人播报车站换乘通知，语速正常，音量稳定，无明显情绪或语调起伏。",
+            "descriptive_phrases": [
+              "语速正常",
+              "音量稳定",
+              "无情绪起伏"
+            ],
+            "evidence_tags": [
+              "speaker.speaker_count",
+              "speaker.profiles",
+              "speaker.asr_transcript"
+            ],
+            "gender": null,
+            "speaker_id": "speaker_1"
+          }
+        ],
+        "uncertainties": [
+          "无法确认说话者性别或年龄。",
+          "背景嗡鸣声来源未知，可能为通风系统或设备运行声。",
+          "非语音比值为0与背景噪声标注冲突，无法确定真实比例。",
+          "语音速率值150与转写词数/时长不一致，无法确定精确值。"
+        ],
+        "usability_notes": [
+          "适用于乘客换乘指引场景，可作为公共广播系统音频样本。"
+        ]
+      },
+      "raw_caption": "一段车站换乘通知广播，内容为提醒乘客前往新站台、保管物品、使用右侧通道及步行时间提示，背景有轻微环境嗡鸣声。",
+      "scores": {
+        "scores": {
+          "background_condition": 1.6,
+          "background_sound_summary": 1.7,
+          "caption": 1.85,
+          "clarity_intelligibility_impression": 1.95,
+          "descriptive_phrases": 1.3,
+          "dominant_content_impression": 2.0,
+          "facets": 1.85,
+          "scene_hypotheses": 1.6,
+          "speaker_descriptions": 1.7,
+          "topic": 1.95
+        },
+        "score_mean": 1.75,
+        "normalized_percent": 87.5,
+        "status": "success"
+      }
+    }
+  },
+  "structural_overall": {
+    "sure_tagger": {
+      "score_rate": 0.6263340476190477,
+      "known_fields": 23,
+      "eligible_fields": 25
+    },
+    "captioner": {
+      "score_rate": 0.5454545454545454,
+      "known_fields": 9,
+      "eligible_fields": 25
+    },
+    "qwen3_omni": {
+      "score_rate": 0.8294194285714286,
+      "known_fields": 20,
+      "eligible_fields": 25
+    }
+  }
+}

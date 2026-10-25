@@ -162,7 +162,21 @@ python scripts/verify_release.py
 python scripts/reproduce.py --profile fixture --output runs/fixture
 ```
 
-`fixture` 只生成不含语言内容的测试音频；仓库不附带论文 WAV。完整复现还需要 CUDA、FFmpeg、另行授权的参考音频、RIR、音乐及固定版本的 Dots 模型。依次运行 `python scripts/reproduce.py --profile full --check` 和 `python scripts/reproduce.py --profile full --gpus 0 --output runs/v4_multilingual`；素材目录和预期质检结果见[完整复现指南](LayeredSpeech-500/docs/REPRODUCE.md)。
+`fixture` 只生成不含语言内容的测试音频；仓库仅附带下方五条精选的论文合成音频片段。完整复现还需要 CUDA、FFmpeg、另行授权的参考音频、RIR、音乐及固定版本的 Dots 模型。依次运行 `python scripts/reproduce.py --profile full --check` 和 `python scripts/reproduce.py --profile full --gpus 0 --output runs/v4_multilingual`；素材目录和预期质检结果见[完整复现指南](LayeredSpeech-500/docs/REPRODUCE.md)。
+
+### 合成音频示例
+
+五条渲染场景分别展示交通环境噪声、多人重叠、音乐、语码转换和阿拉伯语。每条都附有完整的生成侧 Ground Truth，以及 SURE-Tagger、Captioner 和 Qwen3-Omni 对同一音频的标签对照。
+
+| 场景 | 条件 | 音频 | 记录 |
+| --- | --- | --- | --- |
+| `SCN-0006` | 普通话 · 交通环境 · 单人 | [试听](assets/readme/synthetic-samples/SCN-0006/audio.wav) | [GT](assets/readme/synthetic-samples/SCN-0006/ground_truth.json) · [三系统对照](assets/readme/synthetic-samples/SCN-0006/review.json) |
+| `SCN-0198` | 普通话 · 双人重叠 · 音乐 | [试听](assets/readme/synthetic-samples/SCN-0198/audio.wav) | [GT](assets/readme/synthetic-samples/SCN-0198/ground_truth.json) · [三系统对照](assets/readme/synthetic-samples/SCN-0198/review.json) |
+| `SCN-0360` | 普通话 · 三人 · 音乐 · 5 dB SNR | [试听](assets/readme/synthetic-samples/SCN-0360/audio.wav) | [GT](assets/readme/synthetic-samples/SCN-0360/ground_truth.json) · [三系统对照](assets/readme/synthetic-samples/SCN-0360/review.json) |
+| `SCN-0367` | 中英混用 · 三人 | [试听](assets/readme/synthetic-samples/SCN-0367/audio.wav) | [GT](assets/readme/synthetic-samples/SCN-0367/ground_truth.json) · [三系统对照](assets/readme/synthetic-samples/SCN-0367/review.json) |
+| `SCN-0469` | 阿拉伯语 · 开放空间 · 5 dB SNR | [试听](assets/readme/synthetic-samples/SCN-0469/audio.wav) | [GT](assets/readme/synthetic-samples/SCN-0469/ground_truth.json) · [三系统对照](assets/readme/synthetic-samples/SCN-0469/review.json) |
+
+[样本来源及上游素材条款](assets/readme/synthetic-samples/README.md)。这些是合成轨道的示例；完整 500 条音频仍由仓库外部提供。
 
 五段 Tag-Bench 音频均提供 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的完整预测：
 

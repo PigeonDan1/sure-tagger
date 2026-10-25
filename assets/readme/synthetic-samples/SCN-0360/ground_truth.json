@@ -1,0 +1,350 @@
+{
+  "audio_path": "sessions/SCN-0360/mixture.wav",
+  "descriptive": {
+    "background_condition": null,
+    "background_sound_summary": null,
+    "caption": null,
+    "clarity_intelligibility_impression": null,
+    "descriptive_phrases": null,
+    "dominant_content_impression": null,
+    "facets": null,
+    "scene_hypotheses": null,
+    "speaker_descriptions": null,
+    "topic": null,
+    "uncertainties": null,
+    "usability_notes": null
+  },
+  "field_status": {
+    "audio_quality.dnsmos_bak": {
+      "reason": "DNSMOS was not run",
+      "status": "unavailable"
+    },
+    "audio_quality.dnsmos_ovrl": {
+      "reason": "DNSMOS was not run",
+      "status": "unavailable"
+    },
+    "audio_quality.dnsmos_p808": {
+      "reason": "DNSMOS was not run",
+      "status": "unavailable"
+    },
+    "audio_quality.dnsmos_sig": {
+      "reason": "DNSMOS was not run",
+      "status": "unavailable"
+    },
+    "audio_quality.snr_db": {
+      "source": "session achieved_snr_db",
+      "status": "exact_render_manifest"
+    },
+    "basic_acoustic.channels": {
+      "source": "rendered WAV header",
+      "status": "exact_measured"
+    },
+    "basic_acoustic.duration_sec": {
+      "source": "rendered WAV header",
+      "status": "exact_measured"
+    },
+    "basic_acoustic.nonspeech_ratio": {
+      "source": "complement of final session utterance intervals",
+      "status": "exact_derived"
+    },
+    "basic_acoustic.sample_rate_hz": {
+      "source": "rendered WAV header",
+      "status": "exact_measured"
+    },
+    "basic_acoustic.silence_segments": {
+      "source": "complement of final session utterance intervals",
+      "status": "exact_derived"
+    },
+    "descriptive": {
+      "reason": "descriptive ground truth intentionally disabled",
+      "status": "unavailable"
+    },
+    "deterministic_derived.filler_ratio": {
+      "source": "filler / word_count",
+      "status": "exact_derived"
+    },
+    "deterministic_derived.speaker_change_rate_per_min": {
+      "source": "speaker_change_count * 60 / duration_sec",
+      "status": "exact_derived"
+    },
+    "frame_snr_ground_truth.mean_db": {
+      "source": "post-RIR speech stems and rendered noise stem using the Brouhaha-maker detailed-SNR recipe",
+      "status": "exact_derived"
+    },
+    "language_content.filler": {
+      "source": "L1 frozen expected_language_content",
+      "status": "exact_reference_text_rule"
+    },
+    "language_content.language": {
+      "source": "L1 explicit language",
+      "status": "exact_script_label"
+    },
+    "language_content.punctuation": {
+      "source": "L1 frozen expected_language_content",
+      "status": "exact_reference_text_rule"
+    },
+    "language_content.repetition": {
+      "source": "L1 frozen expected_language_content",
+      "status": "exact_reference_text_rule"
+    },
+    "language_content.word_count": {
+      "source": "L1 frozen expected_language_content",
+      "status": "exact_reference_text_rule"
+    },
+    "room_acoustic.c50_db": {
+      "source": "qc/rir_metrics.jsonl measured_c50",
+      "status": "exact_post_render_measurement"
+    },
+    "room_acoustic.far_field": {
+      "reason": "no explicit far-field label",
+      "status": "unavailable"
+    },
+    "room_acoustic.rt60_sec": {
+      "source": "qc/rir_metrics.jsonl measured_rt60",
+      "status": "exact_post_render_measurement"
+    },
+    "sound_field_scene.external_noise_type": {
+      "source": "L5 explicit render configuration",
+      "status": "exact_render_control"
+    },
+    "sound_field_scene.music_present": {
+      "source": "L5 explicit render configuration",
+      "status": "exact_render_control"
+    },
+    "sound_field_scene.noise_composition": {
+      "source": "L5 explicit render configuration",
+      "status": "exact_render_control"
+    },
+    "sound_field_scene.speech_music_events": {
+      "source": "L5 explicit render configuration",
+      "status": "exact_render_control"
+    },
+    "speaker.asr_transcript": {
+      "source": "scene script reference_transcript",
+      "status": "exact_reference_text"
+    },
+    "speaker.multi_speaker": {
+      "source": "speaker_count >= 2",
+      "status": "exact_derived"
+    },
+    "speaker.overlap_ratio": {
+      "source": "session overlap_ratio",
+      "status": "exact_render_manifest"
+    },
+    "speaker.profiles": {
+      "reason": "speaker profile requires annotation or acoustic analysis",
+      "status": "unavailable"
+    },
+    "speaker.speaker_change": {
+      "source": "speaker_change_count > 0",
+      "status": "exact_derived"
+    },
+    "speaker.speaker_change_count": {
+      "source": "rendered turn speaker sequence",
+      "status": "exact_derived"
+    },
+    "speaker.speaker_count": {
+      "source": "session num_speakers",
+      "status": "exact_render_manifest"
+    },
+    "speaker.speaker_overlap": {
+      "source": "overlap_ratio > 0",
+      "status": "exact_derived"
+    },
+    "speaker.speaker_present": {
+      "source": "speaker_count > 0",
+      "status": "exact_derived"
+    }
+  },
+  "frame_snr_ground_truth": {
+    "aggregation": "arithmetic_mean_of_all_detailed_snr_windows_db",
+    "background_source": "noise stem including music when configured",
+    "frame_duration_sec": 2.0,
+    "frame_grid_reference": "Brouhaha-maker compute_detailed_snr defaults",
+    "frame_hop_sec": 0.01,
+    "mean_db": -0.987502,
+    "noise_power_epsilon": 0.001,
+    "normalization": "common speech/noise gain from post-RIR speech RMS on VAD-active samples",
+    "normalization_epsilon": 1E-8,
+    "signal_to_noise_floor": 1E-10,
+    "speech_source": "VAD-masked sum of post-RIR speaker stems",
+    "total_frame_count": 2508,
+    "vad_policy": "mask post-RIR speech where every dry stem abs(sample) <= 1e-6",
+    "valid_frame_count": 2508,
+    "valid_frame_policy": "all complete 2 s windows; no frame-level VAD filter",
+    "valid_frame_ratio": 1.0,
+    "version": "known_stems_brouhaha_detailed_snr.v2"
+  },
+  "generation": {
+    "acoustic_environment": "dry",
+    "acoustic_scene_id": "AC-304",
+    "background_asset": "assets/backgrounds/dry/bg_d05db384b1088bfc.wav",
+    "dataset_version": "outputs_l1_l5_dots_v4_multilingual",
+    "environment": "dry",
+    "grid_version": "l1_l5_scene_grid.v1",
+    "language_mode": "monolingual",
+    "languages_present": [
+      "zh"
+    ],
+    "noise_asset": "bg_d05db384b1088bfc.wav",
+    "primary_language": "zh",
+    "rir_asset": null,
+    "rir_backend": "deterministic_approximation",
+    "rir_metrics": "qc/rir_metrics.jsonl",
+    "scene_script": "data/scene_scripts_v4.jsonl",
+    "session_manifest": "manifests/sessions.json",
+    "text_variant": "mixed"
+  },
+  "sample_id": "SCN-0360",
+  "tags": {
+    "audio_quality": {
+      "dnsmos_bak": null,
+      "dnsmos_ovrl": null,
+      "dnsmos_p808": null,
+      "dnsmos_sig": null,
+      "snr_db": 5.0
+    },
+    "basic_acoustic": {
+      "channels": 1,
+      "duration_sec": 27.074042,
+      "nonspeech_ratio": 0.06316,
+      "sample_rate_hz": 24000,
+      "silence_segments": [
+        {
+          "end_sec": 0.51,
+          "start_sec": 0.0
+        },
+        {
+          "end_sec": 27.074042,
+          "start_sec": 25.874042
+        }
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": 0.0,
+      "speaker_change_rate_per_min": 4.43229
+    },
+    "language_content": {
+      "filler": 0,
+      "language": "zh",
+      "punctuation": {
+        "has_terminal_punctuation": true,
+        "punctuation_count": 10
+      },
+      "repetition": {
+        "has_repetition": true,
+        "repetition_count": 3
+      },
+      "word_count": 93
+    },
+    "room_acoustic": {
+      "c50_db": -1.7437,
+      "far_field": null,
+      "rt60_sec": 1.0936
+    },
+    "sound_field_scene": {
+      "external_noise_type": [
+        "music"
+      ],
+      "music_present": true,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [],
+        "mechanical": [],
+        "music": [
+          "Background music"
+        ],
+        "nature": []
+      },
+      "speech_music_events": [
+        "speech",
+        "music"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": "欢迎回到经典旋律回顾，背景音乐稍后会慢慢降低。我先把已经确认的部分和还需要核对的细节一次说完。嗯嗯，先看一下嘉宾介绍，今天上午的互动已经收到很多回复。嗯，嗯，我来补充嘉宾刚才提到的创作过程，重点在节奏变化。",
+      "multi_speaker": true,
+      "overlap_ratio": 0.081069,
+      "profiles": null,
+      "speaker_change": true,
+      "speaker_change_count": 2,
+      "speaker_count": 3,
+      "speaker_overlap": true,
+      "speaker_present": true
+    }
+  },
+  "temporal_ground_truth": {
+    "nonspeech_intervals": [
+      {
+        "end_sec": 0.51,
+        "start_sec": 0.0
+      },
+      {
+        "end_sec": 27.074042,
+        "start_sec": 25.874042
+      }
+    ],
+    "speech_placement_intervals": [
+      {
+        "end_sec": 25.874042,
+        "start_sec": 0.51
+      }
+    ],
+    "timebase": "seconds",
+    "timestamp_source": "rendered_session_manifest",
+    "turns": [
+      {
+        "end_sec": 12.599542,
+        "language": "zh",
+        "language_spans": [
+          {
+            "end": 47,
+            "language": "zh",
+            "start": 0
+          }
+        ],
+        "overlap_with_previous": false,
+        "speaker_id": "speaker_1",
+        "start_sec": 0.51,
+        "text": "欢迎回到经典旋律回顾，背景音乐稍后会慢慢降低。我先把已经确认的部分和还需要核对的细节一次说完。",
+        "turn_id": "t01",
+        "utterance_id": "u000"
+      },
+      {
+        "end_sec": 18.360667,
+        "language": "zh",
+        "language_spans": [
+          {
+            "end": 28,
+            "language": "zh",
+            "start": 0
+          }
+        ],
+        "overlap_with_previous": true,
+        "speaker_id": "speaker_2",
+        "start_sec": 11.571417,
+        "text": "嗯嗯，先看一下嘉宾介绍，今天上午的互动已经收到很多回复。",
+        "turn_id": "t02",
+        "utterance_id": "u001"
+      },
+      {
+        "end_sec": 25.874042,
+        "language": "zh",
+        "language_spans": [
+          {
+            "end": 28,
+            "language": "zh",
+            "start": 0
+          }
+        ],
+        "overlap_with_previous": true,
+        "speaker_id": "speaker_3",
+        "start_sec": 17.332542,
+        "text": "嗯，嗯，我来补充嘉宾刚才提到的创作过程，重点在节奏变化。",
+        "turn_id": "t03",
+        "utterance_id": "u002"
+      }
+    ]
+  }
+}

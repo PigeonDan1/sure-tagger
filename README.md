@@ -165,7 +165,21 @@ python scripts/verify_release.py
 python scripts/reproduce.py --profile fixture --output runs/fixture
 ```
 
-The fixture makes non-linguistic test audio; paper WAVs are not bundled. Full reproduction also needs CUDA, FFmpeg, separately licensed reference audio, RIRs, music, and pinned Dots models. Run `python scripts/reproduce.py --profile full --check`, then `python scripts/reproduce.py --profile full --gpus 0 --output runs/v4_multilingual`. See the [full reproduction guide](LayeredSpeech-500/docs/REPRODUCE.md) for setup and expected QC results.
+The fixture makes non-linguistic test audio; only the five curated paper-audio excerpts below are bundled. Full reproduction also needs CUDA, FFmpeg, separately licensed reference audio, RIRs, music, and pinned Dots models. Run `python scripts/reproduce.py --profile full --check`, then `python scripts/reproduce.py --profile full --gpus 0 --output runs/v4_multilingual`. See the [full reproduction guide](LayeredSpeech-500/docs/REPRODUCE.md) for setup and expected QC results.
+
+### Synthetic audio examples
+
+Hear five rendered scenes spanning transit noise, overlapping speakers, music, code-switching, and Arabic speech. Each clip includes its complete generated ground-truth record and a same-audio comparison of SURE-Tagger, Captioner, and Qwen3-Omni.
+
+| Scene | Condition | Audio | Records |
+| --- | --- | --- | --- |
+| `SCN-0006` | Mandarin · transit ambience · 1 speaker | [Listen](assets/readme/synthetic-samples/SCN-0006/audio.wav) | [GT](assets/readme/synthetic-samples/SCN-0006/ground_truth.json) · [Comparison](assets/readme/synthetic-samples/SCN-0006/review.json) |
+| `SCN-0198` | Mandarin · 2 speakers · overlap + music | [Listen](assets/readme/synthetic-samples/SCN-0198/audio.wav) | [GT](assets/readme/synthetic-samples/SCN-0198/ground_truth.json) · [Comparison](assets/readme/synthetic-samples/SCN-0198/review.json) |
+| `SCN-0360` | Mandarin · 3 speakers · music · 5 dB SNR | [Listen](assets/readme/synthetic-samples/SCN-0360/audio.wav) | [GT](assets/readme/synthetic-samples/SCN-0360/ground_truth.json) · [Comparison](assets/readme/synthetic-samples/SCN-0360/review.json) |
+| `SCN-0367` | Mandarin/English code-switching · 3 speakers | [Listen](assets/readme/synthetic-samples/SCN-0367/audio.wav) | [GT](assets/readme/synthetic-samples/SCN-0367/ground_truth.json) · [Comparison](assets/readme/synthetic-samples/SCN-0367/review.json) |
+| `SCN-0469` | Arabic · open-space ambience · 5 dB SNR | [Listen](assets/readme/synthetic-samples/SCN-0469/audio.wav) | [GT](assets/readme/synthetic-samples/SCN-0469/ground_truth.json) · [Comparison](assets/readme/synthetic-samples/SCN-0469/review.json) |
+
+[Sample provenance and upstream terms](assets/readme/synthetic-samples/README.md). These excerpts illustrate the synthetic track; the full 500-scene audio corpus remains external to this source release.
 
 Explore five Tag-Bench clips with complete same-audio predictions from SURE-Tagger, Captioner, and Qwen3-Omni:
 

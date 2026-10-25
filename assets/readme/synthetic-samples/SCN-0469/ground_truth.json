@@ -1,0 +1,316 @@
+{
+  "audio_path": "sessions/SCN-0469/mixture.wav",
+  "descriptive": {
+    "background_condition": null,
+    "background_sound_summary": null,
+    "caption": null,
+    "clarity_intelligibility_impression": null,
+    "descriptive_phrases": null,
+    "dominant_content_impression": null,
+    "facets": null,
+    "scene_hypotheses": null,
+    "speaker_descriptions": null,
+    "topic": null,
+    "uncertainties": null,
+    "usability_notes": null
+  },
+  "field_status": {
+    "audio_quality.dnsmos_bak": {
+      "reason": "DNSMOS was not run",
+      "status": "unavailable"
+    },
+    "audio_quality.dnsmos_ovrl": {
+      "reason": "DNSMOS was not run",
+      "status": "unavailable"
+    },
+    "audio_quality.dnsmos_p808": {
+      "reason": "DNSMOS was not run",
+      "status": "unavailable"
+    },
+    "audio_quality.dnsmos_sig": {
+      "reason": "DNSMOS was not run",
+      "status": "unavailable"
+    },
+    "audio_quality.snr_db": {
+      "source": "session achieved_snr_db",
+      "status": "exact_render_manifest"
+    },
+    "basic_acoustic.channels": {
+      "source": "rendered WAV header",
+      "status": "exact_measured"
+    },
+    "basic_acoustic.duration_sec": {
+      "source": "rendered WAV header",
+      "status": "exact_measured"
+    },
+    "basic_acoustic.nonspeech_ratio": {
+      "source": "complement of final session utterance intervals",
+      "status": "exact_derived"
+    },
+    "basic_acoustic.sample_rate_hz": {
+      "source": "rendered WAV header",
+      "status": "exact_measured"
+    },
+    "basic_acoustic.silence_segments": {
+      "source": "complement of final session utterance intervals",
+      "status": "exact_derived"
+    },
+    "descriptive": {
+      "reason": "descriptive ground truth intentionally disabled",
+      "status": "unavailable"
+    },
+    "deterministic_derived.filler_ratio": {
+      "source": "filler / word_count",
+      "status": "exact_derived"
+    },
+    "deterministic_derived.speaker_change_rate_per_min": {
+      "source": "speaker_change_count * 60 / duration_sec",
+      "status": "exact_derived"
+    },
+    "frame_snr_ground_truth.mean_db": {
+      "source": "post-RIR speech stems and rendered noise stem using the Brouhaha-maker detailed-SNR recipe",
+      "status": "exact_derived"
+    },
+    "language_content.filler": {
+      "source": "L1 frozen expected_language_content",
+      "status": "exact_reference_text_rule"
+    },
+    "language_content.language": {
+      "source": "L1 explicit language",
+      "status": "exact_script_label"
+    },
+    "language_content.punctuation": {
+      "source": "L1 frozen expected_language_content",
+      "status": "exact_reference_text_rule"
+    },
+    "language_content.repetition": {
+      "source": "L1 frozen expected_language_content",
+      "status": "exact_reference_text_rule"
+    },
+    "language_content.word_count": {
+      "source": "L1 frozen expected_language_content",
+      "status": "exact_reference_text_rule"
+    },
+    "room_acoustic.c50_db": {
+      "source": "qc/rir_metrics.jsonl measured_c50",
+      "status": "exact_post_render_measurement"
+    },
+    "room_acoustic.far_field": {
+      "reason": "no explicit far-field label",
+      "status": "unavailable"
+    },
+    "room_acoustic.rt60_sec": {
+      "source": "qc/rir_metrics.jsonl measured_rt60",
+      "status": "exact_post_render_measurement"
+    },
+    "sound_field_scene.external_noise_type": {
+      "source": "L5 explicit render configuration",
+      "status": "exact_render_control"
+    },
+    "sound_field_scene.music_present": {
+      "source": "L5 explicit render configuration",
+      "status": "exact_render_control"
+    },
+    "sound_field_scene.noise_composition": {
+      "source": "L5 explicit render configuration",
+      "status": "exact_render_control"
+    },
+    "sound_field_scene.speech_music_events": {
+      "source": "L5 explicit render configuration",
+      "status": "exact_render_control"
+    },
+    "speaker.asr_transcript": {
+      "source": "scene script reference_transcript",
+      "status": "exact_reference_text"
+    },
+    "speaker.multi_speaker": {
+      "source": "speaker_count >= 2",
+      "status": "exact_derived"
+    },
+    "speaker.overlap_ratio": {
+      "source": "session overlap_ratio",
+      "status": "exact_render_manifest"
+    },
+    "speaker.profiles": {
+      "reason": "speaker profile requires annotation or acoustic analysis",
+      "status": "unavailable"
+    },
+    "speaker.speaker_change": {
+      "source": "speaker_change_count > 0",
+      "status": "exact_derived"
+    },
+    "speaker.speaker_change_count": {
+      "source": "rendered turn speaker sequence",
+      "status": "exact_derived"
+    },
+    "speaker.speaker_count": {
+      "source": "session num_speakers",
+      "status": "exact_render_manifest"
+    },
+    "speaker.speaker_overlap": {
+      "source": "overlap_ratio > 0",
+      "status": "exact_derived"
+    },
+    "speaker.speaker_present": {
+      "source": "speaker_count > 0",
+      "status": "exact_derived"
+    }
+  },
+  "frame_snr_ground_truth": {
+    "aggregation": "arithmetic_mean_of_all_detailed_snr_windows_db",
+    "background_source": "noise stem including music when configured",
+    "frame_duration_sec": 2.0,
+    "frame_grid_reference": "Brouhaha-maker compute_detailed_snr defaults",
+    "frame_hop_sec": 0.01,
+    "mean_db": -13.564664,
+    "noise_power_epsilon": 0.001,
+    "normalization": "common speech/noise gain from post-RIR speech RMS on VAD-active samples",
+    "normalization_epsilon": 1E-8,
+    "signal_to_noise_floor": 1E-10,
+    "speech_source": "VAD-masked sum of post-RIR speaker stems",
+    "total_frame_count": 795,
+    "vad_policy": "mask post-RIR speech where every dry stem abs(sample) <= 1e-6",
+    "valid_frame_count": 795,
+    "valid_frame_policy": "all complete 2 s windows; no frame-level VAD filter",
+    "valid_frame_ratio": 1.0,
+    "version": "known_stems_brouhaha_detailed_snr.v2"
+  },
+  "generation": {
+    "acoustic_environment": "open_space",
+    "acoustic_scene_id": "AC-V4-000",
+    "background_asset": "assets/backgrounds/open_space/bg_13915ccddd205232.wav",
+    "dataset_version": "outputs_l1_l5_dots_v4_multilingual",
+    "environment": "open_space",
+    "grid_version": "l1_l5_scene_grid.v1",
+    "language_mode": "monolingual",
+    "languages_present": [
+      "ar"
+    ],
+    "noise_asset": "bg_13915ccddd205232.wav",
+    "primary_language": "ar",
+    "rir_asset": "h199_Outside_DoorstepOfHouseInCambridge_1txts.wav",
+    "rir_backend": "audio_asset",
+    "rir_metrics": "qc/rir_metrics.jsonl",
+    "scene_script": "data/scene_scripts_v4.jsonl",
+    "session_manifest": "manifests/sessions.json",
+    "text_variant": "original"
+  },
+  "sample_id": "SCN-0469",
+  "tags": {
+    "audio_quality": {
+      "dnsmos_bak": null,
+      "dnsmos_ovrl": null,
+      "dnsmos_p808": null,
+      "dnsmos_sig": null,
+      "snr_db": 5.0
+    },
+    "basic_acoustic": {
+      "channels": 1,
+      "duration_sec": 9.940833,
+      "nonspeech_ratio": 0.105273,
+      "sample_rate_hz": 24000,
+      "silence_segments": [
+        {
+          "end_sec": 0.51,
+          "start_sec": 0.0
+        },
+        {
+          "end_sec": 9.940833,
+          "start_sec": 9.404333
+        }
+      ]
+    },
+    "deterministic_derived": {
+      "filler_ratio": 0.0,
+      "speaker_change_rate_per_min": 0.0
+    },
+    "language_content": {
+      "filler": 0,
+      "language": "ar",
+      "punctuation": {
+        "has_terminal_punctuation": true,
+        "punctuation_count": 1
+      },
+      "repetition": {
+        "has_repetition": false,
+        "repetition_count": 0
+      },
+      "word_count": 9
+    },
+    "room_acoustic": {
+      "c50_db": 18.3999,
+      "far_field": null,
+      "rt60_sec": 0.2418
+    },
+    "sound_field_scene": {
+      "external_noise_type": [
+        "formless"
+      ],
+      "music_present": false,
+      "noise_composition": {
+        "animal": [],
+        "channel_environment": [],
+        "formless": [
+          "Background noise",
+          "Whistle"
+        ],
+        "mechanical": [],
+        "music": [],
+        "nature": []
+      },
+      "speech_music_events": [
+        "speech"
+      ]
+    },
+    "speaker": {
+      "asr_transcript": "نؤكد جدول إطلاق خدمة الصوت ونطاق القبول هذا الأسبوع.",
+      "multi_speaker": false,
+      "overlap_ratio": 0.0,
+      "profiles": null,
+      "speaker_change": false,
+      "speaker_change_count": 0,
+      "speaker_count": 1,
+      "speaker_overlap": false,
+      "speaker_present": true
+    }
+  },
+  "temporal_ground_truth": {
+    "nonspeech_intervals": [
+      {
+        "end_sec": 0.51,
+        "start_sec": 0.0
+      },
+      {
+        "end_sec": 9.940833,
+        "start_sec": 9.404333
+      }
+    ],
+    "speech_placement_intervals": [
+      {
+        "end_sec": 9.404333,
+        "start_sec": 0.51
+      }
+    ],
+    "timebase": "seconds",
+    "timestamp_source": "rendered_session_manifest",
+    "turns": [
+      {
+        "end_sec": 9.404333,
+        "language": "ar",
+        "language_spans": [
+          {
+            "end": 52,
+            "language": "ar",
+            "start": 0
+          }
+        ],
+        "overlap_with_previous": false,
+        "speaker_id": "speaker_1",
+        "start_sec": 0.51,
+        "text": "نؤكد جدول إطلاق خدمة الصوت ونطاق القبول هذا الأسبوع.",
+        "turn_id": "t01",
+        "utterance_id": "u000"
+      }
+    ]
+  }
+}
