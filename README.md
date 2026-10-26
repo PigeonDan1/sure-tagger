@@ -6,7 +6,7 @@
 
 <p align="center">
 <a href="https://me-chuan.github.io/sure-tagger/"><strong>Interactive Demo ↗</strong></a> ·
-<a href="https://www.isca-archive.org/interspeech_2026/peng26e_interspeech.pdf"><strong>Paper ↗</strong></a> ·
+<a href="https://arxiv.org/abs/2610.32198"><strong>Paper ↗</strong></a> ·
 <a href="#usage"><strong>Quick Start</strong></a>
 </p>
 
@@ -16,7 +16,7 @@
 
 <p align="center">
 <a href="#motivation">Motivation</a> · <a href="#sure-tagger">SURE-Tagger</a> · <a href="#how-it-works">How it works</a> · <a href="#usage">Usage</a> · <a href="#tag-bench">Tag-Bench</a><br>
-<a href="#system-performance">Performance</a> · <a href="#compositional-benchmark">Compositional benchmark</a> · <a href="#links">Links</a> · <a href="#license">License</a>
+<a href="#system-performance">Performance</a> · <a href="#compositional-benchmark">Compositional benchmark</a> · <a href="#citation">Citation</a> · <a href="#links">Links</a> · <a href="#license">License</a>
 </p>
 
 ---
@@ -328,6 +328,28 @@ Condition-level errors guide candidate selection for about one hour of Qwen3-ASR
 </details>
 
 The repository's full evaluation launcher currently uses the existing-data subset; see its [composition](compare/docs/benchmark-650-dataset-composition.md) and [scoring rules](compare/docs/benchmark-v1-29-metrics.md).
+
+<a id="citation"></a>
+
+---
+
+## Citation
+
+If you find SURE-Tagger or Tag-Bench useful in your research, please consider citing [our paper](https://arxiv.org/abs/2610.32198):
+
+```bibtex
+@misc{peng2026suretagger,
+  title={SURE-Tagger: Structured Speech Representations for Compositional Evaluation and Targeted Data Selection},
+  author={Jing Peng and Huifei Wang and Weihan Chen and Shuo Gao and
+    Bicheng Zhang and Junhao Du and Hanqi Li and Chaolei Liu and
+    Wen Wen and Tao Liu and Xu Li and Yu Xi and Shuai Wang and Kai Yu},
+  year={2026},
+  eprint={2610.32198},
+  archivePrefix={arXiv},
+  primaryClass={eess.AS},
+  url={https://arxiv.org/abs/2610.32198}
+}
+```
 
 <a id="references"></a>
 <a id="links"></a>

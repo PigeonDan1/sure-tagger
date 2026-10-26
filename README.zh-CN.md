@@ -6,7 +6,7 @@
 
 <p align="center">
 <a href="https://me-chuan.github.io/sure-tagger/"><strong>交互演示 ↗</strong></a> ·
-<a href="https://www.isca-archive.org/interspeech_2026/peng26e_interspeech.pdf"><strong>论文 ↗</strong></a> ·
+<a href="https://arxiv.org/abs/2610.32198"><strong>论文 ↗</strong></a> ·
 <a href="#usage"><strong>快速开始</strong></a>
 </p>
 
@@ -16,7 +16,7 @@
 
 <p align="center">
 <a href="#motivation">项目动机</a> · <a href="#sure-tagger">SURE-Tagger</a> · <a href="#how-it-works">工作原理</a> · <a href="#usage">使用方式</a> · <a href="#tag-bench">Tag-Bench</a><br>
-<a href="#system-performance">系统表现</a> · <a href="#compositional-benchmark">组合式评测</a> · <a href="#links">链接</a> · <a href="#license">协议</a>
+<a href="#system-performance">系统表现</a> · <a href="#compositional-benchmark">组合式评测</a> · <a href="#citation">引用</a> · <a href="#links">链接</a> · <a href="#license">协议</a>
 </p>
 
 ---
@@ -328,6 +328,28 @@ python3 clustering/scripts/cluster_scenes.py \
 </details>
 
 当前仓库的完整评测入口使用现有数据集子集；[数据构成](compare/docs/benchmark-650-dataset-composition.md)与[评分规则](compare/docs/benchmark-v1-29-metrics.md)另见文档。
+
+<a id="citation"></a>
+
+---
+
+## 引用本项目
+
+如果 SURE-Tagger 或 Tag-Bench 对您的研究有所帮助，欢迎引用[我们的论文](https://arxiv.org/abs/2610.32198)：
+
+```bibtex
+@misc{peng2026suretagger,
+  title={SURE-Tagger: Structured Speech Representations for Compositional Evaluation and Targeted Data Selection},
+  author={Jing Peng and Huifei Wang and Weihan Chen and Shuo Gao and
+    Bicheng Zhang and Junhao Du and Hanqi Li and Chaolei Liu and
+    Wen Wen and Tao Liu and Xu Li and Yu Xi and Shuai Wang and Kai Yu},
+  year={2026},
+  eprint={2610.32198},
+  archivePrefix={arXiv},
+  primaryClass={eess.AS},
+  url={https://arxiv.org/abs/2610.32198}
+}
+```
 
 <a id="references"></a>
 <a id="links"></a>
