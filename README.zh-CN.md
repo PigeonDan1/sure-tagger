@@ -1,26 +1,36 @@
-<p align="center"><img src="./assets/readme/three-layer-audio-metadata-tag.png" width="112" alt="SURE-Tagger 图标：三层音频元数据标签"></p>
+<p align="center"><img src="./assets/readme/three-layer-audio-metadata-tag.png" width="96" alt="SURE-Tagger 图标：三层音频元数据标签"></p>
 
 <h1 align="center">SURE-Tagger</h1>
 
-<h2 align="center">让智能体听懂语音，并让声音信息可计算<br><sub>—— 通过丰富的半结构化表征</sub></h2>
+<p align="center"><strong>让智能体听懂语音，并让声音信息可计算</strong><br><sub>通过丰富的半结构化表征</sub></p>
+
+<p align="center">
+<a href="https://me-chuan.github.io/sure-tagger/"><strong>交互演示 ↗</strong></a> ·
+<a href="https://arxiv.org/abs/2610.32198"><strong>论文 ↗</strong></a> ·
+<a href="#usage"><strong>快速开始</strong></a>
+</p>
 
 <p align="center"><a href="README.md">English</a> · <strong>简体中文</strong></p>
 
-<table width="100%" role="presentation">
-<tbody>
-<tr><td width="600" align="left"><a href="#motivation"><img src="./assets/readme/nav/motivation.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>项目动机</ins></a></td><td width="500" align="left"><a href="#sure-tagger"><img src="./assets/readme/nav/sure-tagger.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>SURE-Tagger</ins></a></td><td width="500" align="left"><a href="#how-it-works"><img src="./assets/readme/nav/how-it-works.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>工作原理</ins></a></td></tr>
-<tr><td width="600" align="left"><a href="#usage"><img src="./assets/readme/nav/usage.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>使用方式</ins></a></td><td width="500" align="left"><a href="#tag-bench"><img src="./assets/readme/nav/tag-bench.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Tag-Bench</ins></a></td><td width="500" align="left"><a href="#system-performance"><img src="./assets/readme/nav/system-performance.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>系统表现</ins></a></td></tr>
-<tr><td width="600" align="left"><a href="#compositional-benchmark"><img src="./assets/readme/nav/compositional-benchmark.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>组合式评测</ins></a></td><td width="500" align="left"><a href="#links"><img src="./assets/readme/nav/references.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>链接</ins></a></td><td width="500" align="left"><a href="#license"><img src="./assets/readme/nav/license.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>协议</ins></a></td></tr>
-</tbody>
-</table>
+<p align="center"><sub>面向智能体、评测与分析的结构化语音理解。</sub></p>
+
+<p align="center">
+<a href="#motivation">项目动机</a> · <a href="#sure-tagger">SURE-Tagger</a> · <a href="#how-it-works">工作原理</a> · <a href="#tag-bench">Tag-Bench</a> · <a href="#system-performance">结果</a> · <a href="#citation">引用</a>
+</p>
+
+---
 
 SURE-Tagger 将语音证据整理为可查询的标签与有证据支撑的描述。
+
+<p align="center"><strong>1,150</strong> 条 Tag-Bench 音频 &nbsp;·&nbsp; <strong>77.28%</strong> 综合得分 &nbsp;·&nbsp; <strong>14.3%</strong> ASR 相对错误率下降</p>
 
 https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 <p align="center"><sub>SURE-Tagger 中文介绍视频</sub></p>
 
 <a id="motivation"></a>
+
+---
 
 ## 项目动机
 
@@ -32,6 +42,8 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 <a id="sure-tagger"></a>
 <a id="demo"></a>
+
+---
 
 ## SURE-Tagger · 从音频到标签
 
@@ -71,6 +83,8 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 
 <a id="how-it-works"></a>
 
+---
+
 ## 工作原理
 
 专项模型分别提取声学、时间、词汇和说话人证据。SURE-Tagger 核对不确定或冲突的信息，生成有类型的字段与证据支撑的描述。
@@ -78,6 +92,8 @@ https://github.com/user-attachments/assets/e2543c8b-6002-40fd-b9ba-c3a99d7cf16f
 <p align="center"><a href="./assets/readme/how-it-works.png"><img src="./assets/readme/how-it-works.png" width="100%" alt="专项语音模型产生证据，经核对形成结构化标签，再用于跨数据集的组合评测"></a></p>
 
 <a id="usage"></a>
+
+---
 
 ## 使用方式
 
@@ -134,9 +150,13 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s clustering/tests -p 't
 
 <a id="tag-bench"></a>
 
+---
+
 ## Tag-Bench
 
 Tag-Bench 将现有数据集样本与 500 条受控合成场景结合。公开的 [LayeredSpeech-500](LayeredSpeech-500/README.md) 流水线依据冻结的 L1–L5 场景脚本生成并核验合成部分。
+
+<p align="center"><strong>500</strong> 条可控合成场景 &nbsp;+&nbsp; <strong>650</strong> 条已有录音 &nbsp;=&nbsp; <strong>1,150</strong> 条音频</p>
 
 <table width="100%">
 <thead><tr><th width="520">构成</th><th width="850">来源或生成方式</th><th width="230" align="right">样本数</th></tr></thead>
@@ -169,16 +189,20 @@ python scripts/reproduce.py --profile fixture --output runs/fixture
 
 在交互演示中试听十段 Tag-Bench 音频，其中包括五段[合成场景](assets/readme/synthetic-samples/README.md)，对照 SURE-Tagger、Captioner 与 Qwen3-Omni 对同一音频的预测。
 
-<h3 align="center"><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh#listen">▶ 立即试听！↗</a></h3>
+<p align="center"><strong><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=zh#listen">▶ 试听 Tag-Bench 音频 ↗</a></strong></p>
 
 <p align="center"><sub><a href="assets/readme/tagbench/COMPARISON.md">同音频输出对照</a> · <a href="assets/readme/tagbench/ATTRIBUTION.md">音频来源与归属</a></sub></p>
 
 <a id="system-performance"></a>
 <a id="paper-results"></a>
 
+---
+
 ## 系统表现
 
 在 Tag-Bench 的结构化与描述性标注评测中，SURE-Tagger 的整体得分高于 Qwen3-Omni-Captioner。各方法使用相同的语言模型构建最终标签；下表汇总 29 个评测维度，越高越好。
+
+> 综合得分 **77.28%**，Captioner 为 **58.20%**。
 
 <table width="100%">
 <thead><tr><th width="830">数据</th><th width="385" align="right">SURE-Tagger</th><th width="385" align="right">Captioner</th></tr></thead>
@@ -195,6 +219,8 @@ python scripts/reproduce.py --profile fixture --output runs/fixture
 
 <a id="compositional-benchmark"></a>
 <a id="from-tags-to-analysis"></a>
+
+---
 
 ## 组合式评测
 
@@ -269,6 +295,8 @@ python3 clustering/scripts/cluster_scenes.py \
 
 将场景错误率用于候选音频抽样，再用约一小时音频微调 Qwen3-ASR-1.7B：SURE-Tagger 引导的候选池选择把错误率从 5.50% 降至 4.71% ± 0.08%，相对下降 14.3%；相同策略的 Captioner 标签得到 6.17% ± 1.02%（三次抽样种子）。
 
+<p align="center"><strong>5.50% → 4.71% ± 0.08%</strong><br><sub>SURE-Tagger 引导的数据选择使相对错误率下降 14.3%</sub></p>
+
 <table width="100%">
 <thead><tr><th width="560" align="left">数据选择</th><th width="600" align="right">错误率（%）· 均值 ± 标准差</th><th width="440" align="right">相对原始模型</th></tr></thead>
 <tbody>
@@ -300,8 +328,32 @@ python3 clustering/scripts/cluster_scenes.py \
 
 当前仓库的完整评测入口使用现有数据集子集；[数据构成](compare/docs/benchmark-650-dataset-composition.md)与[评分规则](compare/docs/benchmark-v1-29-metrics.md)另见文档。
 
+<a id="citation"></a>
+
+---
+
+## 引用本项目
+
+如果 SURE-Tagger 或 Tag-Bench 对您的研究有所帮助，欢迎引用[我们的论文](https://arxiv.org/abs/2610.32198)：
+
+```bibtex
+@misc{peng2026suretagger,
+  title={SURE-Tagger: Structured Speech Representations for Compositional Evaluation and Targeted Data Selection},
+  author={Jing Peng and Huifei Wang and Weihan Chen and Shuo Gao and
+    Bicheng Zhang and Junhao Du and Hanqi Li and Chaolei Liu and
+    Wen Wen and Tao Liu and Xu Li and Yu Xi and Shuai Wang and Kai Yu},
+  year={2026},
+  eprint={2610.32198},
+  archivePrefix={arXiv},
+  primaryClass={eess.AS},
+  url={https://arxiv.org/abs/2610.32198}
+}
+```
+
 <a id="references"></a>
 <a id="links"></a>
+
+---
 
 ## 链接
 
@@ -310,6 +362,8 @@ python3 clustering/scripts/cluster_scenes.py \
 - 🌐 [Open-Bench](https://www.open-bench.net/home) — 开放评测平台与项目主页
 
 <a id="license"></a>
+
+---
 
 ## 协议
 
