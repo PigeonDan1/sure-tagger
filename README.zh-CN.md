@@ -15,8 +15,7 @@
 <p align="center"><sub>面向智能体、评测与分析的结构化语音理解。</sub></p>
 
 <p align="center">
-<a href="#motivation">项目动机</a> · <a href="#sure-tagger">SURE-Tagger</a> · <a href="#how-it-works">工作原理</a> · <a href="#usage">使用方式</a> · <a href="#tag-bench">Tag-Bench</a><br>
-<a href="#system-performance">系统表现</a> · <a href="#compositional-benchmark">组合式评测</a> · <a href="#citation">引用</a> · <a href="#links">链接</a> · <a href="#license">协议</a>
+<a href="#motivation">项目动机</a> · <a href="#sure-tagger">SURE-Tagger</a> · <a href="#how-it-works">工作原理</a> · <a href="#tag-bench">Tag-Bench</a> · <a href="#system-performance">结果</a> · <a href="#citation">引用</a>
 </p>
 
 ---

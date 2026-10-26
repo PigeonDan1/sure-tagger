@@ -15,8 +15,7 @@
 <p align="center"><sub>Structured speech understanding for agents, evaluation, and analysis.</sub></p>
 
 <p align="center">
-<a href="#motivation">Motivation</a> · <a href="#sure-tagger">SURE-Tagger</a> · <a href="#how-it-works">How it works</a> · <a href="#usage">Usage</a> · <a href="#tag-bench">Tag-Bench</a><br>
-<a href="#system-performance">Performance</a> · <a href="#compositional-benchmark">Compositional benchmark</a> · <a href="#citation">Citation</a> · <a href="#links">Links</a> · <a href="#license">License</a>
+<a href="#motivation">Motivation</a> · <a href="#sure-tagger">SURE-Tagger</a> · <a href="#how-it-works">How it works</a> · <a href="#tag-bench">Tag-Bench</a> · <a href="#system-performance">Results</a> · <a href="#citation">Citation</a>
 </p>
 
 ---
