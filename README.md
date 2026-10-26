@@ -1,26 +1,37 @@
-<p align="center"><img src="./assets/readme/three-layer-audio-metadata-tag.png" width="112" alt="SURE-Tagger icon: three layered audio metadata tags"></p>
+<p align="center"><img src="./assets/readme/three-layer-audio-metadata-tag.png" width="96" alt="SURE-Tagger icon: three layered audio metadata tags"></p>
 
 <h1 align="center">SURE-Tagger</h1>
 
-<h2 align="center">Making speech interpretable and computable to agents<br><sub>— through rich, semi-structured representations</sub></h2>
+<p align="center"><strong>Making speech interpretable and computable to agents</strong><br><sub>Through rich, semi-structured representations</sub></p>
+
+<p align="center">
+<a href="https://me-chuan.github.io/sure-tagger/"><strong>Interactive Demo ↗</strong></a> ·
+<a href="https://www.isca-archive.org/interspeech_2026/peng26e_interspeech.pdf"><strong>Paper ↗</strong></a> ·
+<a href="#usage"><strong>Quick Start</strong></a>
+</p>
 
 <p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
-<table width="100%" role="presentation">
-<tbody>
-<tr><td width="600" align="left"><a href="#motivation"><img src="./assets/readme/nav/motivation.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Motivation</ins></a></td><td width="500" align="left"><a href="#sure-tagger"><img src="./assets/readme/nav/sure-tagger.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>SURE-Tagger</ins></a></td><td width="500" align="left"><a href="#how-it-works"><img src="./assets/readme/nav/how-it-works.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>How&nbsp;it&nbsp;works</ins></a></td></tr>
-<tr><td width="600" align="left"><a href="#usage"><img src="./assets/readme/nav/usage.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Usage</ins></a></td><td width="500" align="left"><a href="#tag-bench"><img src="./assets/readme/nav/tag-bench.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Tag-Bench</ins></a></td><td width="500" align="left"><a href="#system-performance"><img src="./assets/readme/nav/system-performance.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>System&nbsp;performance</ins></a></td></tr>
-<tr><td width="600" align="left"><a href="#compositional-benchmark"><img src="./assets/readme/nav/compositional-benchmark.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Compositional&nbsp;benchmark</ins></a></td><td width="500" align="left"><a href="#links"><img src="./assets/readme/nav/references.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>Links</ins></a></td><td width="500" align="left"><a href="#license"><img src="./assets/readme/nav/license.svg" width="22" height="22" align="middle" alt="">&nbsp;<ins>License</ins></a></td></tr>
-</tbody>
-</table>
+<p align="center"><sub>Structured speech understanding for agents, evaluation, and analysis.</sub></p>
+
+<p align="center">
+<a href="#motivation">Motivation</a> · <a href="#sure-tagger">SURE-Tagger</a> · <a href="#how-it-works">How it works</a> · <a href="#usage">Usage</a> · <a href="#tag-bench">Tag-Bench</a><br>
+<a href="#system-performance">Performance</a> · <a href="#compositional-benchmark">Compositional benchmark</a> · <a href="#links">Links</a> · <a href="#license">License</a>
+</p>
+
+---
 
 SURE-Tagger turns speech evidence into queryable tags and evidence-linked descriptions.
+
+<p align="center"><strong>1,150</strong> Tag-Bench clips &nbsp;·&nbsp; <strong>77.28%</strong> overall score &nbsp;·&nbsp; <strong>14.3%</strong> relative ASR error reduction</p>
 
 https://github.com/user-attachments/assets/da8797a9-47d8-4c20-9781-eb336b8e4ba8
 
 <p align="center"><sub>Introduction video · English narration</sub></p>
 
 <a id="motivation"></a>
+
+---
 
 ## Motivation
 
@@ -32,6 +43,8 @@ A free-form caption can summarize a recording, but it cannot tell whether an omi
 
 <a id="sure-tagger"></a>
 <a id="demo"></a>
+
+---
 
 ## SURE-Tagger · Audio to tags
 
@@ -71,6 +84,8 @@ For the complete fields and input format, see the [tag guide](sure-tagger-main/d
 
 <a id="how-it-works"></a>
 
+---
+
 ## How it works
 
 Specialized observers collect acoustic, temporal, lexical, and speaker evidence. SURE-Tagger reconciles uncertainty and conflicts into typed fields and evidence-linked descriptions.
@@ -78,6 +93,8 @@ Specialized observers collect acoustic, temporal, lexical, and speaker evidence.
 <p align="center"><a href="./assets/readme/how-it-works.png"><img src="./assets/readme/how-it-works.png" width="100%" alt="Specialized speech observers feed an evidence record, which is reconciled into structured tags for compositional evaluation"></a></p>
 
 <a id="usage"></a>
+
+---
 
 ## Usage
 
@@ -134,9 +151,13 @@ Explore the [tagger](sure-tagger-main/README.md), [scoring and comparison](compa
 
 <a id="tag-bench"></a>
 
+---
+
 ## Tag-Bench
 
 Tag-Bench combines selected recordings from existing datasets with 500 controlled synthetic scenes. The released [LayeredSpeech-500](LayeredSpeech-500/README.md) pipeline follows frozen L1–L5 scene scripts to generate and validate the synthetic half.
+
+<p align="center"><strong>500</strong> controlled synthetic scenes &nbsp;+&nbsp; <strong>650</strong> existing recordings &nbsp;=&nbsp; <strong>1,150</strong> clips</p>
 
 <table width="100%">
 <thead><tr><th width="520">Component</th><th width="850">Source or process</th><th width="230" align="right">Clips</th></tr></thead>
@@ -169,16 +190,20 @@ The fixture makes non-linguistic test audio; only five synthetic showcase WAVs a
 
 Hear ten Tag-Bench clips, including five [synthetic scenes](assets/readme/synthetic-samples/README.md), and compare SURE-Tagger, Captioner, and Qwen3-Omni on the same audio.
 
-<h3 align="center"><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en#listen">▶ Listen here! ↗</a></h3>
+<p align="center"><strong><a href="https://me-chuan.github.io/sure-tagger/sure-tagger-main/demo/?lang=en#listen">▶ Listen to Tag-Bench clips ↗</a></strong></p>
 
 <p align="center"><sub><a href="assets/readme/tagbench/COMPARISON.md">Same-audio comparison</a> · <a href="assets/readme/tagbench/ATTRIBUTION.md">Audio attribution</a></sub></p>
 
 <a id="system-performance"></a>
 <a id="paper-results"></a>
 
+---
+
 ## System performance
 
 On Tag-Bench, SURE-Tagger scores higher than Qwen3-Omni-Captioner on rich speech annotation. All methods use the same language model to construct the final schema. The overall score covers 29 structured and descriptive axes; higher is better.
+
+> **77.28% overall score** on the combined benchmark, compared with **58.20%** for Captioner.
 
 <table width="100%">
 <thead><tr><th width="830">Data</th><th width="385" align="right">SURE-Tagger</th><th width="385" align="right">Captioner</th></tr></thead>
@@ -195,6 +220,8 @@ On Tag-Bench, SURE-Tagger scores higher than Qwen3-Omni-Captioner on rich speech
 
 <a id="compositional-benchmark"></a>
 <a id="from-tags-to-analysis"></a>
+
+---
 
 ## Compositional benchmark
 
@@ -269,6 +296,8 @@ Tags such as short duration, low SNR, and speaker overlap can also be combined i
 
 Condition-level errors guide candidate selection for about one hour of Qwen3-ASR-1.7B fine-tuning. SURE-Tagger-guided pool selection lowers error from 5.50% to 4.71% ± 0.08%, a 14.3% relative reduction; the same strategy with Captioner-derived tags reaches 6.17% ± 1.02% (three sampling seeds).
 
+<p align="center"><strong>5.50% → 4.71% ± 0.08%</strong><br><sub>14.3% relative error reduction with SURE-Tagger-guided selection</sub></p>
+
 <table width="100%">
 <thead><tr><th width="560" align="left">Selection</th><th width="600" align="right">Error (%) · mean ± SD</th><th width="440" align="right">Δ vs. original</th></tr></thead>
 <tbody>
@@ -303,6 +332,8 @@ The repository's full evaluation launcher currently uses the existing-data subse
 <a id="references"></a>
 <a id="links"></a>
 
+---
+
 ## Links
 
 - 📄 [A Unified and Reproducible Experimentation Framework for Speech Understanding](https://www.isca-archive.org/interspeech_2026/peng26e_interspeech.pdf) — Jing Peng et al. · Interspeech 2026
@@ -310,6 +341,8 @@ The repository's full evaluation launcher currently uses the existing-data subse
 - 🌐 [Open-Bench](https://www.open-bench.net/home) — Open benchmarking platform
 
 <a id="license"></a>
+
+---
 
 ## License
 
